@@ -72,19 +72,6 @@ const Subject = ({ subject, type }) => {
             >
               {desc}
             </p>
-            {navButton && (
-              <div>
-                <div className="text-sm text-black dark:text-blackColor-darkColor group-hover:text-whiteColor dark:text-blackColor-dark dark:group-hover:text-whiteColor-dark">
-                  <Link
-                    href={path}
-                    className="text-sm font-medium hover:text-secondaryColor "
-                  >
-                    View Subject
-                    <i className="icofont-long-arrow-right"></i>
-                  </Link>
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ const TestimonialsSlider2 = () => {
       image: testimonialImage2,
       desig: "Ui/Ux Designer",
       desc1: "The digital world is constantly changing, but our commitment to your success is steadfast. We provide continual support and maintenance post-launch to ensure your web presence remains strong and secure.",
-      desc2: "Partner with Sinope, where industry knowledge meets web development expertise. Elevate your online presence to reflect the quality and values of your business while harnessing the power of digital technology to thrive in the digital era. Contact us to discuss your industry-specific web solution today."
+      desc2: "Partner with Neuronexa Labs, where industry knowledge meets web development expertise. Elevate your online presence to reflect the quality and values of your business while harnessing the power of digital technology to thrive in the digital era. Contact us to discuss your industry-specific web solution today."
     },
   ];
   return (
