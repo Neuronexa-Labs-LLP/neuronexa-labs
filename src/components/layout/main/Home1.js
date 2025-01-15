@@ -3,7 +3,7 @@ import Blogs from "@/components/sections/blogs/Blogs";
 import CoursesFilter from "@/components/sections/courses/CoursesFilter";
 import Hero1 from "@/components/sections/hero-banners/Hero1";
 import Instructors from "@/components/sections/instructors/Instructors";
-import PopularSubjects from "@/components/sections/popular-subjects/PopularSubjects";
+import OurServices from "@/components/sections/popular-subjects/PopularSubjects";
 import PricingPlans from "@/components/sections/pricing-plans/PricingPlans";
 import Registration from "@/components/sections/registrations/Registration";
 import BrandHero from "@/components/sections/sub-section/BrandHero";
@@ -14,7 +14,7 @@ const Home1 = () => {
       <Hero1 />
       <BrandHero />
       <About1 />
-      <PopularSubjects />
+      <OurServices />
       <CoursesFilter />
       <Registration />
       <PricingPlans />

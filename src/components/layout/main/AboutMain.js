@@ -1,5 +1,5 @@
 import About11 from "@/components/sections/abouts/About11";
-import Brands from "@/components/sections/brands/Brands";
+import TechnologyPlatformsWeUse from "@/components/sections/brands/Brands";
 import FeatureCourses from "@/components/sections/featured-courses/FeatureCourses";
 import HeroPrimary from "@/components/sections/hero-banners/HeroPrimary";
 import Overview from "@/components/sections/overviews/Overview";
@@ -22,7 +22,7 @@ const AboutMain = () => {
         subTitle="Popular Courses"
       />
       <Testimonials />
-      <Brands />
+      <TechnologyPlatformsWeUse />
     </>
   );
 };

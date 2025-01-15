@@ -7,7 +7,7 @@ import Instructors2 from "@/components/sections/instructors/Instructors2";
 import PopularSubjects2 from "@/components/sections/popular-subjects/PopularSubjects2";
 import Registration from "@/components/sections/registrations/Registration";
 import SubjectMarque from "@/components/sections/sub-section/SubjectMarque";
-import Testimonials2 from "@/components/sections/testimonials/Testimonials2";
+import SupportMaintenance from "@/components/sections/testimonials/Testimonials2";
 import React from "react";
 
 const Home5 = () => {
@@ -21,7 +21,7 @@ const Home5 = () => {
       <CoursesFilter />
       <Registration />
       <Instructors2 />
-      <Testimonials2 />
+      <SupportMaintenance />
       <Blogs2 />
     </>
   );

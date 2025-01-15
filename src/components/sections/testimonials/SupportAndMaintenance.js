@@ -4,9 +4,9 @@ import TestimonialsSlider2 from "@/components/shared/testimonials/TestimonialsSl
 import SectionNameSecondary from "@/components/shared/section-names/SectionNameSecondary";
 import HeadingPrimaryXl from "@/components/shared/headings/HeadingPrimaryXl ";
 
-const SupportMaintenance = () => {
+const Testimonials2 = () => {
   return (
-    <section id="Support&Maintenance">
+    <section>
       <div className="testimonial bg-lightGrey10 dark:bg-lightGrey10-dark relative z-0 overflow-hidden">
         <div className="container py-50px md:py-70px lg:py-20 2xl:pt-145px 2xl:pb-154px">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-30px lg:gap-0">
@@ -39,4 +39,4 @@ const SupportMaintenance = () => {
   );
 };
 
-export default SupportMaintenance;
+export default Testimonials2;

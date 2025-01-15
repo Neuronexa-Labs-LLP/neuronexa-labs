@@ -30,6 +30,20 @@ const NavItems = () => {
       dropdown: null,
       isRelative: true,
     },
+    {
+      id: 5,
+      name: "Client Success Stories",   
+      path: "#ClientSuccessStories",
+      dropdown: null,
+      isRelative: true,
+    },
+    {
+      id: 6,
+      name: "Feedback",   
+      path: "#Feedback",
+      dropdown: null,
+      isRelative: true,
+    },
   ];
   return (
     <div className="hidden lg:block lg:col-start-3 lg:col-span-7">

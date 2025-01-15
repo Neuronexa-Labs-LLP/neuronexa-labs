@@ -6,7 +6,7 @@ import Instructors2 from "@/components/sections/instructors/Instructors2";
 import PopularSubjects2 from "@/components/sections/popular-subjects/PopularSubjects2";
 import Registration from "@/components/sections/registrations/Registration";
 import BrandHero from "@/components/sections/sub-section/BrandHero";
-import Testimonials2 from "@/components/sections/testimonials/Testimonials2";
+import SupportMaintenance from "@/components/sections/testimonials/Testimonials2";
 import React from "react";
 
 const Home4 = () => {
@@ -19,7 +19,7 @@ const Home4 = () => {
       <CoursesFilter />
       <Registration />
       <Instructors2 />
-      <Testimonials2 />
+      <SupportMaintenance />
       <Blogs2 />
     </>
   );

@@ -1,5 +1,5 @@
 import About2 from "@/components/sections/abouts/About2";
-import Brands from "@/components/sections/brands/Brands";
+import TechnologyPlatformsWeUse from "@/components/sections/brands/Brands";
 import CoursesFilter2 from "@/components/sections/courses/CoursesFilter2";
 import EventsTab from "@/components/sections/events/EventsTab";
 import Features from "@/components/sections/features/Features";
@@ -19,7 +19,7 @@ const Home2 = () => {
       <Registration />
       <EventsTab />
       <Testimonials />
-      <Brands />
+      <TechnologyPlatformsWeUse />
     </>
   );
 };

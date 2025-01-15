@@ -3,7 +3,7 @@ import { FaLaptopCode, FaHeartbeat, FaShoppingCart, FaPlane, FaHospital, FaFlask
 import HeadingPrimary from "@/components/shared/headings/HeadingPrimary";
 import Link from "next/link";
 
-const Brands = () => {
+const IndustryTechnologies = () => {
   const brands = [
     {
       icon: <FaLaptopCode className="mr-2 text-xl" />,
@@ -86,9 +86,11 @@ const Brands = () => {
             Mastering Every Terrain
           </HeadingPrimary>
           <HeadingPrimary text="center">No Industry Unexplored</HeadingPrimary>
-          <p>
+          <div className="text-center">
+          <p className="dark:text-gray-400">
             At NeuroNexa Labs, we understand that every industry has unique digital requirements and challenges. Our comprehensive web development services cater to a diverse clientele, from startups to established enterprises across various sectors. Whether you are looking to build a brand-new website or enhance an existing web application, our expert team is dedicated to turning your online platform into a robust sales powerhouse.
           </p>
+          </div>
         </div>
 
         {/* Brands Sliding */}
@@ -110,7 +112,7 @@ const Brands = () => {
                     {brand.icon}
                   </div>
                   {/* Brand Name */}
-                  <h4 className="text-lg font-bold">{brand.name}</h4>
+                  <h4 className="text-lg font-bold dark:text-contentColor-dark">{brand.name}</h4>
                   {/* Brand Description */}
                   <p className="text-sm text-gray-600 dark:text-gray-400">{brand.description}</p>
                 </Link>
@@ -138,7 +140,7 @@ const Brands = () => {
                     {brand.icon}
                   </div>
                   {/* Brand Name */}
-                  <h4 className="text-lg font-bold">{brand.name}</h4>
+                  <h4 className="text-lg font-bold dark:text-contentColor-dark">{brand.name}</h4>
                   {/* Brand Description */}
                   <p className="text-sm text-gray-600 dark:text-gray-400">{brand.description}</p>
                 </Link>
@@ -151,4 +153,4 @@ const Brands = () => {
   );
 };
 
-export default Brands;
+export default IndustryTechnologies;

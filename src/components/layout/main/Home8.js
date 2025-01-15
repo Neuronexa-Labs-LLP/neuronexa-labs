@@ -7,7 +7,7 @@ import Hero8 from "@/components/sections/hero-banners/Hero8";
 import BrandHero from "@/components/sections/sub-section/BrandHero";
 import Counter2 from "@/components/sections/sub-section/Counter2";
 import FeaturesMarque from "@/components/sections/sub-section/FeaturesMarque";
-import Testimonials2 from "@/components/sections/testimonials/Testimonials2";
+import SupportMaintenance from "@/components/sections/testimonials/Testimonials2";
 import React from "react";
 
 const Home8 = () => {
@@ -20,7 +20,7 @@ const Home8 = () => {
       <Features2 />
       <CoursesFilter2 type="lg" />
       <Counter2 type="lg" />
-      <Testimonials2 />
+      <SupportMaintenance />
       <Blogs />
       <FeaturesMarque />
     </>

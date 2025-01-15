@@ -10,7 +10,7 @@
   import aiImage3 from "@/assets/images/program/ai_3.jpg";
   import aiImage4 from "@/assets/images/program/ai_4.jpg";
 
-  const About6 = () => {
+  const OurProjects = () => {
     // Program data to display
     const programs = [
       {
@@ -63,7 +63,7 @@
               <div className="flex space-x-4 overflow-x-auto">
                 {/* Cards */}
                 {programs.map((program, idx) => (
-                  <div key={idx} className="w-[25vw] p-4 flex-none">
+                  <div key={idx} className="w-[25vw] p-4 flex-none dark:text-contentColor-dark">
                     <Program program={program} />
                   </div>
                 ))}
@@ -75,4 +75,4 @@
     );
   };
 
-  export default About6;  
+  export default OurProjects;  

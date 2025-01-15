@@ -1,6 +1,6 @@
 import About4 from "@/components/sections/abouts/About4";
 import Blogs from "@/components/sections/blogs/Blogs";
-import Brands from "@/components/sections/brands/Brands";
+import TechnologyPlatformsWeUse from "@/components/sections/brands/Brands";
 import EventsTab from "@/components/sections/events/EventsTab";
 import FeatureCourses from "@/components/sections/featured-courses/FeatureCourses";
 import Fees from "@/components/sections/fees/Fees";
@@ -26,7 +26,7 @@ const Home7 = () => {
       <Fees />
       <EventsTab />
       <Testimonials />
-      <Brands />
+      <TechnologyPlatformsWeUse />
       <Blogs secondary={true} />
 
       <ImageGallery />

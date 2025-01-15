@@ -12,7 +12,7 @@ import brandImage9 from "@/assets/images/brand/brand_9.png";
 import Link from "next/link";
 import Image from "next/image";
 
-const Brands = () => {
+const TechnologyPlatformsWeUse = () => {
   const brands = [
     {
       image: brandImage1,
@@ -93,7 +93,7 @@ const Brands = () => {
         {/* Brands Heading */}
         <div className="mb-5 md:mb-10" data-aos="fade-up">
           <HeadingPrimary text="center">Technology Platforms We Use</HeadingPrimary>
-          <p>
+          <p className="dark:text-contentColor-dark">
             Our tech stack is carefully selected to ensure reliability,
             scalability, and security, catering to the diverse needs of our
             clients across various industries.
@@ -121,7 +121,7 @@ const Brands = () => {
                     className="mb-5 w-[120px] h-[120px] object-contain"
                   />
                   {/* Brand Name */}
-                  <h4 className="text-lg font-bold">{brand.name}</h4>
+                  <h4 className="text-lg font-bold dark:text-contentColor-dark">{brand.name}</h4>
                   {/* Brand Description */}
                   <p className="text-sm text-gray-600 dark:text-gray-400">{brand.description}</p>
                 </Link>
@@ -134,4 +134,4 @@ const Brands = () => {
   );
 };
 
-export default Brands;
+export default TechnologyPlatformsWeUse;

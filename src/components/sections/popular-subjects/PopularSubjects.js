@@ -10,7 +10,7 @@ import chatImage from "@/assets/images/icon/chat-app.png";
 import virtualRealityImage from "@/assets/images/icon/virtual-reality.png";
 import machineLearningImage from "@/assets/images/icon/machine-learning.png";
 import artifitialImage from "@/assets/images/icon/artificial-intelligence.png";
-const PopularSubjects = () => {
+const OurServices = () => {
   const isHome9 = useIsTrue("/home-9");
   const isHome9Dark = useIsTrue("/home-9-dark");
   const isHome10 = useIsTrue("/home-10");
@@ -394,4 +394,4 @@ const PopularSubjects = () => {
   );
 };
 
-export default PopularSubjects;
+export default OurServices;
