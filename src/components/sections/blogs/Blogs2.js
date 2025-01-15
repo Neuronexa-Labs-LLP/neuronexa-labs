@@ -7,7 +7,7 @@ import HeadingPrimary from "@/components/shared/headings/HeadingPrimary";
 import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
 import emailjs from "emailjs-com"; // Import EmailJS
 
-const About6 = () => {
+const UserFeedback = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     phone: "",
@@ -39,25 +39,30 @@ const About6 = () => {
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
     // Collect form data
     const { fullName, phone, email, services, company, message } = formData;
-
+  
+    // Log form data to the console to make sure it's being collected
+    console.log("Form data:", formData);
+  
     // Prepare template parameters to send to EmailJS
     const templateParams = {
-      fullName,
-      phone,
-      email,
-      services,
-      company,
-      message,
+      fullName,   // Matches {{fullName}} in the template
+      phone,      // Matches {{phone}} in the template
+      email,      // Matches {{email}} in the template
+      services,   // Matches {{services}} in the template
+      company,    // Matches {{company}} in the template
+      message,    // Matches {{message}} in the template
     };
-
+  
     // Use EmailJS to send the email
     emailjs
-      .send("your_service_id", "your_template_id", templateParams, "your_user_id")
+      .send("service_ruehvaj", "template_86emdi2", templateParams, "I3ghLf1eskQ5JuHPi")
       .then(
         (response) => {
+          // Log success message to console
+          console.log("Email sent successfully", response);
           // On successful submission
           alert("Your message has been sent!");
           setFormData({
@@ -70,12 +75,13 @@ const About6 = () => {
           });
         },
         (error) => {
-          // On error, log the error details for debugging
+          // Log error details to console for debugging
           console.error("EmailJS error:", error);
           alert("An error occurred. Please try again.");
         }
       );
   };
+  
 
   return (
     <section id="Feedback">
@@ -204,4 +210,4 @@ const About6 = () => {
   );
 };
 
-export default About6;
+export default UserFeedback;
