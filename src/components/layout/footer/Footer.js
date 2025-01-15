@@ -1,7 +1,5 @@
 "use client";
-import FooterNavList from "./FooterNavList";
 import CopyRight from "./CopyRight";
-import FooterTop from "./FooterTop";
 import { usePathname } from "next/navigation";
 
 const Footer = () => {
@@ -24,12 +22,6 @@ const Footer = () => {
           isHome8 ? "container-fluid-2" : "container"
         }   pt-65px pb-5 lg:pb-10  `}
       >
-        {/* footer top or subscription */}
-        {/* <FooterTop /> */}
-        {/* footer main */}
-        {/* <FooterNavList /> */}
-
-        {/* footer copyright  */}
         <CopyRight />
       </div>
     </footer>
