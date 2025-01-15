@@ -1,10 +1,8 @@
 import Image from "next/image";
+import Image1 from "@/assets/images/brand/About.png";
 import aboutImage from "@/assets/images/about/about_ai.jpg";
-import aboutImage15 from "@/assets/images/about/about_15.png";
 import TiltWrapper from "@/components/shared/wrappers/TiltWrapper";
-import SectionName from "@/components/shared/section-names/SectionName";
 import HeadingPrimary from "@/components/shared/headings/HeadingPrimary";
-import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
 
 // Importing icons (assumed to be FontAwesome or similar)
 import { FaChartLine, FaCogs, FaPlug, FaUser } from 'react-icons/fa'; 
@@ -51,7 +49,7 @@ const About6 = () => {
               <div className="tilt">
                 <Image
                   className="w-full rounded-lg2"
-                  src={aboutImage}
+                  src={Image1}
                   alt="About Us"
                   placeholder="blur"
                 />
