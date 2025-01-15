@@ -1,6 +1,6 @@
 import About11 from "@/components/sections/abouts/About11";
-import TechnologyPlatformsWeUse from "@/components/sections/brands/Brands";
-import FeatureCourses from "@/components/sections/featured-courses/FeatureCourses";
+import TechnologyPlatforms from "@/components/sections/technology-platforms/TechnologyPlatforms";
+import FeatureCourses from "@/components/sections/industry-technologies/IndustryTechnologies";
 import HeroPrimary from "@/components/sections/hero-banners/HeroPrimary";
 import Overview from "@/components/sections/overviews/Overview";
 import Testimonials from "@/components/sections/testimonials/Testimonials";
@@ -22,7 +22,7 @@ const AboutMain = () => {
         subTitle="Popular Courses"
       />
       <Testimonials />
-      <TechnologyPlatformsWeUse />
+      <TechnologyPlatforms />
     </>
   );
 };

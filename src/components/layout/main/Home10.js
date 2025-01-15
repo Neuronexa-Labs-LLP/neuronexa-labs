@@ -1,24 +1,24 @@
-import About6 from "@/components/sections/abouts/About6";
-import UserFeedback from "@/components/sections/blogs/Blogs2";
-import TechnologyPlatformsWeUse from "@/components/sections/brands/Brands";
-import IndustryTechnologies from "@/components/sections/featured-courses/FeatureCourses";
-import Hero10 from "@/components/sections/hero-banners/Hero10";
-import OurServices from "@/components/sections/popular-subjects/PopularSubjects";
+import About from "@/components/sections/abouts/About6";
+import UserFeedback from "@/components/sections/user-feedback/UserFeedback";
+import TechnologyPlatforms from "@/components/sections/technology-platforms/TechnologyPlatforms";
+import IndustryTechnologies from "@/components/sections/industry-technologies/IndustryTechnologies";
+import Hero from "@/components/sections/hero-banners/Hero";
+import OurServices from "@/components/sections/our-services/OurServices";
 import PricingPlans from "@/components/sections/pricing-plans/PricingPlans";
-import OurProjects from "@/components/sections/programs/Programs2";
+import Projects from "@/components/sections/projects/Projects";
 
-import ClientSuccessStories from "@/components/sections/sub-section/ImageGallery";
-import SupportMaintenance from "@/components/sections/testimonials/Testimonials2";
+import ClientSuccessStories from "@/components/sections/client-success-stories/ClientSuccessStories";
+import SupportMaintenance from "@/components/sections/support-and-maintenance/SupportAndMaintenance";
 import React from "react";
 
 const Home10 = () => {
   return (
     <>
-      <Hero10 />
-      <About6 />  
+      <Hero />
+      <About />  
       <OurServices />   {/* Popular Subjects*/}
-      <TechnologyPlatformsWeUse/>    {/* Brands */}
-      <OurProjects />  {/* Programs2 */} 
+      <TechnologyPlatforms/>    {/* Brands */}
+      <Projects />  {/* Programs2 */} 
       <IndustryTechnologies/>    {/* FeatureCourses */}
       {/* <PricingPlans /> */}
       <SupportMaintenance />   {/* Testimonials2 */}

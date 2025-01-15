@@ -1,4 +1,4 @@
-import Subject from "@/components/shared/popular-subjects/Subject";
+import Service from "@/components/sections/our-services/Service";
 import React from "react";
 
 const SubjectMarque = () => {
@@ -504,7 +504,7 @@ const SubjectMarque = () => {
           {/* subject cards  */}
           {subjects.map((subject, idx) => (
             <div className="w-250px flex-shrink-0" key={idx}>
-              <Subject subject={subject} type="primary" />
+              <Service subject={subject} type="primary" />
             </div>
           ))}
         </div>

@@ -2,7 +2,7 @@ import React from "react";
 import BlogAuthor from "./BlogAuthor";
 import BlogCategories from "./BlogCategories";
 import RecentPosts from "./RecentPosts";
-import ImageGallery from "@/components/sections/sub-section/ImageGallery";
+import ImageGallery from "@/components/sections/client-success-stories/ClientSuccessStories";
 import BlogContactForm from "./BlogContactForm";
 import BlogTags from "./BlogTags";
 import BlogSocials from "./BlogSocials";

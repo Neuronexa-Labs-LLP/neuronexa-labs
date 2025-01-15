@@ -7,7 +7,7 @@ import HeadingPrimary from "@/components/shared/headings/HeadingPrimary";
 // Importing icons (assumed to be FontAwesome or similar)
 import { FaChartLine, FaCogs, FaPlug, FaUser } from 'react-icons/fa'; 
 
-const About6 = () => {
+const About = () => {
   return (
     <section id="About">
       <div className="container py-50px md:py-70px lg:py-20 2xl:py-100px">
@@ -62,4 +62,4 @@ const About6 = () => {
   );
 };
 
-export default About6;
+export default About;
