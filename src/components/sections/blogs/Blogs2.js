@@ -1,53 +1,212 @@
 "use client";
-import HeadingPrimaryXl from "@/components/shared/headings/HeadingPrimaryXl ";
-import SectionNameSecondary from "@/components/shared/section-names/SectionNameSecondary";
-import React from "react";
-import allBlogs from "@/../public/fakedata/blogs.json";
-import blogImage5 from "@/assets/images/blog/blog_5.png";
-import blogImage24 from "@/assets/images/blog/blog_24.png";
-import blogImage25 from "@/assets/images/blog/blog_25.png";
-import blogImage34 from "@/assets/images/blog/blog_34.jpg";
-import blogImage35 from "@/assets/images/blog/blog_35.jpg";
-import blogImage36 from "@/assets/images/blog/blog_36.jpg";
-import Blog from "@/components/shared/blogs/Blog";
-import Link from "next/link";
-import useIsTrue from "@/hooks/useIsTrue";
-const Blogs2 = () => {
-  const isHome10 = useIsTrue("/home-10");
-  const isHome10Dark = useIsTrue("/home-10-dark");
-  const blogs = allBlogs.slice(3, 6);
-  const images =
-    isHome10 || isHome10Dark
-      ? [blogImage34, blogImage35, blogImage36]
-      : [blogImage5, blogImage24, blogImage25];
+import React, { useState } from "react";
+import Image from "next/image";
+import aboutImage from "@/assets/images/about/about_ai.jpg";
+import TiltWrapper from "@/components/shared/wrappers/TiltWrapper";
+import HeadingPrimary from "@/components/shared/headings/HeadingPrimary";
+import emailjs from "emailjs-com"; // Import EmailJS
+
+const UserFeedback = () => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    phone: "",
+    email: "",
+    services: "",
+    company: "",
+    message: "",
+  });
+
+  // Handle form field changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+
+    // Custom validation for email field
+    if (name === "email") {
+      const emailInput = e.target;
+      if (emailInput.validity.typeMismatch) {
+        emailInput.setCustomValidity("Please match the requested format.");
+      } else {
+        emailInput.setCustomValidity("");
+      }
+    }
+  };
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  
+    // Collect form data
+    const { fullName, phone, email, services, company, message } = formData;
+  
+    // Log form data to the console to make sure it's being collected
+    console.log("Form data:", formData);
+  
+    // Prepare template parameters to send to EmailJS
+    const templateParams = {
+      fullName,   // Matches {{fullName}} in the template
+      phone,      // Matches {{phone}} in the template
+      email,      // Matches {{email}} in the template
+      services,   // Matches {{services}} in the template
+      company,    // Matches {{company}} in the template
+      message,    // Matches {{message}} in the template
+    };
+  
+    // Use EmailJS to send the email
+    emailjs
+      .send("service_ruehvaj", "template_86emdi2", templateParams, "I3ghLf1eskQ5JuHPi")
+      .then(
+        (response) => {
+          // Log success message to console
+          console.log("Email sent successfully", response);
+          // On successful submission
+          alert("Your message has been sent!");
+          setFormData({
+            fullName: "",
+            phone: "",
+            email: "",
+            services: "",
+            company: "",
+            message: "",
+          });
+        },
+        (error) => {
+          // Log error details to console for debugging
+          console.error("EmailJS error:", error);
+          alert("An error occurred. Please try again.");
+        }
+      );
+  };
+  
+
   return (
-    <section>
-      <div className="container py-10 md:py-50px lg:py-60px 2xl:py-100px">
-        {/* heading  */}
+    <section id="Feedback">
+      <HeadingPrimary text="center">We’d Love to Hear From You</HeadingPrimary>
+      <div className="container py-50px md:py-70px lg:py-20 2xl:py-100px">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-30px">
+          {/* Left section: Form with Box and Shadow */}
+          <div data-aos="fade-up" className="2xl:mr-65px">
+            <div className="p-6 bg-white rounded-lg shadow-lg">
+              {/* New Heading */}
+              <h2 className="text-2xl font-semibold text-center mb-6 text-primaryColor">
+                Let's Make Something Great Together
+              </h2>
 
-        <div data-aos="fade-up" className="text-center mb-15px">
-          <SectionNameSecondary>NEWS & BLOG</SectionNameSecondary>
-          <HeadingPrimaryXl>Latest News & Blogs</HeadingPrimaryXl>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-30px">
-          {/* blogs  */}
+              <form onSubmit={handleSubmit} className="contact-form">
+                {/* Full Name Input */}
+                <div className="form-group mb-4">
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    placeholder="Full Name"
+                    required
+                    className="w-full p-3 border border-gray-300 rounded"
+                  />
+                </div>
 
-          {blogs.map((blog, idx) => (
-            <Blog key={idx} blog={{ ...blog, image: images[idx] }} />
-          ))}
-        </div>
+                {/* Phone Input */}
+                <div className="form-group mb-4">
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="Phone"
+                    required
+                    className="w-full p-3 border border-gray-300 rounded"
+                  />
+                </div>
 
-        <div className="flex justify-center" data-aos="fade-up">
-          <Link
-            href="/blogs"
-            className="text-size-15 px-47px py-15px bg-primaryColor text-whiteColor border border-primaryColor hover:text-primaryColor hover:bg-whiteColor dark:hover:bg-whiteColor-dark dark:hover:text-whiteColor mt-10 md:mt-50px rounded uppercase"
-          >
-            More Blog
-          </Link>
+                {/* Email Input */}
+                <div className="form-group mb-4">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Email"
+                    required
+                    className="w-full p-3 border border-gray-300 rounded"
+                  />
+                </div>
+
+                {/* Services Input */}
+                <div className="form-group mb-4">
+                  <input
+                    type="text"
+                    id="services"
+                    name="services"
+                    value={formData.services}
+                    onChange={handleChange}
+                    placeholder="Services Interested In"
+                    className="w-full p-3 border border-gray-300 rounded"
+                  />
+                </div>
+
+                {/* Company Name Input */}
+                <div className="form-group mb-4">
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    placeholder="Company Name"
+                    className="w-full p-3 border border-gray-300 rounded"
+                  />
+                </div>
+
+                {/* Message Input */}
+                <div className="form-group mb-4">
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Message"
+                    required
+                    className="w-full p-3 border border-gray-300 rounded"
+                  ></textarea>
+                </div>
+
+                {/* Submit Button */}
+                <div className="form-group">
+                  <button
+                    type="submit"
+                    className="w-full px-6 py-3 bg-primaryColor text-white font-bold rounded"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          {/* Right section: Image */}
+          <div data-aos="fade-up">
+            <TiltWrapper>
+              <div className="tilt">
+                <Image
+                  className="w-full rounded-lg2"
+                  src={aboutImage}
+                  alt="About Us"
+                  placeholder="blur"
+                />
+              </div>
+            </TiltWrapper>
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-export default Blogs2;
+export default UserFeedback;

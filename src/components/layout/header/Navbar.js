@@ -19,26 +19,24 @@ const Navbar = () => {
 
   return (
     <div
-      className={`transition-all duration-500 sticky-header z-medium dark:bg-whiteColor-dark ${
-        isHome2 || isHome2Dark
+      className={`transition-all duration-500 sticky-header z-medium dark:bg-whiteColor-dark ${isHome2 || isHome2Dark
           ? "lg:border-b border-borderColor dark:border-borderColor-dark"
           : ""
-      }`}
+        }`}
     >
       <nav>
         <div
-          className={`py-15px lg:py-0 px-15px ${
-            isHome1 ||
-            isHome1Dark ||
-            isHome4 ||
-            isHome4Dark ||
-            isHome5 ||
-            isHome5Dark
+          className={`py-15px lg:py-0 px-15px ${isHome1 ||
+              isHome1Dark ||
+              isHome4 ||
+              isHome4Dark ||
+              isHome5 ||
+              isHome5Dark
               ? "lg:container 3xl:container2-lg"
               : isHome2 || isHome2Dark
-              ? "container sm:container-fluid lg:container 3xl:container-secondary "
-              : "lg:container 3xl:container-secondary-lg "
-          } 4xl:container mx-auto relative`}
+                ? "container sm:container-fluid lg:container 3xl:container-secondary "
+                : "lg:container 3xl:container-secondary-lg "
+            } 4xl:container mx-auto relative`}
         >
           {isHome4 || isHome4Dark || isHome5 || isHome5Dark ? (
             <NavbarTop />
@@ -49,6 +47,8 @@ const Navbar = () => {
             {/* navbar left */}
             {/* <NavbarLogo /> */}
             <HeadingPrimary>Neuronexa Labs</HeadingPrimary>
+
+
             {/* Main menu */}
             {isHome2Dark ? <NavItems2 /> : <NavItems />}
 

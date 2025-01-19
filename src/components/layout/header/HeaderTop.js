@@ -13,31 +13,45 @@ const HeaderTop = () => {
   return (
     <div className="bg-blackColor2 dark:bg-lightGrey10-dark hidden lg:block">
       <div
-        className={`${
-          isHome1 ||
+        className={`${isHome1 ||
           isHome1Dark ||
           isHome4 ||
           isHome4Dark ||
           isHome5 ||
           isHome5Dark
-            ? "lg:container 3xl:container2-lg"
-            : "container 3xl:container-secondary-lg "
-        } 4xl:container mx-auto text-whiteColor text-size-12 xl:text-sm py-5px xl:py-9px`}
+          ? "lg:container 3xl:container2-lg"
+          : "container 3xl:container-secondary-lg "
+          } 4xl:container mx-auto text-whiteColor text-size-12 xl:text-sm py-5px xl:py-9px`}
       >
         <div className="flex justify-between items-center">
           <div>
-            <p>Call Us: +1 800 123 456 789 - Mail Us: Itcroc@mail.com</p>
+            <p>
+              Call Us: +91 96866 61378 - Mail Us: {" "}
+              <a
+                href="mailto:neuronexalabs@gmail.com?subject=Inquiry&body=Hello,%20I%20have%20an%20inquiry..."
+                style={{
+                  color: '#007bff',  // Blue color for the link
+                  textDecoration: 'underline',  // Optional: remove underline
+                }}
+              >
+                neuronexalabs@gmail.com
+              </a>
+
+
+
+            </p>
           </div>
+
           <div className="flex gap-37px items-center">
-            <div>
+            {/* <div>
               <p>
                 <i className="icofont-location-pin text-primaryColor text-size-15 mr-5px"></i>
                 <span>684 West College St. Sun City, USA</span>
               </p>
-            </div>
+            </div> */}
             <div>
               {/* header social list  */}
-              <ul className="flex gap-[18px] text-size-15">
+              {/* <ul className="flex gap-[18px] text-size-15">
                 <li>
                   <a
                     className="hover:text-primaryColor"
@@ -70,7 +84,7 @@ const HeaderTop = () => {
                     <i className="icofont-youtube-play"></i>
                   </a>
                 </li>
-              </ul>
+              </ul> */}
             </div>
           </div>
         </div>

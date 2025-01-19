@@ -1,5 +1,4 @@
-import Home1 from "@/components/layout/main/Home1";
-import Home10 from "@/components/layout/main/Home10";
+import HomeMain from "@/components/layout/main/Home";
 import ThemeController from "@/components/shared/others/ThemeController";
 import PageWrapper from "@/components/shared/wrappers/PageWrapper";
 
@@ -7,7 +6,7 @@ export default function Home() {
   return (
     <PageWrapper>
       <main>
-        <Home10 />
+        <HomeMain />
         <ThemeController />
       </main>
     </PageWrapper>

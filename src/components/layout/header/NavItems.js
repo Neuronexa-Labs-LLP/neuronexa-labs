@@ -26,7 +26,21 @@ const NavItems = () => {
     {
       id: 4,
       name: "Our Projects",   // Dashboard
-      path: "/dashboards/instructor-dashboard",
+      path: "#OurProjects",
+      dropdown: null,
+      isRelative: true,
+    },
+    {
+      id: 5,
+      name: "Client Success Stories",   
+      path: "#ClientSuccessStories",
+      dropdown: null,
+      isRelative: true,
+    },
+    {
+      id: 6,
+      name: "Feedback",   
+      path: "#Feedback",
       dropdown: null,
       isRelative: true,
     },
