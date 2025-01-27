@@ -23,7 +23,7 @@ const HeaderTop = () => {
           : "container 3xl:container-secondary-lg "
           } 4xl:container mx-auto text-whiteColor text-size-12 xl:text-sm py-5px xl:py-9px`}
       >
-        <div className="flex justify-between items-center">
+        <div className="flex justify-end items-center">
           <div>
             <p>
               Call Us: +91 96866 61378 - Mail Us: {" "}

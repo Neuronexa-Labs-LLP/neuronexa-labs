@@ -2,7 +2,6 @@
 import React from "react";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa"; // Import WhatsApp icon from react-icons
-import MobileMenuOpen from "@/components/shared/buttons/MobileMenuOpen";
 import useIsTrue from "@/hooks/useIsTrue";
 
 const NavbarRight = () => {
@@ -28,9 +27,6 @@ const NavbarRight = () => {
             <FaWhatsapp className="mr-2 text-xl" />
             Chat With Us
           </Link>
-        </li>
-        <li className="block lg:hidden">
-          <MobileMenuOpen />
         </li>
       </ul>
     </div>
