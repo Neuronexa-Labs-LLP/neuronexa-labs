@@ -110,7 +110,7 @@ const Projects = () => {
 
             {/* Explore More button */}
             {!showAllProjects && (
-              <div className="text-center mt-6">
+              <div className="lg:hidden text-center mt-6">
                 <button
                   onClick={handleExploreMore}
                   className="px-8 py-3 bg-primaryColor text-white font-semibold rounded-md hover:bg-primaryColorDark transition-colors duration-300"
@@ -122,7 +122,7 @@ const Projects = () => {
 
             {/* Show Less button when all projects are displayed */}
             {showAllProjects && (
-              <div className="text-center mt-6">
+              <div className="lg:hidden text-center mt-6">
                 <button
                   onClick={handleShowLess}
                   className="px-8 py-3 bg-primaryColor text-white font-semibold rounded-md hover:bg-primaryColorDark transition-colors duration-300"
