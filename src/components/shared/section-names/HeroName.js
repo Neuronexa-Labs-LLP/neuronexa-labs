@@ -1,4 +1,4 @@
-const HreoName = ({ children }) => {
+const HeroName = ({ children }) => {
   return (
     <span className="uppercase text-secondaryColor text-size-15 mb-5px md:mb-15px  tracking-5px font-semibold block">
       {children}
@@ -6,4 +6,4 @@ const HreoName = ({ children }) => {
   );
 };
 
-export default HreoName;
+export default HeroName;

@@ -1,9 +1,7 @@
 "use client";
-import { usePathname } from "next/navigation";
 import NavItems from "./NavItems";
 import NavbarLogo from "./NavbarLogo";
 import NavbarRight from "./NavbarRight";
-import NavItems2 from "./NavItems2";
 import useIsTrue from "@/hooks/useIsTrue";
 import NavbarTop from "./NavbarTop";
 import HeadingPrimary from "@/components/shared/headings/HeadingPrimary";
