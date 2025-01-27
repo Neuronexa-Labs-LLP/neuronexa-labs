@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
 import Navbar from "./Navbar";
-import MobileMenu from "./MobileMenu";
 import HeaderTop from "./HeaderTop";
 
 import useIsTrue from "@/hooks/useIsTrue";
@@ -30,8 +29,6 @@ const Header = () => {
         {isHome2Dark || isHome2 ? "" : <HeaderTop />}
         {/* navbar */}
         <Navbar />
-        {/* mobile menu */}
-        <MobileMenu />
       </div>
     </header>
   );
