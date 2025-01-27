@@ -1,6 +1,6 @@
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa"; // Import WhatsApp icon from react-icons
-import HeadingPrimaryXl from "@/components/shared/headings/HeadingPrimaryXl ";
+import HeadingPrimary from "@/components/shared/headings/HeadingPrimary";
 
 const SupportMaintenance = () => {
   return (
@@ -10,9 +10,9 @@ const SupportMaintenance = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-30px lg:gap-0">
             {/* testimonial Left */}
             <div data-aos="fade-up">
-              <HeadingPrimaryXl>
+              <HeadingPrimary>
                 Ongoing Support and Maintenance
-              </HeadingPrimaryXl>
+              </HeadingPrimary>
               <p className="text-sm md:text-base leading-7 text-contentColor dark:text-contentColor-dark mb-10 pl-3 border-l-[3px] border-secondaryColor text-left">
               The digital world is constantly changing, but our commitment to your success is steadfast. We provide continual support and maintenance post-launch to ensure your web presence remains strong and secure.
             </p>

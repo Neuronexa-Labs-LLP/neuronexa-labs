@@ -2,8 +2,6 @@ import Image from "next/image";
 import flagImage1 from "@/assets/images/icon/flag1.webp";
 import flagImage2 from "@/assets/images/icon/flag2.webp";
 import flagImage3 from "@/assets/images/icon/flag3.webp";
-import DropdownCart from "./DropdownCart";
-import LoginButton from "./LoginButton";
 import DropdownWrapper from "@/components/shared/wrappers/DropdownWrapper";
 
 const NavbarTop = () => {
@@ -102,14 +100,6 @@ const NavbarTop = () => {
             </button>
           </div>
         </form>
-      </div>
-      <div className="col-start-10 col-span-3">
-        <ul className="relative nav-list flex justify-end items-center">
-          <li className="px-5 lg:px-10px 2xl:px-5 group">
-            <DropdownCart isHeaderTop={true} />
-          </li>
-          <li className="hidden lg:block">{<LoginButton />}</li>
-        </ul>
       </div>
     </div>
   );

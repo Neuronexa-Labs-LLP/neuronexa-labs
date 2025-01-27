@@ -1,11 +1,6 @@
 import React from "react";
 import Navitem from "./Navitem";
-import DropdownDemoes from "./DropdownDemoes";
-import DropdownPages from "./DropdownPages";
-import DropdownCourses from "./DropdownCourses";
 import DropdownWrapper from "@/components/shared/wrappers/DropdownWrapper";
-import DropdownDashboard from "./DropdownDashboard";
-import DropdownEcommerce from "./DropdownEcommerce";
 
 const NavItems = () => {
   const navItems = [

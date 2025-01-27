@@ -1,5 +1,5 @@
 import HeadingXl from "../../shared/headings/HeadingXl";
-import HreoName from "../../shared/section-names/HreoName";
+import HeroName from "../../shared/section-names/HeroName";
 import ButtonPrimary from "../../shared/buttons/ButtonPrimary";
 
 const HeroSlide = ({ slide }) => {
@@ -8,7 +8,7 @@ const HeroSlide = ({ slide }) => {
     <div className="container lg:max-w-770px xl:max-w-998px relative overflow-hidden">
       <div data-aos="fade-up" className="text-center">
         <div className="">
-          <HreoName>{tag}</HreoName>
+          <HeroName>{tag}</HeroName>
           <HeadingXl color="white">{title}</HeadingXl>
           <p className="text-size-15 md:text-lg text-blackColor-dark font-medium">
           Elevating Your Success in App Development, Web Development,<br />

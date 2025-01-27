@@ -1,5 +1,4 @@
 import About from "@/components/sections/about/About";
-import UserFeedback from "@/components/sections/blogs/Blogs2";
 import TechnologyPlatforms from "@/components/sections/technology-platforms/TechnologyPlatforms";
 import IndustryTechnologies from "@/components/sections/industry-technologies/IndustryTechnologies";
 import Hero from "@/components/sections/hero-banners/Hero";
@@ -10,6 +9,7 @@ import ClientSuccessStories from "@/components/sections/client-success-stories/C
 import SupportMaintenance from "@/components/sections/support-and-maintenance/SupportAndMaintenance";
 
 import React from "react";
+import UserFeedback from "@/components/sections/user-feedback/UserFeedback";
 
 const HomeMain = () => {
   return (

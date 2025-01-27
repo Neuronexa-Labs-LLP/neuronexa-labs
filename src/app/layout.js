@@ -1,6 +1,5 @@
 import { Hind, Inter } from "next/font/google";
 import "@/assets/css/icofont.min.css";
-import "@/assets/css/popup.css";
 import "@/assets/css/video-modal.css";
 import "aos/dist/aos.css";
 import "swiper/css";
