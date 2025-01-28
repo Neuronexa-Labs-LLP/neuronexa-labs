@@ -56,6 +56,7 @@ const About = () => {
               </div>
             </TiltWrapper>
           </div>
+          
         </div>
       </div>
     </section>
