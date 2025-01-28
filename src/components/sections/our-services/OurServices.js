@@ -17,24 +17,10 @@ const OurServices = () => {
   const isHome10Dark = useIsTrue("/home-10-dark");
   const subjects = [
     {
-      title:
-        isHome9 || isHome9Dark
-          ? "Daily Routnies"
-          : isHome10 || isHome10Dark
-          ? "App Development"
-          : "Business Studies",
+      title: "Business Studies",
       desc: "Create A Standout Presence in The Digital Market With Our Innovative And User-centric App Development Services. Designed To Meet Your Business Goals",
-      navButton: true,
       image: isHome10 || isHome10Dark ? chatImage : null,
       id: 1,
-      path: "#",
-      category:
-        isHome9 || isHome9Dark
-          ? "Lifestyle"
-          : isHome10 || isHome10Dark
-          ? "Development"
-          : "Business",
-
       svg: (
         <div className="relative w-20 h-[60px]">
           <svg
@@ -108,13 +94,6 @@ const OurServices = () => {
       desc: "Transform Your Digital Presence With Our Responsive And Visually Appealing Web Development Services, Utilizing The Latest Technologies",
       navButton: true,
       id: 2,
-      path: "#",
-      category:
-        isHome9 || isHome9Dark
-          ? "Personal Development"
-          : isHome10 || isHome10Dark
-          ? "Photography"
-          : "Art & Design",
       translate: true,
       image: isHome10 || isHome10Dark ? virtualRealityImage : null,
       svg: (
@@ -186,12 +165,6 @@ const OurServices = () => {
       navButton: true,
       id: 3,
       path: "#",
-      category:
-        isHome9 || isHome9Dark
-          ? "Health & Fitness"
-          : isHome10 || isHome10Dark
-          ? "Development"
-          : "Development",
       image: isHome10 || isHome10Dark ? machineLearningImage : null,
       svg: (
         <div className="relative w-20 h-[60px]">
@@ -264,13 +237,6 @@ const OurServices = () => {
       desc: "Drive Measurable Results And Enhance Brand Visibility Through Our Comprehensive Digital Marketing Strategies, and Advertising",
       navButton: true,
       id: 4,
-      path: "#",
-      category:
-        isHome9 || isHome9Dark
-          ? "Health & Fitness"
-          : isHome10 || isHome10Dark
-          ? "Development"
-          : "Development",
       translate: true,
       image: isHome10 || isHome10Dark ? artifitialImage : null,
       svg: (
