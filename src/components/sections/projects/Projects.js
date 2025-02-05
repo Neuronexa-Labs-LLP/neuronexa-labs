@@ -1,13 +1,20 @@
-'use client'; // Add this at the top to indicate a Client Component
+'use client'; // Mark this as a client component
 
-import { useState } from "react"; // Import useState
-import Image from "next/image";
 import aiImage1 from "@/assets/images/program/ai_1.jpg";
 import aiImage2 from "@/assets/images/program/ai_2.jpg";
 import aiImage3 from "@/assets/images/program/ai_3.jpg";
 import aiImage4 from "@/assets/images/program/ai_4.jpg";
 import Project from "@/components/sections/projects/Project"; // Import Project component
 import HeadingPrimary from "@/components/shared/headings/HeadingPrimary"; // Import HeadingPrimary
+
+import React, { useState } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+// Import required modules
+import { Pagination } from 'swiper/modules';
 
 const Projects = () => {
   // Program data to display
@@ -24,7 +31,7 @@ const Projects = () => {
     {
       projectNumber: 2,
       category: "IT",
-      title: "Classifying Best Intelligence Photos",
+      title: "Classifying Best Intelligence Photos Classifying Best Intelligence Photos",
       link: "abc.com",
       image: aiImage2,
       description:
@@ -76,16 +83,31 @@ const Projects = () => {
 
           {/* Right side with Programs Grid (70%) */}
           <div data-aos="fade-up" className="lg:col-span-8">
-            {/* For larger screens (laptop and above), display as horizontal sliding bar */}
-            <div className="hidden lg:block overflow-x-auto">
-              {/* Flex box with wrapping cards for large screens */}
-              <div className="flex space-x-6">
+            {/* Swiper for larger screens (laptop and above), display as horizontal sliding bar */}
+            <div className="hidden lg:block">
+              <Swiper
+                slidesPerView={3} // Number of slides visible at once
+                spaceBetween={20} // Space between slides
+                centeredSlides={true} // Ensure the selected slide is centered
+                loop={true}
+                pagination={{
+                  clickable: true, // Clickable pagination dots
+                }}
+                modules={[Pagination]} // Add pagination module
+                grabCursor={true} // Make cursor draggable
+                draggable={true} // Allow dragging of the slides
+                className="mySwiper"
+              >
                 {programs.map((program, idx) => (
-                  <div key={idx} className="w-[300px] p-4 flex-none">
-                    <Project program={program} />
-                  </div>
+                  <SwiperSlide key={idx}>
+                    <div className="w-full p-4">
+                      <Project program={program} />
+                    </div>
+                  </SwiperSlide>
                 ))}
-              </div>
+              </Swiper>
+
+
             </div>
 
             {/* For smaller screens (mobile), initially show 2 projects */}
