@@ -23,7 +23,7 @@ const HeroSlider = () => {
       }}
       grabCursor={true}
       modules={[Pagination]}
-      className={`ecommerce-slider py-50px md:py-100px lg:pt-100px lg:pb-150px 2xl:pt-155px 2xl:pb-180px 3xl:pb-250px`}
+      className={`ecommerce-slider py-150px md:py-200px lg:py-200px 2xl:py-250px 3xl:py-300px pb-150px`} // Added padding-bottom
     >
       {slides.map((slide, idx) => (
         <SwiperSlide className="px-15px" key={idx}>

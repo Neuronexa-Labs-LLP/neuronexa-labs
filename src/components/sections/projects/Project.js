@@ -5,7 +5,7 @@ const Project = ({ program }) => {
   const { projectNumber, category, title, link, image, description } = program;
 
   return (
-    <div className="shadow-dropdown-secodary p-6 mb-4 border border-gray-200" data-aos="fade-up">
+    <div className="shadow-dropdown-secodary p-6 mb-4 border border-gray-200 w-500" data-aos="fade-up">
       {/* Project Number */}
       <p className="text-6xl font-semibold text-gray-200 mb-4 pb-6">
         {projectNumber}

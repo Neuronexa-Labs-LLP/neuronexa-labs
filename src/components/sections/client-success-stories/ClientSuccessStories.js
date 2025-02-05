@@ -49,12 +49,12 @@ const client_stories = [
 
 const ClientSuccessStories = () => {
   return (
-    <section id='ClientSuccessStories'>
+    <section id="ClientSuccessStories">
       <div className="container py-50px md:py-70px lg:py-20 2xl:py-100px">
         <HeadingPrimary text="center">Client Success Stories</HeadingPrimary>
         <br />
         <br />
-        
+
         {/* Swiper container */}
         <Swiper
           spaceBetween={30}
@@ -73,7 +73,7 @@ const ClientSuccessStories = () => {
           {/* Map over the client_stories and create SwiperSlide for each */}
           {client_stories.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="flex flex-col md:flex-row items-start justify-between p-5 bg-white rounded-lg shadow-md">
+              <div className="flex flex-col md:flex-row items-start justify-between p-5 bg-white rounded-lg shadow-md transition-all duration-300 group hover:shadow-xl hover:bg-white dark:bg-whiteColor-dark dark:group-hover:bg-primaryColor dark:group-hover:text-whiteColor dark:hover:shadow-xl dark:hover:bg-primaryColor">
                 {/* Left Side - Image, Name, Position */}
                 <div className="w-full md:w-1/3 flex flex-col items-center justify-center space-y-3 mb-5 md:mb-0">
                   <Image
@@ -84,7 +84,7 @@ const ClientSuccessStories = () => {
                     className="object-contain rounded-lg"
                   />
                   <div className="text-center">
-                    <div className="text-lg font-semibold">{item.name}</div>
+                    <div className="text-lg font-semibold dark:text-contentColor-dark">{item.name}</div>
                     <div className="text-sm text-gray-500 mt-2">{item.position}</div>
                   </div>
                 </div>
@@ -104,5 +104,6 @@ const ClientSuccessStories = () => {
     </section>
   );
 };
+
 
 export default ClientSuccessStories;
