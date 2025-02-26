@@ -24,7 +24,7 @@ export const hind = Hind({
 });
 
 export const metadata = {
-  title: "Home 1 | Edurock - Education LMS Template",
+  title: "Home 1 |",
   description: "Home description",
 };
 
