@@ -25,13 +25,13 @@ const NavItems = () => {
       dropdown: null,
       isRelative: true,
     },
-    {
-      id: 5,
-      name: "Client Success Stories",   
-      path: "#ClientSuccessStories",
-      dropdown: null,
-      isRelative: true,
-    },
+    // {
+    //   id: 5,
+    //   name: "Client Success Stories",   
+    //   path: "#ClientSuccessStories",
+    //   dropdown: null,
+    //   isRelative: true,
+    // },
     {
       id: 6,
       name: "Feedback",   

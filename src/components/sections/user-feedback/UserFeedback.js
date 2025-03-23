@@ -1,10 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import aboutImage from "@/assets/images/about/about_ai.jpg";
 import TiltWrapper from "@/components/shared/wrappers/TiltWrapper";
 import HeadingPrimary from "@/components/shared/headings/HeadingPrimary";
 import emailjs from "emailjs-com"; // Import EmailJS
+import { DotLottie } from "@lottiefiles/dotlottie-web"; // Import DotLottie
 
 const UserFeedback = () => {
   const [formData, setFormData] = useState({
@@ -38,13 +39,13 @@ const UserFeedback = () => {
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
     // Collect form data
     const { fullName, phone, email, services, company, message } = formData;
-  
+
     // Log form data to the console to make sure it's being collected
     console.log("Form data:", formData);
-  
+
     // Prepare template parameters to send to EmailJS
     const templateParams = {
       fullName,   // Matches {{fullName}} in the template
@@ -54,7 +55,7 @@ const UserFeedback = () => {
       company,    // Matches {{company}} in the template
       message,    // Matches {{message}} in the template
     };
-  
+
     // Use EmailJS to send the email
     emailjs
       .send("service_ruehvaj", "template_86emdi2", templateParams, "I3ghLf1eskQ5JuHPi")
@@ -80,7 +81,28 @@ const UserFeedback = () => {
         }
       );
   };
-  
+
+  // Reference to the canvas element
+  const canvasRef = useRef(null);
+
+  // Initialize Lottie animation
+  useEffect(() => {
+    if (canvasRef.current) {
+      const dotLottie = new DotLottie({
+        autoplay: true,
+        loop: true,
+        canvas: canvasRef.current,
+        src: "https://lottie.host/750d02bb-2afc-4b7e-997b-663dfbf667bb/JqN0BS1gDk.lottie", // Replace with your .lottie or .json file URL
+      });
+
+      // Cleanup on unmount
+      return () => {
+        dotLottie.destroy();
+      };
+    }
+  }, []);
+
+
 
   return (
     <section id="Feedback">
@@ -190,18 +212,12 @@ const UserFeedback = () => {
             </div>
           </div>
 
-          {/* Right section: Image */}
+          {/* Right section: Lottie Animation */}
           <div data-aos="fade-up">
-            <TiltWrapper>
-              <div className="tilt">
-                <Image
-                  className="w-full rounded-lg2"
-                  src={aboutImage}
-                  alt="About Us"
-                  placeholder="blur"
-                />
-              </div>
-            </TiltWrapper>
+            <canvas
+              ref={canvasRef}
+              style={{ width: "100%", height: "100%", borderRadius: "8px" }}
+            ></canvas>
           </div>
         </div>
       </div>

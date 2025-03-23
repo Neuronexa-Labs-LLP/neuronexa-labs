@@ -29,7 +29,7 @@ const HomeMain = () => {
       <IndustryTechnologies/>   
       {/* <PricingPlans /> */}
       <SupportMaintenance />   
-      <ClientSuccessStories />   
+      {/* <ClientSuccessStories />    */}
       <UserFeedback />   
     </>
   );

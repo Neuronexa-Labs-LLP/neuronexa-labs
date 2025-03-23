@@ -1,7 +1,23 @@
 import React from "react";
-import { FaLaptopCode, FaHeartbeat, FaShoppingCart, FaPlane, FaHospital, FaFlask, FaBrain, FaRobot, FaCogs, FaCar } from "react-icons/fa"; // Importing icons
+import {
+  FaLaptopCode,
+  FaHeartbeat,
+  FaShoppingCart,
+  FaPlane,
+  FaHospital,
+  FaFlask,
+  FaBrain,
+  FaRobot,
+  FaCogs,
+  FaCar,
+  FaUniversity,
+  FaCloud,
+  FaDatabase,
+  FaCity,
+  FaTree,
+  FaGamepad
+} from "react-icons/fa";
 import HeadingPrimary from "@/components/shared/headings/HeadingPrimary";
-import Link from "next/link";
 
 const IndustryTechnologies = () => {
   const brands = [
@@ -71,6 +87,43 @@ const IndustryTechnologies = () => {
       description:
         "Revolutionizing the automobile industry with cutting-edge digital and software solutions.",
     },
+    {
+      icon: <FaUniversity className="mr-2 text-xl text-gray-600 dark:text-white" />,
+      name: "EdTech",
+      description:
+        "Transforming education with digital tools, AI-driven learning, and e-learning platforms.",
+    },
+    {
+      icon: <FaCloud className="mr-2 text-xl text-gray-600 dark:text-white" />,
+      name: "Cloud Computing",
+      description:
+        "Empowering businesses with scalable and secure cloud-based infrastructures and services.",
+    },
+    {
+      icon: <FaDatabase className="mr-2 text-xl text-gray-600 dark:text-white" />,
+      name: "Big Data & Analytics",
+      description:
+        "Harnessing the power of data for strategic decision-making and predictive analytics.",
+    },
+    {
+      icon: <FaCity className="mr-2 text-xl text-gray-600 dark:text-white" />,
+      name: "Smart Cities",
+      description:
+        "Developing intelligent urban infrastructures with IoT, AI, and automation for better living.",
+    },
+    {
+      icon: <FaTree className="mr-2 text-xl text-gray-600 dark:text-white" />,
+      name: "AgriTech",
+      description:
+        "Empowering agriculture with AI-driven farming, precision technology, and automation.",
+    },
+    {
+      icon: <FaGamepad className="mr-2 text-xl text-gray-600 dark:text-white" />,
+      name: "Game Development",
+      description:
+        "Creating immersive gaming experiences with advanced graphics, AI, and real-time rendering.",
+    }
+
   ];
 
   return (
@@ -87,63 +140,26 @@ const IndustryTechnologies = () => {
           </HeadingPrimary>
           <HeadingPrimary text="center">No Industry Unexplored</HeadingPrimary>
           <div className="text-center">
-          <p className="dark:text-gray-400">
-            At NeuroNexa Labs, we understand that every industry has unique digital requirements and challenges. Our comprehensive web development services cater to a diverse clientele, from startups to established enterprises across various sectors. Whether you are looking to build a brand-new website or enhance an existing web application, our expert team is dedicated to turning your online platform into a robust sales powerhouse.
-          </p>
+            <p className="dark:text-gray-400">
+              At NeuroNexa Labs, we understand that every industry has unique digital requirements and challenges. Our comprehensive web development services cater to a diverse clientele, from startups to established enterprises across various sectors. Whether you are looking to build a brand-new website or enhance an existing web application, our expert team is dedicated to turning your online platform into a robust sales powerhouse.
+            </p>
           </div>
         </div>
 
         {/* Brands Sliding */}
         <div className="overflow-x-hidden">
           <div className="flex animate-marquee gap-5">
-            {/* Brands */}
-            {brands.map((brand, idx) => (
-              <div
-                key={idx}
-                className="w-250px flex-shrink-0"
-                data-aos="fade-up"
-              >
-                <Link
-                  href="#"
-                  className="pt-25px pb-45px text-center w-full flex flex-col items-center"
-                >
+            {/* Duplicate items for smooth infinite scrolling */}
+            {[...brands, ...brands].map((brand, idx) => (
+              <div key={idx} className="w-250px flex-shrink-0" data-aos="fade-up">
+                <div className="pt-25px pb-45px text-center w-full flex flex-col items-center">
                   {/* Brand Icon */}
-                  <div className="mb-5">
-                    {brand.icon}
-                  </div>
+                  <div className="mb-5">{brand.icon}</div>
                   {/* Brand Name */}
                   <h4 className="text-lg font-bold dark:text-contentColor-dark">{brand.name}</h4>
                   {/* Brand Description */}
                   <p className="text-sm text-gray-600 dark:text-gray-400">{brand.description}</p>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Brands Sliding (Repeated) */}
-        <div className="overflow-x-hidden">
-          <div className="flex animate-marquee gap-5">
-            {/* Brands */}
-            {brands.map((brand, idx) => (
-              <div
-                key={idx}
-                className="w-250px flex-shrink-0"
-                data-aos="fade-up"
-              >
-                <Link
-                  href="#"
-                  className="pt-25px pb-45px text-center w-full flex flex-col items-center"
-                >
-                  {/* Brand Icon */}
-                  <div className="mb-5">
-                    {brand.icon}
-                  </div>
-                  {/* Brand Name */}
-                  <h4 className="text-lg font-bold dark:text-contentColor-dark">{brand.name}</h4>
-                  {/* Brand Description */}
-                  <p className="text-sm text-gray-600 dark:text-gray-400">{brand.description}</p>
-                </Link>
+                </div>
               </div>
             ))}
           </div>
