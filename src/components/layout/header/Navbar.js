@@ -4,7 +4,6 @@ import NavbarLogo from "./NavbarLogo";
 import NavbarRight from "./NavbarRight";
 import useIsTrue from "@/hooks/useIsTrue";
 import NavbarTop from "./NavbarTop";
-import HeadingPrimary from "@/components/shared/headings/HeadingPrimary";
 const Navbar = () => {
   const isHome1 = useIsTrue("/");
   const isHome1Dark = useIsTrue("/home-1-dark");
@@ -44,7 +43,7 @@ const Navbar = () => {
           <div className="grid grid-cols-2 lg:grid-cols-12 items-center gap-15px">
             {/* navbar left */}
             {/* <NavbarLogo /> */}
-            <HeadingPrimary>Neuronexa Labs</HeadingPrimary>
+            <NavbarLogo />
 
 
             {/* Main menu */}

@@ -2,16 +2,12 @@ import HeadingPrimary from "@/components/shared/headings/HeadingPrimary";
 import React from "react";
 import WordPress from "@/assets/images/brand/wordpress.png";
 import ReactJS from "@/assets/images/brand/reactjs.png";
-import Shopify from "@/assets/images/brand/shopify.png";
-import NodeJS from "@/assets/images/brand/nodejs.png";
-import Figma from "@/assets/images/brand/figma.png";
-import Html5 from "@/assets/images/brand/html5.png";
-import Css from "@/assets/images/brand/css.png";
-import MySQL from "@/assets/images/brand/mysql.png";
-import MongoDb from "@/assets/images/brand/mongoDB.png";
-import ExpressJS from "@/assets/images/brand/expressjs.png";
-import AmazonRDS from "@/assets/images/brand/amazonRDS.png";
 import Aws from "@/assets/images/brand/aws.png";
+import PowerBI from "@/assets/images/brand/powerbi.png";
+import NodeJS from "@/assets/images/brand/nodejs.png";
+import Flutter from "@/assets/images/brand/flutter.png";
+import IOS from "@/assets/images/brand/ios.png";
+import Figma from "@/assets/images/brand/figma.png";
 
 
 
@@ -33,63 +29,39 @@ const TechnologyPlatforms = () => {
         "Crafting dynamic web solutions with expertise in custom development and responsive design",
     },
     {
-      image: Shopify,
-      name: "Shopify",
+      image: Aws,
+      name: "AWS",
       description:
-        "Shopify specialist shaping e-commerce excellence through tailored development and seamless customization",
+        "Navigating businesses through the cloud, architecting scalable solutions for successs",
     },
+    {
+      image: PowerBI,
+      name: "Power BI",
+      description: "Transforming raw data into actionable insights with intuitive visual analytics.",
+    },
+
     {
       image: NodeJS,
       name: "Node Js",
-      description: "Pioneering advancements in cybersecurity",
+      description: "Building scalable and high-performance backend solutions.",
+    },
+    {
+      image: Flutter,
+      name: "Flutter",
+      description:
+        "Building natively compiled, beautiful mobile apps with a single codebase.",
+    },
+    {
+      image: IOS,
+      name: "iOS",
+      description:
+        "Engineering seamless and high-performance applications for the Apple ecosystem.",
     },
     {
       image: Figma,
       name: "Figma",
       description:
         "Bringing creative visions to life through interactive design masterpieces, with a dedicated focus on achieving UX/UI excellence",
-    },
-    {
-      image: Html5,
-      name: "HTML 5",
-      description:
-        "Artisan shaping the digital canvas with clean, semantic, and structured brilliances",
-    },
-    {
-      image: Css,
-      name: "CSS",
-      description:
-        "Sorcerer weaving style magic for visually stunning and responsive web experiences",
-    },
-    {
-      image: MySQL,
-      name: "MySQL",
-      description:
-        "Enhance data management with our secure database solutions, seamlessly integrated with popular SQL tool for optimal efficiency",
-    },
-    {
-      image: MongoDb,
-      name: "mongo DB",
-      description:
-        "Architect pioneering flexible and scalable database solutions for dynamic data ecosystems",
-    },
-    {
-      image: ExpressJS,
-      name: "Express JS",
-      description:
-        "Crafting agile and robust backend solutions for streamlined web applications",
-    },
-    {
-      image: AmazonRDS,
-      name: "Amazon RDS",
-      description:
-        "Optimizing database management, ensuring reliability and scalability in the cloud",
-    },
-    {
-      image: Aws,
-      name: "AWS",
-      description:
-        "Navigating businesses through the cloud, architecting scalable solutions for successs",
     },
   ];
 
@@ -108,30 +80,26 @@ const TechnologyPlatforms = () => {
 
         {/* Brands Sliding */}
         <div className="overflow-x-hidden">
-          <div className="flex animate-marquee gap-5">
-            {/* Brands */}
-            {brands.map((brand, idx) => (
-              <div
-                key={idx}
-                className="w-250px flex-shrink-0 text-center flex flex-col items-center justify-center"
-                data-aos="fade-up" 
-              >
-                  {/* Brand Image */}
-                  <Image
-                    src={brand.image}
-                    alt={brand.name}
-                    className="mb-5 w-[120px] h-[120px] object-contain"
-                  />
+          <div className="flex animate-marquee gap-5 w-[200%]">
+            {/* Duplicate items for smooth infinite scrolling */}
+            {[...brands, ...brands].map((brand, idx) => (
+              <div key={idx} className="w-250px flex-shrink-0" data-aos="fade-up">
+                <Link
+                  href="#"
+                  className="pt-25px pb-45px text-center w-full flex flex-col items-center"
+                >
+                  {/* Brand Icon */}
+                  <div className="mb-5">{brand.icon}</div>
                   {/* Brand Name */}
                   <h4 className="text-lg font-bold dark:text-contentColor-dark">{brand.name}</h4>
                   {/* Brand Description */}
-                  <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
-                    {brand.description}
-                  </p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{brand.description}</p>
+                </Link>
               </div>
             ))}
           </div>
         </div>
+
       </div>
     </section>
   );

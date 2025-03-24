@@ -22,7 +22,7 @@ const Projects = () => {
     {
       projectNumber: 1,
       category: "IT",
-      title: "TECHNOLOGY",
+      title: "Vedims",
       link: "abc.com",
       image: aiImage1,
       description:
@@ -31,7 +31,7 @@ const Projects = () => {
     {
       projectNumber: 2,
       category: "IT",
-      title: "Classifying Best Intelligence Photos Classifying Best Intelligence Photos",
+      title: "Ag Tech",
       link: "abc.com",
       image: aiImage2,
       description:
@@ -40,7 +40,7 @@ const Projects = () => {
     {
       projectNumber: 3,
       category: "IT",
-      title: "Industry Labor Machine",
+      title: "HRMS Platform",
       link: "abc.com",
       image: aiImage3,
       description:
@@ -49,7 +49,7 @@ const Projects = () => {
     {
       projectNumber: 4,
       category: "IT",
-      title: "Education Super AI Studies",
+      title: "Medblik",
       link: "abc.com",
       image: aiImage4,
       description:
@@ -86,7 +86,7 @@ const Projects = () => {
             {/* Swiper for larger screens (laptop and above), display as horizontal sliding bar */}
             <div className="hidden lg:block">
               <Swiper
-                slidesPerView={3} // Number of slides visible at once
+                slidesPerView={2} // Number of slides visible at once
                 spaceBetween={20} // Space between slides
                 centeredSlides={true} // Ensure the selected slide is centered
                 loop={true}

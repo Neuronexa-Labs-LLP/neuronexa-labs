@@ -17,8 +17,8 @@ const OurServices = () => {
   const isHome10Dark = useIsTrue("/home-10-dark");
   const subjects = [
     {
-      title: "Business Studies",
-      desc: "Create A Standout Presence in The Digital Market With Our Innovative And User-centric App Development Services. Designed To Meet Your Business Goals",
+      title: "Custom Software Development",
+      desc: "Transform your business with cutting-edge, tailor-made software solutions. Our expert developers design and build scalable, secure, and high-performing applications that align with your unique business needs.",
       image: isHome10 || isHome10Dark ? chatImage : null,
       id: 1,
       svg: (
@@ -90,8 +90,8 @@ const OurServices = () => {
           ? "Activity Room"
           : isHome10 || isHome10Dark
           ? "Web Development"
-          : "Artist & Design",
-      desc: "Transform Your Digital Presence With Our Responsive And Visually Appealing Web Development Services, Utilizing The Latest Technologies",
+          : "Cloud Solutions",
+      desc: "Enhance efficiency and scalability with our robust cloud solutions. We provide cloud migration, management, and optimization services to ensure seamless business operations and secure data accessibility.",
       navButton: true,
       id: 2,
       translate: true,
@@ -161,7 +161,7 @@ const OurServices = () => {
           : isHome10 || isHome10Dark
           ? "E-commerce"
           : "Machine Learning",
-      desc: "Optimize Your Online Business With Our Tailored E-commerce Solutions. Ensuring A Secure And Seamless Shopping Experience For Your Customers.",
+      desc: "Harness the power of AI and machine learning to drive smarter business decisions. Our advanced algorithms and predictive analytics help automate processes, enhance customer experiences, and improve operational efficiency.",
       navButton: true,
       id: 3,
       path: "#",
@@ -233,8 +233,8 @@ const OurServices = () => {
           ? "Summer Champ"
           : isHome10 || isHome10Dark
           ? "Digital Marketing"
-          : "Artist & Design",
-      desc: "Drive Measurable Results And Enhance Brand Visibility Through Our Comprehensive Digital Marketing Strategies, and Advertising",
+          : "Analytics & Insights",
+      desc: " Turn raw data into actionable insights with our analytics solutions. We help businesses track performance, optimize strategies, and make data-driven decisions for sustainable growth.",
       navButton: true,
       id: 4,
       translate: true,
