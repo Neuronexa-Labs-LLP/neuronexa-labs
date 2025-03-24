@@ -1,7 +1,7 @@
 const nextConfig = {
-  reactStrictMode: false,
   output: 'export',
-  trailingSlash: true,
+  // basePath: '/neuronexa-labs',
+  // assetPrefix: '/neuronexa-labs/',
   images: {
     unoptimized: true,  // Disables image optimization
   },
