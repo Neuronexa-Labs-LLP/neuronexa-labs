@@ -1,6 +1,6 @@
 'use client'; // Mark this as a client component
 
-import aiImage1 from "@/assets/images/program/ai_1.jpg";
+import aiImage1 from "@/assets/images/program/ai_1.png";
 import aiImage2 from "@/assets/images/program/ai_2.jpg";
 import aiImage3 from "@/assets/images/program/ai_3.jpg";
 import aiImage4 from "@/assets/images/program/ai_4.jpg";
@@ -21,36 +21,36 @@ const Projects = () => {
   const programs = [
     {
       projectNumber: 1,
-      category: "IT",
+      category: "LMS",
       title: "Vedims",
-      link: "abc.com",
+      link: "vedims.com",
       image: aiImage1,
       description:
-        "Leveraging Our Extensive Industry Expertise, We Deliver Tailor-made Web Solutions That Not Only Meet but Exceed the Unique Digital Demands Across Sectors, Driving Significant Growth, Enhancing User Experience, and Ensuring Scalable and Sustainable Success.",
+        "VEDIMS is an innovative ed-tech platform dedicated to making Mental maths and related ancient subjects engaging and accessible for students of all ages. Vedim combines the timeless techniques of Vedic knowledge with modern technology, creating an interactive platform that makes complex concepts simple, intuitive, and fun. With a user-friendly interface, engaging lessons, and practical exercises, Vedim ensures that students not only excel in academics but also develop a love for mathematics and critical thinking.",
     },
     {
       projectNumber: 2,
-      category: "IT",
+      category: "E-Commerce",
       title: "Ag Tech",
-      link: "abc.com",
+      link: "Flutter App",
       image: aiImage2,
       description:
         "Leveraging Our Extensive Industry Expertise, We Deliver Tailor-made Web Solutions That Not Only Meet but Exceed the Unique Digital Demands Across Sectors, Driving Significant Growth, Enhancing User Experience, and Ensuring Scalable and Sustainable Success.",
     },
     {
       projectNumber: 3,
-      category: "IT",
+      category: "HRMS Tool",
       title: "HRMS Platform",
-      link: "abc.com",
+      link: "ERP",
       image: aiImage3,
       description:
         "Leveraging Our Extensive Industry Expertise, We Deliver Tailor-made Web Solutions That Not Only Meet but Exceed the Unique Digital Demands Across Sectors, Driving Significant Growth, Enhancing User Experience, and Ensuring Scalable and Sustainable Success.",
     },
     {
       projectNumber: 4,
-      category: "IT",
+      category: "Health",
       title: "Medblik",
-      link: "abc.com",
+      link: "Flutter App",
       image: aiImage4,
       description:
         "Leveraging Our Extensive Industry Expertise, We Deliver Tailor-made Web Solutions That Not Only Meet but Exceed the Unique Digital Demands Across Sectors, Driving Significant Growth, Enhancing User Experience, and Ensuring Scalable and Sustainable Success.",
