@@ -23,7 +23,7 @@ const Navbar = () => {
     >
       <nav>
         <div
-          className={`py-15px lg:py-0 px-15px ${isHome1 ||
+          className={`py-10px lg:py-0 px-15px ${isHome1 ||
               isHome1Dark ||
               isHome4 ||
               isHome4Dark ||

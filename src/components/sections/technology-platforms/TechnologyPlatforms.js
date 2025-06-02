@@ -1,3 +1,5 @@
+"use client";
+
 import HeadingPrimary from "@/components/shared/headings/HeadingPrimary";
 import React from "react";
 import WordPress from "@/assets/images/brand/wordpress.png";
@@ -8,8 +10,8 @@ import NodeJS from "@/assets/images/brand/nodejs.png";
 import Flutter from "@/assets/images/brand/flutter.png";
 import IOS from "@/assets/images/brand/ios.png";
 import Figma from "@/assets/images/brand/figma.png";
-
-
+import './brandsSlider.css';
+import { useRef, useState } from 'react';
 
 import Link from "next/link";
 import Image from "next/image";
@@ -65,6 +67,41 @@ const TechnologyPlatforms = () => {
     },
   ];
 
+  const scrollRef = useRef(null);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
+  const handleMouseDown = (e) => {
+    isDragging.current = true;
+    startX.current = e.pageX - scrollRef.current.offsetLeft;
+    scrollLeft.current = scrollRef.current.scrollLeft;
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX.current) * 1.5; // scroll speed multiplier
+    scrollRef.current.scrollLeft = scrollLeft.current - walk;
+  };
+
+  const handleMouseUpOrLeave = () => {
+    isDragging.current = false;
+  };
+
+  // Touch events for mobile
+  const handleTouchStart = (e) => {
+    startX.current = e.touches[0].pageX - scrollRef.current.offsetLeft;
+    scrollLeft.current = scrollRef.current.scrollLeft;
+  };
+
+  const handleTouchMove = (e) => {
+    const x = e.touches[0].pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX.current) * 1.5;
+    scrollRef.current.scrollLeft = scrollLeft.current - walk;
+  };
+
   return (
     <section className="bg-lightGrey10 dark:bg-lightGrey10-dark">
       <div className="container pb-60px">
@@ -79,22 +116,26 @@ const TechnologyPlatforms = () => {
         </div>
 
         {/* Brands Sliding */}
-        <div className="overflow-x-hidden">
-          <div className="flex animate-marquee gap-5 w-[200%]">
-            {/* Duplicate items for smooth infinite scrolling */}
+        <div
+          className="noselect brands-wrapper overflow-hidden cursor-grab active:cursor-grabbing"
+          ref={scrollRef}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUpOrLeave}
+          onMouseLeave={handleMouseUpOrLeave}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+        >
+          <div className="brands-track flex gap-5 w-max animate-marquee">
             {[...brands, ...brands].map((brand, idx) => (
-              <div key={idx} className="w-250px flex-shrink-0" data-aos="fade-up">
-                <Link
-                  href="#"
-                  className="pt-25px pb-45px text-center w-full flex flex-col items-center"
-                >
-                  {/* Brand Icon */}
-                  <div className="mb-5">{brand.icon}</div>
-                  {/* Brand Name */}
+              <div key={idx} className="w-[250px] flex-shrink-0" data-aos="fade-up">
+                <div className="pt-[25px] pb-[45px] text-center w-full flex flex-col items-center">
+                  <div className="mb-5">
+                    <Image src={brand.image} alt={brand.name} width={60} height={60} />
+                  </div>
                   <h4 className="text-lg font-bold dark:text-contentColor-dark">{brand.name}</h4>
-                  {/* Brand Description */}
                   <p className="text-sm text-gray-600 dark:text-gray-400">{brand.description}</p>
-                </Link>
+                </div>
               </div>
             ))}
           </div>

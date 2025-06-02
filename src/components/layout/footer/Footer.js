@@ -20,7 +20,7 @@ const Footer = () => {
       <div
         className={`${
           isHome8 ? "container-fluid-2" : "container"
-        }   pt-65px pb-5 lg:pb-10  `}
+        } pt-9px pb-5 lg:pb-10 flex items-center justify-center`}
       >
         <CopyRight />
       </div>

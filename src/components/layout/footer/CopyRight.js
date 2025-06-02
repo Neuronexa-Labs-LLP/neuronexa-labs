@@ -6,7 +6,7 @@ const CopyRight = () => {
     <div>
       <div>
         <p className="text-base text-center sm:text-start text-darkgray">
-          © 2024 Powered by{" "}
+          © 2025 Powered by{" "}
           <a href="#" className="hover:text-primaryColor">
             Neuronexa Labs
           </a>{" "}

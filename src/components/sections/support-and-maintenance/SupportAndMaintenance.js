@@ -26,7 +26,7 @@ const SupportMaintenance = () => {
             <div data-aos="fade-up" className="flex justify-center items-center">
               {/* WhatsApp Button */}
               <a
-                href="https://wa.me/message/JJEEGZUSAFCGA1" // Updated link to the desired WhatsApp message link
+                href="https://wa.me/9110435020" // Updated link to the desired WhatsApp message link
                 target="_blank" // Open WhatsApp in a new tab
                 className="flex items-center text-size-12 2xl:text-size-15 text-whiteColor bg-[#25D366] block border-[#25D366] border hover:bg-[#128C7E] hover:text-white px-15px py-2 rounded-standard dark:hover:bg-whiteColor-dark dark: dark:hover:text-whiteColor"
               >

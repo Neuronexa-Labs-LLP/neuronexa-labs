@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   FaLaptopCode,
@@ -18,6 +20,8 @@ import {
   FaGamepad
 } from "react-icons/fa";
 import HeadingPrimary from "@/components/shared/headings/HeadingPrimary";
+import './brandsSlider.css';
+import { useRef, useState } from 'react';
 
 const IndustryTechnologies = () => {
   const brands = [
@@ -126,6 +130,41 @@ const IndustryTechnologies = () => {
 
   ];
 
+  const scrollRef = useRef(null);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
+  const handleMouseDown = (e) => {
+    isDragging.current = true;
+    startX.current = e.pageX - scrollRef.current.offsetLeft;
+    scrollLeft.current = scrollRef.current.scrollLeft;
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX.current) * 1.5; // scroll speed multiplier
+    scrollRef.current.scrollLeft = scrollLeft.current - walk;
+  };
+
+  const handleMouseUpOrLeave = () => {
+    isDragging.current = false;
+  };
+
+  // Touch events for mobile
+  const handleTouchStart = (e) => {
+    startX.current = e.touches[0].pageX - scrollRef.current.offsetLeft;
+    scrollLeft.current = scrollRef.current.scrollLeft;
+  };
+
+  const handleTouchMove = (e) => {
+    const x = e.touches[0].pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX.current) * 1.5;
+    scrollRef.current.scrollLeft = scrollLeft.current - walk;
+  };
+
   return (
     <section className="bg-lightGrey10 dark:bg-lightGrey10-dark">
       <div className="container pb-60px">
@@ -147,9 +186,16 @@ const IndustryTechnologies = () => {
         </div>
 
         {/* Brands Sliding */}
-        <div className="overflow-x-hidden">
-          <div className="flex animate-marquee gap-5">
-            {/* Duplicate items for smooth infinite scrolling */}
+        <div className="noselect brands-wrapper overflow-hidden cursor-grab active:cursor-grabbing"
+          ref={scrollRef}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUpOrLeave}
+          onMouseLeave={handleMouseUpOrLeave}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+        >
+          <div className="brands-track flex gap-5 w-max animate-marquee">
             {[...brands, ...brands].map((brand, idx) => (
               <div key={idx} className="w-250px flex-shrink-0" data-aos="fade-up">
                 <div className="pt-25px pb-45px text-center w-full flex flex-col items-center">

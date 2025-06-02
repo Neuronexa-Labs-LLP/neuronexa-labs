@@ -1,0 +1,15 @@
+@keyframes move-var {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.bouncy {
+  animation: move-var 3s ease-in-out infinite;
+}

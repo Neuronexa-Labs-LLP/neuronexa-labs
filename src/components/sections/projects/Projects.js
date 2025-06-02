@@ -21,6 +21,15 @@ const Projects = () => {
   const programs = [
     {
       projectNumber: 1,
+      category: "Healthcare",
+      title: "Medblik",
+      link: "medblik.com",
+      image: aiImage1,
+      description:
+        "Medblik is a mobile application built using Flutter that helps users quickly locate nearby hospitals, clinics, pharmacies, and ambulance services. It features advanced filters that allow users to narrow down their search based on various criteria such as location, service type, and availability. The app aims to provide a seamless and efficient experience for accessing essential medical services in emergencies or routine situations.",
+    },
+    {
+      projectNumber: 2,
       category: "LMS",
       title: "Vedims",
       link: "vedims.com",
@@ -29,31 +38,22 @@ const Projects = () => {
         "VEDIMS is an innovative ed-tech platform dedicated to making Mental maths and related ancient subjects engaging and accessible for students of all ages. Vedim combines the timeless techniques of Vedic knowledge with modern technology, creating an interactive platform that makes complex concepts simple, intuitive, and fun. With a user-friendly interface, engaging lessons, and practical exercises, Vedim ensures that students not only excel in academics but also develop a love for mathematics and critical thinking.",
     },
     {
-      projectNumber: 2,
+      projectNumber: 3,
       category: "E-Commerce",
       title: "Ag Tech",
-      link: "Flutter App",
+      link: "agtech.com",
       image: aiImage2,
       description:
-        "Leveraging Our Extensive Industry Expertise, We Deliver Tailor-made Web Solutions That Not Only Meet but Exceed the Unique Digital Demands Across Sectors, Driving Significant Growth, Enhancing User Experience, and Ensuring Scalable and Sustainable Success.",
-    },
-    {
-      projectNumber: 3,
-      category: "HRMS Tool",
-      title: "HRMS Platform",
-      link: "ERP",
-      image: aiImage3,
-      description:
-        "Leveraging Our Extensive Industry Expertise, We Deliver Tailor-made Web Solutions That Not Only Meet but Exceed the Unique Digital Demands Across Sectors, Driving Significant Growth, Enhancing User Experience, and Ensuring Scalable and Sustainable Success.",
+        "AgTech is a cross-platform e-commerce application built with Flutter, paired with a robust admin portal developed using JavaScript. It features secure payment gateway integration and a comprehensive admin panel to manage inventory, orders, and user data. Designed for flexibility, AgTech offers a smooth shopping experience while giving admins full control over backend operations.",
     },
     {
       projectNumber: 4,
-      category: "Health",
-      title: "Medblik",
-      link: "Flutter App",
-      image: aiImage4,
+      category: "Enterprise",
+      title: "HRMS Platform",
+      link: "hrms.com",
+      image: aiImage3,
       description:
-        "Leveraging Our Extensive Industry Expertise, We Deliver Tailor-made Web Solutions That Not Only Meet but Exceed the Unique Digital Demands Across Sectors, Driving Significant Growth, Enhancing User Experience, and Ensuring Scalable and Sustainable Success.",
+        "The HRMS Platform is a comprehensive enterprise solution built using ReactJS and Java Spring Boot. It offers end-to-end lead generation and customer onboarding, complete leave and timesheet management, and dynamic project tracking linked to timesheets. With dedicated roles for Admin, HR, Director, and Employees, it serves as a full-fledged HRMS and ERP tool for streamlined organizational operations.",
     },
   ];
 

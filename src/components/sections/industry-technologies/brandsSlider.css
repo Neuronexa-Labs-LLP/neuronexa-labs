@@ -1,0 +1,23 @@
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.brands-track {
+  animation: marquee 1s linear infinite;
+}
+
+.brands-wrapper {
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+.brands-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.noselect {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
