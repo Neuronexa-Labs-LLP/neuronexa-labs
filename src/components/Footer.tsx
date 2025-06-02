@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChevronRight, Mail, Phone } from 'lucide-react';
+import logo from '../assets/white-flat.png';
 
 const Footer: React.FC = () => {
   return (
@@ -7,9 +8,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           <div>
-            <h3 className="text-2xl font-bold mb-6">
-              TechSolve<span className="text-indigo-400">AI</span>
-            </h3>
+            <img src={logo} alt="Neuronexa Labs Logo" className="h-20 md:h-40 mb-6" />
             <p className="text-gray-400 mb-6">
               We develop custom, requirement-based online solutions powered by the latest technologies and AI innovations.
             </p>
