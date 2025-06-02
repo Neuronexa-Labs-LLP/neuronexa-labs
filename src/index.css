@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add spacing to account for the navbar height */
+.navbar-offset {
+  margin-top: 6rem; /* Adjust this value based on the navbar height */
+}
