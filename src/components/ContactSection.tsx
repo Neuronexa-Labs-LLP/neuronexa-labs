@@ -28,7 +28,7 @@ const ContactSection: React.FC = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          to: 'support@neuronexalabs.com',
+          to: 'neuronexalabs@gmail.com',
           subject: formData.subject,
           message: `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nMessage: ${formData.message}`,
         }),
@@ -85,7 +85,7 @@ const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg">Email Us</h4>
-                    <p className="text-indigo-100 mt-1">support@neuronexalabs.com</p>
+                    <p className="text-indigo-100 mt-1">neuronexalabs@gmail.com</p>
                   </div>
                 </div>
               </div>
