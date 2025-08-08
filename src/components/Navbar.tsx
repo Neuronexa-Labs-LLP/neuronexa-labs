@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, MessageCircle } from 'lucide-react';
 import logo from '../assets/white-flat.png'; 
-import blackLogo from '../assets/black-flat.png'; // Import the black version of the logo
+import blackLogo from '../assets/logo-website-theme.png'; // Import the black version of the logo
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -73,9 +73,8 @@ const Navbar: React.FC = () => {
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`p-2 rounded-md ${
-              scrolled ? 'text-secondary' : 'text-white'
-            }`}
+            className={`p-2 rounded-md`}
+            style={{ color: scrolled ? '#1d265e' : '#ffffff' }}
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>

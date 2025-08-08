@@ -23,7 +23,6 @@ const Footer: React.FC = () => {
                     href={`#${item.toLowerCase().replace(' ', '-')}`}
                     className="text-gray-400 hover:text-indigo-400 transition-colors duration-300 flex items-center"
                   >
-                    <ChevronRight className="h-4 w-4 mr-2" />
                     {item}
                   </a>
                 </li>
@@ -46,7 +45,6 @@ const Footer: React.FC = () => {
                     href="#services"
                     className="text-gray-400 hover:text-indigo-400 transition-colors duration-300 flex items-center"
                   >
-                    <ChevronRight className="h-4 w-4 mr-2" />
                     {item}
                   </a>
                 </li>
