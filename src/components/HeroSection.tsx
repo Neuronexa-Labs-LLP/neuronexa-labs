@@ -29,7 +29,7 @@ const HeroSection: React.FC = () => {
             <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               <div className="text-left max-w-lg">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
-                  Empowering Your Vision with <span className="text-primary">AI-Driven Solutions</span>
+                  Empoweringg Your Vision with <span className="text-primary">AI-Driven Solutions</span>
                 </h1>
                 <p className="mt-4 text-lg text-gray-300">
                   At Neuronexa Labs, we transform your ideas into reality with cutting-edge technology and innovative strategies. Let us help you achieve your goals with our expertise in AI, web development, and design.
