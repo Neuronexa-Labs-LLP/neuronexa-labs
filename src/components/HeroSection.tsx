@@ -41,9 +41,28 @@ const HeroSection: React.FC = () => {
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
                   Empowering Your Vision with <span className="text-primary">AI-Driven Solutions</span>
                 </h1>
-                <p className="mt-4 text-lg text-gray-300">
-                  At Neuronexa Labs, we transform your ideas into reality with cutting-edge technology and innovative strategies. Let us help you achieve your goals with our expertise in AI, web development, and design.
+               <p className="mt-4 text-lg text-gray-300">
+                  At Neuronexa Labs, we transform your ideas into reality with cutting-edge technology and innovative strategies.
+                  Let us help you achieve your goals with our expertise in AI, web development, and design.
                 </p>
+
+                {/* ✅ Add this tagline line here */}
+                <p className="mt-2 text-primary text-lg tracking-wide font-medium">
+                  AI • Cloud • Modern Apps • Automation
+                </p>
+
+                {/* ✅ Add social proof */}
+                <p className="mt-6 text-gray-400 text-sm uppercase tracking-wider opacity-80">
+                  Trusted by teams and startups in India
+                </p>
+
+                {/* ✅ Add quick services */}
+                <div className="mt-3 grid grid-cols-2 gap-3 text-gray-300 text-sm">
+                  <div className="bg-white/10 px-3 py-2 rounded-md">🤖 AI Automation</div>
+                  <div className="bg-white/10 px-3 py-2 rounded-md">⚡ Custom Development</div>
+                  <div className="bg-white/10 px-3 py-2 rounded-md">📱 Mobile & Web Apps</div>
+                  <div className="bg-white/10 px-3 py-2 rounded-md">☁️ Cloud & DevOps</div>
+                </div>
                 <div className="mt-6 flex space-x-4">
                   <a href="#contact" className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg font-medium transition-all duration-300">
                     Get Started
