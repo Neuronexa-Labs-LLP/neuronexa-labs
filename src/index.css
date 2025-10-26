@@ -6,3 +6,19 @@
 .navbar-offset {
   margin-top: 6rem; /* Adjust this value based on the navbar height */
 }
+
+@keyframes slideWorld {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -2000px 0; /* Adjust speed */
+  }
+}
+
+.slide-world {
+  animation: slideWorld 80s linear infinite;
+  filter: blur(1px);
+  opacity: 0.08;
+}
+
