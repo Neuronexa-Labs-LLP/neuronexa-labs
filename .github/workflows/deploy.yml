@@ -30,6 +30,11 @@ jobs:
       - name: Add CNAME file for custom domain
         run: echo "neuronexalabs.com" > dist/CNAME
 
+      - name: Configure Git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Deploy to GitHub Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
