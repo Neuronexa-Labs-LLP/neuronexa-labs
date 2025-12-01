@@ -34,7 +34,7 @@ const ContactSection: React.FC = () => {
           subject: "New Lead enquiry from Neuronexa Labs Website",
           reply_to: formData.email,
           phone: formData.phone,
-          message: formData.message,
+          message: `Enquiry Type: ${formData.subject}\n\nMessage:\n${formData.message}`,
         }),
       });
 
@@ -122,7 +122,7 @@ const ContactSection: React.FC = () => {
                   <input type="hidden" name="access_key" value="2bcc34ca-a718-47fd-bc50-291be571c96b"></input>
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                      Full Name
+                      Full Name *
                     </label>
                     <input
                       type="text"
@@ -131,13 +131,15 @@ const ContactSection: React.FC = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
+                      minLength={3}
+                      placeholder="Full name"
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
                     />
                   </div>
                   
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                      Email Address
+                      Email Address *
                     </label>
                     <input
                       type="email"
@@ -146,6 +148,7 @@ const ContactSection: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
+                      placeholder="Email address"
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
                     />
                   </div>
@@ -154,7 +157,7 @@ const ContactSection: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                      Phone Number (Optional)
+                      Phone Number
                     </label>
                     <input
                       type="tel"
@@ -162,13 +165,16 @@ const ContactSection: React.FC = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
+                      pattern="^[0-9]{10}$"
+                      title="Phone number must be 10 digits"
+                      placeholder="Phone number"
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
                     />
                   </div>
                   
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-                      Subject
+                      Enquiry Type *
                     </label>
                     <select
                       id="subject"
@@ -178,7 +184,7 @@ const ContactSection: React.FC = () => {
                       required
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
                     >
-                      <option value="">Select a subject</option>
+                      <option value="" disabled selected>Select enquiry type</option>
                       <option value="Custom Development">Custom Development</option>
                       <option value="AI Solutions">AI Solutions</option>
                       <option value="Mobile App">Mobile App</option>
@@ -190,7 +196,7 @@ const ContactSection: React.FC = () => {
                 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Message
+                    Message *
                   </label>
                   <textarea
                     id="message"
@@ -199,6 +205,8 @@ const ContactSection: React.FC = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
+                    minLength={10}
+                    placeholder="Your message"
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
                   ></textarea>
                 </div>

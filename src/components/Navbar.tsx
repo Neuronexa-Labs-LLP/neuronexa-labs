@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
   // Removed useEffect for setting hero section marginTop and navbar-offset class
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/91104 35020', '_blank'); // Updated with the WhatsApp number from the footer
+    window.open('https://wa.me/9110435020', '_blank'); // Updated with the WhatsApp number from the footer
   };
 
   return (
