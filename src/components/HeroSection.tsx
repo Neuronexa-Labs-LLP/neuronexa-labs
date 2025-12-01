@@ -86,7 +86,7 @@ const HeroSection: React.FC = () => {
                       <div className="w-3 h-3 rounded-full bg-green-500"></div>
                     </div>
                     {/* <div className="text-white/80 text-sm">AI Powered</div> */}
-                    <a href="https://wa.me/919110435020?text=Hi%20I%20would%20like%20to%20request%20a%20demo%20of%20your%20services" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/9191104 35020?text=Hi%20I%20would%20like%20to%20request%20a%20demo%20of%20your%20services" target="_blank" rel="noopener noreferrer">
                       <div className="text-sm bg-[#6ED36E] text-white px-3 py-1 rounded-full font-medium shadow-lg cursor-pointer hover:opacity-90 transition">
                         Book a Demo
                       </div>
