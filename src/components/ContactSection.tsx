@@ -22,15 +22,19 @@ const ContactSection: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
         body: JSON.stringify({
-          to: 'info@neuronexalabs.com',
-          subject: formData.subject,
-          message: `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nMessage: ${formData.message}`,
+          access_key: "2bcc34ca-a718-47fd-bc50-291be571c96b",
+          from_name: formData.name,
+          subject: "New Lead enquiry from Neuronexa Labs Website",
+          reply_to: formData.email,
+          phone: formData.phone,
+          message: formData.message,
         }),
       });
 
@@ -115,6 +119,7 @@ const ContactSection: React.FC = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <input type="hidden" name="access_key" value="2bcc34ca-a718-47fd-bc50-291be571c96b"></input>
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                       Full Name
