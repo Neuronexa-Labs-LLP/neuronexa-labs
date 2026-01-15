@@ -19,12 +19,18 @@ const ProjectsSection: React.FC = () => {
     {
       id: 1,
       title: "Vedims",
-      category: "Ed-Tech",
-      description: "VEDIMS is an innovative ed-tech platform dedicated to making Mental maths and related ancient subjects engaging and accessible for students of all ages.",
-      challenge: "Creating an engaging platform to teach ancient subjects like Mental maths to a diverse age group of students.",
-      solution: "We developed an interactive platform with gamified learning modules, quizzes, and progress tracking to make learning fun and effective.",
+      category: "Ed-Tech / LMS",
+      description: "Vedims is a scalable Learning Management System designed to deliver structured, curriculum-driven learning experiences with a strong focus on skill development, assessments, and learner progress tracking.",
+      challenge: "Designing a flexible LMS that supports structured courses, assessments, and analytics while keeping learners engaged across different age groups.",
+      solution: "We built a full-featured LMS with course management, interactive lessons, quizzes, certifications, and detailed learner analytics, enabling educators to manage content effectively and learners to track their progress seamlessly.",
       image: "https://images.pexels.com/photos/4145190/pexels-photo-4145190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      tags: ["Ed-Tech", "Mental Maths", "Gamified Learning", "Student Engagement"]
+      tags: [
+        "Learning Management System",
+        "Ed-Tech Platform",
+        "Course Management",
+        "Assessments & Analytics",
+        "Progress Tracking"
+      ]
     },
     {
       id: 2,
