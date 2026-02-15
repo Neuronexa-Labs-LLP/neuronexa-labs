@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 
 const ClientsSection: React.FC = () => {
   const clients = [
-    { id: 1, name: "Vedims", logo: "/src/assets/clients/vedims.png", link: "https://vedims.com" },
-    { id: 2, name: "Shri Rajeshwari Properties", logo: "/src/assets/clients/srp.png", link: "https://shrirajeshwariproperties.com" },
-    { id: 3, name: "Orion Park", logo: "/src/assets/clients/orion_park.png", link: "https://shrirajeshwariproperties.com" },
-    { id: 4, name: "Legacy B", logo: "/src/assets/clients/legacyb.jpeg", link: "#" },
-    { id: 5, name: "Medblik", logo: "/src/assets/clients/medblik.png", link: "#" }
+    { id: 1, name: "Vedims", logo: "/assets/clients/vedims.png", link: "https://vedims.com" },
+    { id: 2, name: "Shri Rajeshwari Properties", logo: "/assets/clients/srp.png", link: "https://shrirajeshwariproperties.com" },
+    { id: 3, name: "Orion Park", logo: "/assets/clients/orion_park.png", link: "https://shrirajeshwariproperties.com" },
+    { id: 4, name: "Legacy B", logo: "/assets/clients/legacyb.jpeg", link: "#" },
+    { id: 5, name: "Medblik", logo: "/assets/clients/medblik.png", link: "#" }
   ];
 
   return (
