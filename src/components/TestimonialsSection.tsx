@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 interface Testimonial {
   id: number;
@@ -21,7 +22,7 @@ const TestimonialsSection: React.FC = () => {
       company: "Vedims",
       quote: "The platform Neuronexa Labs built for us has transformed how students engage with Mental Maths. The gamified approach has made learning fun and effective!",
       rating: 5
-    },  
+    },
     {
       id: 2,
       name: "Rohit Mehta",
@@ -94,18 +95,32 @@ const TestimonialsSection: React.FC = () => {
     return () => clearInterval(interval);
   }, [isAnimating]);
 
+  // ... existing code ...
+
   return (
     <section className="py-24 bg-indigo-50 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
           <div className="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600">
             Don't take our word for it. Hear from the businesses we've helped transform with our technical solutions.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="max-w-5xl mx-auto relative">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="max-w-5xl mx-auto relative"
+        >
           <div className="relative h-auto overflow-hidden">
             <div
               className="flex transition-transform duration-500 ease-in-out"
@@ -149,9 +164,8 @@ const TestimonialsSection: React.FC = () => {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  currentIndex === index ? 'bg-indigo-600 w-8' : 'bg-indigo-300'
-                }`}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${currentIndex === index ? 'bg-indigo-600 w-8' : 'bg-indigo-300'
+                  }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               ></button>
             ))}
@@ -198,7 +212,7 @@ const TestimonialsSection: React.FC = () => {
               />
             </svg>
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Mail, Phone, Send } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
@@ -52,26 +53,40 @@ const ContactSection: React.FC = () => {
     }
   };
 
+  // ... existing code ...
+
   return (
     <section id="contact" className="py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
           <div className="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600">
             Ready to transform your business with custom technical solutions? Let's start a conversation.
           </p>
-        </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto"
+        >
           <div className="bg-indigo-600 text-white rounded-xl p-8 lg:p-12 shadow-xl relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-indigo-500 rounded-full opacity-50"></div>
             <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-indigo-700 rounded-full opacity-50"></div>
-            
+
             <div className="relative">
               <h3 className="text-2xl font-bold mb-8">Contact Information</h3>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="bg-indigo-500 rounded-full p-3 mr-4">
@@ -82,7 +97,7 @@ const ContactSection: React.FC = () => {
                     <p className="text-indigo-100 mt-1">+91 91104 35020</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
                   <div className="bg-indigo-500 rounded-full p-3 mr-4">
                     <Mail className="h-5 w-5" />
@@ -104,10 +119,10 @@ const ContactSection: React.FC = () => {
               </ul>
             </div>
           </div>
-          
+
           <div className="bg-white rounded-xl shadow-xl p-8 lg:p-12 border border-gray-100">
             <h3 className="text-2xl font-bold text-gray-900 mb-8">Send us a Message</h3>
-            
+
             {isSubmitted ? (
               <div className="bg-green-50 border border-green-200 text-green-800 rounded-lg p-6 text-center">
                 <svg className="w-12 h-12 mx-auto text-green-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -136,7 +151,7 @@ const ContactSection: React.FC = () => {
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
                     />
                   </div>
-                  
+
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                       Email Address *
@@ -153,7 +168,7 @@ const ContactSection: React.FC = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
@@ -171,7 +186,7 @@ const ContactSection: React.FC = () => {
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
                     />
                   </div>
-                  
+
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
                       Enquiry Type *
@@ -193,7 +208,7 @@ const ContactSection: React.FC = () => {
                     </select>
                   </div>
                 </div>
-                
+
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                     Message *
@@ -210,13 +225,12 @@ const ContactSection: React.FC = () => {
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
                   ></textarea>
                 </div>
-                
+
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center ${
-                    isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
-                  }`}
+                  className={`w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+                    }`}
                 >
                   {isSubmitting ? (
                     <>
@@ -235,7 +249,7 @@ const ContactSection: React.FC = () => {
               </form>
             )}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
