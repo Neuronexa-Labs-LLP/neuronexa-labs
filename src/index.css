@@ -22,3 +22,16 @@
   opacity: 0.08;
 }
 
+
+/* Infinite Scroll Animation */
+@keyframes infinite-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.scroller {
+  display: flex;
+  width: max-content;
+  animation: infinite-scroll 30s linear infinite;
+  margin-right: 4rem;
+}
