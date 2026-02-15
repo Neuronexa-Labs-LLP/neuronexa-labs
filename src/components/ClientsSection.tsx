@@ -44,7 +44,7 @@ const ClientsSection: React.FC = () => {
                 <img
                   src={client.logo}
                   alt={client.name}
-                  className="h-10 md:h-12 lg:h-14 w-auto object-contain"
+                  className="h-12 w-32 md:h-16 md:w-40 object-contain grayscale hover:grayscale-0 transition duration-300"
                 />
               </a>
             ))}
