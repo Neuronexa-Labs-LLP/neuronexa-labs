@@ -1,22 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, Send } from 'lucide-react';
+import { ArrowRight, Terminal } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
-  });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,226 +19,126 @@ const ContactSection: React.FC = () => {
           Accept: "application/json",
         },
         body: JSON.stringify({
+          // NOTE: Generate a free access key at https://web3forms.com/ and paste it replacing the string below
           access_key: "2bcc34ca-a718-47fd-bc50-291be571c96b",
-          from_name: formData.name,
-          subject: "New Lead enquiry from Neuronexa Labs Website",
-          reply_to: formData.email,
-          phone: formData.phone,
-          message: `Enquiry Type: ${formData.subject}\n\nMessage:\n${formData.message}`,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: "New Enterprise Inquiry | Neuronexa Labs",
         }),
       });
 
-      if (response.ok) {
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitting(false);
         setIsSubmitted(true);
-        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
         setTimeout(() => setIsSubmitted(false), 5000);
+        setFormData({ name: '', email: '', message: '' });
       } else {
-        console.error('Failed to send email');
+        console.error("Transmission rejected by server:", result);
+        alert("Transmission failed. Please verify the Web3Forms access key is correctly configured.");
+        setIsSubmitting(false);
       }
     } catch (error) {
-      console.error('Error sending email:', error);
-    } finally {
+      console.error("Network error during transmission:", error);
+      alert("Network error. Could not establish uplink to transmission server.");
       setIsSubmitting(false);
     }
   };
 
-  // ... existing code ...
-
   return (
-    <section id="contact" className="py-24 bg-white">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-          <div className="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600">
-            Ready to transform your business with custom technical solutions? Let's start a conversation.
-          </p>
-        </motion.div>
+    <section id="contact" className="py-32 md:py-48 bg-black border-t border-white/5 relative overflow-hidden flex items-center justify-center min-h-screen">
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-black via-[#001824] to-[#000000]"></div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto"
-        >
-          <div className="bg-indigo-600 text-white rounded-xl p-8 lg:p-12 shadow-xl relative overflow-hidden">
-            {/* Background decoration */}
-            <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-indigo-500 rounded-full opacity-50"></div>
-            <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-indigo-700 rounded-full opacity-50"></div>
+      <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10 flex flex-col md:flex-row gap-16 lg:gap-32 items-center">
 
-            <div className="relative">
-              <h3 className="text-2xl font-bold mb-8">Contact Information</h3>
+        <div className="flex-1 w-full relative">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tighter leading-none">
+              Let's <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00A7E1] to-white">Build.</span>
+            </h2>
+            <p className="text-xl text-gray-400 font-light max-w-md mb-12">
+              Ready to deploy cutting-edge automation and AI into your enterprise architecture? Initiate the sequence.
+            </p>
 
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="bg-indigo-500 rounded-full p-3 mr-4">
-                    <Phone className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-lg">Call Us</h4>
-                    <p className="text-indigo-100 mt-1">+91 91104 35020</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="bg-indigo-500 rounded-full p-3 mr-4">
-                    <Mail className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-lg">Email Us</h4>
-                    <p className="text-indigo-100 mt-1">info@neuronexalabs.com</p>
-                  </div>
-                </div>
-              </div>
+            <div className="space-y-6 text-gray-500 font-mono text-sm max-w-md bg-white/5 p-6 rounded-2xl border border-white/5 backdrop-blur-md">
+              <p className="flex items-center text-[#00A7E1]"><Terminal className="w-4 h-4 mr-3" /> SYSTEM_READY</p>
+              <p className="flex justify-between border-b border-white/10 pb-2"><span>IP:</span> <span className="text-white">India / Remote</span></p>
+              <p className="flex justify-between border-b border-white/10 pb-2"><span>COMMS:</span> <span className="text-white">info@neuronexalabs.com</span></p>
+              <p className="flex justify-between pb-2"><span>UPLINK:</span> <span className="text-[#00A7E1]">+91 91104 35020</span></p>
             </div>
+          </motion.div>
+        </div>
 
-            <div className="mt-12">
-              <h4 className="font-semibold text-lg mb-4">Business Hours</h4>
-              <ul className="space-y-2 text-indigo-100">
-                <li><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</li>
-                <li><strong>Saturday:</strong> 10:00 AM - 4:00 PM</li>
-                <li><strong>Sunday:</strong> Closed</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-xl shadow-xl p-8 lg:p-12 border border-gray-100">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">Send us a Message</h3>
+        <div className="flex-1 w-full">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true }}
+            className="bg-[#00121B] p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl relative overflow-hidden"
+          >
+            {/* Glow */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#00A7E1] rounded-full blur-[100px] opacity-10"></div>
 
             {isSubmitted ? (
-              <div className="bg-green-50 border border-green-200 text-green-800 rounded-lg p-6 text-center">
-                <svg className="w-12 h-12 mx-auto text-green-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                <h4 className="text-xl font-semibold mb-2">Message Sent Successfully!</h4>
-                <p>Thank you for reaching out. We'll get back to you shortly.</p>
+              <div className="flex flex-col items-center justify-center text-center py-20">
+                <div className="w-20 h-20 rounded-full border-2 border-[#00A7E1] flex items-center justify-center mb-6 text-[#00A7E1]">
+                  ✓
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">Transmission Successful</h3>
+                <p className="text-gray-400">Our engineers will respond to your query shortly.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <input type="hidden" name="access_key" value="2bcc34ca-a718-47fd-bc50-291be571c96b"></input>
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      minLength={3}
-                      placeholder="Full name"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      placeholder="Email address"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      pattern="^[0-9]{10}$"
-                      title="Phone number must be 10 digits"
-                      placeholder="Phone number"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-                      Enquiry Type *
-                    </label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                    >
-                      <option value="" disabled selected>Select enquiry type</option>
-                      <option value="Custom Development">Custom Development</option>
-                      <option value="AI Solutions">AI Solutions</option>
-                      <option value="Mobile App">Mobile App</option>
-                      <option value="UX/UI Design">UX/UI Design</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
-                </div>
-
+              <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    value={formData.message}
-                    onChange={handleChange}
+                  <input
+                    type="text"
+                    placeholder="Your Designation / Name"
                     required
-                    minLength={10}
-                    placeholder="Your message"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+                    value={formData.name}
+                    onChange={e => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full bg-transparent border-b border-white/20 px-0 py-4 text-white placeholder-gray-600 focus:outline-none focus:border-[#00A7E1] transition-colors"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Corporate Email"
+                    required
+                    value={formData.email}
+                    onChange={e => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full bg-transparent border-b border-white/20 px-0 py-4 text-white placeholder-gray-600 focus:outline-none focus:border-[#00A7E1] transition-colors"
+                  />
+                </div>
+                <div>
+                  <textarea
+                    placeholder="Project Parameters"
+                    required
+                    rows={4}
+                    value={formData.message}
+                    onChange={e => setFormData({ ...formData, message: e.target.value })}
+                    className="w-full bg-transparent border-b border-white/20 px-0 py-4 text-white placeholder-gray-600 focus:outline-none focus:border-[#00A7E1] transition-colors resize-none"
                   ></textarea>
                 </div>
-
                 <button
-                  type="submit"
                   disabled={isSubmitting}
-                  className={`w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
-                    }`}
+                  className="w-full bg-[#00A7E1] text-black font-bold uppercase tracking-widest py-4 rounded-xl hover:bg-white transition-all flex items-center justify-center group"
                 >
-                  {isSubmitting ? (
-                    <>
-                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white\" xmlns="http://www.w3.org/2000/svg\" fill="none\" viewBox="0 0 24 24">
-                        <circle className="opacity-25\" cx="12\" cy="12\" r="10\" stroke="currentColor\" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                      Processing...
-                    </>
-                  ) : (
-                    <>
-                      Send Message <Send className="ml-2 h-5 w-5" />
-                    </>
-                  )}
+                  {isSubmitting ? "Processing..." : "Transmit"}
+                  {!isSubmitting && <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform" />}
                 </button>
               </form>
             )}
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
+
       </div>
     </section>
   );
