@@ -82,13 +82,13 @@ const Footer: React.FC = () => {
                   <span className="text-white">info@neuronexalabs.com</span>
                 </div>
               </li>
-              <li className="flex items-start">
+              {/* <li className="flex items-start">
                 <div className="mt-1 mr-4 text-[#00A7E1]"><MapPin className="h-5 w-5" /></div>
                 <div>
                   <span className="block text-gray-400 font-light text-sm mb-1">Location</span>
                   <span className="text-white">Dharwad, India</span>
                 </div>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
