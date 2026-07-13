@@ -1,171 +1,141 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { BrainCircuit, Network, Activity, ShieldCheck, ArrowRight } from 'lucide-react';
+import AnimatedText from './jack/AnimatedText';
+import Magnet from './jack/Magnet';
 
 const services = [
   {
+    icon: BrainCircuit,
     title: "Workflow Automation",
-    subtitle: "01 // ELIMINATE REDUNDANCY",
+    subtitle: "Eliminate Redundancy",
     desc: "Replace repetitive manual tasks with highly optimized, automated workflows that execute flawlessly 24/7.",
-    color: "#00A7E1"
+    bg: "bg-blue-50/80"
   },
   {
+    icon: Network,
     title: "Agentic AI Integration",
-    subtitle: "02 // AUTONOMOUS LOGIC",
+    subtitle: "Autonomous Logic",
     desc: "Deploy autonomous AI agents capable of reasoning, planning, and executing complex multistep processes.",
-    color: "#003A4F"
+    bg: "bg-purple-50/80"
   },
   {
+    icon: Activity,
     title: "Data Engineering",
-    subtitle: "03 // UNIFIED TRUTH",
+    subtitle: "Unified Truth",
     desc: "Architect robust data pipelines that clean, structure, and securely store your organization's most valuable assets.",
-    color: "#E6F7FC"
+    bg: "bg-emerald-50/80"
   },
   {
+    icon: ShieldCheck,
     title: "Enterprise Security",
-    subtitle: "04 // ZERO TRUST",
+    subtitle: "Zero Trust",
     desc: "Embed zero-trust security architecture directly into your automated workflows and custom applications.",
-    color: "#0096CA"
+    bg: "bg-amber-50/80"
   }
 ];
 
-const DesktopServiceCard = ({ service, index, total, scrollYProgress }: any) => {
-  // Calculate dynamic scroll ranges for each item (0% to 100% split by 4)
-  const start = index * 0.25;
-  const peak = start + 0.125;
-  const end = start + 0.25;
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15
+    }
+  }
+};
 
-  // Ensure arrays are strictly increasing and bound to [0, 1] without negative numbers
-  const opacityInput = index === 0 
-     ? [0, end - 0.1, end] 
-     : index === total - 1 
-        ? [start - 0.05, start, 1] 
-        : [start - 0.05, start, end - 0.1, end];
-
-  const opacityOutput = index === 0
-     ? [1, 1, 0]
-     : index === total - 1
-        ? [0, 1, 1]
-        : [0, 1, 1, 0];
-
-  const opacity = useTransform(scrollYProgress, opacityInput, opacityOutput);
-  
-  // Map scale/y for cinematic "sliding up" and "falling away" effect
-  const y = useTransform(scrollYProgress,
-    [start, peak, end],
-    ["50px", "0px", "-50px"]
-  );
-  const scale = useTransform(scrollYProgress,
-    [start, peak, end],
-    [0.9, 1, 1.1]
-  );
-
-  return (
-    <motion.div
-      style={{ opacity, y, scale }}
-      className="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
-    >
-      <span className="text-[#00A7E1] tracking-[0.4em] text-xs md:text-sm font-bold mb-6 block">
-        {service.subtitle}
-      </span>
-      <h2 className="text-4xl sm:text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter leading-none">
-        {service.title}
-      </h2>
-      <p className="text-lg md:text-2xl text-gray-400 font-light max-w-2xl mx-auto leading-relaxed">
-        {service.desc}
-      </p>
-    </motion.div>
-  );
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  show: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] } 
+  }
 };
 
 const ServicesSection: React.FC = () => {
-  const targetRef = useRef<HTMLDivElement>(null);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ["start start", "end start"]
-  });
-
-  // Extract inline hooks to top level to satisfy Rules of Hooks unconditionally
-  const line1Y = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
-  const line1Opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.1, 0.4, 0.1]);
-  const line2Y = useTransform(scrollYProgress, [0, 1], ["-50%", "50%"]);
-  const line2Opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.1, 0.5, 0.1]);
-
-  // Mobile Native Accordion/Stack View (Prevents 400vh scroll fatigue)
-  if (isMobile) {
-    return (
-      <section id="services" className="relative py-24 bg-black border-t border-white/5">
-        <div className="container mx-auto px-4">
-           {services.map((service, idx) => (
-             <motion.div
-               key={idx}
-               initial={{ opacity: 0, y: 30 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true, margin: "-10%" }}
-               transition={{ duration: 0.6 }}
-               className="mb-8 last:mb-0 border border-[#00A7E1]/20 bg-gradient-to-br from-[#00A7E1]/5 to-transparent rounded-[2rem] p-8 shadow-2xl relative overflow-hidden"
-             >
-               <div className="absolute top-0 right-0 w-32 h-32 bg-[#00A7E1] rounded-full blur-[80px] opacity-10 pointer-events-none"></div>
-               <span className="text-[#00A7E1] tracking-[0.4em] text-xs font-bold mb-4 block">
-                 {service.subtitle}
-               </span>
-               <h2 className="text-4xl font-black text-white mb-4 tracking-tighter leading-tight">
-                 {service.title}
-               </h2>
-               <p className="text-base text-gray-400 font-light leading-relaxed relative z-10">
-                 {service.desc}
-               </p>
-             </motion.div>
-           ))}
-        </div>
-      </section>
-    );
-  }
-
-  // Desktop Cinematic Fade Track
   return (
-    <section id="services" ref={targetRef} className="relative h-[400vh] bg-black">
-      {/* Background layer stays sticky underneath everything */}
-      <div className="sticky top-0 h-screen w-full bg-black overflow-hidden flex items-center justify-center">
+    <section id="services" className="relative py-20 md:py-28 bg-[#FAFBFC] border-t border-b border-slate-100/80 overflow-hidden">
+      {/* Dynamic Background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+        <div className="absolute -top-40 right-10 h-[500px] w-[500px] rounded-full bg-[#2AA7D3]/[0.04] blur-[120px] z-0" />
+        <div className="absolute -bottom-20 left-10 h-[400px] w-[400px] rounded-full bg-blue-600/[0.04] blur-[100px] z-0" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
         
-        {/* Abstract Tech Lines Background */}
-        <div className="absolute inset-0 z-0 opacity-20">
-          <motion.div 
-             style={{
-                y: line1Y,
-                opacity: line1Opacity
-             }}
-             className="w-[1px] h-[300vh] bg-gradient-to-b from-transparent via-[#00A7E1] to-transparent absolute left-1/4"
-          />
-          <motion.div 
-             style={{
-                y: line2Y,
-                opacity: line2Opacity
-             }}
-             className="w-[1px] h-[300vh] bg-gradient-to-b from-transparent via-[#00A7E1] to-transparent absolute right-1/4"
+        {/* Section Header */}
+        <div className="max-w-3xl mb-16 text-center md:text-left mx-auto md:mx-0">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 bg-white border border-[#2AA7D3]/20 text-slate-900 px-4 py-1.5 rounded-full text-xs font-bold mb-6 shadow-sm"
+          >
+            <span className="w-2 h-2 rounded-full bg-[#2AA7D3] animate-pulse"></span>
+            What We Do
+          </motion.div>
+          <AnimatedText 
+            text="Intelligent automation and AI workflows built for global enterprises"
+            className="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight"
           />
         </div>
 
-        {/* Content Container */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-8">
-           {services.map((service, index) => (
-             <DesktopServiceCard
-               key={index}
-               service={service}
-               index={index}
-               total={services.length}
-               scrollYProgress={scrollYProgress}
-             />
-           ))}
-        </div>
+        {/* Services Grid */}
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          className="flex md:grid md:grid-cols-2 lg:grid-cols-4 overflow-x-auto md:overflow-x-visible gap-6 pb-6 md:pb-0 pr-4 md:pr-0 custom-scrollbar snap-x snap-mandatory"
+        >
+          {services.map((service, idx) => (
+            <motion.div
+              key={idx}
+              variants={itemVariants}
+              whileHover={{ y: -10, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 200 }}
+              className="relative bg-white border border-slate-200/70 rounded-[28px] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_60px_rgba(42,167,211,0.12)] transition-shadow duration-500 group min-w-[300px] md:min-w-0 flex-shrink-0 md:flex-shrink snap-start flex flex-col overflow-hidden"
+            >
+              {/* Decorative corner element */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#2AA7D3]/5 to-transparent rounded-bl-full z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              
+              {/* Icon Container */}
+              <div className="flex items-center justify-between mb-8 relative z-10">
+                <Magnet padding={40} disabled={false} magnetStrength={2}>
+                  <div className={`h-16 w-16 rounded-[20px] ${service.bg} flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-sm border border-slate-100/50`}>
+                    <service.icon className={`h-7 w-7 text-[#2AA7D3] group-hover:text-blue-600 transition-colors duration-500`} />
+                  </div>
+                </Magnet>
+                <span className="text-[10px] font-extrabold uppercase tracking-widest text-slate-400 bg-slate-50 border border-slate-100 px-3 py-1 rounded-full group-hover:border-[#2AA7D3]/30 group-hover:text-[#2AA7D3] group-hover:bg-[#E8F4FA]/50 transition-colors duration-300">
+                  {service.subtitle}
+                </span>
+              </div>
+              
+              {/* Content */}
+              <div className="relative z-10 flex-grow flex flex-col">
+                <h3 className="text-xl font-extrabold text-slate-900 mb-3 group-hover:text-[#2AA7D3] transition-colors duration-300 tracking-tight">
+                  {service.title}
+                </h3>
+                <p className="text-slate-600 leading-relaxed text-sm font-medium flex-grow">
+                  {service.desc}
+                </p>
+                
+                {/* Bottom CTA */}
+                <motion.div 
+                  whileHover="hover"
+                  className="mt-8 pt-5 border-t border-slate-100 flex items-center text-xs font-bold text-[#2AA7D3] gap-1 cursor-pointer"
+                >
+                  Explore Solution 
+                  <motion.div variants={{ hover: { x: 5 } }} transition={{ type: "spring" }}>
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </motion.div>
+                </motion.div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
 
       </div>
     </section>

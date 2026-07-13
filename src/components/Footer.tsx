@@ -1,40 +1,41 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Linkedin } from 'lucide-react';
+import { Mail, Phone, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/white-flat.png';
+import logo from '../assets/nnlabs-logo-hd.png';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-black text-white pt-24 pb-12 border-t border-white/5 relative overflow-hidden">
+    <footer className="bg-brand-dark text-white pt-16 pb-8" id="contact">
+      <div className="max-w-7xl mx-auto px-5 md:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
 
-      {/* Footer background glow */}
-      <div className="absolute -bottom-40 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#00A7E1] rounded-full blur-[180px] opacity-10 pointer-events-none"></div>
-
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          <div className="lg:pr-8">
+          {/* Brand */}
+          <div>
             <Link to="/">
-              <img src={logo} alt="Neuronexa Labs Logo" className="h-20 mb-6 object-contain" />
+              <img src={logo} alt="NeuroNexa Labs" className="h-14 mb-5 object-contain brightness-0 invert" />
             </Link>
-            <p className="text-gray-400 font-light leading-relaxed mb-8">
-              We develop custom, requirement-based enterprise solutions powered by agentic AI, robust data engineering, and relentless process automation.
+            <p className="text-gray-400 leading-relaxed mb-6 text-sm">
+              Custom enterprise solutions powered by agentic AI, robust data engineering, and relentless process automation.
             </p>
-            <div className="flex space-x-4">
-              {/* Social Profile */}
-              <a href="https://www.linkedin.com/in/malharrao-kulkarni-76a303391/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#00A7E1] hover:text-white transition-all text-gray-400 group">
-                <Linkedin className="w-5 h-5 transform group-hover:scale-110 transition-transform" />
-              </a>
-            </div>
+            <a
+              href="https://www.linkedin.com/in/malharrao-kulkarni-76a303391/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-white/10 hover:bg-brand-teal text-gray-400 hover:text-white transition-all"
+            >
+              <Linkedin className="w-4 h-4" />
+            </a>
           </div>
 
+          {/* Company */}
           <div>
-            <h4 className="text-xl font-bold mb-6 text-white tracking-wide">Company</h4>
-            <ul className="space-y-4">
-              {['Home', 'Services', 'Projects', 'About', 'Contact'].map((item) => (
+            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wide text-gray-300">Company</h4>
+            <ul className="space-y-3">
+              {['Home', 'Services', 'Projects', 'Upcoming', 'Contact'].map((item) => (
                 <li key={item}>
                   <a
-                    href={`/#${item.toLowerCase().replace(' ', '-')}`}
-                    className="text-gray-400 hover:text-[#00A7E1] transition-colors duration-300 font-light inline-block transform hover:translate-x-1"
+                    href={`/#${item.toLowerCase()}`}
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
                   >
                     {item}
                   </a>
@@ -43,21 +44,13 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
+          {/* Solutions */}
           <div>
-            <h4 className="text-xl font-bold mb-6 text-white tracking-wide">Solutions</h4>
-            <ul className="space-y-4">
-              {[
-                'Process Automation',
-                'Agentic AI Workflows',
-                'Custom Development',
-                'Data Engineering',
-                'Enterprise Security'
-              ].map((item) => (
+            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wide text-gray-300">Solutions</h4>
+            <ul className="space-y-3">
+              {['AI Calling Agents', 'Lead Qualification', 'Workflow Automation', 'Data Engineering', 'Custom Development'].map((item) => (
                 <li key={item}>
-                  <a
-                    href="/#services"
-                    className="text-gray-400 hover:text-[#00A7E1] transition-colors duration-300 font-light inline-block transform hover:translate-x-1"
-                  >
+                  <a href="/#services" className="text-gray-400 hover:text-white transition-colors text-sm">
                     {item}
                   </a>
                 </li>
@@ -65,42 +58,29 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
+          {/* Contact */}
           <div>
-            <h4 className="text-xl font-bold mb-6 text-white tracking-wide">Contact Us</h4>
-            <ul className="space-y-6">
-              <li className="flex items-start">
-                <div className="mt-1 mr-4 text-[#00A7E1]"><Phone className="h-5 w-5" /></div>
-                <div>
-                  <span className="block text-gray-400 font-light text-sm mb-1">Phone Inquiry</span>
-                  <span className="text-white">+91 91104 35020</span>
-                </div>
+            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wide text-gray-300">Get in Touch</h4>
+            <ul className="space-y-4">
+              <li className="flex items-center gap-3">
+                <Phone className="h-4 w-4 text-brand-teal shrink-0" />
+                <span className="text-gray-400 text-sm">+91 91104 35020</span>
               </li>
-              <li className="flex items-start">
-                <div className="mt-1 mr-4 text-[#00A7E1]"><Mail className="h-5 w-5" /></div>
-                <div>
-                  <span className="block text-gray-400 font-light text-sm mb-1">Email Us</span>
-                  <span className="text-white">info@neuronexalabs.com</span>
-                </div>
+              <li className="flex items-center gap-3">
+                <Mail className="h-4 w-4 text-brand-teal shrink-0" />
+                <span className="text-gray-400 text-sm">info@neuronexalabs.com</span>
               </li>
-              {/* <li className="flex items-start">
-                <div className="mt-1 mr-4 text-[#00A7E1]"><MapPin className="h-5 w-5" /></div>
-                <div>
-                  <span className="block text-gray-400 font-light text-sm mb-1">Location</span>
-                  <span className="text-white">Dharwad, India</span>
-                </div>
-              </li> */}
             </ul>
           </div>
+
         </div>
 
-        <div className="border-t border-gray-800/80 pt-8 mt-12 flex flex-col md:flex-row justify-between items-center text-sm">
-          <p className="text-gray-500 font-light mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} <span className="text-white font-medium">Neuronexa Labs</span>. All rights reserved.
-          </p>
-          <div className="flex space-x-8">
-            <a href="#" className="text-gray-500 hover:text-[#00A7E1] transition-colors duration-300 font-light">Privacy Policy</a>
-            <a href="#" className="text-gray-500 hover:text-[#00A7E1] transition-colors duration-300 font-light">Terms of Service</a>
-            <a href="#" className="text-gray-500 hover:text-[#00A7E1] transition-colors duration-300 font-light">Security</a>
+        {/* Bottom bar */}
+        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+          <p>&copy; {new Date().getFullYear()} NeuroNexa Labs. All rights reserved.</p>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>

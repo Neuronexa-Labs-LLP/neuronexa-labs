@@ -1,147 +1,194 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { projectsData } from '../pages/ProductDetail';
+import { ArrowRight, ExternalLink, Layers } from 'lucide-react';
+import { projectsData } from '../data/projectsData';
+import AnimatedText from './jack/AnimatedText';
+import Magnet from './jack/Magnet';
 
 const ProjectsSection: React.FC = () => {
-  const targetRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [scrollRange, setScrollRange] = useState(0);
-
-  const [isMobile, setIsMobile] = useState(false);
-
-  // Measure dynamic DOM bounds on mount and resize to perfectly hit the container edge
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-      if (trackRef.current && window.innerWidth >= 768) {
-        // We translate the container exactly its overflown amount so its right edge hits the right viewport edge
-        setScrollRange(trackRef.current.scrollWidth - window.innerWidth);
-      }
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
-
-  // Apply heavily damped spring physics to scrollYProgress to completely mask mouse-wheel notch stepping ("skipping")
-  const springScroll = useSpring(scrollYProgress, { stiffness: 400, damping: 90, mass: 0.1 });
-
   const projects = Object.values(projectsData);
-  
-  // Interpolate exactly to the pixel bounds
-  const x = useTransform(springScroll, [0, 1], [0, -scrollRange]);
 
-  // Mobile Native Stack Return
-  if (isMobile) {
-    return (
-      <section id="projects" className="relative bg-black py-24 border-t border-white/5">
-        <div className="container mx-auto px-4 mb-16">
-          <h2 className="text-[#00A7E1] tracking-[0.3em] text-sm font-bold uppercase mb-4">
-             Portfolio // Systems Enabled
-          </h2>
-        </div>
-        
-        <div className="flex flex-col gap-10 px-4">
-          {projects.map((project) => (
-             <motion.div 
-               key={project.id}
-               initial={{ opacity: 0, y: 30 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true, margin: "-10%" }}
-               transition={{ duration: 0.6, delay: 0.1 }}
-               className="w-full relative rounded-[2rem] overflow-hidden group h-[50vh] min-h-[400px] border border-white/10"
-             >
-               <Link to={`/projects/${project.id}`} className="block h-full w-full relative">
-                 <img src={project.image} alt={project.title} className="w-full h-full object-cover filter brightness-50" />
-                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90"></div>
-                 <div className="absolute bottom-0 left-0 p-6 md:p-8 w-full">
-                    <span className="text-[#00A7E1] text-xs font-mono tracking-widest block mb-2">
-                       CLICK TO VIEW ARCHIVE
-                    </span>
-                    <h3 className="text-3xl font-black text-white mb-3 tracking-tight leading-none">
-                       {project.title}
-                    </h3>
-                    <p className="text-gray-400 font-light text-base line-clamp-2">
-                       {project.description}
-                    </p>
-                 </div>
-               </Link>
-             </motion.div>
-          ))}
-        </div>
-      </section>
-    );
-  }
-
-  // Desktop Cinematic Horizontal Track
   return (
-    <section id="projects" ref={targetRef} className="relative h-[300vh] bg-black">
-      <div className="sticky top-0 h-screen flex items-center overflow-hidden bg-black">
-        
-        {/* Background ambient glow */}
-        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-20">
-           <div className="w-[100vw] h-[50vh] bg-gradient-to-r from-[#003A4F] to-[#00A7E1] blur-[200px] mix-blend-screen"></div>
-        </div>
-
-        {/* Section Title indicator fixed to center tracking */}
-        <div className="absolute top-24 md:top-32 left-8 md:left-24 z-20">
-           <h2 className="text-[#00A7E1] tracking-[0.3em] text-sm md:text-base font-bold uppercase">
-              Portfolio // Systems Enabled
-           </h2>
-        </div>
-
-        {/* The horizontal scrolling track */}
-        <motion.div 
-          ref={trackRef}
-          style={{ x }} 
-          className="flex w-max h-[70vh] items-center relative z-10 shrink-0 px-[10vw]"
-        >
-          {projects.map((project) => {
-            return (
-              <div 
-                key={project.id} 
-                className="w-[80vw] md:w-[60vw] lg:w-[45vw] flex-shrink-0 h-full mx-4 md:mx-8 relative group"
-              >
-                <Link to={`/projects/${project.id}`} className="block h-full w-full relative overflow-hidden rounded-3xl cursor-none">
-                  {/* Image with extreme parallax zoom effect on hover */}
-                  <div className="absolute inset-0 transition-transform duration-[1.5s] ease-out group-hover:scale-110">
-                     <img src={project.image} alt={project.title} className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-90 transition-all duration-700" />
-                  </div>
-                  
-                  {/* Film gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-500"></div>
-                  
-                  {/* Content Overlay */}
-                  <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                     <span className="text-[#00A7E1] text-xs md:text-sm font-mono tracking-widest block mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                        CLICK TO VIEW ARCHIVE
-                     </span>
-                     <h3 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight leading-none">
-                        {project.title}
-                     </h3>
-                     <p className="text-gray-400 font-light text-lg md:text-xl line-clamp-2 max-w-xl">
-                        {project.description}
-                     </p>
-                  </div>
-
-                  {/* Aesthetic borders */}
-                  <div className="absolute top-8 right-8 border-t-2 border-r-2 border-[#00A7E1] w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200"></div>
-                  <div className="absolute bottom-8 left-8 border-b-2 border-l-2 border-[#00A7E1] w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200"></div>
-                </Link>
-              </div>
-            );
-          })}
-        </motion.div>
-
-        {/* Right side fade mask */}
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-20 pointer-events-none"></div>
-
+    <section id="projects" className="relative py-20 md:py-28 bg-[#FAFBFC] overflow-hidden">
+      {/* Subtle background texture */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+        <div className="absolute top-1/4 -left-32 h-[500px] w-[500px] rounded-full bg-[#2AA7D3]/[0.03] blur-[100px]" />
+        <div className="absolute bottom-1/4 -right-32 h-[400px] w-[400px] rounded-full bg-blue-500/[0.03] blur-[100px]" />
       </div>
+
+      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+
+        {/* Section Header */}
+        <div className="max-w-3xl mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 bg-white border border-[#2AA7D3]/20 text-slate-900 px-4 py-1.5 rounded-full text-xs font-bold mb-5 shadow-sm"
+          >
+            <Layers className="h-3 w-3 text-[#2AA7D3]" />
+            Our Portfolio
+          </motion.div>
+
+          <AnimatedText 
+            text="Solutions we've engineered"
+            className="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight"
+          />
+
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-slate-700 text-base font-medium mt-3 max-w-xl"
+          >
+            Real projects. Real impact. Here's how we've helped businesses transform with technology.
+          </motion.p>
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+            {projects.map((project, idx) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover="hover"
+                variants={{ hover: { y: -10, scale: 1.02 } }}
+                viewport={{ once: true, margin: "-5%" }}
+                transition={{ type: "spring", stiffness: 200, duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: idx * 0.06 }}
+                className="bg-white rounded-2xl overflow-hidden border border-slate-200/70 hover:border-[#2AA7D3]/30 shadow-[0_4px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_16px_48px_rgba(42,167,211,0.08)] transition-shadow duration-500 flex flex-col h-full"
+              >
+                {/* Image */}
+                <Link to={`/projects/${project.id}`} className="block relative h-52 overflow-hidden">
+                  <motion.img
+                    src={project.image}
+                    alt={project.title}
+                    variants={{ hover: { scale: 1.08 } }}
+                    transition={{ duration: 0.5 }}
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
+
+                  {/* Category Badge */}
+                  <span className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg text-[10px] font-extrabold text-slate-900 border border-white/50 shadow-sm uppercase tracking-wider z-10">
+                    {project.category}
+                  </span>
+
+                  {/* Hover external link icon */}
+                  <Magnet padding={20} disabled={false} magnetStrength={2}>
+                    <div className="absolute top-4 right-4 h-8 w-8 bg-white/90 backdrop-blur-sm rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0 z-10">
+                      <ExternalLink className="h-3.5 w-3.5 text-slate-800" />
+                    </div>
+                  </Magnet>
+                </Link>
+
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-grow">
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {project.tags.slice(0, 2).map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2.5 py-1 bg-slate-50 border border-slate-100 text-slate-800 rounded-md text-[10px] font-bold uppercase tracking-wide"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-lg font-extrabold text-slate-900 mb-2.5 tracking-tight group-hover:text-[#2AA7D3] transition-colors duration-300 leading-snug">
+                    <Link to={`/projects/${project.id}`}>{project.title}</Link>
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-slate-700 text-sm leading-relaxed font-medium line-clamp-3 flex-1">
+                    {project.description}
+                  </p>
+
+                  {/* Tech Stack Preview */}
+                  <div className="flex flex-wrap gap-1 mt-4 mb-4">
+                    {project.techStack.slice(0, 3).map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-0.5 text-[9px] font-bold text-[#2AA7D3] bg-[#2AA7D3]/[0.06] rounded-md"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                    {project.techStack.length > 3 && (
+                      <span className="px-2 py-0.5 text-[9px] font-bold text-slate-500 bg-slate-50 rounded-md">
+                        +{project.techStack.length - 3}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* CTA */}
+                  <div className="pt-4 border-t border-slate-100">
+                    <Link
+                      to={`/projects/${project.id}`}
+                      className="inline-flex items-center text-xs font-bold text-[#2AA7D3] hover:text-[#0F172A] transition-colors duration-300 gap-1.5"
+                    >
+                      View Case Study
+                      <motion.div variants={{ hover: { x: 5 } }} transition={{ type: "spring" }}>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </motion.div>
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+        {/* Bottom Stats Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="mt-12 md:mt-16 bg-white border border-slate-200/60 rounded-2xl p-5 md:p-8 flex flex-col items-center gap-6"
+        >
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12">
+            <div className="text-center md:text-left">
+              <p className="text-2xl md:text-3xl font-extrabold text-slate-900">{projects.length}+</p>
+              <p className="text-xs font-bold text-slate-600 uppercase tracking-wider mt-0.5">Projects Delivered</p>
+            </div>
+            <div className="w-px h-10 bg-slate-200 hidden md:block" />
+            <div className="text-center md:text-left">
+              <p className="text-2xl md:text-3xl font-extrabold text-slate-900">98%</p>
+              <p className="text-xs font-bold text-slate-600 uppercase tracking-wider mt-0.5">Client Satisfaction</p>
+            </div>
+            <div className="w-px h-10 bg-slate-200 hidden md:block" />
+            <div className="text-center md:text-left">
+              <p className="text-2xl md:text-3xl font-extrabold text-slate-900">5+</p>
+              <p className="text-xs font-bold text-slate-600 uppercase tracking-wider mt-0.5">Industries Served</p>
+            </div>
+          </div>
+
+          <motion.a
+            href="/#contact"
+            whileHover={{ scale: 1.05, y: -3 }}
+            whileTap={{ scale: 0.96 }}
+            className="bg-[#0F172A] hover:bg-[#2AA7D3] text-white px-6 py-3 rounded-xl text-sm font-bold transition-colors duration-300 flex items-center gap-2 shadow-sm cursor-pointer"
+          >
+            Start Your Project <ArrowRight className="h-4 w-4" />
+          </motion.a>
+        </motion.div>
+      </div>
+
+      <style>{`
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </section>
   );
 };

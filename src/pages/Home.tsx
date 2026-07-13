@@ -2,20 +2,21 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
+import Footer from '../components/Footer';
+
 import ServicesSection from '../components/ServicesSection';
-import ProjectsSection from '../components/CaseStudiesSection';
+import CaseStudiesSection from '../components/CaseStudiesSection';
+// import ClientsSection from '../components/ClientsSection';
 import AboutSection from '../components/AboutSection';
+import JackMarqueeSection from '../components/jack/MarqueeSection';
+import UpcomingSection from '../components/UpcomingSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import ContactSection from '../components/ContactSection';
-import Footer from '../components/Footer';
-import ClientsSection from '../components/ClientsSection';
 
 const Home: React.FC = () => {
   useEffect(() => {
-    // Update the document title
     document.title = 'Neuronexa Labs - AI-Driven Solutions for Your Business';
     
-    // Smooth scroll for anchor links
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const anchor = target.closest('a');
@@ -26,7 +27,7 @@ const Home: React.FC = () => {
         
         if (targetElement) {
           window.scrollTo({
-            top: targetElement.getBoundingClientRect().top + window.scrollY - 80, // Offset for fixed header
+            top: targetElement.getBoundingClientRect().top + window.scrollY - 80,
             behavior: 'smooth'
           });
         }
@@ -41,24 +42,32 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black font-sans selection:bg-[#00A7E1] selection:text-white transition-colors duration-300">
+    <div className="min-h-screen bg-white font-sans selection:bg-brand-teal selection:text-white transition-colors duration-300">
       <Helmet>
         <title>Neuronexa Labs | Enterprise AI & Workflow Automation</title>
-        <meta name="description" content="World-class process automation and intelligent AI workflows for global enterprises. We architect scalable, secure, and highly efficient systems." />
-        <meta property="og:title" content="Neuronexa Labs | Enterprise AI & Workflow Automation" />
-        <meta property="og:description" content="World-class process automation and intelligent AI workflows for global enterprises." />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="description" content="World-class process automation and intelligent AI workflows for global enterprises." />
       </Helmet>
+      
       <Navbar />
-      <HeroSection />
-      <ServicesSection />
-      <ProjectsSection />
-      <AboutSection />
-      <ClientsSection />
-      <TestimonialsSection />
-      <ContactSection />
-      <Footer />
+      
+      <main>
+        <HeroSection />
+        
+        <JackMarqueeSection />
+        
+        <ServicesSection />
+        <CaseStudiesSection />
+        <AboutSection />
+        {/* <ClientsSection /> */}
+        
+        <UpcomingSection />
+        <TestimonialsSection />
+        <ContactSection />
+      </main>
+      
+      <footer id="footer">
+        <Footer />
+      </footer>
     </div>
   );
 };
