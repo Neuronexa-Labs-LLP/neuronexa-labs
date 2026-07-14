@@ -1,107 +1,207 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
-
-const Word = ({ children, progress, range }: { children: React.ReactNode, progress: MotionValue<number>, range: [number, number] }) => {
-  const opacity = useTransform(progress, range, [0.1, 1]);
-  const color = useTransform(progress, range, ["rgba(255, 255, 255, 0.1)", "rgba(255, 255, 255, 1)"]);
-  return (
-    <motion.span 
-      style={{ opacity, color }}
-      className="inline-block transition-colors duration-200 text-white"
-    >
-      {children}
-    </motion.span>
-  );
-};
+import React from 'react';
+import { motion } from 'framer-motion';
+import {
+  ShieldCheck,
+  GitBranch,
+  Zap,
+  Sparkles,
+  TrendingUp,
+  Lock,
+  Server,
+} from 'lucide-react';
+import AnimatedText from './jack/AnimatedText';
+import Magnet from './jack/Magnet';
 
 const AboutSection: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLParagraphElement>(null);
-  
-  // We use direct fractional intersection bounds:
-  // "0 0.8" -> Animation starts when the top (0) of the text hits 80% (0.8) down the screen.
-  // "1 0.6" -> Animation finishes completely when the bottom (1) of the text hits 60% (0.6) down the screen.
-  // This guarantees all words are vividly lit before hitting the middle of the screen!
-  const { scrollYProgress } = useScroll({
-    target: textRef,
-    offset: ["0 0.8", "1 0.6"]
-  });
-
-  const narrative = "Engineering excellence, ruthless efficiency, security-first architecture, and a relentless focus on delivering measurable client ROI are at the core of our DNA. We architect intelligent solutions that empower global enterprises.".split(" ");
-
   return (
-    <section id="about" ref={containerRef} className="relative py-24 md:py-48 bg-black">
-      <div className="container mx-auto px-4 md:px-8 max-w-5xl">
-        <motion.h2 
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-10%" }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="text-[#00A7E1] tracking-[0.3em] text-sm md:text-base font-bold uppercase mb-16 relative"
-        >
-          System Core // Narrative
-          <div className="absolute -left-8 top-1/2 -translate-y-1/2 w-4 h-[1px] bg-[#00A7E1]/50 hidden md:block"></div>
-        </motion.h2>
-        
-        <p ref={textRef} className="text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.2] md:leading-[1.1] tracking-tight flex flex-wrap gap-x-3 gap-y-2 md:gap-x-4 md:gap-y-4">
-          {narrative.map((word, i) => {
-            const SAFE_ZONE = 0.5;
-            const start = (i / narrative.length) * SAFE_ZONE;
-            const end = ((i + 1) / narrative.length) * SAFE_ZONE;
-            return <Word key={i} progress={scrollYProgress} range={[start, end]}>{word}</Word>;
-          })}
-        </p>
-
+    <section
+      id="about"
+      className="relative py-16 md:py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50/80 border-t border-slate-100/85 overflow-hidden"
+    >
+      {/* Enhanced Background Glows */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20 md:mt-32 relative z-20"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-10%" }}
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.1
-              }
-            }
-          }}
+          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-1/4 -left-20 h-[400px] w-[400px] rounded-full bg-[#2AA7D3]/10 blur-[120px] z-0" 
+        />
+        <motion.div 
+          animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.5, 0.2] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute bottom-1/4 -right-20 h-[400px] w-[400px] rounded-full bg-blue-400/10 blur-[120px] z-0" 
+        />
+        <motion.div 
+          animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.7, 0.4] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[300px] w-[300px] rounded-full bg-purple-400/5 blur-[100px] z-0" 
+        />
+        {/* Subtle grid pattern */}
+        <svg
+          className="absolute inset-0 w-full h-full z-0 opacity-[0.03]"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.5" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 md:px-8 relative z-10">
+        {/* Section Header */}
+        <div className="mb-10">
+          <motion.div
+            animate={{ scale: [1, 1.08, 1], opacity: [1, 0.8, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#2AA7D3]/20 text-slate-800 px-4 py-1.5 rounded-full text-xs font-bold shadow-sm shadow-[#2AA7D3]/5"
+          >
+            <span className="w-2 h-2 rounded-full bg-[#2AA7D3] animate-pulse" />
+            About Neuronexa Labs
+            <Sparkles className="h-3 w-3 text-[#2AA7D3] ml-1" />
+          </motion.div>
+        </div>
+
+        {/* Narrative - Broken into scannable blocks */}
+        <div className="max-w-5xl mb-14">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            {/* Core statement with AnimatedText */}
+            <AnimatedText 
+              text="Engineering excellence, security-first architecture, and measurable client ROI — that's our DNA."
+              className="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight"
+            />
+
+            {/* Supporting sentence */}
+            <p className="text-lg md:text-xl text-slate-700 font-medium mt-4 max-w-3xl">
+              We architect intelligent solutions that empower global enterprises to{' '}
+              <span className="font-bold text-slate-800">automate processes seamlessly</span>, delivering tangible business impact.
+            </p>
+          </motion.div>
+
+          {/* Three core pillars as mini-cards (replaces the long paragraph) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8"
+          >
+            {[
+              {
+                icon: <Server className="h-4 w-4 text-cyan-600" />,
+                label: 'Engineering Excellence',
+                desc: 'Built to scale, resilient, and rigorously tested.',
+                bg: 'bg-cyan-50',
+              },
+              {
+                icon: <Lock className="h-4 w-4 text-emerald-600" />,
+                label: 'Security-First',
+                desc: 'Zero-trust principles embedded at every layer.',
+                bg: 'bg-emerald-50',
+              },
+              {
+                icon: <TrendingUp className="h-4 w-4 text-purple-600" />,
+                label: 'ROI-Obsessed',
+                desc: 'Every solution engineered for measurable outcomes.',
+                bg: 'bg-purple-50',
+              },
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 4 + idx, repeat: Infinity, ease: "easeInOut" }}
+                className={`flex items-start gap-3 p-4 rounded-xl border border-slate-200/60 ${item.bg} backdrop-blur-sm hover:shadow-md hover:border-[#2AA7D3]/30 transition-shadow group`}
+              >
+                <div className="shrink-0 mt-0.5">
+                  <Magnet padding={30} magnetStrength={2}>
+                    <div className="bg-white p-2 rounded-lg shadow-sm border border-slate-100/50">
+                      {item.icon}
+                    </div>
+                  </Magnet>
+                </div>
+                <div>
+                  <p className="text-sm font-extrabold text-slate-900">{item.label}</p>
+                  <p className="text-xs text-slate-700 font-medium">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Value Cards - Enhanced with Icons & Glassmorphism */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+          {[
+            {
+              icon: GitBranch,
+              title: 'Infinite Scale',
+              desc: 'Architectures built to withstand massive enterprise loads without faltering.',
+              gradient: 'from-cyan-500 to-blue-500',
+              bg: 'bg-cyan-50',
+            },
+            {
+              icon: ShieldCheck,
+              title: 'Zero Trust Security',
+              desc: 'Security baked into every layer of our code natively, not as an afterthought.',
+              gradient: 'from-emerald-500 to-teal-500',
+              bg: 'bg-emerald-50',
+            },
+            {
+              icon: Zap,
+              title: 'Unified Workflows',
+              desc: 'Consolidating disjointed systems into singular, highly-efficient automated flows.',
+              gradient: 'from-amber-500 to-orange-500',
+              bg: 'bg-amber-50',
+            },
+          ].map((feature, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="group relative bg-white/80 backdrop-blur-sm border border-slate-200/60 rounded-3xl p-8 hover:border-[#2AA7D3]/40 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out overflow-hidden"
+            >
+              {/* Glow hover effect */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-[#2AA7D3]/5 via-transparent to-purple-500/5 rounded-3xl pointer-events-none" />
+
+              <h3 className="text-xl font-extrabold text-slate-900 mb-3 tracking-tight group-hover:text-[#2AA7D3] transition-colors duration-300">
+                {feature.title}
+              </h3>
+              <p className="text-slate-700 text-sm leading-relaxed font-medium">{feature.desc}</p>
+
+              {/* Decorative corner line */}
+              <div className="absolute bottom-4 right-4 w-12 h-12 border-r-2 border-b-2 border-[#2AA7D3]/20 rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Trust Badge / Stats */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-12 md:mt-16 flex flex-wrap items-center justify-center gap-6 md:gap-16 border-t border-slate-200/60 pt-8 md:pt-10"
         >
           {[
-            { icon: "∞", title: "Infinite Scale", desc: "Architectures built to withstand massive enterprise loads without faltering." },
-            { icon: "0", title: "Zero Trust", desc: "Security baked into every layer of our code natively, not as an afterthought." },
-            { icon: "1", title: "Unified Truth", desc: "Consolidating disjointed systems into singular, highly-efficient workflows." }
-          ].map((feature, idx) => (
-            <motion.div 
-              key={idx}
-              variants={{
-                hidden: { opacity: 0, y: 50, scale: 0.95 },
-                visible: { 
-                  opacity: 1, 
-                  y: 0, 
-                  scale: 1,
-                  transition: { type: "spring", stiffness: 70, damping: 20 }
-                }
-              }}
-              className="group relative p-10 md:p-12 rounded-[2rem] bg-[#030303] border border-white/[0.03] overflow-hidden hover:border-[#00A7E1]/30 transition-colors duration-500"
-            >
-               {/* Hover bloomed glow */}
-               <div className="absolute inset-0 bg-gradient-to-br from-[#00A7E1]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-
-               {/* Massive typography icon wrapped for blending */}
-               <div className="relative text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-white/5 mb-8 tracking-tighter opacity-80 group-hover:opacity-100 transition-opacity duration-500 select-none">
-                  {feature.icon}
-               </div>
-
-               {/* Accent line expanding on hover */}
-               <div className="w-8 h-[2px] bg-[#00A7E1]/80 mb-6 group-hover:w-16 transition-all duration-500 shadow-[0_0_15px_rgba(0,167,225,0.5)]"></div>
-
-               <h3 className="text-2xl font-bold mb-4 text-white drop-shadow-lg tracking-tight">{feature.title}</h3>
-               <p className="text-zinc-400 leading-relaxed font-light group-hover:text-zinc-300 transition-colors duration-500">
-                 {feature.desc}
-               </p>
-            </motion.div>
+            { label: 'Enterprise Clients', value: '50+' },
+            { label: 'Automated Processes', value: '1,200+' },
+            { label: 'Avg. ROI Increase', value: '3.2x' },
+          ].map((stat, i) => (
+            <div key={i} className="text-center">
+              <p className="text-2xl md:text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#2AA7D3] to-blue-600">
+                {stat.value}
+              </p>
+              <p className="text-xs font-bold text-slate-700 uppercase tracking-wider mt-1">
+                {stat.label}
+              </p>
+            </div>
           ))}
         </motion.div>
       </div>
