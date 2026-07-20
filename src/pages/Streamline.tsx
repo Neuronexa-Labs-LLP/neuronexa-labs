@@ -184,8 +184,8 @@ const Streamline: React.FC = () => {
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setSelectedNeed(project.id)}
                   className={`text-left p-5 rounded-2xl border-2 transition-all cursor-pointer ${selectedNeed === project.id
-                      ? 'border-[#2AA7D3] bg-gradient-to-br from-[#EEF8FF] to-white shadow-lg shadow-[#2AA7D3]/10'
-                      : 'border-slate-200/60 hover:border-slate-300 hover:bg-white/50'
+                    ? 'border-[#2AA7D3] bg-gradient-to-br from-[#EEF8FF] to-white shadow-lg shadow-[#2AA7D3]/10'
+                    : 'border-slate-200/60 hover:border-slate-300 hover:bg-white/50'
                     }`}
                 >
                   <div className="flex items-start justify-between">
@@ -229,63 +229,63 @@ const Streamline: React.FC = () => {
                 </div>
               </div>
 
-                  {/* Curved Timeline with SVG Path */}
-                  <div className="relative py-4 flex-1">
+              {/* Curved Timeline with SVG Path */}
+              <div className="relative py-4 flex-1">
 
-                    {/* Timeline Nodes */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
-                      <AnimatePresence mode="wait">
-                        {currentProject.timeline.map((item, idx) => {
-                          const color = phaseColors[idx] || phaseColors[0];
-                          const IconComponent = color.icon;
-                          const isLast = idx === currentProject.timeline.length - 1;
+                {/* Timeline Nodes */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+                  <AnimatePresence mode="wait">
+                    {currentProject.timeline.map((item, idx) => {
+                      const color = phaseColors[idx] || phaseColors[0];
+                      const IconComponent = color.icon;
+                      const isLast = idx === currentProject.timeline.length - 1;
 
-                          return (
-                            <motion.div
-                              key={item.phase}
-                              initial={{ opacity: 0, y: 20 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              exit={{ opacity: 0, scale: 0.9 }}
-                              transition={{ duration: 0.4, delay: idx * 0.12 }}
-                              className="flex flex-col items-center text-center group"
-                            >
-                              {/* Node Circle with icon */}
-                              <div className="relative mb-3">
-                                <div className={`
+                      return (
+                        <motion.div
+                          key={item.phase}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, scale: 0.9 }}
+                          transition={{ duration: 0.4, delay: idx * 0.12 }}
+                          className="flex flex-col items-center text-center group"
+                        >
+                          {/* Node Circle with icon */}
+                          <div className="relative mb-3">
+                            <div className={`
                       w-14 h-14 rounded-full border-4 ${color.border} ${color.bg} 
                       flex items-center justify-center shadow-lg group-hover:scale-110 
                       transition-transform duration-300 group-hover:shadow-xl
                       relative z-10
                     `}>
-                                  <IconComponent className={`h-6 w-6 ${color.text}`} />
-                                </div>
-                                {/* Pulsing ring */}
-                                <div className="absolute inset-0 rounded-full border-2 border-[#2AA7D3]/30 animate-ping opacity-30" />
-                              </div>
+                              <IconComponent className={`h-6 w-6 ${color.text}`} />
+                            </div>
+                            {/* Pulsing ring */}
+                            <div className="absolute inset-0 rounded-full border-2 border-[#2AA7D3]/30 animate-ping opacity-30" />
+                          </div>
 
-                              {/* Phase info */}
-                              <div className="bg-white/80 backdrop-blur-sm px-4 py-3 rounded-xl border border-slate-200/60 shadow-sm w-full hover:shadow-md transition-shadow">
-                                <p className="text-sm font-extrabold text-slate-800 tracking-tight">
-                                  {item.phase}
-                                </p>
-                                <span className="inline-block bg-slate-900 text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-full mt-1 tracking-wider">
-                                  {item.weeks} {item.weeks === 1 ? 'Week' : 'Weeks'}
-                                </span>
-                                <p className="text-xs text-slate-600 font-semibold mt-2 leading-snug hidden sm:block">
-                                  {item.description}
-                                </p>
-                              </div>
+                          {/* Phase info */}
+                          <div className="bg-white/80 backdrop-blur-sm px-4 py-3 rounded-xl border border-slate-200/60 shadow-sm w-full hover:shadow-md transition-shadow">
+                            <p className="text-sm font-extrabold text-slate-800 tracking-tight">
+                              {item.phase}
+                            </p>
+                            <span className="inline-block bg-slate-900 text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-full mt-1 tracking-wider">
+                              {item.weeks} {item.weeks === 1 ? 'Week' : 'Weeks'}
+                            </span>
+                            <p className="text-xs text-slate-600 font-semibold mt-2 leading-snug hidden sm:block">
+                              {item.description}
+                            </p>
+                          </div>
 
-                              {/* Connector dot (visible on mobile) */}
-                              {!isLast && (
-                                <div className="md:hidden w-6 h-0.5 bg-slate-300 my-1" />
-                              )}
-                            </motion.div>
-                          );
-                        })}
-                      </AnimatePresence>
-                    </div>
-                  </div>
+                          {/* Connector dot (visible on mobile) */}
+                          {!isLast && (
+                            <div className="md:hidden w-6 h-0.5 bg-slate-300 my-1" />
+                          )}
+                        </motion.div>
+                      );
+                    })}
+                  </AnimatePresence>
+                </div>
+              </div>
 
               {/* Footer */}
               <div className="border-t border-slate-200/60 pt-4 mt-6 flex flex-wrap items-center justify-between gap-4 relative z-10">
@@ -451,9 +451,7 @@ const Streamline: React.FC = () => {
               </button>
             </div>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400 font-bold">
-              <span className="flex items-center gap-1"><Check className="h-3 w-3 text-emerald-500" /> 50+ Enterprises Deployed</span>
-              <span className="flex items-center gap-1"><Check className="h-3 w-3 text-emerald-500" /> 24/7 Support SLA</span>
-              <span className="flex items-center gap-1"><Check className="h-3 w-3 text-emerald-500" /> SOC2 Compliant</span>
+              <span className="flex items-center gap-1"><Check className="h-3 w-3 text-emerald-500" /> 5+ Enterprises Deployed</span>
             </div>
           </div>
         </motion.div>
