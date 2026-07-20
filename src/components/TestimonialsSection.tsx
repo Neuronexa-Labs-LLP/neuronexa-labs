@@ -40,7 +40,7 @@ const TestimonialsSection: React.FC = () => {
                     P
                  </div>
              </div>
-             <h3 className="text-slate-800 text-lg font-bold tracking-wide">Praveen Kulkarni</h3>
+             <h3 className="text-slate-800 text-lg font-bold tracking-wide">Praveen K</h3>
              <p className="text-[#2AA7D3] uppercase tracking-widest text-xs font-bold mt-1">Founder, Vedims</p>
            </div>
          </motion.div>
