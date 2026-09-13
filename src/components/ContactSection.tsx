@@ -145,7 +145,7 @@ const ContactSection: React.FC = () => {
                   <div className="flex items-center bg-[#F8FAFC] border border-slate-200/60 rounded-xl px-4 py-3 shadow-sm focus-within:border-[#2AA7D3] focus-within:ring-2 focus-within:ring-[#2AA7D3]/15 transition-all duration-300">
                     <Mail className="w-4 h-4 text-slate-400 mr-3 shrink-0" />
                     <input
-                      type="email"
+                      type="text"
                       placeholder="e.g. rajesh@enterprise.com"
                       required
                       value={formData.email}
