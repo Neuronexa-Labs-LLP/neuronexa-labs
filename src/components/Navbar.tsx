@@ -122,9 +122,7 @@ const Navbar: React.FC = () => {
     window.open('https://wa.me/9110435020', '_blank');
   };
 
-  const navLinks: any[] = [
-    { id: 'blog', label: 'Blog & Insights', path: '/blog' }
-  ];
+  const navLinks: any[] = [];
 
   return (
     <nav className={`fixed top-4 left-4 right-4 md:top-6 md:left-24 md:right-24 z-50 transition-all duration-300 rounded-2xl border ${
