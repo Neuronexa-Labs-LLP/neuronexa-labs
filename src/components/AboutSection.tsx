@@ -79,8 +79,8 @@ const AboutSection: React.FC = () => {
 
             {/* Supporting sentence */}
             <p className="text-lg md:text-xl text-slate-700 font-medium mt-4 max-w-3xl">
-              We architect intelligent solutions that empower global enterprises to{' '}
-              <span className="font-bold text-slate-800">automate processes seamlessly</span>, delivering tangible business impact.
+              Built by experienced engineers and conversational designers who believe technology should serve people, not complicate them. We combine{' '}
+              <span className="font-bold text-slate-800">human empathy with intelligent automation</span> so your business connects faster and grows sustainably.
             </p>
           </motion.div>
 
@@ -193,6 +193,7 @@ const AboutSection: React.FC = () => {
             { label: 'Enterprise Clients', value: '50+' },
             { label: 'Automated Processes', value: '1,200+' },
             { label: 'Avg. ROI Increase', value: '3.2x' },
+            { label: 'Direct Engineer Support', value: '100%' },
           ].map((stat, i) => (
             <div key={i} className="text-center">
               <p className="text-2xl md:text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#2AA7D3] to-blue-600">

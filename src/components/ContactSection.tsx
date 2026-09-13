@@ -34,13 +34,13 @@ const ContactSection: React.FC = () => {
         setTimeout(() => setIsSubmitted(false), 5000);
         setFormData({ name: '', email: '', message: '' });
       } else {
-        console.error("Transmission rejected by server:", result);
-        alert("Transmission failed. Please try again later.");
+        console.error("Submission rejected by server:", result);
+        alert("Message delivery failed. Please contact us directly on WhatsApp at +91 91104 35020.");
         setIsSubmitting(false);
       }
     } catch (error) {
-      console.error("Network error during transmission:", error);
-      alert("Network error. Could not establish uplink to transmission server.");
+      console.error("Network error during form submission:", error);
+      alert("Network error. Please reach us directly on WhatsApp at +91 91104 35020 or email info@neuronexalabs.com.");
       setIsSubmitting(false);
     }
   };
@@ -70,21 +70,37 @@ const ContactSection: React.FC = () => {
                 className="inline-flex items-center gap-2 bg-[#F4F9FC] border border-[#2AA7D3]/20 text-[#0F172A] px-3.5 py-1.5 rounded-full text-xs font-bold shadow-sm"
               >
                 <span className="w-2 h-2 rounded-full bg-[#2AA7D3] animate-pulse"></span>
-                Connect
+                Get in Touch
               </motion.div>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0F2137] mb-6 tracking-tighter leading-none uppercase">
               Let's <span className="text-[#2AA7D3]">Build.</span>
             </h2>
-            <p className="text-lg text-slate-600 font-medium max-w-md mb-10 leading-relaxed">
-              Ready to deploy cutting-edge automation and AI into your enterprise architecture? Initiate the sequence.
+            <p className="text-lg text-slate-600 font-medium max-w-md mb-8 leading-relaxed">
+              Ready to deploy an intelligent AI Voice Assistant or custom workflow? Speak directly with our team — we reply in under 15 minutes.
             </p>
 
-            <div className="space-y-4 text-slate-500 font-mono text-xs sm:text-sm max-w-md bg-[#F4F9FC] p-5 sm:p-6 rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
-              <p className="flex items-center text-[#2AA7D3] font-semibold"><Terminal className="w-4 h-4 mr-3" /> SYSTEM_READY</p>
-              <p className="flex justify-between border-b border-slate-200/60 pb-2"><span>IP:</span> <span className="text-[#1E3A5F] font-bold">India / Remote</span></p>
-              <p className="flex justify-between border-b border-slate-200/60 pb-2 gap-2"><span className="shrink-0">COMMS:</span> <span className="text-[#1E3A5F] font-bold truncate">info@neuronexalabs.com</span></p>
-              <p className="flex justify-between pb-1"><span>UPLINK:</span> <span className="text-[#2AA7D3] font-bold">+91 91104 35020</span></p>
+            <div className="space-y-3 text-slate-600 text-xs sm:text-sm max-w-md bg-[#F4F9FC] p-5 sm:p-6 rounded-2xl border border-slate-100 shadow-sm overflow-hidden font-sans">
+              <p className="flex items-center text-emerald-700 font-bold text-xs pb-1 border-b border-slate-200/60">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse mr-2.5"></span>
+                Team Online · Fast 15-Minute Response
+              </p>
+              <div className="flex justify-between items-center border-b border-slate-200/60 pb-2">
+                <span className="text-slate-400 font-mono text-xs">DIRECT LINE:</span>
+                <a href="https://wa.me/9110435020" target="_blank" rel="noopener noreferrer" className="text-[#0F6F94] hover:text-[#2AA7D3] font-bold transition-colors">
+                  +91 91104 35020
+                </a>
+              </div>
+              <div className="flex justify-between items-center border-b border-slate-200/60 pb-2 gap-2">
+                <span className="text-slate-400 font-mono text-xs shrink-0">EMAIL:</span>
+                <a href="mailto:info@neuronexalabs.com" className="text-[#1E3A5F] hover:text-[#2AA7D3] font-bold truncate transition-colors">
+                  info@neuronexalabs.com
+                </a>
+              </div>
+              <div className="flex justify-between items-center pb-1">
+                <span className="text-slate-400 font-mono text-xs">LOCATION:</span>
+                <span className="text-slate-700 font-semibold">India · Global Remote</span>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -101,21 +117,21 @@ const ContactSection: React.FC = () => {
 
             {isSubmitted ? (
               <div className="flex flex-col items-center justify-center text-center py-16">
-                <div className="w-16 h-16 rounded-full border-2 border-[#2AA7D3] flex items-center justify-center mb-6 text-[#2AA7D3] text-xl font-bold">
+                <div className="w-16 h-16 rounded-full border-2 border-emerald-500 bg-emerald-50 flex items-center justify-center mb-6 text-emerald-600 text-xl font-bold">
                   ✓
                 </div>
-                <h3 className="text-xl font-bold text-[#0F2137] mb-2">Transmission Successful</h3>
-                <p className="text-slate-500 font-medium">Our engineers will respond to your query shortly.</p>
+                <h3 className="text-xl font-bold text-[#0F2137] mb-2">Thank you! Message Received</h3>
+                <p className="text-slate-600 font-medium max-w-sm">A real member of our engineering team will review your requirements and get back to you within 15 minutes.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block px-1">Your Designation / Name</label>
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block px-1">Your Name / Organization</label>
                   <div className="flex items-center bg-[#F8FAFC] border border-slate-200/60 rounded-xl px-4 py-3 shadow-sm focus-within:border-[#2AA7D3] focus-within:ring-2 focus-within:ring-[#2AA7D3]/15 transition-all duration-300">
                     <User className="w-4 h-4 text-slate-400 mr-3 shrink-0" />
                     <input
                       type="text"
-                      placeholder="e.g. राजेश कुमार / Project Director"
+                      placeholder="e.g. Rajesh Kumar / Acme Enterprises"
                       required
                       value={formData.name}
                       onChange={e => setFormData({ ...formData, name: e.target.value })}
@@ -125,7 +141,7 @@ const ContactSection: React.FC = () => {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block px-1">Corporate Email</label>
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block px-1">Work Email or Phone</label>
                   <div className="flex items-center bg-[#F8FAFC] border border-slate-200/60 rounded-xl px-4 py-3 shadow-sm focus-within:border-[#2AA7D3] focus-within:ring-2 focus-within:ring-[#2AA7D3]/15 transition-all duration-300">
                     <Mail className="w-4 h-4 text-slate-400 mr-3 shrink-0" />
                     <input
@@ -140,11 +156,11 @@ const ContactSection: React.FC = () => {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block px-1">Project Description</label>
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block px-1">Project or Voice Assistant Needs</label>
                   <div className="flex items-start bg-[#F8FAFC] border border-slate-200/60 rounded-xl px-4 py-3 shadow-sm focus-within:border-[#2AA7D3] focus-within:ring-2 focus-within:ring-[#2AA7D3]/15 transition-all duration-300">
                     <MessageSquare className="w-4 h-4 text-slate-400 mr-3 mt-0.5 shrink-0" />
                     <textarea
-                      placeholder="Describe your workflow automation or agentic AI needs..."
+                      placeholder="Tell us about your business, expected call volume, or workflows you'd like to automate..."
                       required
                       rows={4}
                       value={formData.message}
@@ -154,13 +170,18 @@ const ContactSection: React.FC = () => {
                   </div>
                 </div>
 
-                <button
-                  disabled={isSubmitting}
-                  className="w-full bg-[#2AA7D3] hover:bg-[#1E3A5F] text-white font-bold uppercase tracking-widest py-4 rounded-xl transition-all flex items-center justify-center group shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer"
-                >
-                  {isSubmitting ? "Processing..." : "Transmit"}
-                  {!isSubmitting && <ArrowRight className="w-4 h-4 ml-3 group-hover:translate-x-2 transition-transform" />}
-                </button>
+                <div>
+                  <button
+                    disabled={isSubmitting}
+                    className="w-full bg-[#2AA7D3] hover:bg-[#0F6F94] text-white font-bold uppercase tracking-widest py-4 rounded-xl transition-all flex items-center justify-center group shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer"
+                  >
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                    {!isSubmitting && <ArrowRight className="w-4 h-4 ml-3 group-hover:translate-x-2 transition-transform" />}
+                  </button>
+                  <p className="text-[11px] text-center text-slate-500 mt-3 font-medium">
+                    ✓ No automated chatbots · Speak directly with our founding engineers
+                  </p>
+                </div>
               </form>
             )}
           </motion.div>
