@@ -23,9 +23,9 @@ interface UpcomingFeature {
 const upcomingFeatures: UpcomingFeature[] = [
   {
     icon: SparklesIcon,
-    title: 'Multimodal Voice Agents',
+    title: 'Multimodal Voice Assistants',
     timeline: 'Q3 2026',
-    desc: 'AI agents that understand voice tone, visual documents, and text chat concurrently for a seamless customer experience.',
+    desc: 'AI voice assistants that understand voice tone, visual documents, and text chat concurrently for a seamless customer experience.',
     color: 'from-teal-400 to-cyan-500',
     bg: 'bg-teal-50',
     iconColor: 'text-teal-500',

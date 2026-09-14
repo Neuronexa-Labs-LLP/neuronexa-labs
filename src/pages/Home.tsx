@@ -2,67 +2,70 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
-import Footer from '../components/Footer';
-
-import ServicesSection from '../components/ServicesSection';
-import CaseStudiesSection from '../components/CaseStudiesSection';
-// import ClientsSection from '../components/ClientsSection';
-import AboutSection from '../components/AboutSection';
-import JackMarqueeSection from '../components/jack/MarqueeSection';
-import UpcomingSection from '../components/UpcomingSection';
-import TestimonialsSection from '../components/TestimonialsSection';
+import HomeHowItHelps from '../components/HomeHowItHelps';
+import HomeSolution from '../components/HomeSolution';
+import HomeHowItFits from '../components/HomeHowItFits';
+import FAQSection from '../components/FAQSection';
 import ContactSection from '../components/ContactSection';
+import HomeBannerCallout from '../components/HomeBannerCallout';
+import Footer from '../components/Footer';
+import { FAQItem } from '../components/FAQSection';
+
+const homeFaqs: FAQItem[] = [
+  {
+    question: "What exactly does Neuronexa Labs do?",
+    answer: "We are an Enterprise AI and Workflow Automation agency. We specialize in building autonomous AI agents, intelligent voice assistants, and custom automation workflows that streamline your business operations and reduce manual overhead.",
+    tag: "About Us"
+  },
+  {
+    question: "Do you build custom AI Voice Assistants?",
+    answer: "Yes, we build low-latency, human-like voice AI assistants that can handle inbound customer support, outbound sales calls, appointment scheduling, and lead qualification 24/7.",
+    tag: "Voice AI"
+  },
+  {
+    question: "How long does it take to deploy an automation workflow?",
+    answer: "Most of our automation workflows and AI agent deployments are completed within 2 to 4 weeks, depending on the complexity of your existing systems and the specific use cases you want to automate.",
+    tag: "Deployment"
+  },
+  {
+    question: "Is our data secure when using your AI solutions?",
+    answer: "Absolutely. We adhere to enterprise-grade security protocols and ensure that all data processed by our AI systems is encrypted and compliant with industry standards. Your data privacy is our top priority.",
+    tag: "Security"
+  },
+  {
+    question: "Can you integrate with our existing software?",
+    answer: "Yes, our solutions are designed to be highly interoperable. We seamlessly integrate with popular CRMs (like Salesforce or HubSpot), ERPs, scheduling tools, and even custom legacy systems via APIs.",
+    tag: "Integrations"
+  }
+];
 
 const Home: React.FC = () => {
   useEffect(() => {
-    document.title = 'Neuronexa Labs - AI-Driven Solutions for Your Business';
-    
-    const handleAnchorClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      const anchor = target.closest('a');
-      
-      if (anchor && anchor.hash && anchor.hash.startsWith('#')) {
-        e.preventDefault();
-        const targetElement = document.querySelector(anchor.hash);
-        
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.getBoundingClientRect().top + window.scrollY - 80,
-            behavior: 'smooth'
-          });
-        }
-      }
-    };
-    
-    document.addEventListener('click', handleAnchorClick);
-    
-    return () => {
-      document.removeEventListener('click', handleAnchorClick);
-    };
+    document.title = 'Neuronexa Labs - Next-Gen AI Voice & Workflows';
+    window.scrollTo(0, 0);
   }, []);
 
   return (
     <div className="min-h-screen bg-white font-sans selection:bg-brand-teal selection:text-white transition-colors duration-300">
       <Helmet>
-        <title>Neuronexa Labs | Enterprise AI & Workflow Automation</title>
-        <meta name="description" content="World-class process automation and intelligent AI workflows for global enterprises." />
+        <title>Neuronexa Labs | AI Voice & Workflows</title>
+        <meta name="description" content="Deploy human-sounding AI voice assistants and robust workflow automations." />
       </Helmet>
       
       <Navbar />
       
       <main>
         <HeroSection />
-        
-        <JackMarqueeSection />
-        
-        <ServicesSection />
-        <CaseStudiesSection />
-        <AboutSection />
-        {/* <ClientsSection /> */}
-        
-        <UpcomingSection />
-        <TestimonialsSection />
+        <HomeHowItHelps />
+        <HomeSolution />
+        <HomeHowItFits />
+        <HomeBannerCallout />
         <ContactSection />
+        <FAQSection 
+          title="Enterprise AI FAQs" 
+          description="Common questions about our AI solutions, deployment timelines, and how we transform your business operations."
+          faqs={homeFaqs} 
+        />
       </main>
       
       <footer id="footer">
@@ -73,3 +76,4 @@ const Home: React.FC = () => {
 };
 
 export default Home;
+
