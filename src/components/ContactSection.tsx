@@ -77,7 +77,7 @@ const ContactSection: React.FC = () => {
               Let's <span className="text-[#2AA7D3]">Build.</span>
             </h2>
             <p className="text-lg text-slate-600 font-medium max-w-md mb-8 leading-relaxed">
-              Ready to deploy an intelligent AI Voice Assistant or custom workflow? Speak directly with our team — we reply in under 15 minutes.
+              Ready to deploy an intelligent AI Voice Assistant or custom workflow? Speak directly with our team — we reply within 24 hrs.
             </p>
 
             <div className="space-y-3 text-slate-600 text-xs sm:text-sm max-w-md bg-[#F4F9FC] p-5 sm:p-6 rounded-2xl border border-slate-100 shadow-sm overflow-hidden font-sans">
@@ -121,7 +121,7 @@ const ContactSection: React.FC = () => {
                   ✓
                 </div>
                 <h3 className="text-xl font-bold text-[#0F2137] mb-2">Thank you! Message Received</h3>
-                <p className="text-slate-600 font-medium max-w-sm">A real member of our engineering team will review your requirements and get back to you within 15 minutes.</p>
+                <p className="text-slate-600 font-medium max-w-sm">A real member of our engineering team will review your requirements and we will get back to you within 24 hrs.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
