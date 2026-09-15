@@ -19,8 +19,9 @@ const ServicesHub: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-50 font-sans selection:bg-brand-teal selection:text-white">
       <Helmet>
-        <title>All Services | Neuronexa Labs</title>
-        <meta name="description" content="Explore our suite of enterprise AI and workflow automation services." />
+        <title>Our Capabilities | Neuronexa Labs</title>
+        <meta name="description" content="From subsecond AI voice agents to enterprise web applications, we engineer intelligent solutions that drive measurable growth." />
+        <meta name="keywords" content="AI voice agents, enterprise web applications, intelligent solutions, business growth, flagship AI product, Neuronexa Labs capabilities" />
       </Helmet>
       
       <Navbar />

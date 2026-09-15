@@ -62,8 +62,7 @@ const Home: React.FC = () => {
         <HomeBannerCallout />
         <ContactSection />
         <FAQSection 
-          title="Enterprise AI FAQs" 
-          description="Common questions about our AI solutions, deployment timelines, and how we transform your business operations."
+          title="Frequently Asked Questions" 
           faqs={homeFaqs} 
         />
       </main>

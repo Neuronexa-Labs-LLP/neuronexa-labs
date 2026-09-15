@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, HelpCircle, MessageCircle, ArrowRight, ExternalLink, Sparkles } from 'lucide-react';
+import { ChevronDown, MessageCircle, Sparkles, Linkedin, Instagram } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 export interface FAQItem {
@@ -43,8 +43,7 @@ export interface FAQSectionProps {
 }
 
 const FAQSection: React.FC<FAQSectionProps> = ({ 
-  title = "Got Questions? We Have Answers.", 
-  description = "Simple, honest answers about how our AI Voice Assistant works, how fast you can launch, and how subsecond latency keeps callers engaged.", 
+  title = "Frequently Asked Questions", 
   faqs = defaultFaqs 
 }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -77,16 +76,9 @@ const FAQSection: React.FC<FAQSectionProps> = ({
         
         {/* Section Header */}
         <div className="text-center mx-auto max-w-2xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-200/80 text-[#0F6F94] text-xs font-semibold uppercase tracking-wider mb-3">
-            <HelpCircle className="w-3.5 h-3.5 text-[#2AA7D3]" />
-            Frequently Asked Questions
-          </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-[1.2]">
             {title}
           </h2>
-          <p className="mt-3 text-xs sm:text-sm md:text-base text-slate-600 font-normal leading-relaxed">
-            {description}
-          </p>
         </div>
 
         {/* FAQ Accordion List */}
@@ -149,24 +141,32 @@ const FAQSection: React.FC<FAQSectionProps> = ({
           <div className="text-center sm:text-left">
             <h4 className="text-base sm:text-lg font-bold text-white flex items-center justify-center sm:justify-start gap-2">
               <Sparkles className="w-4 h-4 text-cyan-300" />
-              Have a specific question not listed here?
+              Stay up to date with NeuroNexa Labs
             </h4>
             <p className="text-xs sm:text-sm text-slate-400 mt-1">
-              Talk directly with our technical team on WhatsApp or test a live call right now.
+              Follow us on our social channels for the latest updates, news, and insights.
             </p>
           </div>
 
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 shrink-0">
             <a
-              href="https://wa.me/9110435020"
+              href="https://www.linkedin.com/company/neuronexa-labs/?viewAsMember=true"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-bold transition-all shadow-sm"
+              aria-label="LinkedIn"
+              className="group inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/10 hover:bg-[#0F6F94] transition-all border border-white/10 shadow-sm"
             >
-              <MessageCircle className="w-4 h-4" />
-              <span>Chat on WhatsApp</span>
+              <Linkedin className="w-5 h-5 text-[#2AA7D3] group-hover:text-white transition-colors" />
             </a>
-
+            <a
+              href="https://www.instagram.com/neuronexa_labs/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="group inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/10 hover:bg-pink-600 transition-all border border-white/10 shadow-sm"
+            >
+              <Instagram className="w-5 h-5 text-pink-500 group-hover:text-white transition-colors" />
+            </a>
           </div>
         </div>
 

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Terminal, User, Mail, MessageSquare } from 'lucide-react';
+import { ArrowRight, User, Mail, MessageSquare } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -56,22 +55,14 @@ const ContactSection: React.FC = () => {
       <div className="container mx-auto px-5 max-w-6xl relative z-10 flex flex-col lg:flex-row gap-10 lg:gap-24 items-center">
 
         <div className="flex-1 w-full relative">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            viewport={{ once: true }}
-          >
+          <div>
             <div className="mb-4">
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+              <div
                 className="inline-flex items-center gap-2 bg-[#F4F9FC] border border-[#2AA7D3]/20 text-[#0F172A] px-3.5 py-1.5 rounded-full text-xs font-bold shadow-sm"
               >
-                <span className="w-2 h-2 rounded-full bg-[#2AA7D3] animate-pulse"></span>
+                <span className="w-2 h-2 rounded-full bg-[#2AA7D3]"></span>
                 Get in Touch
-              </motion.div>
+              </div>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0F2137] mb-6 tracking-tighter leading-none uppercase">
               Let's <span className="text-[#2AA7D3]">Build.</span>
@@ -81,10 +72,6 @@ const ContactSection: React.FC = () => {
             </p>
 
             <div className="space-y-3 text-slate-600 text-xs sm:text-sm max-w-md bg-[#F4F9FC] p-5 sm:p-6 rounded-2xl border border-slate-100 shadow-sm overflow-hidden font-sans">
-              <p className="flex items-center text-emerald-700 font-bold text-xs pb-1 border-b border-slate-200/60">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse mr-2.5"></span>
-                Team Online · Fast 15-Minute Response
-              </p>
               <div className="flex justify-between items-center border-b border-slate-200/60 pb-2">
                 <span className="text-slate-400 font-mono text-xs">DIRECT LINE:</span>
                 <a href="https://wa.me/9110435020" target="_blank" rel="noopener noreferrer" className="text-[#0F6F94] hover:text-[#2AA7D3] font-bold transition-colors">
@@ -102,15 +89,11 @@ const ContactSection: React.FC = () => {
                 <span className="text-slate-700 font-semibold">India · Global Remote</span>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         <div className="flex-1 w-full text-left">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.97 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            viewport={{ once: true }}
+          <div
             className="bg-white p-8 md:p-10 rounded-[32px] border border-slate-200/60 shadow-[0_20px_60px_rgba(0,0,0,0.06)] relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#2AA7D3] rounded-full blur-[120px] opacity-[0.06]"></div>
@@ -184,7 +167,7 @@ const ContactSection: React.FC = () => {
                 </div>
               </form>
             )}
-          </motion.div>
+          </div>
         </div>
 
       </div>

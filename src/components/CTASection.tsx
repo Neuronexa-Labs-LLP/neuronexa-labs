@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, MessageCircle } from 'lucide-react';
+import { Sparkles, MessageCircle } from 'lucide-react';
 
 const CTASection: React.FC = () => {
   const handleWhatsAppClick = () => {
