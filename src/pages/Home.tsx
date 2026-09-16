@@ -5,6 +5,7 @@ import HeroSection from '../components/HeroSection';
 import HomeHowItHelps from '../components/HomeHowItHelps';
 import HomeSolution from '../components/HomeSolution';
 import HomeHowItFits from '../components/HomeHowItFits';
+import HomeIntegrations from '../components/HomeIntegrations';
 import FAQSection from '../components/FAQSection';
 import ContactSection from '../components/ContactSection';
 import HomeBannerCallout from '../components/HomeBannerCallout';
@@ -59,6 +60,7 @@ const Home: React.FC = () => {
         <HomeHowItHelps />
         <HomeSolution />
         <HomeHowItFits />
+        <HomeIntegrations />
         <HomeBannerCallout />
         <ContactSection />
         <FAQSection 
