@@ -16,11 +16,7 @@ const HomeHowItFits: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+          <div 
             className="w-full lg:w-1/2"
           >
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
@@ -45,13 +41,9 @@ const HomeHowItFits: React.FC = () => {
                 Listen to calls anytime · See what your AI is handling 
               </p>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+          <div 
             className="w-full lg:w-1/2 relative"
           >
             {/* Background glowing orb */}
@@ -101,11 +93,9 @@ const HomeHowItFits: React.FC = () => {
                   {/* Dynamic Audio Waveform Mockup */}
                   <div className="flex gap-1.5 h-12 items-end justify-between px-2 w-full mt-2">
                     {[35, 60, 40, 85, 55, 100, 75, 45, 90, 65, 30, 70].map((h, i) => (
-                      <motion.div 
+                      <div 
                         key={i} 
-                        initial={{ height: '20%' }}
-                        animate={{ height: [`${h}%`, `${Math.max(20, h - 30)}%`, `${h}%`] }}
-                        transition={{ duration: 1.5 + (i * 0.1), repeat: Infinity, ease: "easeInOut" }}
+                        style={{ height: `${h}%` }}
                         className="w-full max-w-[12px] bg-gradient-to-t from-[#0F6F94] to-[#2AA7D3] rounded-sm opacity-80 group-hover:opacity-100 transition-opacity" 
                       />
                     ))}
@@ -113,7 +103,7 @@ const HomeHowItFits: React.FC = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
           
         </div>
       </div>

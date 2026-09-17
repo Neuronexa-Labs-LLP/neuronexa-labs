@@ -119,7 +119,7 @@ const AboutSection: React.FC = () => {
                 className={`flex items-start gap-3 p-4 rounded-xl border border-slate-200/60 ${item.bg} backdrop-blur-sm hover:shadow-md hover:border-[#2AA7D3]/30 transition-shadow group`}
               >
                 <div className="shrink-0 mt-0.5">
-                  <Magnet padding={30} magnetStrength={2}>
+                  <Magnet padding={30}>
                     <div className="bg-white p-2 rounded-lg shadow-sm border border-slate-100/50">
                       {item.icon}
                     </div>

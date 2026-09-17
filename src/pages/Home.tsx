@@ -5,6 +5,7 @@ import HeroSection from '../components/HeroSection';
 import HomeHowItHelps from '../components/HomeHowItHelps';
 import HomeSolution from '../components/HomeSolution';
 import HomeHowItFits from '../components/HomeHowItFits';
+import HomeIntegrations from '../components/HomeIntegrations';
 import FAQSection from '../components/FAQSection';
 import ContactSection from '../components/ContactSection';
 import HomeBannerCallout from '../components/HomeBannerCallout';
@@ -59,11 +60,11 @@ const Home: React.FC = () => {
         <HomeHowItHelps />
         <HomeSolution />
         <HomeHowItFits />
+        <HomeIntegrations />
         <HomeBannerCallout />
         <ContactSection />
         <FAQSection 
-          title="Enterprise AI FAQs" 
-          description="Common questions about our AI solutions, deployment timelines, and how we transform your business operations."
+          title="Frequently Asked Questions" 
           faqs={homeFaqs} 
         />
       </main>
