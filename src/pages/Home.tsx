@@ -15,7 +15,7 @@ import { FAQItem } from '../components/FAQSection';
 const homeFaqs: FAQItem[] = [
   {
     question: "What exactly does Neuronexa Labs do?",
-    answer: "We are an Enterprise AI and Workflow Automation agency. We specialize in building autonomous AI agents, intelligent voice assistants, and custom automation workflows that streamline your business operations and reduce manual overhead.",
+    answer: "We are an Enterprise AI and Workflow Automation company. We specialize in building autonomous AI agents, intelligent voice assistants, and custom automation workflows that streamline your business operations and reduce manual overhead.",
     tag: "About Us"
   },
   {
