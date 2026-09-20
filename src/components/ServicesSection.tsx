@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BrainCircuit, Network, Activity, ShieldCheck, ArrowRight } from 'lucide-react';
@@ -103,7 +105,7 @@ const ServicesSection: React.FC = () => {
               
               {/* Icon Container */}
               <div className="flex items-center justify-between mb-8 relative z-10">
-                <Magnet padding={40} disabled={false} magnetStrength={2}>
+                <Magnet padding={40}>
                   <div className={`h-16 w-16 rounded-[20px] ${service.bg} flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-sm border border-slate-100/50`}>
                     <service.icon className={`h-7 w-7 text-[#2AA7D3] group-hover:text-blue-600 transition-colors duration-500`} />
                   </div>
@@ -143,3 +145,4 @@ const ServicesSection: React.FC = () => {
 };
 
 export default ServicesSection;
+

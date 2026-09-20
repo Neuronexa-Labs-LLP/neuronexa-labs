@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef } from 'react';
 import { useScroll } from 'framer-motion';
 import { Sparkles, ShieldCheck, Server, TrendingUp, Cpu } from 'lucide-react';
@@ -117,3 +119,4 @@ const AboutSection: React.FC = () => {
 };
 
 export default AboutSection;
+

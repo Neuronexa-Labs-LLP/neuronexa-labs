@@ -1,3 +1,5 @@
+"use client";
+
 import React, { ReactNode, ElementType } from 'react';
 import { motion } from 'framer-motion';
 
@@ -40,3 +42,4 @@ const FadeIn: React.FC<FadeInProps> = ({
 };
 
 export default FadeIn;
+

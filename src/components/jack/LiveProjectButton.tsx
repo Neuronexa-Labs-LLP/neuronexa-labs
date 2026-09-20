@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 
 interface LiveProjectButtonProps {
@@ -29,3 +31,4 @@ const LiveProjectButton: React.FC<LiveProjectButtonProps> = ({
 };
 
 export default LiveProjectButton;
+

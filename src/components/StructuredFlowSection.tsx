@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { 
   Database, 
@@ -163,7 +165,7 @@ const StructuredFlowSection: React.FC = () => {
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-[11px] font-mono font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded">
+                    <span className="text-[11px] font-mono font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
                       STAGE {step.step}
                     </span>
                     <div className={`p-1.5 rounded-lg border ${step.accent}`}>
@@ -388,3 +390,4 @@ const StructuredFlowSection: React.FC = () => {
 };
 
 export default StructuredFlowSection;
+

@@ -1,31 +1,21 @@
-import React, { useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
-import { Mic, ArrowRight, Layout, Briefcase, MapPin, ShoppingBag, Brain } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import ContactSection from '../components/ContactSection';
-import { servicesData } from '../data/servicesData';
+import Link from 'next/link';
+import { Mic, ArrowRight } from 'lucide-react';
+import ContactSection from '../../components/ContactSection';
+import { servicesData } from '../../data/servicesData';
 
-const ServicesHub: React.FC = () => {
-  useEffect(() => {
-    document.title = 'All Services | Neuronexa Labs';
-    window.scrollTo(0, 0);
-  }, []);
+export const metadata = {
+  title: 'AI Solutions & Custom Engineering Services | Neuronexa Labs',
+  description: 'Explore Neuronexa Labs\' suite of AI automation, voice assistants, custom web applications, and digital growth services designed to scale your business.',
+  alternates: {
+    canonical: 'https://neuronexalabs.com/services',
+  },
+};
 
-  // Group services by category for display
+export default function ServicesHub() {
   const categories = Array.from(new Set(servicesData.map(s => s.category)));
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans selection:bg-brand-teal selection:text-white">
-      <Helmet>
-        <title>Our Capabilities | Neuronexa Labs</title>
-        <meta name="description" content="From subsecond AI voice agents to enterprise web applications, we engineer intelligent solutions that drive measurable growth." />
-        <meta name="keywords" content="AI voice agents, enterprise web applications, intelligent solutions, business growth, flagship AI product, Neuronexa Labs capabilities" />
-      </Helmet>
-      
-      <Navbar />
-      
+    <>
       <main className="pt-32 pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -39,7 +29,6 @@ const ServicesHub: React.FC = () => {
           </div>
 
           <div className="space-y-20">
-            {/* Special Callout for the main Voice Assistant page */}
             <section>
               <div className="bg-gradient-to-br from-[#0F2137] to-[#0A1626] rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-2xl border border-slate-800">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-[#2AA7D3]/10 rounded-full blur-[100px] pointer-events-none" />
@@ -55,7 +44,7 @@ const ServicesHub: React.FC = () => {
                     Deploy human-sounding AI voice agents in minutes. Handle inbound support 24/7, qualify outbound leads, and sync everything directly to your CRM with subsecond latency.
                   </p>
                   <Link 
-                    to="/services/ai-voice-agent"
+                    href="/services/ai-voice-agent"
                     className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#2AA7D3] hover:bg-[#228cb2] text-white font-bold transition-colors"
                   >
                     Explore Voice AI
@@ -65,7 +54,6 @@ const ServicesHub: React.FC = () => {
               </div>
             </section>
 
-            {/* Render the remaining templated services categorized */}
             {categories.map(category => {
               const categoryServices = servicesData.filter(s => s.category === category);
               return (
@@ -77,13 +65,14 @@ const ServicesHub: React.FC = () => {
                     {categoryServices.map(service => (
                       <Link 
                         key={service.slug}
-                        to={`/services/${service.slug}`}
+                        href={`/services/${service.slug}`}
                         className="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-xl border border-slate-200/60 overflow-hidden transition-all duration-300 hover:-translate-y-1"
                       >
                         <div className="h-48 overflow-hidden relative">
                           <img 
                             src={service.heroImage} 
                             alt={service.title}
+                            loading="lazy"
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
@@ -112,12 +101,6 @@ const ServicesHub: React.FC = () => {
       </main>
 
       <ContactSection />
-      
-      <footer id="footer">
-        <Footer />
-      </footer>
-    </div>
+    </>
   );
-};
-
-export default ServicesHub;
+}

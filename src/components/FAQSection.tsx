@@ -1,6 +1,7 @@
+"use client";
+
 import React, { useState } from 'react';
 import { ChevronDown, MessageCircle, Sparkles, Linkedin, Instagram } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
 
 export interface FAQItem {
   question: string;
@@ -67,11 +68,10 @@ const FAQSection: React.FC<FAQSectionProps> = ({
 
   return (
     <section id="faq" className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-b from-slate-50/60 via-white to-slate-50/60 border-t border-slate-200/80 overflow-hidden">
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(schemaData)}
-        </script>
-      </Helmet>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
@@ -139,10 +139,10 @@ const FAQSection: React.FC<FAQSectionProps> = ({
         {/* Bottom Help Box */}
         <div className="mt-12 sm:mt-16 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-slate-900 to-[#0F172A] text-white flex flex-col sm:flex-row items-center justify-between gap-5 shadow-lg border border-slate-800">
           <div className="text-center sm:text-left">
-            <h4 className="text-base sm:text-lg font-bold text-white flex items-center justify-center sm:justify-start gap-2">
+            <h3 className="text-base sm:text-lg font-bold text-white flex items-center justify-center sm:justify-start gap-2">
               <Sparkles className="w-4 h-4 text-cyan-300" />
               Stay up to date with NeuroNexa Labs
-            </h4>
+            </h3>
             <p className="text-xs sm:text-sm text-slate-400 mt-1">
               Follow us on our social channels for the latest updates, news, and insights.
             </p>
@@ -176,3 +176,4 @@ const FAQSection: React.FC<FAQSectionProps> = ({
 };
 
 export default FAQSection;
+

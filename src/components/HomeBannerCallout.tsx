@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { Zap, ArrowRight } from 'lucide-react';
 
@@ -11,9 +13,9 @@ const HomeBannerCallout: React.FC = () => {
               <Zap className="w-3.5 h-3.5" />
               AI Voice Agent
             </div>
-            <h4 className="text-base sm:text-lg md:text-xl font-bold tracking-tight">
+            <h3 className="text-base sm:text-lg md:text-xl font-bold tracking-tight">
               Ready to deploy an AI Voice Assistant for your business?
-            </h4>
+            </h3>
             <p className="text-xs text-slate-300 mt-1 leading-relaxed">
               Launch customized inbound &amp; outbound voice agents in minutes with subsecond latency and instant CRM synchronization.
             </p>
@@ -37,3 +39,4 @@ const HomeBannerCallout: React.FC = () => {
 };
 
 export default HomeBannerCallout;
+

@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { BrainCircuit, Network, Activity, ShieldCheck } from 'lucide-react';
 import FadeIn from './FadeIn';
@@ -107,3 +109,4 @@ const ServicesSection: React.FC = () => {
 };
 
 export default ServicesSection;
+

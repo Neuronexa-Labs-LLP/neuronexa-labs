@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
@@ -34,3 +36,4 @@ const ContactButton: React.FC<ContactButtonProps> = ({
 };
 
 export default ContactButton;
+

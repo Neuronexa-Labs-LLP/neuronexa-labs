@@ -1,38 +1,78 @@
-import React, { useEffect } from 'react';
-import { useParams, Navigate, Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import { ArrowLeft, CheckCircle2, ChevronRight, Zap, ArrowUpRight, ArrowRight } from 'lucide-react';
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
-import ContactSection from '../../components/ContactSection';
-import FAQSection from '../../components/FAQSection';
-import { servicesData } from '../../data/servicesData';
+import ContactSection from '../../../components/ContactSection';
+import FAQSection from '../../../components/FAQSection';
+import { servicesData } from '../../../data/servicesData';
 
-const ServiceDetail: React.FC = () => {
-  const { slug } = useParams<{ slug: string }>();
-  
+export function generateStaticParams() {
+  return servicesData.map((service) => ({
+    slug: service.slug,
+  }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const service = servicesData.find(s => s.slug === slug);
-
-  useEffect(() => {
-    if (service) {
-      document.title = `${service.title} | Neuronexa Labs`;
-      window.scrollTo(0, 0);
-    }
-  }, [service]);
-
+  
   if (!service) {
-    return <Navigate to="/services" replace />;
+    return {
+      title: 'Service Not Found',
+    };
   }
 
+  return {
+    title: `${service.title} | Neuronexa Labs`,
+    description: service.shortDesc,
+    alternates: {
+      canonical: `https://neuronexalabs.com/services/${service.slug}`,
+    },
+  };
+}
+
+export default async function ServiceDetail({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const service = servicesData.find(s => s.slug === slug);
+
+  if (!service) {
+    notFound();
+  }
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": service.title,
+    "description": service.shortDesc,
+    "provider": {
+      "@type": "Organization",
+      "name": "Neuronexa Labs",
+      "url": "https://neuronexalabs.com"
+    },
+    "category": service.category,
+    "url": `https://neuronexalabs.com/services/${service.slug}`
+  };
+
+  const faqSchema = service.faqs && service.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": service.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  } : null;
+
+  const schemas = faqSchema ? [serviceSchema, faqSchema] : [serviceSchema];
+
   return (
-    <div className="min-h-screen bg-slate-50 font-sans selection:bg-brand-teal selection:text-white flex flex-col">
-      <Helmet>
-        <title>{service.title} | Neuronexa Labs</title>
-        <meta name="description" content={service.shortDesc} />
-      </Helmet>
-      
-      <Navbar />
-      
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+      />
       <main className="flex-grow pt-24 pb-16">
         
         {/* HERO SECTION */}
@@ -43,7 +83,7 @@ const ServiceDetail: React.FC = () => {
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 relative z-10">
             <Link 
-              to="/services" 
+              href="/services" 
               className="inline-flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-[#0F6F94] transition-colors mb-8"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -168,7 +208,7 @@ const ServiceDetail: React.FC = () => {
                     {servicesData.filter(s => s.slug !== service.slug).slice(0, 4).map(s => (
                       <Link 
                         key={s.slug} 
-                        to={`/services/${s.slug}`}
+                        href={`/services/${s.slug}`}
                         className="group flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 transition-colors"
                       >
                         <span className="text-sm font-semibold text-slate-700 group-hover:text-[#0F6F94] transition-colors line-clamp-1">{s.title}</span>
@@ -176,7 +216,7 @@ const ServiceDetail: React.FC = () => {
                       </Link>
                     ))}
                   </div>
-                  <Link to="/services" className="inline-flex items-center gap-2 text-sm font-bold text-[#0F6F94] hover:text-[#0c5977] mt-6 transition-colors">
+                  <Link href="/services" className="inline-flex items-center gap-2 text-sm font-bold text-[#0F6F94] hover:text-[#0c5977] mt-6 transition-colors">
                     View all services
                     <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -191,12 +231,6 @@ const ServiceDetail: React.FC = () => {
       </main>
 
       <ContactSection />
-      
-      <footer id="footer">
-        <Footer />
-      </footer>
-    </div>
+    </>
   );
-};
-
-export default ServiceDetail;
+}

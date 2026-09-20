@@ -1,9 +1,11 @@
+"use client";
+
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 import { Layers } from 'lucide-react';
 import FadeIn from './FadeIn';
 import { projectsData } from '../../data/projectsData';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const ProjectsSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -96,7 +98,7 @@ const ProjectCard: React.FC<{
           </div>
 
           <div className="flex items-center gap-4">
-            <Link to={`/projects/${project.id}`}>
+            <Link href={`/projects/${project.id}`}>
               <button className="bg-[#0F172A] hover:bg-[#2AA7D3] text-white px-8 py-4 rounded-full text-sm font-bold uppercase tracking-wider transition-colors duration-300">
                 View Case Study
               </button>
@@ -109,7 +111,8 @@ const ProjectCard: React.FC<{
           <motion.div style={{ scale: imageScale }} className="w-full h-full">
             <img 
               src={project.image} 
-              alt={project.title} 
+              alt={project.title}
+              loading="lazy"
               className="w-full h-full object-cover"
             />
           </motion.div>
@@ -120,3 +123,4 @@ const ProjectCard: React.FC<{
 };
 
 export default ProjectsSection;
+

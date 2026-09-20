@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import { 
@@ -686,3 +688,4 @@ const IndustrySolutionsSection: React.FC = () => {
 };
 
 export default IndustrySolutionsSection;
+

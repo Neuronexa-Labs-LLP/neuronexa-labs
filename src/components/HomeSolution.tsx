@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { PhoneOutgoing, CalendarCheck, Headphones, Zap, ArrowRight } from 'lucide-react';
@@ -161,3 +163,4 @@ const HomeSolution: React.FC = () => {
 };
 
 export default HomeSolution;
+

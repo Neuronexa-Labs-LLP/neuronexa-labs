@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, Phone, Linkedin, ExternalLink, MessageCircle, Instagram } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import logo from '../assets/nnlabs-logo-hd.png';
 
 const navigationLinks = [
@@ -28,15 +28,15 @@ const Footer: React.FC = () => {
           
           {/* Brand Column */}
           <div className="md:col-span-12 lg:col-span-4">
-            <Link to="/" className="inline-block mb-6">
-              <img src={logo} alt="NeuroNexa Labs" className="h-12 md:h-14 object-contain brightness-0 invert opacity-90 hover:opacity-100 transition-opacity" />
+            <Link href="/" className="inline-block mb-6">
+              <img src={logo.src} alt="NeuroNexa Labs" width={200} height={56} className="h-12 md:h-14 object-contain brightness-0 invert opacity-90 hover:opacity-100 transition-opacity" />
             </Link>
             <p className="text-slate-400 leading-relaxed mb-8 max-w-sm text-sm">
               We build intelligent AI voice assistants and custom web applications that automate your daily tasks. Save time and grow your business without the manual work.
             </p>
             
             <div>
-              <p className="text-slate-500 mb-4 text-xs font-bold uppercase tracking-wider">Follow Us</p>
+              <p className="text-slate-400 mb-4 text-xs font-bold uppercase tracking-wider">Follow Us</p>
               <div className="flex items-center gap-3">
                 <a
                   href="https://www.linkedin.com/company/neuronexa-labs/?viewAsMember=true"
@@ -109,7 +109,7 @@ const Footer: React.FC = () => {
                     <Phone className="h-4 w-4 text-[#2AA7D3]" />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-500 mb-0.5">Call Us</p>
+                    <p className="text-xs text-slate-400 mb-0.5">Call Us</p>
                     <span className="text-sm font-medium">+91 91104 35020</span>
                   </div>
                 </a>
@@ -123,7 +123,7 @@ const Footer: React.FC = () => {
                     <Mail className="h-4 w-4 text-[#2AA7D3]" />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-500 mb-0.5">Email Us</p>
+                    <p className="text-xs text-slate-400 mb-0.5">Email Us</p>
                     <span className="text-sm font-medium truncate block">info@neuronexalabs.com</span>
                   </div>
                 </a>
@@ -134,11 +134,11 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-slate-800/80 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+        <div className="border-t border-slate-800/80 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 gap-4">
           <p>&copy; {new Date().getFullYear()} NeuroNexa Labs. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link to="/privacy" className="hover:text-slate-400 transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-slate-400 transition-colors">Terms of Service</Link>
+            <Link href="/privacy" className="hover:text-slate-400 transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-slate-400 transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

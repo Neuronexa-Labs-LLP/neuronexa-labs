@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Phone, Headphones, CalendarCheck, Zap, CheckCircle2 } from 'lucide-react';
@@ -130,3 +132,4 @@ const AIVoiceHero: React.FC = () => {
 };
 
 export default AIVoiceHero;
+

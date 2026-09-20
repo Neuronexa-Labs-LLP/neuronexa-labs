@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
@@ -180,3 +182,4 @@ const UpcomingSection: React.FC = () => {
 };
 
 export default UpcomingSection;
+

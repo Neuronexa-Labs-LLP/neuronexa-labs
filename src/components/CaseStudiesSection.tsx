@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { ArrowRight, ExternalLink, Layers } from 'lucide-react';
 import { projectsData } from '../data/projectsData';
 import AnimatedText from './jack/AnimatedText';
@@ -62,7 +62,7 @@ const ProjectsSection: React.FC = () => {
                 className="bg-white rounded-2xl overflow-hidden border border-slate-200/70 hover:border-[#2AA7D3]/30 shadow-[0_4px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_16px_48px_rgba(42,167,211,0.08)] transition-shadow duration-500 flex flex-col h-full"
               >
                 {/* Image */}
-                <Link to={`/projects/${project.id}`} className="block relative h-52 overflow-hidden">
+                <Link href={`/projects/${project.id}`} className="block relative h-52 overflow-hidden">
                   <motion.img
                     src={project.image}
                     alt={project.title}
@@ -79,9 +79,10 @@ const ProjectsSection: React.FC = () => {
                   </span>
 
                   {/* Hover external link icon */}
-                  <Magnet padding={20} disabled={false} magnetStrength={2}>
+                  <Magnet padding={20} strength={2}>
                     <div className="absolute top-4 right-4 h-8 w-8 bg-white/90 backdrop-blur-sm rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0 z-10">
                       <ExternalLink className="h-3.5 w-3.5 text-slate-800" />
+
                     </div>
                   </Magnet>
                 </Link>
@@ -102,7 +103,7 @@ const ProjectsSection: React.FC = () => {
 
                   {/* Title */}
                   <h3 className="text-lg font-extrabold text-slate-900 mb-2.5 tracking-tight group-hover:text-[#2AA7D3] transition-colors duration-300 leading-snug">
-                    <Link to={`/projects/${project.id}`}>{project.title}</Link>
+                    <Link href={`/projects/${project.id}`}>{project.title}</Link>
                   </h3>
 
                   {/* Description */}
@@ -130,7 +131,7 @@ const ProjectsSection: React.FC = () => {
                   {/* CTA */}
                   <div className="pt-4 border-t border-slate-100">
                     <Link
-                      to={`/projects/${project.id}`}
+                      href={`/projects/${project.id}`}
                       className="inline-flex items-center text-xs font-bold text-[#2AA7D3] hover:text-[#0F172A] transition-colors duration-300 gap-1.5"
                     >
                       View Case Study

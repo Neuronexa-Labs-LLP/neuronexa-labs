@@ -1,5 +1,7 @@
+"use client";
+
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 const integrationsList = [
@@ -68,3 +70,4 @@ const HomeIntegrations: React.FC = () => {
 };
 
 export default HomeIntegrations;
+

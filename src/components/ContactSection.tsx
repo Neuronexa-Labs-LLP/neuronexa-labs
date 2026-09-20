@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import { ArrowRight, User, Mail, MessageSquare } from 'lucide-react';
 
@@ -73,19 +75,19 @@ const ContactSection: React.FC = () => {
 
             <div className="space-y-3 text-slate-600 text-xs sm:text-sm max-w-md bg-[#F4F9FC] p-5 sm:p-6 rounded-2xl border border-slate-100 shadow-sm overflow-hidden font-sans">
               <div className="flex justify-between items-center border-b border-slate-200/60 pb-2">
-                <span className="text-slate-400 font-mono text-xs">DIRECT LINE:</span>
+                <span className="text-slate-500 font-mono text-xs">DIRECT LINE:</span>
                 <a href="https://wa.me/9110435020" target="_blank" rel="noopener noreferrer" className="text-[#0F6F94] hover:text-[#2AA7D3] font-bold transition-colors">
                   +91 91104 35020
                 </a>
               </div>
               <div className="flex justify-between items-center border-b border-slate-200/60 pb-2 gap-2">
-                <span className="text-slate-400 font-mono text-xs shrink-0">EMAIL:</span>
+                <span className="text-slate-500 font-mono text-xs shrink-0">EMAIL:</span>
                 <a href="mailto:info@neuronexalabs.com" className="text-[#1E3A5F] hover:text-[#2AA7D3] font-bold truncate transition-colors">
                   info@neuronexalabs.com
                 </a>
               </div>
               <div className="flex justify-between items-center pb-1">
-                <span className="text-slate-400 font-mono text-xs">LOCATION:</span>
+                <span className="text-slate-500 font-mono text-xs">LOCATION:</span>
                 <span className="text-slate-700 font-semibold">India · Global Remote</span>
               </div>
             </div>
@@ -109,9 +111,9 @@ const ContactSection: React.FC = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block px-1">Your Name / Organization</label>
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block px-1">Your Name / Organization</label>
                   <div className="flex items-center bg-[#F8FAFC] border border-slate-200/60 rounded-xl px-4 py-3 shadow-sm focus-within:border-[#2AA7D3] focus-within:ring-2 focus-within:ring-[#2AA7D3]/15 transition-all duration-300">
-                    <User className="w-4 h-4 text-slate-400 mr-3 shrink-0" />
+                    <User className="w-4 h-4 text-slate-500 mr-3 shrink-0" />
                     <input
                       type="text"
                       placeholder="e.g. Rajesh Kumar / Acme Enterprises"
@@ -124,9 +126,9 @@ const ContactSection: React.FC = () => {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block px-1">Work Email or Phone</label>
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block px-1">Work Email or Phone</label>
                   <div className="flex items-center bg-[#F8FAFC] border border-slate-200/60 rounded-xl px-4 py-3 shadow-sm focus-within:border-[#2AA7D3] focus-within:ring-2 focus-within:ring-[#2AA7D3]/15 transition-all duration-300">
-                    <Mail className="w-4 h-4 text-slate-400 mr-3 shrink-0" />
+                    <Mail className="w-4 h-4 text-slate-500 mr-3 shrink-0" />
                     <input
                       type="text"
                       placeholder="e.g. rajesh@enterprise.com"
@@ -139,9 +141,9 @@ const ContactSection: React.FC = () => {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block px-1">Project or Voice Assistant Needs</label>
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block px-1">Project or Voice Assistant Needs</label>
                   <div className="flex items-start bg-[#F8FAFC] border border-slate-200/60 rounded-xl px-4 py-3 shadow-sm focus-within:border-[#2AA7D3] focus-within:ring-2 focus-within:ring-[#2AA7D3]/15 transition-all duration-300">
-                    <MessageSquare className="w-4 h-4 text-slate-400 mr-3 mt-0.5 shrink-0" />
+                    <MessageSquare className="w-4 h-4 text-slate-500 mr-3 mt-0.5 shrink-0" />
                     <textarea
                       placeholder="Tell us about your business, expected call volume, or workflows you'd like to automate..."
                       required
@@ -176,3 +178,4 @@ const ContactSection: React.FC = () => {
 };
 
 export default ContactSection;
+

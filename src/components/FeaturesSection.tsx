@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
@@ -189,3 +191,4 @@ const FeaturesSection: React.FC = () => {
 };
 
 export default FeaturesSection;
+
