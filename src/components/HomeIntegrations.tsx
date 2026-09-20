@@ -36,9 +36,10 @@ const HomeIntegrations: React.FC = () => {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           
           <div>
-            <p className="text-[13px] font-bold uppercase tracking-[0.15em] text-brand-navy">
-              Integrations
-            </p>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-navy/10 border border-brand-navy/20 mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-navy animate-pulse" />
+              <span className="text-xs font-bold text-brand-navy uppercase tracking-wider">Integrations</span>
+            </div>
             <h2 className="mt-4 max-w-md text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
               Keep the tools you already love. We just make them effortlessly smart.
             </h2>

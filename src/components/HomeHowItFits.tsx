@@ -21,6 +21,10 @@ const HomeHowItFits: React.FC = () => {
           <div 
             className="w-full lg:w-1/2"
           >
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-navy/10 border border-brand-navy/20 mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-navy animate-pulse" />
+              <span className="text-xs font-bold text-brand-navy uppercase tracking-wider">Seamless Fit</span>
+            </div>
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
               It Just Works With Your Business
             </h2>

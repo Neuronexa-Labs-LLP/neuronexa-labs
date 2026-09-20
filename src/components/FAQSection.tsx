@@ -75,8 +75,12 @@ const FAQSection: React.FC<FAQSectionProps> = ({
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center mx-auto max-w-2xl mb-12 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-[1.2]">
+        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-navy/10 border border-brand-navy/20 mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-navy animate-pulse" />
+            <span className="text-xs font-bold text-brand-navy uppercase tracking-wider">FAQs</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-[42px] font-extrabold text-slate-900 mb-6 tracking-tight leading-[1.2]">
             {title}
           </h2>
         </div>

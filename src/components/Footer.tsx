@@ -28,8 +28,8 @@ const Footer: React.FC = () => {
           
           {/* Brand Column */}
           <div className="md:col-span-12 lg:col-span-4">
-            <Link href="/" className="inline-block mb-6">
-              <img src={logo.src} alt="NeuroNexa Labs" width={200} height={56} className="h-12 md:h-14 object-contain brightness-0 invert opacity-90 hover:opacity-100 transition-opacity" />
+            <Link href="/" className="inline-block mb-4">
+              <img src={logo.src} alt="NeuroNexa Labs" width={100} height={76} className="object-contain brightness-0 invert opacity-90 hover:opacity-100 transition-opacity" />
             </Link>
             <p className="text-slate-400 leading-relaxed mb-8 max-w-sm text-sm">
               We build intelligent AI voice assistants and custom web applications that automate your daily tasks. Save time and grow your business without the manual work.

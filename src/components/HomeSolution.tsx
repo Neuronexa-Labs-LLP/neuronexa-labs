@@ -89,9 +89,9 @@ const HomeSolution: React.FC = () => {
         <div
           className="text-center max-w-3xl mx-auto mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0F6F94]/[0.08] border border-brand-navy/20 mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-navy/10 border border-brand-navy/20 mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-navy animate-pulse" />
-            <span className="text-xs font-bold text-[#0F6F94] uppercase tracking-wider">Core Capabilities</span>
+            <span className="text-xs font-bold text-brand-navy uppercase tracking-wider">Core Capabilities</span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-[42px] font-extrabold text-slate-900 mb-5 leading-tight tracking-tight">
             What Our AI Does For You
