@@ -20,14 +20,14 @@ const CTASection: React.FC = () => {
           className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200/90 bg-gradient-to-b from-slate-50/90 via-white to-sky-50/40 p-8 sm:p-12 md:p-16 text-center shadow-[0_8px_30px_rgba(15,111,148,0.06)]"
         >
           {/* Subtle Ambient Background Accents */}
-          <div className="absolute top-0 right-1/4 w-72 h-72 bg-[#2AA7D3]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-1/4 w-72 h-72 bg-brand-navy/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-[#0F6F94]/10 rounded-full blur-3xl pointer-events-none" />
           
           <div className="relative z-10 max-w-2xl mx-auto">
             {/* Top Pill Badges */}
             <div className="flex flex-wrap items-center justify-center gap-2 mb-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-200/80 text-[#0F6F94] text-xs font-semibold uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5 text-[#2AA7D3]" />
+                <Sparkles className="w-3.5 h-3.5 text-brand-navy" />
                 Ready to automate?
               </div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-700 text-xs font-semibold uppercase tracking-wider">

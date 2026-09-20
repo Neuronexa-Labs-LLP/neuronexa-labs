@@ -25,7 +25,7 @@ const AboutSection: React.FC = () => {
         <motion.div 
           animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/4 -left-20 h-[400px] w-[400px] rounded-full bg-[#2AA7D3]/10 blur-[120px] z-0" 
+          className="absolute top-1/4 -left-20 h-[400px] w-[400px] rounded-full bg-brand-navy/10 blur-[120px] z-0" 
         />
         <motion.div 
           animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.5, 0.2] }}
@@ -57,11 +57,11 @@ const AboutSection: React.FC = () => {
           <motion.div
             animate={{ scale: [1, 1.08, 1], opacity: [1, 0.8, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#2AA7D3]/20 text-slate-800 px-4 py-1.5 rounded-full text-xs font-bold shadow-sm shadow-[#2AA7D3]/5"
+            className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-brand-navy/20 text-slate-800 px-4 py-1.5 rounded-full text-xs font-bold shadow-sm shadow-brand-navy/5"
           >
-            <span className="w-2 h-2 rounded-full bg-[#2AA7D3] animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-brand-navy animate-pulse" />
             About Neuronexa Labs
-            <Sparkles className="h-3 w-3 text-[#2AA7D3] ml-1" />
+            <Sparkles className="h-3 w-3 text-brand-navy ml-1" />
           </motion.div>
         </div>
 
@@ -118,7 +118,7 @@ const AboutSection: React.FC = () => {
                 key={idx}
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4 + idx, repeat: Infinity, ease: "easeInOut" }}
-                className={`flex items-start gap-3 p-4 rounded-xl border border-slate-200/60 ${item.bg} backdrop-blur-sm hover:shadow-md hover:border-[#2AA7D3]/30 transition-shadow group`}
+                className={`flex items-start gap-3 p-4 rounded-xl border border-slate-200/60 ${item.bg} backdrop-blur-sm hover:shadow-md hover:border-brand-navy/30 transition-shadow group`}
               >
                 <div className="shrink-0 mt-0.5">
                   <Magnet padding={30}>
@@ -167,18 +167,18 @@ const AboutSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="group relative bg-white/80 backdrop-blur-sm border border-slate-200/60 rounded-3xl p-8 hover:border-[#2AA7D3]/40 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out overflow-hidden"
+              className="group relative bg-white/80 backdrop-blur-sm border border-slate-200/60 rounded-3xl p-8 hover:border-brand-navy/40 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out overflow-hidden"
             >
               {/* Glow hover effect */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-[#2AA7D3]/5 via-transparent to-purple-500/5 rounded-3xl pointer-events-none" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-brand-navy/5 via-transparent to-purple-500/5 rounded-3xl pointer-events-none" />
 
-              <h3 className="text-xl font-extrabold text-slate-900 mb-3 tracking-tight group-hover:text-[#2AA7D3] transition-colors duration-300">
+              <h3 className="text-xl font-extrabold text-slate-900 mb-3 tracking-tight group-hover:text-brand-navy transition-colors duration-300">
                 {feature.title}
               </h3>
               <p className="text-slate-700 text-sm leading-relaxed font-medium">{feature.desc}</p>
 
               {/* Decorative corner line */}
-              <div className="absolute bottom-4 right-4 w-12 h-12 border-r-2 border-b-2 border-[#2AA7D3]/20 rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute bottom-4 right-4 w-12 h-12 border-r-2 border-b-2 border-brand-navy/20 rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </motion.div>
           ))}
         </div>
@@ -198,7 +198,7 @@ const AboutSection: React.FC = () => {
             { label: 'Direct Engineer Support', value: '100%' },
           ].map((stat, i) => (
             <div key={i} className="text-center">
-              <p className="text-2xl md:text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#2AA7D3] to-blue-600">
+              <p className="text-2xl md:text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-brand-navy to-blue-600">
                 {stat.value}
               </p>
               <p className="text-xs font-bold text-slate-700 uppercase tracking-wider mt-1">

@@ -14,7 +14,7 @@ const ProjectsSection: React.FC = () => {
       {/* Subtle background texture */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
-        <div className="absolute top-1/4 -left-32 h-[500px] w-[500px] rounded-full bg-[#2AA7D3]/[0.03] blur-[100px]" />
+        <div className="absolute top-1/4 -left-32 h-[500px] w-[500px] rounded-full bg-brand-navy/[0.03] blur-[100px]" />
         <div className="absolute bottom-1/4 -right-32 h-[400px] w-[400px] rounded-full bg-blue-500/[0.03] blur-[100px]" />
       </div>
 
@@ -26,9 +26,9 @@ const ProjectsSection: React.FC = () => {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 bg-white border border-[#2AA7D3]/20 text-slate-900 px-4 py-1.5 rounded-full text-xs font-bold mb-5 shadow-sm"
+            className="inline-flex items-center gap-2 bg-white border border-brand-navy/20 text-slate-900 px-4 py-1.5 rounded-full text-xs font-bold mb-5 shadow-sm"
           >
-            <Layers className="h-3 w-3 text-[#2AA7D3]" />
+            <Layers className="h-3 w-3 text-brand-navy" />
             Our Portfolio
           </motion.div>
 
@@ -59,7 +59,7 @@ const ProjectsSection: React.FC = () => {
                 variants={{ hover: { y: -10, scale: 1.02 } }}
                 viewport={{ once: true, margin: "-5%" }}
                 transition={{ type: "spring", stiffness: 200, duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: idx * 0.06 }}
-                className="bg-white rounded-2xl overflow-hidden border border-slate-200/70 hover:border-[#2AA7D3]/30 shadow-[0_4px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_16px_48px_rgba(42,167,211,0.08)] transition-shadow duration-500 flex flex-col h-full"
+                className="bg-white rounded-2xl overflow-hidden border border-slate-200/70 hover:border-brand-navy/30 shadow-[0_4px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_16px_48px_rgba(42,167,211,0.08)] transition-shadow duration-500 flex flex-col h-full"
               >
                 {/* Image */}
                 <Link href={`/projects/${project.id}`} className="block relative h-52 overflow-hidden">
@@ -102,7 +102,7 @@ const ProjectsSection: React.FC = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-extrabold text-slate-900 mb-2.5 tracking-tight group-hover:text-[#2AA7D3] transition-colors duration-300 leading-snug">
+                  <h3 className="text-lg font-extrabold text-slate-900 mb-2.5 tracking-tight group-hover:text-brand-navy transition-colors duration-300 leading-snug">
                     <Link href={`/projects/${project.id}`}>{project.title}</Link>
                   </h3>
 
@@ -116,7 +116,7 @@ const ProjectsSection: React.FC = () => {
                     {project.techStack.slice(0, 3).map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-0.5 text-[9px] font-bold text-[#2AA7D3] bg-[#2AA7D3]/[0.06] rounded-md"
+                        className="px-2 py-0.5 text-[9px] font-bold text-brand-navy bg-brand-navy/[0.06] rounded-md"
                       >
                         {tech}
                       </span>
@@ -132,7 +132,7 @@ const ProjectsSection: React.FC = () => {
                   <div className="pt-4 border-t border-slate-100">
                     <Link
                       href={`/projects/${project.id}`}
-                      className="inline-flex items-center text-xs font-bold text-[#2AA7D3] hover:text-[#0F172A] transition-colors duration-300 gap-1.5"
+                      className="inline-flex items-center text-xs font-bold text-brand-navy hover:text-[#0F172A] transition-colors duration-300 gap-1.5"
                     >
                       View Case Study
                       <motion.div variants={{ hover: { x: 5 } }} transition={{ type: "spring" }}>
@@ -174,7 +174,7 @@ const ProjectsSection: React.FC = () => {
             href="/#contact"
             whileHover={{ scale: 1.05, y: -3 }}
             whileTap={{ scale: 0.96 }}
-            className="bg-[#0F172A] hover:bg-[#2AA7D3] text-white px-6 py-3 rounded-xl text-sm font-bold transition-colors duration-300 flex items-center gap-2 shadow-sm cursor-pointer"
+            className="bg-[#0F172A] hover:bg-brand-navy text-white px-6 py-3 rounded-xl text-sm font-bold transition-colors duration-300 flex items-center gap-2 shadow-sm cursor-pointer"
           >
             Start Your Project <ArrowRight className="h-4 w-4" />
           </motion.a>

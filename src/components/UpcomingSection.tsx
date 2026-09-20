@@ -74,11 +74,11 @@ const UpcomingSection: React.FC = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#2AA7D3]/20 text-slate-800 px-4 py-1.5 rounded-full text-xs font-bold shadow-sm shadow-[#2AA7D3]/5"
+            className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-brand-navy/20 text-slate-800 px-4 py-1.5 rounded-full text-xs font-bold shadow-sm shadow-brand-navy/5"
           >
-            <span className="w-2 h-2 rounded-full bg-[#2AA7D3] animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-brand-navy animate-pulse" />
             Roadmap
-            <Calendar className="h-3 w-3 text-[#2AA7D3] ml-1" />
+            <Calendar className="h-3 w-3 text-brand-navy ml-1" />
           </motion.div>
 
           <motion.h2
@@ -89,7 +89,7 @@ const UpcomingSection: React.FC = () => {
             className="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mt-4"
           >
             Expanding the boundaries of{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#2AA7D3] via-blue-500 to-purple-500">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-navy via-blue-500 to-purple-500">
               Voice AI
             </span>
           </motion.h2>
@@ -113,7 +113,7 @@ const UpcomingSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="relative flex-shrink-0 snap-start w-[280px] md:w-auto bg-white/90 backdrop-blur-sm border border-slate-200/60 rounded-3xl p-7 shadow-sm transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-[#2AA7D3]/30 group flex flex-col"
+              className="relative flex-shrink-0 snap-start w-[280px] md:w-auto bg-white/90 backdrop-blur-sm border border-slate-200/60 rounded-3xl p-7 shadow-sm transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-brand-navy/30 group flex flex-col"
             >
 
               {/* Header: timeline pill + icon */}
@@ -129,9 +129,9 @@ const UpcomingSection: React.FC = () => {
               </div>
 
               {/* Title with hover arrow */}
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#2AA7D3] transition-colors duration-300 flex items-center gap-1.5">
+              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-brand-navy transition-colors duration-300 flex items-center gap-1.5">
                 {feature.title}
-                <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 text-[#2AA7D3]" />
+                <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 text-brand-navy" />
               </h3>
 
               {/* Description */}
@@ -140,11 +140,11 @@ const UpcomingSection: React.FC = () => {
               </p>
 
               {/* Decorative corner element */}
-              <div className="absolute bottom-4 right-4 w-10 h-10 border-r-2 border-b-2 border-[#2AA7D3]/10 rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute bottom-4 right-4 w-10 h-10 border-r-2 border-b-2 border-brand-navy/10 rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* Timeline indicator dot – for visual connection */}
               <div className="mt-5 flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#2AA7D3]/40 group-hover:bg-[#2AA7D3] transition-colors duration-300" />
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-navy/40 group-hover:bg-brand-navy transition-colors duration-300" />
                 <span className="text-[10px] font-bold text-slate-800 uppercase tracking-wider">
                   Coming soon
                 </span>

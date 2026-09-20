@@ -68,9 +68,9 @@ const Footer: React.FC = () => {
                 <li key={item.label}>
                   <a
                     href={item.href}
-                    className="text-slate-400 hover:text-[#2AA7D3] transition-colors text-sm flex items-center gap-2 group"
+                    className="text-slate-400 hover:text-brand-navy transition-colors text-sm flex items-center gap-2 group"
                   >
-                    <span className="text-slate-600 group-hover:text-[#2AA7D3] transition-colors font-mono">›</span>
+                    <span className="text-slate-600 group-hover:text-brand-navy transition-colors font-mono">›</span>
                     {item.label}
                   </a>
                 </li>
@@ -86,9 +86,9 @@ const Footer: React.FC = () => {
                 <li key={item.label}>
                   <a
                     href={item.href}
-                    className="text-slate-400 hover:text-[#2AA7D3] transition-colors text-sm flex items-center gap-2 group truncate"
+                    className="text-slate-400 hover:text-brand-navy transition-colors text-sm flex items-center gap-2 group truncate"
                   >
-                    <span className="text-slate-600 group-hover:text-[#2AA7D3] transition-colors font-mono shrink-0">›</span>
+                    <span className="text-slate-600 group-hover:text-brand-navy transition-colors font-mono shrink-0">›</span>
                     <span className="truncate">{item.label}</span>
                   </a>
                 </li>
@@ -105,8 +105,8 @@ const Footer: React.FC = () => {
                   href="tel:+919110435020" 
                   className="flex items-start gap-3 text-slate-400 hover:text-white transition-colors group"
                 >
-                  <div className="mt-0.5 p-2 rounded-lg bg-white/5 group-hover:bg-[#2AA7D3]/10 transition-colors">
-                    <Phone className="h-4 w-4 text-[#2AA7D3]" />
+                  <div className="mt-0.5 p-2 rounded-lg bg-white/5 group-hover:bg-brand-navy/10 transition-colors">
+                    <Phone className="h-4 w-4 text-brand-navy" />
                   </div>
                   <div>
                     <p className="text-xs text-slate-400 mb-0.5">Call Us</p>
@@ -119,8 +119,8 @@ const Footer: React.FC = () => {
                   href="mailto:info@neuronexalabs.com" 
                   className="flex items-start gap-3 text-slate-400 hover:text-white transition-colors group"
                 >
-                  <div className="mt-0.5 p-2 rounded-lg bg-white/5 group-hover:bg-[#2AA7D3]/10 transition-colors">
-                    <Mail className="h-4 w-4 text-[#2AA7D3]" />
+                  <div className="mt-0.5 p-2 rounded-lg bg-white/5 group-hover:bg-brand-navy/10 transition-colors">
+                    <Mail className="h-4 w-4 text-brand-navy" />
                   </div>
                   <div>
                     <p className="text-xs text-slate-400 mb-0.5">Email Us</p>

@@ -36,7 +36,7 @@ const HomeIntegrations: React.FC = () => {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           
           <div>
-            <p className="text-[13px] font-bold uppercase tracking-[0.15em] text-[#2AA7D3]">
+            <p className="text-[13px] font-bold uppercase tracking-[0.15em] text-brand-navy">
               Integrations
             </p>
             <h2 className="mt-4 max-w-md text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
@@ -56,7 +56,7 @@ const HomeIntegrations: React.FC = () => {
             {integrationsList.map((item) => (
               <span 
                 key={item} 
-                className="rounded-xl border border-slate-200/80 bg-white px-5 py-3 text-[14px] sm:text-[15px] font-semibold text-slate-700 shadow-sm hover:border-[#2AA7D3]/40 hover:shadow-md hover:-translate-y-0.5 transition-all cursor-default"
+                className="rounded-xl border border-slate-200/80 bg-white px-5 py-3 text-[14px] sm:text-[15px] font-semibold text-slate-700 shadow-sm hover:border-brand-navy/40 hover:shadow-md hover:-translate-y-0.5 transition-all cursor-default"
               >
                 {item}
               </span>

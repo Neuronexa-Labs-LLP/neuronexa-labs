@@ -61,7 +61,7 @@ const ServicesSection: React.FC = () => {
       {/* Dynamic Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
-        <div className="absolute -top-40 right-10 h-[500px] w-[500px] rounded-full bg-[#2AA7D3]/[0.04] blur-[120px] z-0" />
+        <div className="absolute -top-40 right-10 h-[500px] w-[500px] rounded-full bg-brand-navy/[0.04] blur-[120px] z-0" />
         <div className="absolute -bottom-20 left-10 h-[400px] w-[400px] rounded-full bg-blue-600/[0.04] blur-[100px] z-0" />
       </div>
 
@@ -73,9 +73,9 @@ const ServicesSection: React.FC = () => {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 bg-white border border-[#2AA7D3]/20 text-slate-900 px-4 py-1.5 rounded-full text-xs font-bold mb-6 shadow-sm"
+            className="inline-flex items-center gap-2 bg-white border border-brand-navy/20 text-slate-900 px-4 py-1.5 rounded-full text-xs font-bold mb-6 shadow-sm"
           >
-            <span className="w-2 h-2 rounded-full bg-[#2AA7D3] animate-pulse"></span>
+            <span className="w-2 h-2 rounded-full bg-brand-navy animate-pulse"></span>
             What We Do
           </motion.div>
           <AnimatedText 
@@ -101,23 +101,23 @@ const ServicesSection: React.FC = () => {
               className="relative bg-white border border-slate-200/70 rounded-[28px] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_60px_rgba(42,167,211,0.12)] transition-shadow duration-500 group min-w-[300px] md:min-w-0 flex-shrink-0 md:flex-shrink snap-start flex flex-col overflow-hidden"
             >
               {/* Decorative corner element */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#2AA7D3]/5 to-transparent rounded-bl-full z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-brand-navy/5 to-transparent rounded-bl-full z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               
               {/* Icon Container */}
               <div className="flex items-center justify-between mb-8 relative z-10">
                 <Magnet padding={40}>
                   <div className={`h-16 w-16 rounded-[20px] ${service.bg} flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-sm border border-slate-100/50`}>
-                    <service.icon className={`h-7 w-7 text-[#2AA7D3] group-hover:text-blue-600 transition-colors duration-500`} />
+                    <service.icon className={`h-7 w-7 text-brand-navy group-hover:text-blue-600 transition-colors duration-500`} />
                   </div>
                 </Magnet>
-                <span className="text-[10px] font-extrabold uppercase tracking-widest text-slate-400 bg-slate-50 border border-slate-100 px-3 py-1 rounded-full group-hover:border-[#2AA7D3]/30 group-hover:text-[#2AA7D3] group-hover:bg-[#E8F4FA]/50 transition-colors duration-300">
+                <span className="text-[10px] font-extrabold uppercase tracking-widest text-slate-400 bg-slate-50 border border-slate-100 px-3 py-1 rounded-full group-hover:border-brand-navy/30 group-hover:text-brand-navy group-hover:bg-[#E8F4FA]/50 transition-colors duration-300">
                   {service.subtitle}
                 </span>
               </div>
               
               {/* Content */}
               <div className="relative z-10 flex-grow flex flex-col">
-                <h3 className="text-xl font-extrabold text-slate-900 mb-3 group-hover:text-[#2AA7D3] transition-colors duration-300 tracking-tight">
+                <h3 className="text-xl font-extrabold text-slate-900 mb-3 group-hover:text-brand-navy transition-colors duration-300 tracking-tight">
                   {service.title}
                 </h3>
                 <p className="text-slate-600 leading-relaxed text-sm font-medium flex-grow">
@@ -127,7 +127,7 @@ const ServicesSection: React.FC = () => {
                 {/* Bottom CTA */}
                 <motion.div 
                   whileHover="hover"
-                  className="mt-8 pt-5 border-t border-slate-100 flex items-center text-xs font-bold text-[#2AA7D3] gap-1 cursor-pointer"
+                  className="mt-8 pt-5 border-t border-slate-100 flex items-center text-xs font-bold text-brand-navy gap-1 cursor-pointer"
                 >
                   Explore Solution 
                   <motion.div variants={{ hover: { x: 5 } }} transition={{ type: "spring" }}>

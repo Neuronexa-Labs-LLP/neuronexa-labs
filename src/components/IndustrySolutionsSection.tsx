@@ -388,7 +388,7 @@ const IndustrySolutionsSection: React.FC = () => {
             {/* Section Header - Compact Pacing */}
             <div className="text-center mx-auto max-w-3xl mb-3 sm:mb-4">
               <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-sky-50 border border-sky-200/80 text-[#0F6F94] text-xs font-semibold uppercase tracking-wider mb-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-[#2AA7D3]" />
+                <Sparkles className="w-3.5 h-3.5 text-brand-navy" />
                 Industry Solutions &amp; Use Cases
               </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-[1.2]">
@@ -534,7 +534,7 @@ const IndustrySolutionsSection: React.FC = () => {
                     <div className="lg:col-span-5 w-full">
                       <div className="rounded-xl border border-slate-200 bg-slate-900 text-slate-100 p-3 sm:p-3.5 shadow-lg relative overflow-hidden">
                         {/* Ambient Glow */}
-                        <div className="absolute top-0 right-0 w-28 h-28 bg-[#2AA7D3]/10 rounded-full blur-xl pointer-events-none" />
+                        <div className="absolute top-0 right-0 w-28 h-28 bg-brand-navy/10 rounded-full blur-xl pointer-events-none" />
 
                         {/* Dialogue Header */}
                         <div className="flex items-center justify-between pb-1.5 mb-2 border-b border-slate-800">
@@ -557,13 +557,13 @@ const IndustrySolutionsSection: React.FC = () => {
                               className={`p-2 rounded-lg text-xs leading-relaxed ${
                                 turn.speaker === 'Caller'
                                   ? 'bg-slate-800/90 text-slate-200 border border-slate-700/60 ml-0 mr-2'
-                                  : 'bg-[#0F6F94]/30 text-cyan-100 border border-[#2AA7D3]/40 ml-2 mr-0'
+                                  : 'bg-[#0F6F94]/30 text-cyan-100 border border-brand-navy/40 ml-2 mr-0'
                               }`}
                             >
                               <div className="flex items-center justify-between mb-0.5 font-mono text-[9px] uppercase font-bold text-slate-400">
                                 <span>{turn.speaker}</span>
                                 {turn.speaker === 'AI Voice Assistant' && (
-                                  <span className="text-[#2AA7D3] flex items-center gap-1">
+                                  <span className="text-brand-navy flex items-center gap-1">
                                     <span className="w-1 h-1 rounded-full bg-cyan-400"></span>
                                     Neural Voice
                                   </span>

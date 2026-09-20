@@ -50,7 +50,7 @@ const ContactSection: React.FC = () => {
     <section id="contact" className="relative py-12 md:py-16 bg-white overflow-hidden flex items-center justify-center border-t border-slate-100/80">
       {/* Blur Background Glows */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute bottom-0 right-1/4 h-[350px] w-[350px] rounded-full bg-[#2AA7D3]/5 blur-[120px] z-0" />
+        <div className="absolute bottom-0 right-1/4 h-[350px] w-[350px] rounded-full bg-brand-navy/5 blur-[120px] z-0" />
         <div className="absolute top-1/4 left-1/4 h-[300px] w-[300px] rounded-full bg-blue-200/5 blur-[90px] z-0" />
       </div>
 
@@ -60,14 +60,14 @@ const ContactSection: React.FC = () => {
           <div>
             <div className="mb-4">
               <div
-                className="inline-flex items-center gap-2 bg-[#F4F9FC] border border-[#2AA7D3]/20 text-[#0F172A] px-3.5 py-1.5 rounded-full text-xs font-bold shadow-sm"
+                className="inline-flex items-center gap-2 bg-[#F4F9FC] border border-brand-navy/20 text-[#0F172A] px-3.5 py-1.5 rounded-full text-xs font-bold shadow-sm"
               >
-                <span className="w-2 h-2 rounded-full bg-[#2AA7D3]"></span>
+                <span className="w-2 h-2 rounded-full bg-brand-navy"></span>
                 Get in Touch
               </div>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0F2137] mb-6 tracking-tighter leading-none uppercase">
-              Let's <span className="text-[#2AA7D3]">Build.</span>
+              Let's <span className="text-brand-navy">Build.</span>
             </h2>
             <p className="text-lg text-slate-600 font-medium max-w-md mb-8 leading-relaxed">
               Ready to deploy an intelligent AI Voice Assistant or custom workflow? Speak directly with our team — we reply within 24 hrs.
@@ -76,13 +76,13 @@ const ContactSection: React.FC = () => {
             <div className="space-y-3 text-slate-600 text-xs sm:text-sm max-w-md bg-[#F4F9FC] p-5 sm:p-6 rounded-2xl border border-slate-100 shadow-sm overflow-hidden font-sans">
               <div className="flex justify-between items-center border-b border-slate-200/60 pb-2">
                 <span className="text-slate-500 font-mono text-xs">DIRECT LINE:</span>
-                <a href="https://wa.me/9110435020" target="_blank" rel="noopener noreferrer" className="text-[#0F6F94] hover:text-[#2AA7D3] font-bold transition-colors">
+                <a href="https://wa.me/9110435020" target="_blank" rel="noopener noreferrer" className="text-[#0F6F94] hover:text-brand-navy font-bold transition-colors">
                   +91 91104 35020
                 </a>
               </div>
               <div className="flex justify-between items-center border-b border-slate-200/60 pb-2 gap-2">
                 <span className="text-slate-500 font-mono text-xs shrink-0">EMAIL:</span>
-                <a href="mailto:info@neuronexalabs.com" className="text-[#1E3A5F] hover:text-[#2AA7D3] font-bold truncate transition-colors">
+                <a href="mailto:info@neuronexalabs.com" className="text-[#1E3A5F] hover:text-brand-navy font-bold truncate transition-colors">
                   info@neuronexalabs.com
                 </a>
               </div>
@@ -98,7 +98,7 @@ const ContactSection: React.FC = () => {
           <div
             className="bg-white p-8 md:p-10 rounded-[32px] border border-slate-200/60 shadow-[0_20px_60px_rgba(0,0,0,0.06)] relative overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#2AA7D3] rounded-full blur-[120px] opacity-[0.06]"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-navy rounded-full blur-[120px] opacity-[0.06]"></div>
 
             {isSubmitted ? (
               <div className="flex flex-col items-center justify-center text-center py-16">
@@ -112,11 +112,11 @@ const ContactSection: React.FC = () => {
               <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                 <div className="space-y-1.5">
                   <label className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block px-1">Your Name / Organization</label>
-                  <div className="flex items-center bg-[#F8FAFC] border border-slate-200/60 rounded-xl px-4 py-3 shadow-sm focus-within:border-[#2AA7D3] focus-within:ring-2 focus-within:ring-[#2AA7D3]/15 transition-all duration-300">
+                  <div className="flex items-center bg-[#F8FAFC] border border-slate-200/60 rounded-xl px-4 py-3 shadow-sm focus-within:border-brand-navy focus-within:ring-2 focus-within:ring-brand-navy/15 transition-all duration-300">
                     <User className="w-4 h-4 text-slate-500 mr-3 shrink-0" />
                     <input
                       type="text"
-                      placeholder="e.g. Rajesh Kumar / Acme Enterprises"
+                      placeholder="Enter your Name / Organization"
                       required
                       value={formData.name}
                       onChange={e => setFormData({ ...formData, name: e.target.value })}
@@ -127,11 +127,11 @@ const ContactSection: React.FC = () => {
 
                 <div className="space-y-1.5">
                   <label className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block px-1">Work Email or Phone</label>
-                  <div className="flex items-center bg-[#F8FAFC] border border-slate-200/60 rounded-xl px-4 py-3 shadow-sm focus-within:border-[#2AA7D3] focus-within:ring-2 focus-within:ring-[#2AA7D3]/15 transition-all duration-300">
+                  <div className="flex items-center bg-[#F8FAFC] border border-slate-200/60 rounded-xl px-4 py-3 shadow-sm focus-within:border-brand-navy focus-within:ring-2 focus-within:ring-brand-navy/15 transition-all duration-300">
                     <Mail className="w-4 h-4 text-slate-500 mr-3 shrink-0" />
                     <input
                       type="text"
-                      placeholder="e.g. rajesh@enterprise.com"
+                      placeholder="Enter email address"
                       required
                       value={formData.email}
                       onChange={e => setFormData({ ...formData, email: e.target.value })}
@@ -141,8 +141,8 @@ const ContactSection: React.FC = () => {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block px-1">Project or Voice Assistant Needs</label>
-                  <div className="flex items-start bg-[#F8FAFC] border border-slate-200/60 rounded-xl px-4 py-3 shadow-sm focus-within:border-[#2AA7D3] focus-within:ring-2 focus-within:ring-[#2AA7D3]/15 transition-all duration-300">
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block px-1">Message/Enquiry </label>
+                  <div className="flex items-start bg-[#F8FAFC] border border-slate-200/60 rounded-xl px-4 py-3 shadow-sm focus-within:border-brand-navy focus-within:ring-2 focus-within:ring-brand-navy/15 transition-all duration-300">
                     <MessageSquare className="w-4 h-4 text-slate-500 mr-3 mt-0.5 shrink-0" />
                     <textarea
                       placeholder="Tell us about your business, expected call volume, or workflows you'd like to automate..."
@@ -158,7 +158,7 @@ const ContactSection: React.FC = () => {
                 <div>
                   <button
                     disabled={isSubmitting}
-                    className="w-full bg-[#2AA7D3] hover:bg-[#0F6F94] text-white font-bold uppercase tracking-widest py-4 rounded-xl transition-all flex items-center justify-center group shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer"
+                    className="w-full bg-brand-navy hover:bg-[#0F6F94] text-white font-bold uppercase tracking-widest py-4 rounded-xl transition-all flex items-center justify-center group shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer"
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
                     {!isSubmitting && <ArrowRight className="w-4 h-4 ml-3 group-hover:translate-x-2 transition-transform" />}

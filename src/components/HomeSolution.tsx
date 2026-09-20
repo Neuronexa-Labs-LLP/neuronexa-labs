@@ -12,10 +12,10 @@ const solutions = [
     accent: {
       bg: 'bg-sky-50',
       border: 'border-sky-100',
-      iconBg: 'bg-gradient-to-br from-[#0F6F94] to-[#2AA7D3]',
+      iconBg: 'bg-gradient-to-br from-[#0F6F94] to-brand-navy',
       iconText: 'text-white',
       hoverShadow: 'hover:shadow-[0_20px_60px_rgba(15,111,148,0.15)]',
-      hoverBorder: 'hover:border-[#2AA7D3]/40',
+      hoverBorder: 'hover:border-brand-navy/40',
       tagBg: 'bg-sky-100/80',
       tagText: 'text-[#0F6F94]',
     },
@@ -80,7 +80,7 @@ const HomeSolution: React.FC = () => {
     <section id="features" className="py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 relative overflow-hidden">
       {/* Subtle background texture */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#2AA7D3]/[0.03] rounded-full blur-[120px]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-navy/[0.03] rounded-full blur-[120px]" />
         <div className="absolute bottom-0 right-0 w-[500px] h-[300px] bg-emerald-500/[0.03] rounded-full blur-[100px]" />
       </div>
 
@@ -89,8 +89,8 @@ const HomeSolution: React.FC = () => {
         <div
           className="text-center max-w-3xl mx-auto mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0F6F94]/[0.08] border border-[#2AA7D3]/20 mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#2AA7D3] animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0F6F94]/[0.08] border border-brand-navy/20 mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-navy animate-pulse" />
             <span className="text-xs font-bold text-[#0F6F94] uppercase tracking-wider">Core Capabilities</span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-[42px] font-extrabold text-slate-900 mb-5 leading-tight tracking-tight">

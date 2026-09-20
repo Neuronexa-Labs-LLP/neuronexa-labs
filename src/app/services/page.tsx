@@ -31,9 +31,9 @@ export default function ServicesHub() {
           <div className="space-y-20">
             <section>
               <div className="bg-gradient-to-br from-[#0F2137] to-[#0A1626] rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-2xl border border-slate-800">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-[#2AA7D3]/10 rounded-full blur-[100px] pointer-events-none" />
+                <div className="absolute top-0 right-0 w-96 h-96 bg-brand-navy/10 rounded-full blur-[100px] pointer-events-none" />
                 <div className="relative z-10 max-w-2xl">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2AA7D3]/20 border border-[#2AA7D3]/30 text-cyan-400 text-xs font-bold uppercase tracking-wider mb-6">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-navy/20 border border-brand-navy/30 text-cyan-400 text-xs font-bold uppercase tracking-wider mb-6">
                     <Mic className="w-3.5 h-3.5" />
                     Flagship Product
                   </div>
@@ -45,7 +45,7 @@ export default function ServicesHub() {
                   </p>
                   <Link 
                     href="/services/ai-voice-agent"
-                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#2AA7D3] hover:bg-[#228cb2] text-white font-bold transition-colors"
+                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-navy hover:bg-[#228cb2] text-white font-bold transition-colors"
                   >
                     Explore Voice AI
                     <ArrowRight className="w-4 h-4" />
@@ -84,7 +84,7 @@ export default function ServicesHub() {
                           <p className="text-sm text-slate-600 leading-relaxed mb-6 flex-1">
                             {service.shortDesc}
                           </p>
-                          <div className="inline-flex items-center gap-2 text-sm font-bold text-[#2AA7D3] mt-auto">
+                          <div className="inline-flex items-center gap-2 text-sm font-bold text-brand-navy mt-auto">
                             Read More
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                           </div>

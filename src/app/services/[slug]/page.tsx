@@ -78,7 +78,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
         {/* HERO SECTION */}
         <section className="relative bg-white border-b border-slate-200/80 overflow-hidden">
           {/* Background decorative elements */}
-          <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-[#2AA7D3]/10 blur-3xl opacity-50" />
+          <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-navy/10 blur-3xl opacity-50" />
           <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-[#0F6F94]/5 blur-3xl opacity-50" />
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 relative z-10">
@@ -94,7 +94,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
               
               {/* Left Text */}
               <div className="max-w-2xl">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2AA7D3]/10 border border-[#2AA7D3]/20 text-[#0F6F94] text-xs font-bold uppercase tracking-wider mb-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-navy/10 border border-brand-navy/20 text-[#0F6F94] text-xs font-bold uppercase tracking-wider mb-6">
                   <Zap className="w-3.5 h-3.5" />
                   {service.category}
                 </div>
@@ -147,10 +147,10 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
                     prose-headings:font-extrabold prose-headings:tracking-tight prose-headings:text-slate-900
                     prose-h2:text-3xl sm:prose-h2:text-4xl prose-h2:mt-2 prose-h2:mb-6
                     prose-h3:text-2xl sm:prose-h3:text-3xl prose-h3:mt-10 prose-h3:mb-5
-                    prose-p:text-slate-600 prose-p:leading-relaxed prose-p:mb-6
-                    prose-a:text-[#2AA7D3] prose-a:no-underline hover:prose-a:underline
-                    prose-li:text-slate-600 prose-li:my-3 prose-li:marker:text-[#2AA7D3]
-                    prose-strong:text-slate-800"
+                    prose-p:text-slate-700 prose-p:leading-relaxed prose-p:mb-6
+                    prose-a:text-brand-navy prose-a:font-bold prose-a:no-underline hover:prose-a:underline
+                    prose-li:text-slate-700 prose-li:my-3 prose-li:marker:text-brand-navy
+                    prose-strong:text-brand-navy prose-strong:font-bold"
                   dangerouslySetInnerHTML={{ __html: service.content }}
                 />
               </div>
@@ -186,7 +186,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
                       'Security & Compliance Review'
                     ].map((item, i) => (
                       <li key={i} className="flex items-center gap-3 text-sm font-medium text-slate-100">
-                        <CheckCircle2 className="w-4 h-4 text-[#2AA7D3]" />
+                        <CheckCircle2 className="w-4 h-4 text-cyan-400" />
                         {item}
                       </li>
                     ))}

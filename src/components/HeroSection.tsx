@@ -43,10 +43,10 @@ const NeuronexaHero: React.FC = () => {
           <div className="flex-1 text-left relative z-20">
             {/* Header Chips */}
             <div
-              className="hero-anim hero-fade inline-flex items-center gap-2 bg-white/90 border border-[#2AA7D3]/30 text-slate-900 px-3.5 py-1.5 rounded-full text-xs font-bold mb-5 shadow-xs"
+              className="hero-anim hero-fade inline-flex items-center gap-2 bg-white/90 border border-brand-navy/30 text-slate-900 px-3.5 py-1.5 rounded-full text-xs font-bold mb-5 shadow-xs"
               style={{ animationDelay: '0ms' }}
             >
-              <span className="w-2 h-2 rounded-full bg-[#2AA7D3] animate-pulse"></span>
+              <span className="w-2 h-2 rounded-full bg-brand-navy animate-pulse"></span>
               <span className="text-[#0F6F94] font-bold">Enterprise AI Voice Assistant</span>
             </div>
 
@@ -56,7 +56,7 @@ const NeuronexaHero: React.FC = () => {
               style={{ animationDelay: '150ms' }}
             >
               Enterprise AI Automation &amp;{' '}
-              <span className="bg-gradient-to-r from-[#0F6F94] via-[#2AA7D3] to-sky-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-brand-navy via-cyan-600 to-sky-400 bg-clip-text text-transparent">
                 Voice Solutions
               </span>{' '}
               for Scaling Businesses
@@ -80,7 +80,7 @@ const NeuronexaHero: React.FC = () => {
                 Instant Voice Response
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white border border-slate-200/90 text-xs font-semibold text-slate-700 shadow-xs">
-                <Headphones className="w-3.5 h-3.5 text-[#2AA7D3]" />
+                <Headphones className="w-3.5 h-3.5 text-brand-navy" />
                 Warm Vernacular Accents
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white border border-slate-200/90 text-xs font-semibold text-slate-700 shadow-xs">
@@ -102,14 +102,14 @@ const NeuronexaHero: React.FC = () => {
                 href="https://wa.me/9110435020"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#0F6F94] to-[#2AA7D3] hover:from-[#0c5977] hover:to-[#228cb2] hover:scale-105 hover:-translate-y-0.5 active:scale-95 text-white px-6 py-3.5 rounded-xl text-sm font-bold shadow-md shadow-[#0F6F94]/20 transition-all duration-200 cursor-pointer"
+                className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#0F6F94] to-brand-navy hover:from-[#0c5977] hover:to-[#228cb2] hover:scale-105 hover:-translate-y-0.5 active:scale-95 text-white px-6 py-3.5 rounded-xl text-sm font-bold shadow-md shadow-[#0F6F94]/20 transition-all duration-200 cursor-pointer"
               >
                 Schedule Live Demo
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
                 href="#flow"
-                className="inline-flex items-center justify-center gap-2 border border-slate-300 hover:border-[#2AA7D3] text-slate-700 bg-white/90 hover:text-[#0F172A] hover:scale-105 hover:-translate-y-0.5 active:scale-95 px-6 py-3.5 rounded-xl text-sm font-semibold transition-all duration-200 shadow-xs hover:bg-slate-50 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 border border-slate-300 hover:border-brand-navy text-slate-700 bg-white/90 hover:text-[#0F172A] hover:scale-105 hover:-translate-y-0.5 active:scale-95 px-6 py-3.5 rounded-xl text-sm font-semibold transition-all duration-200 shadow-xs hover:bg-slate-50 cursor-pointer"
               >
                 View System Architecture
               </a>
@@ -139,7 +139,7 @@ const NeuronexaHero: React.FC = () => {
               <div className="bg-gradient-to-b from-[#0B1528] via-[#0F1E36] to-[#0A1424] rounded-[26px] p-5 sm:p-6 border border-slate-700/40 relative overflow-hidden text-white shadow-inner">
                 
                 {/* Subtle radial ambient glows */}
-                <div className="absolute -top-12 -right-12 h-48 w-48 rounded-full bg-[#2AA7D3]/15 blur-[60px] pointer-events-none" />
+                <div className="absolute -top-12 -right-12 h-48 w-48 rounded-full bg-brand-navy/15 blur-[60px] pointer-events-none" />
                 <div className="absolute bottom-0 -left-10 h-36 w-36 rounded-full bg-emerald-500/10 blur-[50px] pointer-events-none" />
 
                 <div className="relative z-10 flex flex-col gap-3.5">
@@ -156,8 +156,8 @@ const NeuronexaHero: React.FC = () => {
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#2AA7D3]/15 border border-[#2AA7D3]/30 text-[10px] font-mono font-bold text-cyan-300">
-                      <Zap className="w-3 h-3 text-[#2AA7D3]" />
+                    <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-brand-navy/15 border border-brand-navy/30 text-[10px] font-mono font-bold text-cyan-300">
+                      <Zap className="w-3 h-3 text-brand-navy" />
                       <span>Real-Time Response</span>
                     </div>
                   </div>
@@ -167,7 +167,7 @@ const NeuronexaHero: React.FC = () => {
                     <div className="flex items-center gap-3">
                       {/* Avatar with subtle ring */}
                       <div className="relative shrink-0">
-                        <div className="h-11 w-11 rounded-full bg-gradient-to-br from-[#2AA7D3] to-[#0F6F94] flex items-center justify-center text-white font-extrabold text-sm shadow-[0_0_20px_rgba(42,167,211,0.35)] border-2 border-white/20">
+                        <div className="h-11 w-11 rounded-full bg-gradient-to-br from-brand-navy to-[#0F6F94] flex items-center justify-center text-white font-extrabold text-sm shadow-[0_0_20px_rgba(42,167,211,0.35)] border-2 border-white/20">
                           RK
                         </div>
                         <span className="absolute -bottom-0.5 -right-0.5 h-3.5 w-3.5 rounded-full bg-emerald-500 border-2 border-[#0B1528] flex items-center justify-center">
@@ -205,14 +205,14 @@ const NeuronexaHero: React.FC = () => {
                   {/* Audio Waveform Equalizer */}
                   <div className="flex items-center justify-between px-1">
                     <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                      <Headphones className="w-3 h-3 text-[#2AA7D3]" />
+                      <Headphones className="w-3 h-3 text-brand-navy" />
                       Neural Voice Streaming
                     </span>
                     <div className="flex items-end gap-[3px] h-4">
                       {[4, 7, 12, 16, 13, 8, 15, 18, 14, 9, 12, 16, 10, 5].map((h, i) => (
                         <div
                           key={i}
-                          className="w-[3px] rounded-full bg-gradient-to-t from-[#0F6F94] to-[#2AA7D3]"
+                          className="w-[3px] rounded-full bg-gradient-to-t from-[#0F6F94] to-brand-navy"
                           style={{
                             height: `${h}px`,
                             animation: `pulse ${0.7 + (i % 5) * 0.15}s ease-in-out infinite alternate`
@@ -233,7 +233,7 @@ const NeuronexaHero: React.FC = () => {
                     </div>
 
                     {/* AI Speech Bubble */}
-                    <div className="p-2.5 rounded-xl bg-[#0F6F94]/25 border border-[#2AA7D3]/35">
+                    <div className="p-2.5 rounded-xl bg-[#0F6F94]/25 border border-brand-navy/35">
                       <div className="flex items-center justify-between mb-1">
                         <span className="text-[10px] font-bold text-cyan-300 flex items-center gap-1">
                           <Sparkles className="w-3 h-3 text-cyan-400" />

@@ -15,7 +15,7 @@ export default function ProductDetailClient({ project }: { project: ProjectDetai
       {/* Premium Header Banner Area */}
       <div className="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden bg-slate-900 border-b border-slate-800">
           {/* Background glow effects */}
-          <div className="absolute top-0 left-1/4 h-[300px] w-[300px] rounded-full bg-[#2AA7D3]/10 blur-[100px]" />
+          <div className="absolute top-0 left-1/4 h-[300px] w-[300px] rounded-full bg-brand-navy/10 blur-[100px]" />
           <div className="absolute bottom-0 right-1/4 h-[250px] w-[250px] rounded-full bg-blue-500/10 blur-[80px]" />
 
           <div className="absolute inset-0 opacity-20">
@@ -31,7 +31,7 @@ export default function ProductDetailClient({ project }: { project: ProjectDetai
 
               <motion.div initial="hidden" animate="visible" variants={fadeIn} transition={{ duration: 0.6 }} className="max-w-4xl">
                   <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="bg-[#E8F4FA]/10 text-[#2AA7D3] border border-[#2AA7D3]/20 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider block">
+                    <span className="bg-[#E8F4FA]/10 text-brand-navy border border-brand-navy/20 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider block">
                         {project.category}
                     </span>
                     {project.tags.slice(0, 2).map(tag => (
@@ -97,7 +97,7 @@ export default function ProductDetailClient({ project }: { project: ProjectDetai
                       className="p-6 md:p-8 rounded-[24px] bg-white border border-slate-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.02)]"
                   >
                       <h3 className="text-sm font-bold text-slate-950 mb-4 flex items-center uppercase tracking-wider">
-                          <Server className="w-4 h-4 mr-2 text-[#2AA7D3]" /> Technologies Used
+                          <Server className="w-4 h-4 mr-2 text-brand-navy" /> Technologies Used
                       </h3>
                       <div className="flex flex-wrap gap-1.5">
                           {project.techStack.map(tech => (
@@ -114,7 +114,7 @@ export default function ProductDetailClient({ project }: { project: ProjectDetai
                       className="p-6 md:p-8 rounded-[24px] bg-white border border-slate-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.02)]"
                   >
                       <h3 className="text-sm font-bold text-slate-950 mb-4 flex items-center uppercase tracking-wider">
-                          <BarChart className="w-4 h-4 mr-2 text-[#2AA7D3]" /> Key Outcomes
+                          <BarChart className="w-4 h-4 mr-2 text-brand-navy" /> Key Outcomes
                       </h3>
                       <ul className="space-y-3.5">
                           {project.results.map((result, idx) => (
@@ -134,12 +134,12 @@ export default function ProductDetailClient({ project }: { project: ProjectDetai
                       className="p-6 md:p-8 rounded-[24px] bg-slate-900 border border-slate-800 shadow-xl relative overflow-hidden group text-white"
                   >
                       {/* Subtle Glow background */}
-                      <div className="absolute top-0 right-0 -mt-10 -mr-10 w-32 h-32 bg-[#2AA7D3]/10 rounded-full blur-2xl group-hover:bg-[#2AA7D3]/20 transition-all duration-500"></div>
+                      <div className="absolute top-0 right-0 -mt-10 -mr-10 w-32 h-32 bg-brand-navy/10 rounded-full blur-2xl group-hover:bg-brand-navy/20 transition-all duration-500"></div>
 
                       <h3 className="text-base font-bold mb-2 relative z-10 tracking-tight">Need a custom dashboard like this?</h3>
                       <p className="text-slate-400 mb-6 relative z-10 text-xs font-semibold leading-relaxed">Let's discuss how we can engineer a custom solution tailored for your team.</p>
                       <a href="https://wa.me/9110435020" target="_blank" rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center gap-2 w-full py-3 px-4 bg-[#2AA7D3] hover:bg-[#1890B8] text-white font-bold rounded-xl transition-all duration-300 hover:shadow-lg relative z-10 hover:-translate-y-0.5 cursor-pointer text-xs uppercase tracking-wider">
+                          className="inline-flex items-center justify-center gap-2 w-full py-3 px-4 bg-brand-navy hover:bg-[#1890B8] text-white font-bold rounded-xl transition-all duration-300 hover:shadow-lg relative z-10 hover:-translate-y-0.5 cursor-pointer text-xs uppercase tracking-wider">
                           Let's Discuss <MessageCircle className="h-4 w-4" />
                       </a>
                   </motion.div>

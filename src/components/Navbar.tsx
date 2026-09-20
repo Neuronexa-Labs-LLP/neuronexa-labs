@@ -187,11 +187,11 @@ const Navbar: React.FC = () => {
                             const linkClass = "flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-50 transition-colors group cursor-pointer";
                             const content = (
                               <>
-                                <div className="h-7 w-7 rounded-lg bg-[#EEF8FF] group-hover:bg-[#2AA7D3] flex items-center justify-center shrink-0 transition-colors">
-                                  <item.icon className="h-3.5 w-3.5 text-[#2AA7D3] group-hover:text-white transition-colors" />
+                                <div className="h-7 w-7 rounded-lg bg-[#EEF8FF] group-hover:bg-brand-navy flex items-center justify-center shrink-0 transition-colors">
+                                  <item.icon className="h-3.5 w-3.5 text-brand-navy group-hover:text-white transition-colors" />
                                 </div>
                                 <div>
-                                  <p className="text-[12.5px] font-bold text-slate-800 group-hover:text-[#2AA7D3] transition-colors leading-tight">
+                                  <p className="text-[12.5px] font-bold text-slate-800 group-hover:text-brand-navy transition-colors leading-tight">
                                     {item.label}
                                   </p>
                                   <p className="text-[9.5px] text-slate-400 font-medium mt-0.5 leading-snug">
@@ -238,7 +238,7 @@ const Navbar: React.FC = () => {
                     <a
                       href="/#contact"
                       onClick={() => setServicesOpen(false)}
-                      className="text-[11px] font-bold text-[#2AA7D3] hover:text-[#0F172A] transition-colors cursor-pointer flex items-center gap-1"
+                      className="text-[11px] font-bold text-brand-navy hover:text-[#0F172A] transition-colors cursor-pointer flex items-center gap-1"
                     >
                       Contact Us <ArrowRight className="h-3 w-3" />
                     </a>
@@ -288,11 +288,11 @@ const Navbar: React.FC = () => {
                         onClick={() => setProjectsOpen(false)}
                         className="flex items-start gap-3 p-2 rounded-xl hover:bg-slate-50 transition-colors group cursor-pointer"
                       >
-                        <div className="h-7 w-7 rounded-lg bg-[#EEF8FF] group-hover:bg-[#2AA7D3] flex items-center justify-center shrink-0 transition-colors">
-                          <project.icon className="h-3.5 w-3.5 text-[#2AA7D3] group-hover:text-white transition-colors" />
+                        <div className="h-7 w-7 rounded-lg bg-[#EEF8FF] group-hover:bg-brand-navy flex items-center justify-center shrink-0 transition-colors">
+                          <project.icon className="h-3.5 w-3.5 text-brand-navy group-hover:text-white transition-colors" />
                         </div>
                         <div>
-                          <p className="text-[12.5px] font-bold text-slate-800 group-hover:text-[#2AA7D3] transition-colors leading-tight">
+                          <p className="text-[12.5px] font-bold text-slate-800 group-hover:text-brand-navy transition-colors leading-tight">
                             {project.label}
                           </p>
                           <p className="text-[9.5px] text-slate-400 font-medium mt-0.5 leading-snug">
@@ -307,7 +307,7 @@ const Navbar: React.FC = () => {
                     <a
                       href="/#projects"
                       onClick={() => setProjectsOpen(false)}
-                      className="text-[11px] font-bold text-[#2AA7D3] hover:text-[#0F172A] transition-colors cursor-pointer flex items-center gap-1"
+                      className="text-[11px] font-bold text-brand-navy hover:text-[#0F172A] transition-colors cursor-pointer flex items-center gap-1"
                     >
                       View Portfolio <ArrowRight className="h-3 w-3" />
                     </a>
@@ -413,7 +413,7 @@ const Navbar: React.FC = () => {
                               const mobileContent = (
                                 <>
                                   <div className="h-7 w-7 rounded-lg bg-[#EEF8FF] flex items-center justify-center shrink-0">
-                                    <item.icon className="h-3.5 w-3.5 text-[#2AA7D3]" />
+                                    <item.icon className="h-3.5 w-3.5 text-brand-navy" />
                                   </div>
                                   <span className="text-[13px] font-semibold text-slate-700">{item.label}</span>
                                 </>
@@ -476,7 +476,7 @@ const Navbar: React.FC = () => {
                             className="flex items-center gap-3 px-2 py-2 rounded-xl hover:bg-slate-50 transition-colors cursor-pointer"
                           >
                             <div className="h-7 w-7 rounded-lg bg-[#EEF8FF] flex items-center justify-center shrink-0">
-                              <project.icon className="h-3.5 w-3.5 text-[#2AA7D3]" />
+                              <project.icon className="h-3.5 w-3.5 text-brand-navy" />
                             </div>
                             <span className="text-[13px] font-semibold text-slate-700">{project.label}</span>
                           </Link>

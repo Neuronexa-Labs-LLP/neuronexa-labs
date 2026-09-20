@@ -38,7 +38,7 @@ jobs:
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
 
       - name: Add CNAME file for custom domain
-        run: echo "neuronexalabs.com" > dist/CNAME
+        run: echo "neuronexalabs.com" > out/CNAME
 
       - name: Deploy to GitHub Pages
         env:

@@ -31,7 +31,7 @@ const HomeHowItFits: React.FC = () => {
             <ul className="space-y-4">
               {fits.map((fit, idx) => (
                 <li key={idx} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-[#2AA7D3] shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-6 h-6 text-brand-navy shrink-0 mt-0.5" />
                   <span className="text-slate-700">{fit}</span>
                 </li>
               ))}
@@ -49,10 +49,10 @@ const HomeHowItFits: React.FC = () => {
             className="w-full lg:w-1/2 relative"
           >
             {/* Background glowing orb */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#2AA7D3]/20 rounded-full blur-[80px]" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-brand-navy/20 rounded-full blur-[80px]" />
             
             <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-[#0F2137] to-[#0A1626] p-1 border border-slate-700/50">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#2AA7D3]/10 rounded-full blur-3xl" />
+              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-navy/10 rounded-full blur-3xl" />
               
               <div className="relative bg-[#0F2137]/90 backdrop-blur-xl rounded-[23px] p-6 sm:p-8 flex flex-col gap-5 border border-slate-700/30">
                 {/* Integration Card */}
@@ -74,14 +74,14 @@ const HomeHowItFits: React.FC = () => {
 
                 {/* Call Volume Card */}
                 <div className="bg-slate-800/40 hover:bg-slate-800/60 transition-colors rounded-2xl p-5 border border-slate-700/50 shadow-inner group relative overflow-hidden">
-                  <div className="absolute top-0 left-0 w-1 h-full bg-[#2AA7D3] rounded-l-2xl shadow-[0_0_10px_rgba(42,167,211,0.5)]" />
+                  <div className="absolute top-0 left-0 w-1 h-full bg-brand-navy rounded-l-2xl shadow-[0_0_10px_rgba(42,167,211,0.5)]" />
                   <div className="flex items-center justify-between mb-4 pl-2">
                     <div>
                       <p className="text-white font-bold text-sm sm:text-base tracking-wide flex items-center gap-2">
                         Live Call Volume
                         <span className="relative flex h-2 w-2">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2AA7D3] opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2AA7D3]"></span>
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-navy opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-navy"></span>
                         </span>
                       </p>
                       <p className="text-slate-400 text-xs sm:text-sm font-medium mt-0.5">Handling multiple calls at the same time</p>
@@ -98,7 +98,7 @@ const HomeHowItFits: React.FC = () => {
                       <div 
                         key={i} 
                         style={{ height: `${h}%` }}
-                        className="w-full max-w-[12px] bg-gradient-to-t from-[#0F6F94] to-[#2AA7D3] rounded-sm opacity-80 group-hover:opacity-100 transition-opacity" 
+                        className="w-full max-w-[12px] bg-gradient-to-t from-[#0F6F94] to-brand-navy rounded-sm opacity-80 group-hover:opacity-100 transition-opacity" 
                       />
                     ))}
                   </div>

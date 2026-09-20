@@ -9,7 +9,7 @@
   }
 
   ::selection {
-    background-color: #2AA7D3;
+    background-color: #1E3A5F;
     color: white;
   }
 }
@@ -48,7 +48,7 @@ html {
   background: transparent;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #2AA7D3; /* brand-teal color */
+  background: #1E3A5F; /* brand-navy color */
   border-radius: 9999px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {

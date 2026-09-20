@@ -20,7 +20,7 @@ const FeaturesSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mx-auto max-w-3xl mb-14 sm:mb-20">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-200/80 text-[#0F6F94] text-xs font-semibold uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-[#2AA7D3]" />
+            <Sparkles className="w-3.5 h-3.5 text-brand-navy" />
             What Is Our Solution
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-extrabold text-slate-900 tracking-tight leading-[1.2]">
@@ -45,7 +45,7 @@ const FeaturesSection: React.FC = () => {
               className="flex flex-col items-start text-left"
             >
               <span className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-[#0F6F94] mb-3">
-                <PhoneCall className="w-3.5 h-3.5 text-[#2AA7D3]" />
+                <PhoneCall className="w-3.5 h-3.5 text-brand-navy" />
                 Autonomous Calling
               </span>
               <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4 tracking-tight leading-snug">
@@ -127,7 +127,7 @@ const FeaturesSection: React.FC = () => {
               <div className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-[0_4px_24px_rgba(15,111,148,0.06)] space-y-3 font-mono text-xs">
                 <div className="flex items-center justify-between text-xs font-bold text-slate-600 pb-2 border-b border-slate-200">
                   <span className="flex items-center gap-1.5 text-[#0F6F94]">
-                    <BarChart3 className="w-3.5 h-3.5 text-[#2AA7D3]" />
+                    <BarChart3 className="w-3.5 h-3.5 text-brand-navy" />
                     Campaign Metrics Overview
                   </span>
                   <span className="text-emerald-600 text-[10px]">Real-Time Active</span>

@@ -90,7 +90,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({
                 key={index}
                 className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
                   isOpen
-                    ? 'bg-white border-[#2AA7D3]/60 shadow-sm shadow-[#0F6F94]/5'
+                    ? 'bg-white border-brand-navy/60 shadow-sm shadow-[#0F6F94]/5'
                     : 'bg-white/80 hover:bg-white border-slate-200/80 hover:border-slate-300'
                 }`}
               >
@@ -156,7 +156,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({
               aria-label="LinkedIn"
               className="group inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/10 hover:bg-[#0F6F94] transition-all border border-white/10 shadow-sm"
             >
-              <Linkedin className="w-5 h-5 text-[#2AA7D3] group-hover:text-white transition-colors" />
+              <Linkedin className="w-5 h-5 text-brand-navy group-hover:text-white transition-colors" />
             </a>
             <a
               href="https://www.instagram.com/neuronexa_labs/"
