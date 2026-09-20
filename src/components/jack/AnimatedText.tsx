@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 
@@ -50,3 +52,4 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className = '' }) => 
 };
 
 export default AnimatedText;
+

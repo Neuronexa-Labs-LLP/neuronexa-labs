@@ -1,7 +1,10 @@
+"use client";
+"use client";
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, MessageCircle, ChevronDown, Bot, Globe, ShieldCheck, Smartphone, Megaphone, Phone, CalendarCheck, UserCheck, Headset, LayoutDashboard, FileText, BarChart3, ArrowRight, Layout, Briefcase, MapPin, ShoppingBag, Brain, Zap, Mic, Search, Calendar, LifeBuoy, TrendingUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import logo from '../assets/nnlabs-logo-hd.png';
 
 import { LucideIcon } from 'lucide-react';
@@ -63,7 +66,7 @@ const projectsList: ProjectItem[] = [
 ];
 
 const Navbar: React.FC = () => {
-  const location = useLocation();
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -78,7 +81,7 @@ const Navbar: React.FC = () => {
   const servicesTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const projectsTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const isHomePage = location.pathname === '/';
+  const isHomePage = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -131,15 +134,15 @@ const Navbar: React.FC = () => {
         : 'bg-white/70 backdrop-blur-sm border-slate-100/50 shadow-sm'
     }`}>
       <div className="max-w-7xl mx-auto px-2 md:px-4 flex items-center justify-between h-16 md:h-18">
-        <Link to="/" className="flex items-center">
-          <img src={logo} alt="NeuroNexa Labs" className="h-12 md:h-14 w-auto object-contain cursor-pointer" />
+        <Link href="/" className="flex items-center">
+          <img src={logo.src} alt="NeuroNexa Labs" width={200} height={56} className="h-12 md:h-14 w-auto object-contain cursor-pointer" fetchPriority="high" loading="eager" />
         </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {!isHomePage && (
             <Link
-              to="/"
+              href="/"
               className="text-sm font-semibold text-slate-700 hover:text-brand-teal transition-colors cursor-pointer"
             >
               Home
@@ -154,7 +157,7 @@ const Navbar: React.FC = () => {
             onMouseLeave={handleServicesLeave}
           >
             <Link
-              to="/services"
+              href="/services"
               className="text-sm font-semibold text-slate-700 hover:text-brand-teal transition-colors flex items-center gap-1"
             >
               Services
@@ -184,11 +187,11 @@ const Navbar: React.FC = () => {
                             const linkClass = "flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-50 transition-colors group cursor-pointer";
                             const content = (
                               <>
-                                <div className="h-7 w-7 rounded-lg bg-[#EEF8FF] group-hover:bg-[#2AA7D3] flex items-center justify-center shrink-0 transition-colors">
-                                  <item.icon className="h-3.5 w-3.5 text-[#2AA7D3] group-hover:text-white transition-colors" />
+                                <div className="h-7 w-7 rounded-lg bg-[#EEF8FF] group-hover:bg-brand-navy flex items-center justify-center shrink-0 transition-colors">
+                                  <item.icon className="h-3.5 w-3.5 text-brand-navy group-hover:text-white transition-colors" />
                                 </div>
                                 <div>
-                                  <p className="text-[12.5px] font-bold text-slate-800 group-hover:text-[#2AA7D3] transition-colors leading-tight">
+                                  <p className="text-[12.5px] font-bold text-slate-800 group-hover:text-brand-navy transition-colors leading-tight">
                                     {item.label}
                                   </p>
                                   <p className="text-[9.5px] text-slate-400 font-medium mt-0.5 leading-snug">
@@ -200,7 +203,7 @@ const Navbar: React.FC = () => {
                             return item.link ? (
                               <Link
                                 key={item.label}
-                                to={item.link}
+                                href={item.link}
                                 onClick={() => setServicesOpen(false)}
                                 className={linkClass}
                               >
@@ -235,7 +238,7 @@ const Navbar: React.FC = () => {
                     <a
                       href="/#contact"
                       onClick={() => setServicesOpen(false)}
-                      className="text-[11px] font-bold text-[#2AA7D3] hover:text-[#0F172A] transition-colors cursor-pointer flex items-center gap-1"
+                      className="text-[11px] font-bold text-brand-navy hover:text-[#0F172A] transition-colors cursor-pointer flex items-center gap-1"
                     >
                       Contact Us <ArrowRight className="h-3 w-3" />
                     </a>
@@ -281,15 +284,15 @@ const Navbar: React.FC = () => {
                     {projectsList.map((project) => (
                       <Link
                         key={project.label}
-                        to={project.link}
+                        href={project.link}
                         onClick={() => setProjectsOpen(false)}
                         className="flex items-start gap-3 p-2 rounded-xl hover:bg-slate-50 transition-colors group cursor-pointer"
                       >
-                        <div className="h-7 w-7 rounded-lg bg-[#EEF8FF] group-hover:bg-[#2AA7D3] flex items-center justify-center shrink-0 transition-colors">
-                          <project.icon className="h-3.5 w-3.5 text-[#2AA7D3] group-hover:text-white transition-colors" />
+                        <div className="h-7 w-7 rounded-lg bg-[#EEF8FF] group-hover:bg-brand-navy flex items-center justify-center shrink-0 transition-colors">
+                          <project.icon className="h-3.5 w-3.5 text-brand-navy group-hover:text-white transition-colors" />
                         </div>
                         <div>
-                          <p className="text-[12.5px] font-bold text-slate-800 group-hover:text-[#2AA7D3] transition-colors leading-tight">
+                          <p className="text-[12.5px] font-bold text-slate-800 group-hover:text-brand-navy transition-colors leading-tight">
                             {project.label}
                           </p>
                           <p className="text-[9.5px] text-slate-400 font-medium mt-0.5 leading-snug">
@@ -304,7 +307,7 @@ const Navbar: React.FC = () => {
                     <a
                       href="/#projects"
                       onClick={() => setProjectsOpen(false)}
-                      className="text-[11px] font-bold text-[#2AA7D3] hover:text-[#0F172A] transition-colors cursor-pointer flex items-center gap-1"
+                      className="text-[11px] font-bold text-brand-navy hover:text-[#0F172A] transition-colors cursor-pointer flex items-center gap-1"
                     >
                       View Portfolio <ArrowRight className="h-3 w-3" />
                     </a>
@@ -318,7 +321,7 @@ const Navbar: React.FC = () => {
             link.path ? (
               <Link
                 key={link.id}
-                to={link.path}
+                href={link.path}
                 className="text-sm font-semibold text-slate-700 hover:text-brand-teal transition-colors cursor-pointer"
               >
                 {link.label}
@@ -347,7 +350,7 @@ const Navbar: React.FC = () => {
         {/* Mobile Toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-slate-700 cursor-pointer"
+          className="md:hidden p-2 text-slate-700 cursor-pointer" aria-label="Toggle menu"
         >
           {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -365,7 +368,7 @@ const Navbar: React.FC = () => {
             <div className="px-5 py-6 flex flex-col gap-2">
               {!isHomePage && (
                 <Link
-                  to="/"
+                  href="/"
                   className="text-base font-semibold text-slate-800 hover:text-brand-teal transition-colors py-2.5 cursor-pointer"
                   onClick={() => setIsOpen(false)}
                 >
@@ -376,7 +379,7 @@ const Navbar: React.FC = () => {
               {/* Mobile Services Accordion */}
               <div>
                 <Link
-                  to="/services"
+                  href="/services"
                   onClick={() => setIsOpen(false)}
                   className="w-full flex items-center justify-between text-base font-semibold text-slate-800 hover:text-brand-teal transition-colors py-2.5 cursor-pointer"
                 >
@@ -410,7 +413,7 @@ const Navbar: React.FC = () => {
                               const mobileContent = (
                                 <>
                                   <div className="h-7 w-7 rounded-lg bg-[#EEF8FF] flex items-center justify-center shrink-0">
-                                    <item.icon className="h-3.5 w-3.5 text-[#2AA7D3]" />
+                                    <item.icon className="h-3.5 w-3.5 text-brand-navy" />
                                   </div>
                                   <span className="text-[13px] font-semibold text-slate-700">{item.label}</span>
                                 </>
@@ -418,7 +421,7 @@ const Navbar: React.FC = () => {
                               return item.link ? (
                                 <Link
                                   key={item.label}
-                                  to={item.link}
+                                  href={item.link}
                                   onClick={() => { setIsOpen(false); setMobileServicesOpen(false); }}
                                   className={mobileClass}
                                 >
@@ -468,12 +471,12 @@ const Navbar: React.FC = () => {
                         {projectsList.map((project) => (
                           <Link
                             key={project.label}
-                            to={project.link}
+                            href={project.link}
                             onClick={() => { setIsOpen(false); setMobileProjectsOpen(false); }}
                             className="flex items-center gap-3 px-2 py-2 rounded-xl hover:bg-slate-50 transition-colors cursor-pointer"
                           >
                             <div className="h-7 w-7 rounded-lg bg-[#EEF8FF] flex items-center justify-center shrink-0">
-                              <project.icon className="h-3.5 w-3.5 text-[#2AA7D3]" />
+                              <project.icon className="h-3.5 w-3.5 text-brand-navy" />
                             </div>
                             <span className="text-[13px] font-semibold text-slate-700">{project.label}</span>
                           </Link>
@@ -488,7 +491,7 @@ const Navbar: React.FC = () => {
                 link.path ? (
                   <Link
                     key={link.id}
-                    to={link.path}
+                    href={link.path}
                     className="text-base font-semibold text-slate-800 hover:text-brand-teal transition-colors py-2.5 cursor-pointer"
                     onClick={() => setIsOpen(false)}
                   >
@@ -523,3 +526,4 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+

@@ -1,22 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Kanit:wght@300;400;500;600;700;800;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    @apply bg-white text-gray-900 font-sans antialiased;
-    font-family: 'Inter', sans-serif;
+    @apply bg-white text-gray-900 antialiased;
+    font-family: var(--font-inter), sans-serif;
   }
 
   ::selection {
-    background-color: #2AA7D3;
+    background-color: #1E3A5F;
     color: white;
   }
 }
 
-.font-playfair { font-family: 'Playfair Display', serif; }
+.font-playfair { font-family: var(--font-playfair), serif; }
 
 /* Smooth scroll */
 html {
@@ -50,7 +48,7 @@ html {
   background: transparent;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #2AA7D3; /* brand-teal color */
+  background: #1E3A5F; /* brand-navy color */
   border-radius: 9999px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
@@ -69,7 +67,7 @@ html {
 
 /* Jack 3D Creator Styles */
 .font-kanit {
-  font-family: 'Kanit', sans-serif;
+  font-family: var(--font-kanit), sans-serif;
 }
 
 .hero-heading {
@@ -79,3 +77,33 @@ html {
   background-clip: text;
   color: transparent;
 }
+
+/* CSS Animations for Hero section (replaces heavy JS framer-motion loops) */
+@keyframes hero-blob-1 {
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.3; }
+  50% { transform: translateX(-50%) scale(1.2); opacity: 0.6; }
+}
+@keyframes hero-blob-2 {
+  0%, 100% { transform: scale(1); opacity: 0.2; }
+  50% { transform: scale(1.3); opacity: 0.5; }
+}
+@keyframes hero-blob-3 {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.15); opacity: 0.7; }
+}
+@keyframes hero-glass-card {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-4px) rotate(0.15deg); }
+  50% { transform: translateY(-8px) rotate(0.3deg); }
+  75% { transform: translateY(-4px) rotate(-0.15deg); }
+}
+@keyframes hero-status-card {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+.anim-hero-blob-1 { animation: hero-blob-1 5s ease-in-out infinite; }
+.anim-hero-blob-2 { animation: hero-blob-2 7s ease-in-out infinite; animation-delay: 1s; }
+.anim-hero-blob-3 { animation: hero-blob-3 6s ease-in-out infinite; animation-delay: 2s; }
+.anim-hero-glass-card { animation: hero-glass-card 6s ease-in-out infinite; }
+.anim-hero-status-card { animation: hero-status-card 5s ease-in-out infinite; }

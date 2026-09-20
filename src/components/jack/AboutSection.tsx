@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef } from 'react';
 import { useScroll } from 'framer-motion';
 import { Sparkles, ShieldCheck, Server, TrendingUp, Cpu } from 'lucide-react';
@@ -20,7 +22,7 @@ const AboutSection: React.FC = () => {
     >
       {/* Enhanced Background Glows */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-20 h-[400px] w-[400px] rounded-full bg-[#2AA7D3]/10 blur-[120px] z-0" />
+        <div className="absolute top-1/4 -left-20 h-[400px] w-[400px] rounded-full bg-brand-navy/10 blur-[120px] z-0" />
         <div className="absolute bottom-1/4 -right-20 h-[400px] w-[400px] rounded-full bg-blue-400/10 blur-[120px] z-0" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[300px] w-[300px] rounded-full bg-purple-400/5 blur-[100px] z-0" />
         {/* Subtle grid pattern */}
@@ -41,10 +43,10 @@ const AboutSection: React.FC = () => {
         
         {/* Top badge */}
         <FadeIn y={20} className="mb-12">
-          <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#2AA7D3]/20 text-slate-800 px-4 py-1.5 rounded-full text-xs font-bold shadow-sm shadow-[#2AA7D3]/5">
-            <span className="w-2 h-2 rounded-full bg-[#2AA7D3] animate-pulse" />
+          <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-brand-navy/20 text-slate-800 px-4 py-1.5 rounded-full text-xs font-bold shadow-sm shadow-brand-navy/5">
+            <span className="w-2 h-2 rounded-full bg-brand-navy animate-pulse" />
             About Neuronexa Labs
-            <Sparkles className="h-3 w-3 text-[#2AA7D3] ml-1" />
+            <Sparkles className="h-3 w-3 text-brand-navy ml-1" />
           </div>
         </FadeIn>
 
@@ -58,8 +60,8 @@ const AboutSection: React.FC = () => {
           {/* Decorative floating icons */}
           <div className="hidden lg:block absolute -top-10 -left-20">
             <Magnet padding={50}>
-              <div className="bg-white p-4 rounded-2xl shadow-xl shadow-[#2AA7D3]/10 border border-slate-100 rotate-[-10deg]">
-                <Server className="w-8 h-8 text-[#2AA7D3]" />
+              <div className="bg-white p-4 rounded-2xl shadow-xl shadow-brand-navy/10 border border-slate-100 rotate-[-10deg]">
+                <Server className="w-8 h-8 text-brand-navy" />
               </div>
             </Magnet>
           </div>
@@ -94,7 +96,7 @@ const AboutSection: React.FC = () => {
             { label: 'Avg. ROI Increase', value: '3.2x' },
           ].map((stat, i) => (
             <div key={i} className="text-center">
-              <p className="text-3xl md:text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#2AA7D3] to-blue-600">
+              <p className="text-3xl md:text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-brand-navy to-blue-600">
                 {stat.value}
               </p>
               <p className="text-xs font-bold text-slate-700 uppercase tracking-wider mt-2">
@@ -117,3 +119,4 @@ const AboutSection: React.FC = () => {
 };
 
 export default AboutSection;
+

@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
@@ -47,7 +49,7 @@ const OnboardingStepsSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mx-auto max-w-3xl mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-200 text-[#0F6F94] text-xs font-semibold uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-[#2AA7D3]" />
+            <Sparkles className="w-3.5 h-3.5 text-brand-navy" />
             Fast Deployment
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-extrabold text-slate-900 tracking-tight leading-[1.2]">
@@ -149,7 +151,7 @@ const OnboardingStepsSection: React.FC = () => {
                   href="https://wa.me/9110435020"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 border border-slate-300 hover:border-[#2AA7D3] text-slate-700 bg-white px-4 py-2.5 rounded-lg text-xs sm:text-sm font-semibold transition-all hover:bg-slate-50 cursor-pointer text-center"
+                  className="inline-flex items-center justify-center gap-2 border border-slate-300 hover:border-brand-navy text-slate-700 bg-white px-4 py-2.5 rounded-lg text-xs sm:text-sm font-semibold transition-all hover:bg-slate-50 cursor-pointer text-center"
                 >
                   Schedule Demo
                 </a>
@@ -166,3 +168,4 @@ const OnboardingStepsSection: React.FC = () => {
 };
 
 export default OnboardingStepsSection;
+

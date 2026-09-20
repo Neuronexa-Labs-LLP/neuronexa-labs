@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
@@ -29,7 +31,7 @@ const MarqueeSection: React.FC = () => {
               <span className="text-4xl md:text-7xl font-extrabold text-slate-300 uppercase tracking-tighter">
                 {word}
               </span>
-              <span className="w-3 h-3 md:w-5 md:h-5 rounded-full bg-[#2AA7D3] opacity-40" />
+              <span className="w-3 h-3 md:w-5 md:h-5 rounded-full bg-brand-navy opacity-40" />
             </div>
           ))}
         </motion.div>
@@ -51,3 +53,4 @@ const MarqueeSection: React.FC = () => {
 };
 
 export default MarqueeSection;
+

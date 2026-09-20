@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
@@ -11,17 +13,17 @@ const outcomes = [
         {/* Baseline 'Before' curve */}
         <path d="M 20 100 Q 100 90 180 80" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="3 3" />
         {/* Accelerated 'With Voice AI' curve */}
-        <path d="M 20 100 Q 100 80 140 30 T 180 20" stroke="#0F6F94" strokeWidth="2.5" strokeLinecap="round" />
+        <path d="M 20 100 Q 100 80 140 30 T 180 20" stroke="#1E3A5F" strokeWidth="2.5" strokeLinecap="round" />
         {/* Before point */}
         <circle cx="100" cy="90" r="4" fill="#ffffff" stroke="#94a3b8" strokeWidth="1.5" />
         {/* Voice AI point */}
-        <circle cx="140" cy="30" r="5" fill="#0F6F94" stroke="#ffffff" strokeWidth="2" />
-        <circle cx="140" cy="30" r="8" fill="#2AA7D3" opacity="0.25" className="animate-ping" />
+        <circle cx="140" cy="30" r="5" fill="#1E3A5F" stroke="#ffffff" strokeWidth="2" />
+        <circle cx="140" cy="30" r="8" fill="#1E3A5F" opacity="0.25" className="animate-ping" />
         {/* Labels */}
         <text x="100" y="110" fill="#64748b" fontSize="9" fontFamily="monospace" textAnchor="middle" fontWeight="500">
           Before
         </text>
-        <text x="140" y="16" fill="#0F6F94" fontSize="9" fontFamily="monospace" fontWeight="700" textAnchor="middle">
+        <text x="140" y="16" fill="#1E3A5F" fontSize="9" fontFamily="monospace" fontWeight="700" textAnchor="middle">
           With Voice AI
         </text>
       </svg>
@@ -37,10 +39,10 @@ const outcomes = [
         {/* Bar 2: Semi-automated */}
         <rect x="92" y="45" width="16" height="55" rx="3" fill="#e2e8f0" stroke="#94a3b8" strokeWidth="1" />
         {/* Bar 3: AI Voice Assistant */}
-        <rect x="142" y="20" width="16" height="80" rx="3" fill="#0F6F94" fillOpacity="0.95" />
+        <rect x="142" y="20" width="16" height="80" rx="3" fill="#1E3A5F" fillOpacity="0.95" />
         {/* Velocity trajectory line */}
-        <path d="M 50 70 Q 100 45 150 20" stroke="#0284c7" strokeWidth="1.5" strokeDasharray="3 3" />
-        <circle cx="150" cy="20" r="3.5" fill="#0F6F94" />
+        <path d="M 50 70 Q 100 45 150 20" stroke="#1E3A5F" strokeWidth="1.5" strokeDasharray="3 3" />
+        <circle cx="150" cy="20" r="3.5" fill="#1E3A5F" />
         <line x1="20" y1="100" x2="180" y2="100" stroke="#e2e8f0" strokeWidth="1.5" />
       </svg>
     )
@@ -53,14 +55,14 @@ const outcomes = [
         {/* Wavy manual timeline */}
         <path d="M 20 40 L 60 25 L 100 55 L 140 30 L 180 40" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="3 3" />
         {/* Straight automated highway */}
-        <path d="M 20 80 L 180 80" stroke="#0F6F94" strokeWidth="2.5" strokeLinecap="round" />
+        <path d="M 20 80 L 180 80" stroke="#1E3A5F" strokeWidth="2.5" strokeLinecap="round" />
         <circle cx="180" cy="40" r="3.5" fill="#ffffff" stroke="#94a3b8" strokeWidth="1.5" />
-        <circle cx="180" cy="80" r="4" fill="#0F6F94" stroke="#ffffff" strokeWidth="1.5" />
+        <circle cx="180" cy="80" r="4" fill="#1E3A5F" stroke="#ffffff" strokeWidth="1.5" />
         {/* Text descriptions */}
         <text x="20" y="30" fill="#64748b" fontSize="8" fontFamily="monospace">
           Manual tasks (Hours)
         </text>
-        <text x="20" y="72" fill="#0F6F94" fontSize="8" fontFamily="monospace" fontWeight="700">
+        <text x="20" y="72" fill="#1E3A5F" fontSize="8" fontFamily="monospace" fontWeight="700">
           AI auto-sync (Seconds)
         </text>
       </svg>
@@ -76,7 +78,7 @@ const BusinessOutcomesSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mx-auto max-w-3xl mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-200/80 text-[#0F6F94] text-xs font-semibold uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-[#2AA7D3]" />
+            <Sparkles className="w-3.5 h-3.5 text-brand-navy" />
             Business Value &amp; Velocity
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-extrabold text-slate-900 tracking-tight leading-[1.2]">
@@ -134,3 +136,4 @@ const BusinessOutcomesSection: React.FC = () => {
 };
 
 export default BusinessOutcomesSection;
+

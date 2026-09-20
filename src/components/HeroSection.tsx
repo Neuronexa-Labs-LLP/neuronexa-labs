@@ -1,5 +1,6 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { ArrowRight, ShieldCheck, Zap, Headphones, Webhook, PhoneOff, Mic, Grid, Volume2, Phone, Star, CheckCircle2, CalendarCheck, Sparkles } from 'lucide-react';
 
 const NeuronexaHero: React.FC = () => {
@@ -23,20 +24,14 @@ const NeuronexaHero: React.FC = () => {
     <section className="relative bg-[#EEF8FF] pt-24 pb-16 md:pt-28 md:pb-28 overflow-hidden min-h-screen flex items-center">
       {/* Blur Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div 
-          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-40 left-1/2 -translate-x-1/2 h-[600px] w-[600px] rounded-full bg-sky-400/10 blur-[120px] z-0" 
+        <div 
+          className="anim-hero-blob-1 absolute -top-40 left-1/2 -translate-x-1/2 h-[600px] w-[600px] rounded-full bg-sky-400/10 blur-[120px] z-0" 
         />
-        <motion.div 
-          animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.5, 0.2] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute right-0 top-20 h-[400px] w-[400px] rounded-full bg-cyan-300/10 blur-[120px] z-0" 
+        <div 
+          className="anim-hero-blob-2 absolute right-0 top-20 h-[400px] w-[400px] rounded-full bg-cyan-300/10 blur-[120px] z-0" 
         />
-        <motion.div 
-          animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.7, 0.4] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute left-0 bottom-0 h-[300px] w-[300px] rounded-full bg-blue-200/20 blur-[100px] z-0" 
+        <div 
+          className="anim-hero-blob-3 absolute left-0 bottom-0 h-[300px] w-[300px] rounded-full bg-blue-200/20 blur-[100px] z-0" 
         />
       </div>
 
@@ -47,53 +42,45 @@ const NeuronexaHero: React.FC = () => {
           {/* Left Text Column */}
           <div className="flex-1 text-left relative z-20">
             {/* Header Chips */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 bg-white/90 border border-[#2AA7D3]/30 text-slate-900 px-3.5 py-1.5 rounded-full text-xs font-bold mb-5 shadow-xs"
+            <div
+              className="hero-anim hero-fade inline-flex items-center gap-2 bg-white/90 border border-brand-navy/30 text-slate-900 px-3.5 py-1.5 rounded-full text-xs font-bold mb-5 shadow-xs"
+              style={{ animationDelay: '0ms' }}
             >
-              <span className="w-2 h-2 rounded-full bg-[#2AA7D3] animate-pulse"></span>
+              <span className="w-2 h-2 rounded-full bg-brand-navy animate-pulse"></span>
               <span className="text-[#0F6F94] font-bold">Enterprise AI Voice Assistant</span>
-            </motion.div>
+            </div>
 
             {/* Title */}
-            <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.15 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-[42px] xl:text-[44px] font-extrabold text-[#0F172A] mb-4"
+            <h1
+              className="hero-anim hero-fade text-3xl sm:text-4xl md:text-5xl lg:text-[42px] xl:text-[44px] font-extrabold text-[#0F172A] mb-4"
+              style={{ animationDelay: '150ms' }}
             >
-              Enterprise AI Voice Assistants That{' '}
-              <span className="bg-gradient-to-r from-[#0F6F94] via-[#2AA7D3] to-sky-500 bg-clip-text text-transparent">
-                Outbound, Qualify &amp; Sync
+              Enterprise AI Automation &amp;{' '}
+              <span className="bg-gradient-to-r from-brand-navy via-cyan-600 to-sky-400 bg-clip-text text-transparent">
+                Voice Solutions
               </span>{' '}
-              Your CRM in Real Time
-            </motion.h1>
+              for Scaling Businesses
+            </h1>
 
             {/* Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.18 }}
-              className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed mb-6 max-w-xl"
+            <p
+              className="hero-anim hero-fade text-sm sm:text-base text-slate-600 font-normal leading-relaxed mb-6 max-w-xl"
+              style={{ animationDelay: '180ms' }}
             >
-              Connect with every customer naturally, answer questions without hold times, and book appointments directly into your calendar with genuine warmth. Seamlessly hands off to your team when personal care is needed.
-            </motion.p>
+              Deploy <strong>enterprise AI voice agents</strong> that naturally handle inbound customer support, <strong>automate inbound lead qualification</strong>, and book appointments directly into your calendar. Scale your operations and reduce costs with <strong>custom workflow automation services</strong>.
+            </p>
 
             {/* Feature Pills */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.22 }}
-              className="flex flex-wrap gap-2 mb-7"
+            <div
+              className="hero-anim hero-fade flex flex-wrap gap-2 mb-7"
+              style={{ animationDelay: '220ms' }}
             >
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white border border-slate-200/90 text-xs font-semibold text-slate-700 shadow-xs">
                 <Zap className="w-3.5 h-3.5 text-amber-500" />
                 Instant Voice Response
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white border border-slate-200/90 text-xs font-semibold text-slate-700 shadow-xs">
-                <Headphones className="w-3.5 h-3.5 text-[#2AA7D3]" />
+                <Headphones className="w-3.5 h-3.5 text-brand-navy" />
                 Warm Vernacular Accents
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white border border-slate-200/90 text-xs font-semibold text-slate-700 shadow-xs">
@@ -104,43 +91,35 @@ const NeuronexaHero: React.FC = () => {
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                 100% TRAI / DNC Compliant
               </span>
-            </motion.div>
+            </div>
 
             {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.25 }}
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5"
+            <div
+              className="hero-anim hero-fade flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5"
+              style={{ animationDelay: '250ms' }}
             >
-              <motion.a
+              <a
                 href="https://wa.me/9110435020"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.03, y: -2 }}
-                whileTap={{ scale: 0.97 }}
-                className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#0F6F94] to-[#2AA7D3] hover:from-[#0c5977] hover:to-[#228cb2] text-white px-6 py-3.5 rounded-xl text-sm font-bold shadow-md shadow-[#0F6F94]/20 transition-all duration-200 cursor-pointer"
+                className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#0F6F94] to-brand-navy hover:from-[#0c5977] hover:to-[#228cb2] hover:scale-105 hover:-translate-y-0.5 active:scale-95 text-white px-6 py-3.5 rounded-xl text-sm font-bold shadow-md shadow-[#0F6F94]/20 transition-all duration-200 cursor-pointer"
               >
                 Schedule Live Demo
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </motion.a>
-              <motion.a
+              </a>
+              <a
                 href="#flow"
-                whileHover={{ scale: 1.03, y: -2 }}
-                whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center justify-center gap-2 border border-slate-300 hover:border-[#2AA7D3] text-slate-700 bg-white/90 hover:text-[#0F172A] px-6 py-3.5 rounded-xl text-sm font-semibold transition-all duration-200 shadow-xs hover:bg-slate-50 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 border border-slate-300 hover:border-brand-navy text-slate-700 bg-white/90 hover:text-[#0F172A] hover:scale-105 hover:-translate-y-0.5 active:scale-95 px-6 py-3.5 rounded-xl text-sm font-semibold transition-all duration-200 shadow-xs hover:bg-slate-50 cursor-pointer"
               >
                 View System Architecture
-              </motion.a>
-            </motion.div>
+              </a>
+            </div>
           </div>
 
           {/* Right Mockup Dashboard Column */}
           <div className="flex-1 w-full max-w-md lg:max-w-xl relative flex justify-center z-20">
-              <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -right-4 lg:-right-6 bottom-[8%] bg-white/95 backdrop-blur-xl border border-emerald-100/80 shadow-[0_8px_30px_rgba(16,185,129,0.12)] rounded-2xl px-3 py-2 lg:px-4 lg:py-3 z-30 hidden md:block"
+            <div
+              className="anim-hero-status-card absolute -right-4 lg:-right-6 bottom-[8%] bg-white/95 backdrop-blur-xl border border-emerald-100/80 shadow-[0_8px_30px_rgba(16,185,129,0.12)] rounded-2xl px-3 py-2 lg:px-4 lg:py-3 z-30 hidden md:block"
             >
               <div className="flex items-center gap-2.5">
                 <div className="h-7 w-7 rounded-lg bg-emerald-50 flex items-center justify-center">
@@ -151,25 +130,16 @@ const NeuronexaHero: React.FC = () => {
                   <span className="text-[9px] text-emerald-700 font-bold">Instant Replies</span>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* Apple-style Premium Glassmorphism Card */}
-            <motion.div
-              animate={{
-                y: [0, -8, 0],
-                rotate: [0, 0.3, -0.3, 0]
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="w-full rounded-[32px] backdrop-blur-2xl bg-white/90 border border-white/80 shadow-[0_25px_70px_rgba(15,111,148,0.12)] p-2"
+            <div
+              className="anim-hero-glass-card w-full rounded-[32px] backdrop-blur-2xl bg-white/90 border border-white/80 shadow-[0_25px_70px_rgba(15,111,148,0.12)] p-2"
             >
               <div className="bg-gradient-to-b from-[#0B1528] via-[#0F1E36] to-[#0A1424] rounded-[26px] p-5 sm:p-6 border border-slate-700/40 relative overflow-hidden text-white shadow-inner">
                 
                 {/* Subtle radial ambient glows */}
-                <div className="absolute -top-12 -right-12 h-48 w-48 rounded-full bg-[#2AA7D3]/15 blur-[60px] pointer-events-none" />
+                <div className="absolute -top-12 -right-12 h-48 w-48 rounded-full bg-brand-navy/15 blur-[60px] pointer-events-none" />
                 <div className="absolute bottom-0 -left-10 h-36 w-36 rounded-full bg-emerald-500/10 blur-[50px] pointer-events-none" />
 
                 <div className="relative z-10 flex flex-col gap-3.5">
@@ -186,8 +156,8 @@ const NeuronexaHero: React.FC = () => {
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#2AA7D3]/15 border border-[#2AA7D3]/30 text-[10px] font-mono font-bold text-cyan-300">
-                      <Zap className="w-3 h-3 text-[#2AA7D3]" />
+                    <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-brand-navy/15 border border-brand-navy/30 text-[10px] font-mono font-bold text-cyan-300">
+                      <Zap className="w-3 h-3 text-brand-navy" />
                       <span>Real-Time Response</span>
                     </div>
                   </div>
@@ -197,7 +167,7 @@ const NeuronexaHero: React.FC = () => {
                     <div className="flex items-center gap-3">
                       {/* Avatar with subtle ring */}
                       <div className="relative shrink-0">
-                        <div className="h-11 w-11 rounded-full bg-gradient-to-br from-[#2AA7D3] to-[#0F6F94] flex items-center justify-center text-white font-extrabold text-sm shadow-[0_0_20px_rgba(42,167,211,0.35)] border-2 border-white/20">
+                        <div className="h-11 w-11 rounded-full bg-gradient-to-br from-brand-navy to-[#0F6F94] flex items-center justify-center text-white font-extrabold text-sm shadow-[0_0_20px_rgba(42,167,211,0.35)] border-2 border-white/20">
                           RK
                         </div>
                         <span className="absolute -bottom-0.5 -right-0.5 h-3.5 w-3.5 rounded-full bg-emerald-500 border-2 border-[#0B1528] flex items-center justify-center">
@@ -208,7 +178,7 @@ const NeuronexaHero: React.FC = () => {
                       {/* Name & Phone */}
                       <div>
                         <div className="flex items-center gap-1.5">
-                          <h4 className="text-sm font-bold text-white tracking-tight">Rajesh Kumar</h4>
+                          <p className="text-sm font-bold text-white tracking-tight">Rajesh Kumar</p>
                           <span className="text-[9px] font-mono font-semibold px-1.5 py-0.2 rounded bg-sky-500/20 text-sky-300 border border-sky-400/30">
                             Verified Lead
                           </span>
@@ -235,14 +205,14 @@ const NeuronexaHero: React.FC = () => {
                   {/* Audio Waveform Equalizer */}
                   <div className="flex items-center justify-between px-1">
                     <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                      <Headphones className="w-3 h-3 text-[#2AA7D3]" />
+                      <Headphones className="w-3 h-3 text-brand-navy" />
                       Neural Voice Streaming
                     </span>
                     <div className="flex items-end gap-[3px] h-4">
                       {[4, 7, 12, 16, 13, 8, 15, 18, 14, 9, 12, 16, 10, 5].map((h, i) => (
                         <div
                           key={i}
-                          className="w-[3px] rounded-full bg-gradient-to-t from-[#0F6F94] to-[#2AA7D3]"
+                          className="w-[3px] rounded-full bg-gradient-to-t from-[#0F6F94] to-brand-navy"
                           style={{
                             height: `${h}px`,
                             animation: `pulse ${0.7 + (i % 5) * 0.15}s ease-in-out infinite alternate`
@@ -263,7 +233,7 @@ const NeuronexaHero: React.FC = () => {
                     </div>
 
                     {/* AI Speech Bubble */}
-                    <div className="p-2.5 rounded-xl bg-[#0F6F94]/25 border border-[#2AA7D3]/35">
+                    <div className="p-2.5 rounded-xl bg-[#0F6F94]/25 border border-brand-navy/35">
                       <div className="flex items-center justify-between mb-1">
                         <span className="text-[10px] font-bold text-cyan-300 flex items-center gap-1">
                           <Sparkles className="w-3 h-3 text-cyan-400" />
@@ -337,7 +307,7 @@ const NeuronexaHero: React.FC = () => {
 
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
 
         </div>
@@ -351,3 +321,4 @@ const HeroSection: React.FC = () => {
 };
 
 export default HeroSection;
+

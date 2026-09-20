@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef, useState, useEffect } from 'react';
 
 interface MagnetProps {
@@ -71,3 +73,4 @@ const Magnet: React.FC<MagnetProps> = ({
 };
 
 export default Magnet;
+

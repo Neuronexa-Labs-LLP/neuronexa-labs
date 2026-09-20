@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { BrainCircuit, Network, Activity, ShieldCheck } from 'lucide-react';
 import FadeIn from './FadeIn';
@@ -48,12 +50,12 @@ const ServicesSection: React.FC = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20 md:mb-32">
           <FadeIn>
-            <div className="inline-flex items-center gap-2 bg-white border border-[#2AA7D3]/20 text-slate-900 px-4 py-1.5 rounded-full text-xs font-bold mb-6 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-[#2AA7D3] animate-pulse"></span>
+            <div className="inline-flex items-center gap-2 bg-white border border-brand-navy/20 text-slate-900 px-4 py-1.5 rounded-full text-xs font-bold mb-6 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-brand-navy animate-pulse"></span>
               What We Do
             </div>
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] tracking-tight max-w-2xl">
-              Intelligent automation built for <span className="text-[#2AA7D3]">global enterprises.</span>
+              Intelligent automation built for <span className="text-brand-navy">global enterprises.</span>
             </h2>
           </FadeIn>
           
@@ -79,12 +81,12 @@ const ServicesSection: React.FC = () => {
                     {service.id}
                   </span>
                   <div className={`h-20 w-20 rounded-[24px] ${service.bg} flex items-center justify-center group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-500`}>
-                    <service.icon className="h-10 w-10 text-[#2AA7D3]" />
+                    <service.icon className="h-10 w-10 text-brand-navy" />
                   </div>
                 </div>
 
                 <div className="flex-grow">
-                  <span className="text-xs font-extrabold uppercase tracking-widest text-[#2AA7D3] mb-4 block">
+                  <span className="text-xs font-extrabold uppercase tracking-widest text-brand-navy mb-4 block">
                     {service.subtitle}
                   </span>
                   <h3 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 tracking-tight">
@@ -96,7 +98,7 @@ const ServicesSection: React.FC = () => {
                 </div>
 
                 {/* Decorative background glow on hover */}
-                <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-gradient-to-br from-[#2AA7D3]/10 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-gradient-to-br from-brand-navy/10 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
               </div>
             </FadeIn>
           ))}
@@ -107,3 +109,4 @@ const ServicesSection: React.FC = () => {
 };
 
 export default ServicesSection;
+

@@ -1,9 +1,11 @@
+"use client";
+
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 import { Layers } from 'lucide-react';
 import FadeIn from './FadeIn';
 import { projectsData } from '../../data/projectsData';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const ProjectsSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -21,12 +23,12 @@ const ProjectsSection: React.FC = () => {
         
         {/* Header */}
         <FadeIn className="mb-20">
-          <div className="inline-flex items-center gap-2 bg-white border border-[#2AA7D3]/20 text-slate-900 px-4 py-1.5 rounded-full text-xs font-bold mb-5 shadow-sm">
-            <Layers className="h-3 w-3 text-[#2AA7D3]" />
+          <div className="inline-flex items-center gap-2 bg-white border border-brand-navy/20 text-slate-900 px-4 py-1.5 rounded-full text-xs font-bold mb-5 shadow-sm">
+            <Layers className="h-3 w-3 text-brand-navy" />
             Our Portfolio
           </div>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] tracking-tight">
-            Solutions we've <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#2AA7D3] to-blue-600">engineered</span>
+            Solutions we've <span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-navy to-blue-600">engineered</span>
           </h2>
         </FadeIn>
 
@@ -73,11 +75,11 @@ const ProjectCard: React.FC<{
     <div ref={containerRef} className="h-screen flex items-center justify-center sticky top-0">
       <motion.div 
         style={{ scale, top: `calc(-5vh + ${i * 25}px)` }} 
-        className="relative w-full max-w-5xl bg-white border border-slate-200 shadow-2xl shadow-[#2AA7D3]/5 rounded-3xl md:rounded-[40px] p-6 md:p-12 overflow-hidden flex flex-col md:flex-row gap-8 md:gap-16 transform-origin-top"
+        className="relative w-full max-w-5xl bg-white border border-slate-200 shadow-2xl shadow-brand-navy/5 rounded-3xl md:rounded-[40px] p-6 md:p-12 overflow-hidden flex flex-col md:flex-row gap-8 md:gap-16 transform-origin-top"
       >
         {/* Text Content */}
         <div className="flex-1 flex flex-col justify-center">
-          <span className="text-sm font-extrabold text-[#2AA7D3] uppercase tracking-widest mb-4">
+          <span className="text-sm font-extrabold text-brand-navy uppercase tracking-widest mb-4">
             {project.category}
           </span>
           <h3 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
@@ -96,8 +98,8 @@ const ProjectCard: React.FC<{
           </div>
 
           <div className="flex items-center gap-4">
-            <Link to={`/projects/${project.id}`}>
-              <button className="bg-[#0F172A] hover:bg-[#2AA7D3] text-white px-8 py-4 rounded-full text-sm font-bold uppercase tracking-wider transition-colors duration-300">
+            <Link href={`/projects/${project.id}`}>
+              <button className="bg-[#0F172A] hover:bg-brand-navy text-white px-8 py-4 rounded-full text-sm font-bold uppercase tracking-wider transition-colors duration-300">
                 View Case Study
               </button>
             </Link>
@@ -109,7 +111,8 @@ const ProjectCard: React.FC<{
           <motion.div style={{ scale: imageScale }} className="w-full h-full">
             <img 
               src={project.image} 
-              alt={project.title} 
+              alt={project.title}
+              loading="lazy"
               className="w-full h-full object-cover"
             />
           </motion.div>
@@ -120,3 +123,4 @@ const ProjectCard: React.FC<{
 };
 
 export default ProjectsSection;
+
