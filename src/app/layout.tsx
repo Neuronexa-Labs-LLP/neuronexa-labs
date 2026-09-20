@@ -26,6 +26,14 @@ const kanit = Kanit({
 export const metadata = {
   title: 'AI Automation & Voice AI Solutions for Businesses | Neuronexa Labs',
   description: 'Neuronexa Labs builds AI-powered business solutions that automate repetitive work, improve customer interactions, and help businesses scale.',
+  icons: {
+    icon: [
+      { url: '/icon.png', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 export default function RootLayout({

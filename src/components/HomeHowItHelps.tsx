@@ -1,41 +1,41 @@
 import React from 'react';
-import { Search, PenTool, Link2, Rocket, BarChart } from 'lucide-react';
+import { Search, PenTool, Link2, Rocket, BarChart, ChevronRight } from 'lucide-react';
 
 const steps = [
   {
     number: '01',
     icon: Search,
-    title: 'Learn your business',
+    title: 'Understand your business',
     description:
-      'We study how your team handles calls, leads, and appointments to find where AI adds the most value.',
+      'We look at your calls, leads, customer questions, and daily workflows to identify where your team is losing the most time or opportunities.',
   },
   {
     number: '02',
     icon: PenTool,
     title: 'Build your AI assistant',
     description:
-      'We train it on your services, FAQs, and tone of voice, so it sounds like part of your team.',
+      'We train your assistant on your services, FAQs, processes, and brand voice so it knows what to say, what to ask, and what to do.',
   },
   {
     number: '03',
     icon: Link2,
-    title: 'Connect your tools',
+    title: 'Connect everything',
     description:
-      'We plug it into the CRM, calendar, and workflows you already use — no new software to learn.',
+      'Connect your CRM, calendar, website, and business systems so the assistant can do more than talk — it can actually take action.',
   },
   {
     number: '04',
     icon: Rocket,
-    title: 'Go live',
+    title: 'Start handling calls',
     description:
-      'Your assistant starts answering calls, following up on leads, and booking appointments — 24/7.',
+      'Go live with inbound calls. Your assistant can answer questions, qualify leads, follow up, book appointments, and transfer calls to your team when needed.',
   },
   {
     number: '05',
     icon: BarChart,
-    title: 'Track the results',
+    title: 'See what happens',
     description:
-      'Every call, lead, and booking shows up in one dashboard, so you always know what is working.',
+      'Track every call, conversation, lead, appointment, and outcome from one place. Use the data to improve performance and grow.',
   },
 ];
 
@@ -56,52 +56,75 @@ const structuredData = {
 
 const HomeHowItHelps: React.FC = () => {
   return (
-    <section id="how-it-works" className="py-20 md:py-24 bg-white relative">
+    <section id="how-it-works" className="py-20 md:py-28 bg-gradient-to-b from-white via-slate-50/60 to-white relative overflow-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Section header */}
-        <div className="max-w-3xl mb-12 md:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-navy/10 border border-brand-navy/20 mb-6">
+        <div className="text-center max-w-3xl mx-auto mb-10 ">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-navy/10 border border-brand-navy/20 mb-4 shadow-xs">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-navy animate-pulse" />
             <span className="text-xs font-bold text-brand-navy uppercase tracking-wider">Our Process</span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-[42px] font-extrabold text-slate-900 mb-6 tracking-tight">
-            How it works
+          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-slate-900 mb-4 tracking-tight leading-tight">
+            How It Works
           </h2>
-          <p className="text-slate-600 text-lg leading-relaxed max-w-2xl">
-            Five steps from first call to a fully working AI assistant — answering calls,
+          <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+            Five steps from first consultation to a live, automated voice assistant — answering calls,
             qualifying leads, and booking appointments for your business.
           </p>
         </div>
 
-        {/* Steps grid */}
-        <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 border-t border-l border-slate-200/80 bg-white shadow-sm rounded-xl overflow-hidden">
-          {steps.map((step) => (
-            <li
-              key={step.title}
-              className="border-r border-b border-slate-200/80 p-6 flex flex-col hover:bg-[#F8FAFC] transition-colors duration-300 group"
-            >
-              <div className="flex items-center justify-between mb-6">
-                <div className="w-10 h-10 rounded-xl bg-brand-navy/5 border border-brand-navy/10 flex items-center justify-center text-brand-navy group-hover:bg-brand-navy group-hover:text-white transition-all duration-300 shadow-sm shrink-0">
-                  <step.icon className="w-4 h-4" strokeWidth={2.5} aria-hidden="true" />
-                </div>
-                <span className="text-3xl font-black text-slate-300 tracking-tighter font-mono transition-colors duration-300">
-                  {step.number}
-                </span>
-              </div>
+        {/* Steps Card Container */}
+        <div className="bg-white rounded-3xl border border-slate-200/80 shadow-[0_8px_30px_-8px_rgba(30,58,95,0.06),0_2px_6px_rgba(0,0,0,0.02)] overflow-hidden">
+          {/* 5-Column Grid */}
+          <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-slate-100 relative">
+            {steps.map((step, index) => (
+              <li
+                key={step.title}
+                className="group relative p-3 lg:p-5 flex flex-col justify-start transition-all duration-300 hover:bg-slate-50/70"
+              >
+                {/* Step Connector Arrow (Desktop only, between columns) */}
+                {index < steps.length - 1 && (
+                  <div
+                    aria-hidden="true"
+                    className="hidden lg:flex absolute -right-3.5 top-16 w-7 h-7 rounded-full bg-white border border-slate-200 text-slate-400 items-center justify-center z-20 shadow-xs"
+                  >
+                    <ChevronRight className="w-3.5 h-3.5" strokeWidth={2.5} />
+                  </div>
+                )}
 
-              <h3 className="text-base font-bold text-slate-900 mb-3 tracking-tight">
-                {step.title}
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">{step.description}</p>
-            </li>
-          ))}
-        </ol>
+                {/* Top Row: Circular Icon on Left, Number at the End on Right */}
+                <div className="flex items-center justify-between mb-6">
+                  {/* Circular Icon */}
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-slate-50 border border-slate-200/80 flex items-center justify-center text-brand-navy relative z-10 shrink-0 shadow-xs">
+                    <step.icon className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300" strokeWidth={1.8} aria-hidden="true" />
+                  </div>
+
+                  {/* Step Number at the end */}
+                  <span className="text-2xl lg:text-3xl font-black text-slate-300 group-hover:text-brand-navy/50 transition-colors tracking-tight font-mono select-none">
+                    {step.number}
+                  </span>
+                </div>
+
+                {/* Title Container: Fixed min-height ensures uniform vertical alignment */}
+                <div className="flex items-start mb-2.5">
+                  <h3 className="text-[17px] font-bold text-slate-900 tracking-tight leading-snug group-hover:text-brand-navy transition-colors">
+                    {step.title}
+                  </h3>
+                </div>
+
+                {/* Description */}
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  {step.description}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
     </section>
   );
