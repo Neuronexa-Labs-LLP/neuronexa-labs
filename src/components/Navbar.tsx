@@ -339,6 +339,13 @@ const Navbar: React.FC = () => {
 
 
 
+          <a
+            href="/#contactus"
+            className="text-sm font-semibold text-slate-700 hover:text-brand-teal transition-colors cursor-pointer"
+          >
+            Contact Us
+          </a>
+
           <button
             onClick={handleWhatsAppClick}
             className="bg-brand-navy hover:bg-brand-teal text-white px-5 py-2 rounded-xl text-sm font-bold transition-all shadow-sm flex items-center gap-2 cursor-pointer"
@@ -510,6 +517,14 @@ const Navbar: React.FC = () => {
               ))}
 
 
+
+              <a
+                href="/#contactus"
+                onClick={() => setIsOpen(false)}
+                className="text-base font-semibold text-slate-800 hover:text-brand-teal transition-colors py-2.5 cursor-pointer"
+              >
+                Contact Us
+              </a>
 
               <button
                 onClick={() => { setIsOpen(false); handleWhatsAppClick(); }}
