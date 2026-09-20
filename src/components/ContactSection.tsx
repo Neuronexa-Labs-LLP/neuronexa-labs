@@ -131,7 +131,7 @@ const ContactSection: React.FC = () => {
                     <Mail className="w-4 h-4 text-slate-500 mr-3 shrink-0" />
                     <input
                       type="text"
-                      placeholder="Enter email address"
+                      placeholder="Enter email address / phone number"
                       required
                       value={formData.email}
                       onChange={e => setFormData({ ...formData, email: e.target.value })}
