@@ -106,7 +106,7 @@ const Footer: React.FC = () => {
                   className="flex items-start gap-3 text-slate-400 hover:text-white transition-colors group"
                 >
                   <div className="mt-0.5 p-2 rounded-lg bg-white/5 group-hover:bg-brand-navy/10 transition-colors">
-                    <Phone className="h-4 w-4 text-brand-navy" />
+                    <Phone className="h-4 w-4 text-sky-400" />
                   </div>
                   <div>
                     <p className="text-xs text-slate-400 mb-0.5">Call Us</p>
@@ -120,7 +120,7 @@ const Footer: React.FC = () => {
                   className="flex items-start gap-3 text-slate-400 hover:text-white transition-colors group"
                 >
                   <div className="mt-0.5 p-2 rounded-lg bg-white/5 group-hover:bg-brand-navy/10 transition-colors">
-                    <Mail className="h-4 w-4 text-brand-navy" />
+                    <Mail className="h-4 w-4 text-sky-400" />
                   </div>
                   <div>
                     <p className="text-xs text-slate-400 mb-0.5">Email Us</p>
