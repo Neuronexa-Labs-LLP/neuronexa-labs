@@ -47,7 +47,9 @@ const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="relative py-12 md:py-16 bg-white overflow-hidden flex items-center justify-center border-t border-slate-100/80">
+    <section id="contactus" className="relative py-12 md:py-16 bg-white overflow-hidden flex items-center justify-center border-t border-slate-100/80 scroll-mt-24">
+      {/* Anchor for backward compatibility with #contact */}
+      <div id="contact" className="absolute -top-24 left-0 pointer-events-none" />
       {/* Blur Background Glows */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute bottom-0 right-1/4 h-[350px] w-[350px] rounded-full bg-brand-navy/5 blur-[120px] z-0" />
@@ -59,11 +61,9 @@ const ContactSection: React.FC = () => {
         <div className="flex-1 w-full relative">
           <div>
             <div className="mb-4">
-              <div
-                className="inline-flex items-center gap-2 bg-[#F4F9FC] border border-brand-navy/20 text-[#0F172A] px-3.5 py-1.5 rounded-full text-xs font-bold shadow-sm"
-              >
-                <span className="w-2 h-2 rounded-full bg-brand-navy"></span>
-                Get in Touch
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-navy/10 border border-brand-navy/20">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-navy animate-pulse" />
+                <span className="text-xs font-bold text-brand-navy uppercase tracking-wider">Get in Touch</span>
               </div>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0F2137] mb-6 tracking-tighter leading-none uppercase">
