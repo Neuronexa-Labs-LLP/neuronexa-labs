@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
+
 import { PhoneOutgoing, CalendarCheck, Headphones, Zap, ArrowRight } from 'lucide-react';
 
 const solutions = [
@@ -86,11 +86,7 @@ const HomeSolution: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+        <div
           className="text-center max-w-3xl mx-auto mb-20"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0F6F94]/[0.08] border border-[#2AA7D3]/20 mb-4">
@@ -103,17 +99,13 @@ const HomeSolution: React.FC = () => {
           <p className="text-slate-600 text-lg leading-relaxed max-w-2xl mx-auto">
             Your AI Voice Assistant handles everyday phone conversations so your team can spend more time serving customers and closing deals.
           </p>
-        </motion.div>
+        </div>
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {solutions.map((item, index) => (
-            <motion.div
+            <div
               key={item.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`
                 group relative bg-white rounded-[24px] p-7 sm:p-8
                 border ${item.accent.border}
@@ -154,7 +146,7 @@ const HomeSolution: React.FC = () => {
                   {item.description}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
