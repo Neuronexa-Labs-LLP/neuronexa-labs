@@ -30,12 +30,13 @@ export default function ProductDetailClient({ project }: { project: ProjectDetai
               </Link>
 
               <motion.div initial="hidden" animate="visible" variants={fadeIn} transition={{ duration: 0.6 }} className="max-w-4xl">
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="bg-[#E8F4FA]/10 text-brand-navy border border-brand-navy/20 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider block">
+                  <div className="flex flex-wrap items-center gap-2.5 mb-5">
+                    <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#2AA7D3]/15 border border-[#2AA7D3]/35 text-cyan-300 text-xs font-bold tracking-wider uppercase backdrop-blur-sm shadow-[0_0_15px_rgba(42,167,211,0.2)]">
+                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_#22d3ee]" />
                         {project.category}
                     </span>
                     {project.tags.slice(0, 2).map(tag => (
-                        <span key={tag} className="px-3 py-1 bg-white/5 text-slate-300 border border-white/5 rounded-full text-[10px] font-bold tracking-wide uppercase">
+                        <span key={tag} className="inline-flex items-center px-3 py-1.5 bg-white/[0.06] text-slate-300 border border-white/10 rounded-full text-xs font-medium tracking-wider uppercase backdrop-blur-sm">
                             {tag}
                         </span>
                     ))}
