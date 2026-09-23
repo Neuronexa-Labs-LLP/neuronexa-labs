@@ -9,7 +9,7 @@ const aboutSchema = {
   "publisher": {
     "@type": "Organization",
     "name": "Neuronexa Labs",
-    "url": "https://neuronexalabs.com"
+    "url": "https://neuronexalabs.com/"
   }
 };
 
@@ -17,7 +17,7 @@ export const metadata = {
   title: 'About Us | Neuronexa Labs',
   description: 'Learn more about Neuronexa Labs, our mission, and our expertise in Enterprise AI and Workflow Automation solutions.',
   alternates: {
-    canonical: 'https://neuronexalabs.com/about',
+    canonical: 'https://neuronexalabs.com/about/',
   },
 };
 

@@ -52,14 +52,13 @@ const NeuronexaHero: React.FC = () => {
 
             {/* Title */}
             <h1
-              className="hero-anim hero-fade text-3xl sm:text-4xl md:text-5xl lg:text-[42px] xl:text-[44px] font-extrabold text-[#0F172A] mb-4"
+              className="hero-anim hero-fade text-2xl sm:text-3xl md:text-4xl lg:text-[38px] xl:text-[40px] font-extrabold text-[#0F172A] mb-4"
               style={{ animationDelay: '150ms' }}
             >
-              Enterprise AI Automation &amp;{' '}
+              Scale Your Business with {' '}
               <span className="bg-gradient-to-r from-brand-navy via-cyan-600 to-sky-400 bg-clip-text text-transparent">
-                Voice Solutions
+                 Enterprise AI Voice & Automation
               </span>{' '}
-              for Scaling Businesses
             </h1>
 
             {/* Subtitle */}
@@ -67,7 +66,7 @@ const NeuronexaHero: React.FC = () => {
               className="hero-anim hero-fade text-sm sm:text-base text-slate-600 font-normal leading-relaxed mb-6 max-w-xl"
               style={{ animationDelay: '180ms' }}
             >
-              Deploy <strong>enterprise AI voice agents</strong> that naturally handle inbound customer support, <strong>automate inbound lead qualification</strong>, and book appointments directly into your calendar. Scale your operations and reduce costs with <strong>custom workflow automation services</strong>.
+               Neuronexa Labs is an enterprise AI and workflow automation company that builds autonomous AI agents, intelligent voice assistants, and custom automation processes.
             </p>
 
             {/* Feature Pills */}

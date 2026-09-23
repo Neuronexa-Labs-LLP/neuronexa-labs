@@ -5,17 +5,17 @@ import logo from '../assets/nnlabs-logo-hd.png';
 
 const navigationLinks = [
   { label: 'Overview', href: '/#' },
-  { label: 'Services', href: '/services' },
-  { label: 'AI Voice Agent', href: '/services/ai-voice-agent' },
+  { label: 'Services', href: '/services/' },
+  { label: 'AI Voice Agent', href: '/services/ai-voice-agent/' },
   { label: 'How It Works', href: '/#how-it-works' },
 ];
 
 const projectLinks = [
-  { label: 'Vedims LMS', href: '/projects/vedims' },
-  { label: 'HRMS Solution', href: '/projects/hrms' },
-  { label: 'Medblik Locator', href: '/projects/medblik' },
-  { label: 'AgTech E-Commerce', href: '/projects/agtech' },
-  { label: 'Mentor AI Matcher', href: '/projects/mentor-ai' },
+  { label: 'Vedims LMS', href: '/projects/vedims/' },
+  { label: 'HRMS Solution', href: '/projects/hrms/' },
+  { label: 'Medblik Locator', href: '/projects/medblik/' },
+  { label: 'AgTech E-Commerce', href: '/projects/agtech/' },
+  { label: 'Mentor AI Matcher', href: '/projects/mentor-ai/' },
 ];
 
 const Footer: React.FC = () => {
@@ -137,8 +137,18 @@ const Footer: React.FC = () => {
         <div className="border-t border-slate-800/80 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 gap-4">
           <p>&copy; {new Date().getFullYear()} NeuroNexa Labs. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="/privacy" className="hover:text-slate-400 transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-slate-400 transition-colors">Terms of Service</Link>
+            <Link
+              href="/privacy/"
+              className="hover:text-slate-400 transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms/"
+              className="hover:text-slate-400 transition-colors"
+            >
+              Terms of Service
+            </Link>
           </div>
         </div>
       </div>

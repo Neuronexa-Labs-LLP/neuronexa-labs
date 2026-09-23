@@ -1,6 +1,9 @@
 export const metadata = {
   title: 'Privacy Policy | Neuronexa Labs',
   description: 'Privacy Policy for Neuronexa Labs.',
+  alternates: {
+    canonical: 'https://neuronexalabs.com/privacy/',
+  },
 };
 
 export default function Privacy() {
@@ -8,11 +11,11 @@ export default function Privacy() {
     <main className="pt-32 pb-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-sm border border-slate-200 prose prose-slate max-w-none">
-          <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
             Privacy Policy
           </h1>
           
-          <p>Last updated: {new Date().toLocaleDateString()}</p>
+          <p className="text-slate-500 text-sm mb-6">Last updated: {new Date().toLocaleDateString()}</p>
           
           <h2>1. Information We Collect</h2>
           <p>

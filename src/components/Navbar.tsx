@@ -32,37 +32,37 @@ const categorizedServices: Category[] = [
   {
     title: 'Autonomous AI Agents',
     items: [
-      { label: 'AI Automation', icon: Zap, desc: 'Intelligent workflow automation', link: '/services/ai-automation' },
-      { label: 'Voice Assistants', icon: Mic, desc: 'Enterprise AI voice assistants', link: '/services/ai-voice-agent' },
-      { label: 'Lead Qualification', icon: Search, desc: 'Smart lead scoring & routing', link: '/services/lead-qualification' },
-      { label: 'Appointment Scheduling', icon: Calendar, desc: 'Automated booking & reminders', link: '/services/appointment-scheduling' },
+      { label: 'AI Automation', icon: Zap, desc: 'Intelligent workflow automation', link: '/services/ai-automation/' },
+      { label: 'Voice Assistants', icon: Mic, desc: 'Enterprise AI voice assistants', link: '/services/ai-voice-agent/' },
+      { label: 'Lead Qualification', icon: Search, desc: 'Smart lead scoring & routing', link: '/services/lead-qualification/' },
+      { label: 'Appointment Scheduling', icon: Calendar, desc: 'Automated booking & reminders', link: '/services/appointment-scheduling/' },
     ]
   },
   {
     title: 'Custom Engineering',
     items: [
-      { label: 'Website Development', icon: Layout, desc: 'Custom web applications', link: '/services/website-development' },
-      { label: 'Mobile App Development', icon: Smartphone, desc: 'iOS & Android applications', link: '/services/mobile-app-development' },
-      { label: 'Solution Support Services', icon: LifeBuoy, desc: '24/7 managed solution support', link: '/services/solution-support' },
+      { label: 'Website Development', icon: Layout, desc: 'Custom web applications', link: '/services/website-development/' },
+      { label: 'Mobile App Development', icon: Smartphone, desc: 'iOS & Android applications', link: '/services/mobile-app-development/' },
+      { label: 'Solution Support Services', icon: LifeBuoy, desc: '24/7 managed solution support', link: '/services/solution-support/' },
     ]
   },
   {
     title: 'Growth & Security',
     items: [
-      { label: 'Digital Marketing', icon: TrendingUp, desc: 'SEO, PPC & growth strategies', link: '/services/digital-marketing' },
-      { label: 'Content & Marketing', icon: FileText, desc: 'Content strategy & creation', link: '/services/content-marketing' },
-      { label: 'Security & Validation', icon: ShieldCheck, desc: 'Security compliance & audits', link: '/services/security-validation' },
-      { label: 'Outbound Campaigns', icon: Megaphone, desc: 'Multi-channel outreach at scale', link: '/services/outbound-campaigns' },
+      { label: 'Digital Marketing', icon: TrendingUp, desc: 'SEO, PPC & growth strategies', link: '/services/digital-marketing/' },
+      { label: 'Content & Marketing', icon: FileText, desc: 'Content strategy & creation', link: '/services/content-marketing/' },
+      { label: 'Security & Validation', icon: ShieldCheck, desc: 'Security compliance & audits', link: '/services/security-validation/' },
+      { label: 'Outbound Campaigns', icon: Megaphone, desc: 'Multi-channel outreach at scale', link: '/services/outbound-campaigns/' },
     ]
   }
 ];
 
 const projectsList: ProjectItem[] = [
-  { label: 'Vedims LMS', icon: Layout, desc: 'Scalable learning management', link: '/projects/vedims' },
-  { label: 'HRMS Solution', icon: Briefcase, desc: 'All-in-one workforce portal', link: '/projects/hrms' },
-  { label: 'Medblik Locator', icon: MapPin, desc: 'Real-time emergency facility finder', link: '/projects/medblik' },
-  { label: 'AgTech E-Commerce', icon: ShoppingBag, desc: 'Agricultural tech themed store', link: '/projects/agtech' },
-  { label: 'Mentor AI Matcher', icon: Brain, desc: 'AI-powered network routing', link: '/projects/mentor-ai' },
+  { label: 'Vedims LMS', icon: Layout, desc: 'Scalable learning management', link: '/projects/vedims/' },
+  { label: 'HRMS Solution', icon: Briefcase, desc: 'All-in-one workforce portal', link: '/projects/hrms/' },
+  { label: 'Medblik Locator', icon: MapPin, desc: 'Real-time emergency facility finder', link: '/projects/medblik/' },
+  { label: 'AgTech E-Commerce', icon: ShoppingBag, desc: 'Agricultural tech themed store', link: '/projects/agtech/' },
+  { label: 'Mentor AI Matcher', icon: Brain, desc: 'AI-powered network routing', link: '/projects/mentor-ai/' },
 ];
 
 const Navbar: React.FC = () => {
