@@ -7,7 +7,7 @@ export const metadata = {
   title: 'AI Solutions & Custom Engineering Services | Neuronexa Labs',
   description: 'Explore Neuronexa Labs\' suite of AI automation, voice assistants, custom web applications, and digital growth services designed to scale your business.',
   alternates: {
-    canonical: 'https://neuronexalabs.com/services',
+    canonical: 'https://neuronexalabs.com/services/',
   },
 };
 
@@ -44,7 +44,7 @@ export default function ServicesHub() {
                     Deploy human-sounding AI voice agents in minutes. Handle inbound support 24/7, qualify outbound leads, and sync everything directly to your CRM with subsecond latency.
                   </p>
                   <Link 
-                    href="/services/ai-voice-agent"
+                    href="/services/ai-voice-agent/"
                     className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-navy hover:bg-[#228cb2] text-white font-bold transition-colors"
                   >
                     Explore Voice AI
@@ -65,7 +65,7 @@ export default function ServicesHub() {
                     {categoryServices.map(service => (
                       <Link 
                         key={service.slug}
-                        href={`/services/${service.slug}`}
+                        href={`/services/${service.slug}/`}
                         className="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-xl border border-slate-200/60 overflow-hidden transition-all duration-300 hover:-translate-y-1"
                       >
                         <div className="h-48 overflow-hidden relative">

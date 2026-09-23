@@ -41,7 +41,7 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Neuronexa Labs",
-  "url": "https://neuronexalabs.com",
+  "url": "https://neuronexalabs.com/",
   "logo": "https://neuronexalabs.com/logo.png",
   "description": "Neuronexa Labs builds AI-powered business solutions that automate repetitive work, improve customer interactions, and help businesses scale.",
 };
@@ -50,7 +50,7 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Neuronexa Labs",
-  "url": "https://neuronexalabs.com"
+  "url": "https://neuronexalabs.com/"
 };
 
 const faqSchema = {

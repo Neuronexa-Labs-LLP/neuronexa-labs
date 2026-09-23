@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "homepage": "https://neuronexalabs.com",
+  "homepage": "https://neuronexalabs.com/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d out -b gh-pages --add --message 'Deploy 🚀' --no-history",

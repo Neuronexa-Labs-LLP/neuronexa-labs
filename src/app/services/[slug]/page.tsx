@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${service.title} | Neuronexa Labs`,
     description: service.shortDesc,
     alternates: {
-      canonical: `https://neuronexalabs.com/services/${service.slug}`,
+      canonical: `https://neuronexalabs.com/services/${service.slug}/`,
     },
   };
 }
@@ -46,7 +46,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
     "provider": {
       "@type": "Organization",
       "name": "Neuronexa Labs",
-      "url": "https://neuronexalabs.com"
+      "url": "https://neuronexalabs.com/"
     },
     "category": service.category,
     "url": `https://neuronexalabs.com/services/${service.slug}`

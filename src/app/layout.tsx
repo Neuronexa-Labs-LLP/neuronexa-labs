@@ -24,6 +24,7 @@ const kanit = Kanit({
 });
 
 export const metadata = {
+  metadataBase: new URL('https://neuronexalabs.com/'),
   title: 'AI Automation & Voice AI Solutions for Businesses | Neuronexa Labs',
   description: 'Neuronexa Labs builds AI-powered business solutions that automate repetitive work, improve customer interactions, and help businesses scale.',
   icons: {

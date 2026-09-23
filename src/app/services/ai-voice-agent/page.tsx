@@ -10,7 +10,7 @@ export const metadata = {
   title: 'AI Voice Assistants | Neuronexa Labs',
   description: 'Deploy human-sounding AI voice assistants with subsecond latency, natural speech generation, and zero-loss CRM synchronization.',
   alternates: {
-    canonical: 'https://neuronexalabs.com/services/ai-voice-agent',
+    canonical: 'https://neuronexalabs.com/services/ai-voice-agent/',
   },
 };
 
