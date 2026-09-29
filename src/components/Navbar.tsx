@@ -1,7 +1,7 @@
 "use client";
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, X, MessageCircle, ChevronDown, Bot, Globe, ShieldCheck, Smartphone, Megaphone, Phone, CalendarCheck, UserCheck, Headset, LayoutDashboard, FileText, BarChart3, ArrowRight, Layout, Briefcase, MapPin, ShoppingBag, Brain, Zap, Mic, Search, Calendar, LifeBuoy, TrendingUp } from 'lucide-react';
+import { Menu, X, MessageCircle, ChevronDown, Bot, Globe, ShieldCheck, Smartphone, Megaphone, Phone, CalendarCheck, UserCheck, Headset, LayoutDashboard, FileText, BarChart3, ArrowRight, Layout, Briefcase, MapPin, ShoppingBag, Brain, Zap, Mic, Search, Calendar, LifeBuoy, TrendingUp, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -58,6 +58,7 @@ const categorizedServices: Category[] = [
 ];
 
 const projectsList: ProjectItem[] = [
+  { label: 'NexaDhi AI Platform', icon: Sparkles, desc: 'AI talent assessment & learning ecosystem', link: '/projects/nexadhi/' },
   { label: 'Vedims LMS', icon: Layout, desc: 'Scalable learning management', link: '/projects/vedims/' },
   { label: 'HRMS Solution', icon: Briefcase, desc: 'All-in-one workforce portal', link: '/projects/hrms/' },
   { label: 'Medblik Locator', icon: MapPin, desc: 'Real-time emergency facility finder', link: '/projects/medblik/' },
@@ -301,16 +302,6 @@ const Navbar: React.FC = () => {
                         </div>
                       </Link>
                     ))}
-                  </div>
-
-                  <div className="mt-3 pt-3 border-t border-slate-100 flex items-center justify-end px-1">
-                    <a
-                      href="/#projects"
-                      onClick={() => setProjectsOpen(false)}
-                      className="text-[11px] font-bold text-brand-navy hover:text-[#0F172A] transition-colors cursor-pointer flex items-center gap-1"
-                    >
-                      View Portfolio <ArrowRight className="h-3 w-3" />
-                    </a>
                   </div>
                 </motion.div>
               )}

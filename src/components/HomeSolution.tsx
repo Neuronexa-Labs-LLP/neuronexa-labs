@@ -19,7 +19,6 @@ const solutions = [
       tagBg: 'bg-sky-100/80',
       tagText: 'text-[#0F6F94]',
     },
-    tag: 'Outbound Sales',
     number: '01',
   },
   {
@@ -36,7 +35,6 @@ const solutions = [
       tagBg: 'bg-emerald-100/80',
       tagText: 'text-emerald-700',
     },
-    tag: 'Inbound Support',
     number: '02',
   },
   {
@@ -53,7 +51,6 @@ const solutions = [
       tagBg: 'bg-violet-100/80',
       tagText: 'text-violet-700',
     },
-    tag: 'Smart Scheduling',
     number: '03',
   },
   {
@@ -70,7 +67,6 @@ const solutions = [
       tagBg: 'bg-amber-100/80',
       tagText: 'text-amber-700',
     },
-    tag: 'Auto Sync',
     number: '04',
   }
 ];
@@ -87,12 +83,8 @@ const HomeSolution: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div
-          className="text-center max-w-3xl mx-auto mb-20"
+          className="text-center max-w-3xl mx-auto mb-5"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-navy/10 border border-brand-navy/20 mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-navy animate-pulse" />
-            <span className="text-xs font-bold text-brand-navy uppercase tracking-wider">Core Capabilities</span>
-          </div>
           <h2 className="text-3xl md:text-4xl lg:text-[42px] font-extrabold text-slate-900 mb-5 leading-tight tracking-tight">
             What Our AI Does For You
           </h2>
@@ -129,11 +121,6 @@ const HomeSolution: React.FC = () => {
                   <div className={`w-14 h-14 rounded-2xl ${item.accent.iconBg} flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-105`}>
                     <item.icon className={`w-6 h-6 ${item.accent.iconText}`} strokeWidth={2} />
                   </div>
-                  
-                  {/* Category tag */}
-                  <span className={`inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider ${item.accent.tagBg} ${item.accent.tagText}`}>
-                    {item.tag}
-                  </span>
                 </div>
 
                 {/* Title */}

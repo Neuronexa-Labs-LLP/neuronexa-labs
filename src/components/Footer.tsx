@@ -11,6 +11,7 @@ const navigationLinks = [
 ];
 
 const projectLinks = [
+  { label: 'NexaDhi AI Platform', href: '/projects/nexadhi/' },
   { label: 'Vedims LMS', href: '/projects/vedims/' },
   { label: 'HRMS Solution', href: '/projects/hrms/' },
   { label: 'Medblik Locator', href: '/projects/medblik/' },

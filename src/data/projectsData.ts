@@ -11,9 +11,29 @@ export interface ProjectDetails {
     image: string;
     bannerImage: string;
     tags: string[];
+    liveUrl?: string;
 }
 
 export const projectsData: Record<string, ProjectDetails> = {
+    "nexadhi": {
+        id: "nexadhi",
+        title: "NexaDhi AI Assessment & Learning Platform",
+        category: "AI Talent Assessment & EdTech",
+        description: "An AI-powered talent assessment and engineering learning platform by Neuronexa Labs. Featuring adaptive coding assessments, in-browser sandboxes, anti-cheat proctoring, and verified credentials.",
+        challenge: "Traditional technical hiring relies on static, easily memorized coding challenges and keyword-stuffed resumes that cause 80%+ drop-off rates during interviews. Simultaneously, universities and campus placement cells face widespread copy-paste tampering, dual-screen cheating, and sluggish manual evaluation cycles.",
+        solution: "We engineered NexaDhi — an end-to-end verifiable skill intelligence ecosystem. Key architectural innovations include: (1) Dynamic Adaptive AI Problem Synthesis with real-time AST analysis; (2) Zero-setup multi-language in-browser sandboxes (Python, C++, Java, Rust, TypeScript); (3) Multi-signal anti-cheat engine leveraging biometric keystroke dynamics and dual-display detection; (4) Cognitive psychometric profiling of candidate reasoning and debugging behavior; and (5) Tamper-proof Skill Passports linking talent directly to 300+ enterprise hiring partners.",
+        results: [
+            "Over 1,400+ engineering learners actively onboarded and certified",
+            "Deployed across 50+ universities for automated, high-throughput campus placement drives",
+            "Reduced enterprise first-round technical screening duration by 70%",
+            "Achieved 99.8% verified assessment integrity via multi-signal proctoring"
+        ],
+        techStack: ["Next.js 16", "React 19", "WebAssembly", "TypeScript", "Tailwind CSS", "Framer Motion", "WebGL Shaders", "AI Psychometrics Engine"],
+        image: "/projects/nexadhi.png",
+        bannerImage: "/projects/nexadhi-banner.png",
+        tags: ["AI Assessment", "Coding Sandboxes", "Anti-Cheat Proctoring", "Skill Intelligence", "EdTech"],
+        liveUrl: "https://nexadhi.com"
+    },
     "vedims": {
         id: "vedims",
         title: "Vedims LMS",

@@ -60,12 +60,6 @@ const ContactSection: React.FC = () => {
 
         <div className="flex-1 w-full relative">
           <div>
-            <div className="mb-4">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-navy/10 border border-brand-navy/20">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-navy animate-pulse" />
-                <span className="text-xs font-bold text-brand-navy uppercase tracking-wider">Get in Touch</span>
-              </div>
-            </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0F2137] mb-6 tracking-tighter leading-none uppercase">
               Let's <span className="text-brand-navy">Build.</span>
             </h2>

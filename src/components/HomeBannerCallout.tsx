@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Zap, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const HomeBannerCallout: React.FC = () => {
   return (
@@ -9,10 +9,6 @@ const HomeBannerCallout: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-xl bg-gradient-to-r from-slate-900 via-[#0B2545] to-[#0F6F94] p-5 sm:p-6 text-white flex flex-col md:flex-row items-center justify-between gap-5 shadow-lg">
           <div className="text-left max-w-2xl">
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/10 border border-white/20 text-cyan-300 text-xs font-mono font-semibold uppercase mb-1.5">
-              <Zap className="w-3.5 h-3.5" />
-              AI Voice Agent
-            </div>
             <h3 className="text-base sm:text-lg md:text-xl font-bold tracking-tight">
               Ready to deploy an AI Voice Assistant for your business?
             </h3>

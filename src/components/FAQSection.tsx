@@ -43,9 +43,9 @@ export interface FAQSectionProps {
   faqs?: FAQItem[];
 }
 
-const FAQSection: React.FC<FAQSectionProps> = ({ 
-  title = "Frequently Asked Questions", 
-  faqs = defaultFaqs 
+const FAQSection: React.FC<FAQSectionProps> = ({
+  title = "Frequently Asked Questions",
+  faqs = defaultFaqs
 }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -73,13 +73,9 @@ const FAQSection: React.FC<FAQSectionProps> = ({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-navy/10 border border-brand-navy/20 mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-navy animate-pulse" />
-            <span className="text-xs font-bold text-brand-navy uppercase tracking-wider">FAQs</span>
-          </div>
+        <div className="text-center max-w-3xl mx-auto mb-4 md:mb-5">
           <h2 className="text-3xl md:text-4xl lg:text-[42px] font-extrabold text-slate-900 mb-6 tracking-tight leading-[1.2]">
             {title}
           </h2>
@@ -92,11 +88,10 @@ const FAQSection: React.FC<FAQSectionProps> = ({
             return (
               <div
                 key={index}
-                className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
-                  isOpen
-                    ? 'bg-white border-brand-navy/60 shadow-sm shadow-[#0F6F94]/5'
-                    : 'bg-white/80 hover:bg-white border-slate-200/80 hover:border-slate-300'
-                }`}
+                className={`rounded-2xl border transition-all duration-200 overflow-hidden ${isOpen
+                  ? 'bg-white border-brand-navy/60 shadow-sm shadow-[#0F6F94]/5'
+                  : 'bg-white/80 hover:bg-white border-slate-200/80 hover:border-slate-300'
+                  }`}
               >
                 <button
                   type="button"
@@ -113,9 +108,8 @@ const FAQSection: React.FC<FAQSectionProps> = ({
                     </span>
                   </div>
                   <div
-                    className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 ${
-                      isOpen ? 'bg-[#0F6F94] text-white rotate-180' : 'bg-slate-100 text-slate-500'
-                    }`}
+                    className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 ${isOpen ? 'bg-[#0F6F94] text-white rotate-180' : 'bg-slate-100 text-slate-500'
+                      }`}
                   >
                     <ChevronDown className="w-4 h-4" />
                   </div>
