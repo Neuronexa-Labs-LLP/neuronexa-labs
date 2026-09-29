@@ -34,12 +34,8 @@ const HomeIntegrations: React.FC = () => {
     <section className="py-20 sm:py-24 bg-slate-50 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-          
+
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-navy/10 border border-brand-navy/20 mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-navy animate-pulse" />
-              <span className="text-xs font-bold text-brand-navy uppercase tracking-wider">Integrations</span>
-            </div>
             <h2 className="mt-4 max-w-md text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
               Keep the tools you already love. We just make them effortlessly smart.
             </h2>
@@ -55,8 +51,8 @@ const HomeIntegrations: React.FC = () => {
 
           <div className="flex flex-wrap content-start gap-3">
             {integrationsList.map((item) => (
-              <span 
-                key={item} 
+              <span
+                key={item}
                 className="rounded-xl border border-slate-200/80 bg-white px-5 py-3 text-[14px] sm:text-[15px] font-semibold text-slate-700 shadow-sm hover:border-brand-navy/40 hover:shadow-md hover:-translate-y-0.5 transition-all cursor-default"
               >
                 {item}

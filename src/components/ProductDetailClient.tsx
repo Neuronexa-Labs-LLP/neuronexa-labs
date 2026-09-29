@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, CheckCircle2, Server, MessageCircle, Cpu, Star, BarChart } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Server, MessageCircle, Cpu, Star, BarChart, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { ProjectDetails } from '../data/projectsData';
 
@@ -47,6 +47,19 @@ export default function ProductDetailClient({ project }: { project: ProjectDetai
                   <p className="text-sm md:text-base text-slate-300 max-w-2xl leading-relaxed font-semibold">
                       {project.description}
                   </p>
+                  {project.liveUrl && (
+                    <div className="mt-6">
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#2AA7D3] hover:bg-[#228cb2] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg hover:scale-105 cursor-pointer"
+                      >
+                        <span>Visit Live Platform</span>
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      </a>
+                    </div>
+                  )}
               </motion.div>
           </div>
       </div>

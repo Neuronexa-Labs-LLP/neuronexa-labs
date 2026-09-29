@@ -17,21 +17,17 @@ const HomeHowItFits: React.FC = () => {
     <section id="solutions" className="py-20 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-          
-          <div 
+
+          <div
             className="w-full lg:w-1/2"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-navy/10 border border-brand-navy/20 mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-navy animate-pulse" />
-              <span className="text-xs font-bold text-brand-navy uppercase tracking-wider">Seamless Fit</span>
-            </div>
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
               It Just Works With Your Business
             </h2>
             <p className="text-slate-600 text-lg mb-8 leading-relaxed">
               You don't need to change the way your team works. Our AI Voice Assistant fits into your existing processes and works with the tools you already use.
             </p>
-            
+
             <ul className="space-y-4">
               {fits.map((fit, idx) => (
                 <li key={idx} className="flex items-start gap-3">
@@ -44,20 +40,20 @@ const HomeHowItFits: React.FC = () => {
             <div className="mt-8 pt-6 border-t border-slate-200">
               <p className="text-lg font-bold text-slate-800 mb-2">Your team stays in control</p>
               <p className="text-slate-500 text-sm leading-relaxed">
-                Listen to calls anytime · See what your AI is handling 
+                Listen to calls anytime · See what your AI is handling
               </p>
             </div>
           </div>
 
-          <div 
+          <div
             className="w-full lg:w-1/2 relative"
           >
             {/* Background glowing orb */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-brand-navy/20 rounded-full blur-[80px]" />
-            
+
             <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-[#0F2137] to-[#0A1626] p-1 border border-slate-700/50">
               <div className="absolute top-0 right-0 w-64 h-64 bg-brand-navy/10 rounded-full blur-3xl" />
-              
+
               <div className="relative bg-[#0F2137]/90 backdrop-blur-xl rounded-[23px] p-6 sm:p-8 flex flex-col gap-5 border border-slate-700/30">
                 {/* Integration Card */}
                 <div className="bg-slate-800/40 hover:bg-slate-800/60 transition-colors rounded-2xl p-5 border border-slate-700/50 shadow-inner group relative overflow-hidden">
@@ -95,14 +91,14 @@ const HomeHowItFits: React.FC = () => {
                       <p className="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Active</p>
                     </div>
                   </div>
-                  
+
                   {/* Dynamic Audio Waveform Mockup */}
                   <div className="flex gap-1.5 h-12 items-end justify-between px-2 w-full mt-2">
                     {[35, 60, 40, 85, 55, 100, 75, 45, 90, 65, 30, 70].map((h, i) => (
-                      <div 
-                        key={i} 
+                      <div
+                        key={i}
                         style={{ height: `${h}%` }}
-                        className="w-full max-w-[12px] bg-gradient-to-t from-[#0F6F94] to-brand-navy rounded-sm opacity-80 group-hover:opacity-100 transition-opacity" 
+                        className="w-full max-w-[12px] bg-gradient-to-t from-[#0F6F94] to-brand-navy rounded-sm opacity-80 group-hover:opacity-100 transition-opacity"
                       />
                     ))}
                   </div>
@@ -110,7 +106,7 @@ const HomeHowItFits: React.FC = () => {
               </div>
             </div>
           </div>
-          
+
         </div>
       </div>
     </section>
