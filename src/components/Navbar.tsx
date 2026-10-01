@@ -1,5 +1,4 @@
 "use client";
-"use client";
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, MessageCircle, ChevronDown, Bot, Globe, ShieldCheck, Smartphone, Megaphone, Phone, CalendarCheck, UserCheck, Headset, LayoutDashboard, FileText, BarChart3, ArrowRight, Layout, Briefcase, MapPin, ShoppingBag, Brain, Zap, Mic, Search, Calendar, LifeBuoy, TrendingUp, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -76,6 +75,7 @@ const Navbar: React.FC = () => {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false);
 
+  const navRef = useRef<HTMLElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
 
@@ -84,14 +84,35 @@ const Navbar: React.FC = () => {
 
   const isHomePage = pathname === '/';
 
+  // Track scroll position
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu on route change
   useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
+    setIsOpen(false);
+    setMobileServicesOpen(false);
+    setMobileProjectsOpen(false);
+  }, [pathname]);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  // Outside click & touch listener for dropdowns and mobile menu
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent | TouchEvent) => {
       const target = e.target as Node;
       if (servicesRef.current && !servicesRef.current.contains(target)) {
         setServicesOpen(false);
@@ -99,9 +120,16 @@ const Navbar: React.FC = () => {
       if (projectsRef.current && !projectsRef.current.contains(target)) {
         setProjectsOpen(false);
       }
+      if (navRef.current && !navRef.current.contains(target)) {
+        setIsOpen(false);
+      }
     };
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
   }, []);
 
   const handleServicesEnter = () => {
@@ -126,18 +154,47 @@ const Navbar: React.FC = () => {
     window.open('https://wa.me/9110435020', '_blank');
   };
 
-  const navLinks: any[] = [];
+  interface NavLinkItem {
+    id: string;
+    label: string;
+    path?: string;
+  }
+
+  const navLinks: NavLinkItem[] = [
+    { id: 'how-it-works', label: 'How It Works' },
+  ];
 
   return (
-    <nav className={`fixed top-4 left-4 right-4 md:top-6 md:left-24 md:right-24 z-50 transition-all duration-300 rounded-2xl border ${
-      scrolled
-        ? 'bg-white/90 backdrop-blur-md shadow-md border-slate-200/80'
-        : 'bg-white/70 backdrop-blur-sm border-slate-100/50 shadow-sm'
-    }`}>
-      <div className="max-w-7xl mx-auto px-2 md:px-4 flex items-center justify-between h-16 md:h-18">
-        <Link href="/" className="flex items-center">
-          <img src={logo.src} alt="NeuroNexa Labs" width={200} height={56} className="h-12 md:h-14 w-auto object-contain cursor-pointer" fetchPriority="high" loading="eager" />
-        </Link>
+    <>
+      {/* Mobile Backdrop Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setIsOpen(false)}
+            className="fixed inset-0 bg-slate-900/40 backdrop-blur-xs z-40 md:hidden"
+            aria-hidden="true"
+          />
+        )}
+      </AnimatePresence>
+
+      <nav
+        ref={navRef}
+        className={`fixed top-4 left-4 right-4 md:top-6 md:left-24 md:right-24 z-50 transition-all duration-300 rounded-2xl border ${
+          isOpen
+            ? 'bg-white shadow-2xl border-slate-200'
+            : scrolled
+            ? 'bg-white/95 backdrop-blur-md shadow-md border-slate-200/80'
+            : 'bg-white/80 backdrop-blur-sm border-slate-100/60 shadow-sm'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-3 md:px-4 flex items-center justify-between h-16 md:h-18">
+          <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
+            <img src={logo.src} alt="NeuroNexa Labs" width={200} height={56} className="h-11 md:h-14 w-auto object-contain cursor-pointer" fetchPriority="high" loading="eager" />
+          </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
@@ -347,8 +404,11 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Toggle */}
         <button
+          type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-slate-700 cursor-pointer" aria-label="Toggle menu"
+          className="md:hidden flex items-center justify-center w-10 h-10 rounded-xl text-slate-700 hover:text-brand-navy hover:bg-slate-100/80 active:bg-slate-200/80 transition-colors cursor-pointer"
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isOpen}
         >
           {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -361,35 +421,35 @@ const Navbar: React.FC = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white/95 backdrop-blur-md border-t border-slate-100 overflow-hidden rounded-b-2xl"
+            transition={{ duration: 0.25, ease: 'easeOut' }}
+            className="md:hidden border-t border-slate-100/80 rounded-b-2xl overflow-hidden bg-white"
           >
-            <div className="px-5 py-6 flex flex-col gap-2">
+            <div className="max-h-[calc(100vh-6.5rem)] overflow-y-auto overscroll-contain px-4 py-4 flex flex-col divide-y divide-slate-100">
               {!isHomePage && (
-                <Link
-                  href="/"
-                  className="text-base font-semibold text-slate-800 hover:text-brand-teal transition-colors py-2.5 cursor-pointer"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Home
-                </Link>
+                <div className="pb-2">
+                  <Link
+                    href="/"
+                    className="flex items-center text-base font-semibold text-slate-800 hover:text-brand-navy active:text-brand-teal transition-colors py-2 px-1 rounded-lg"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Home
+                  </Link>
+                </div>
               )}
 
               {/* Mobile Services Accordion */}
-              <div>
-                <Link
-                  href="/services"
-                  onClick={() => setIsOpen(false)}
-                  className="w-full flex items-center justify-between text-base font-semibold text-slate-800 hover:text-brand-teal transition-colors py-2.5 cursor-pointer"
+              <div className="py-2">
+                <button
+                  type="button"
+                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  className="w-full flex items-center justify-between text-base font-semibold text-slate-800 hover:text-brand-navy active:text-brand-teal transition-colors py-2 px-1 cursor-pointer text-left rounded-lg"
+                  aria-expanded={mobileServicesOpen}
                 >
-                  Services
-                  <button 
-                    type="button"
-                    onClick={(e) => { e.preventDefault(); setMobileServicesOpen(!mobileServicesOpen); }}
-                    className="p-2"
-                  >
+                  <span>Services</span>
+                  <div className={`h-6 w-6 rounded-md flex items-center justify-center transition-colors ${mobileServicesOpen ? 'bg-brand-navy/10 text-brand-navy' : 'bg-slate-100 text-slate-500'}`}>
                     <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
-                  </button>
-                </Link>
+                  </div>
+                </button>
 
                 <AnimatePresence>
                   {mobileServicesOpen && (
@@ -400,43 +460,37 @@ const Navbar: React.FC = () => {
                       transition={{ duration: 0.2 }}
                       className="overflow-hidden"
                     >
-                      <div className="pl-2 pb-2 flex flex-col gap-4">
+                      <div className="pt-2 pb-3 px-1 flex flex-col gap-4">
+                        <Link
+                          href="/services"
+                          onClick={() => { setIsOpen(false); setMobileServicesOpen(false); }}
+                          className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-navy hover:text-brand-teal transition-colors px-2.5 py-1.5 bg-[#EEF8FF] rounded-lg w-fit"
+                        >
+                          <span>Explore All Services</span>
+                          <ArrowRight className="h-3 w-3" />
+                        </Link>
+
                         {categorizedServices.map((category) => (
                           <div key={category.title} className="flex flex-col gap-1">
-                            <p className="text-[10px] uppercase tracking-[0.2em] font-extrabold text-slate-400 border-b border-slate-100 pb-1.5 mb-1">
+                            <p className="text-[10px] uppercase tracking-[0.18em] font-extrabold text-slate-400 border-b border-slate-100 pb-1 mb-1 px-1">
                               {category.title}
                             </p>
-                            {category.items.map((item) => {
-                              const mobileClass = "flex items-center gap-3 px-2 py-2 rounded-xl hover:bg-slate-50 transition-colors cursor-pointer";
-                              const mobileContent = (
-                                <>
-                                  <div className="h-7 w-7 rounded-lg bg-[#EEF8FF] flex items-center justify-center shrink-0">
-                                    <item.icon className="h-3.5 w-3.5 text-brand-navy" />
-                                  </div>
-                                  <span className="text-[13px] font-semibold text-slate-700">{item.label}</span>
-                                </>
-                              );
-                              return item.link ? (
-                                <Link
-                                  key={item.label}
-                                  href={item.link}
-                                  onClick={() => { setIsOpen(false); setMobileServicesOpen(false); }}
-                                  className={mobileClass}
-                                >
-                                  {mobileContent}
-                                </Link>
-                              ) : (
-                                <div
-                                  key={item.label}
-                                  className="flex items-center gap-3 px-2 py-2 rounded-xl cursor-default"
-                                >
-                                  <div className="h-7 w-7 rounded-lg bg-slate-100 flex items-center justify-center shrink-0">
-                                    <item.icon className="h-3.5 w-3.5 text-slate-400" />
-                                  </div>
-                                  <span className="text-[13px] font-semibold text-slate-400">{item.label}</span>
+                            {category.items.map((item) => (
+                              <Link
+                                key={item.label}
+                                href={item.link || '/services'}
+                                onClick={() => { setIsOpen(false); setMobileServicesOpen(false); }}
+                                className="flex items-center gap-3 px-2 py-2 rounded-xl hover:bg-slate-50 active:bg-slate-100 transition-colors"
+                              >
+                                <div className="h-7 w-7 rounded-lg bg-[#EEF8FF] flex items-center justify-center shrink-0">
+                                  <item.icon className="h-3.5 w-3.5 text-brand-navy" />
                                 </div>
-                              );
-                            })}
+                                <div className="flex flex-col">
+                                  <span className="text-[13px] font-semibold text-slate-800 leading-snug">{item.label}</span>
+                                  <span className="text-[10px] text-slate-400 leading-snug line-clamp-1">{item.desc}</span>
+                                </div>
+                              </Link>
+                            ))}
                           </div>
                         ))}
                       </div>
@@ -446,14 +500,17 @@ const Navbar: React.FC = () => {
               </div>
 
               {/* Mobile Projects Accordion */}
-              <div>
+              <div className="py-2">
                 <button
                   type="button"
                   onClick={() => setMobileProjectsOpen(!mobileProjectsOpen)}
-                  className="w-full flex items-center justify-between text-base font-semibold text-slate-800 hover:text-brand-teal transition-colors py-2.5 cursor-pointer"
+                  className="w-full flex items-center justify-between text-base font-semibold text-slate-800 hover:text-brand-navy active:text-brand-teal transition-colors py-2 px-1 cursor-pointer text-left rounded-lg"
+                  aria-expanded={mobileProjectsOpen}
                 >
-                  Projects
-                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileProjectsOpen ? 'rotate-180' : ''}`} />
+                  <span>Projects</span>
+                  <div className={`h-6 w-6 rounded-md flex items-center justify-center transition-colors ${mobileProjectsOpen ? 'bg-brand-navy/10 text-brand-navy' : 'bg-slate-100 text-slate-500'}`}>
+                    <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileProjectsOpen ? 'rotate-180' : ''}`} />
+                  </div>
                 </button>
 
                 <AnimatePresence>
@@ -465,18 +522,21 @@ const Navbar: React.FC = () => {
                       transition={{ duration: 0.2 }}
                       className="overflow-hidden"
                     >
-                      <div className="pl-2 pb-2 flex flex-col gap-2">
+                      <div className="pt-2 pb-3 px-1 flex flex-col gap-1.5">
                         {projectsList.map((project) => (
                           <Link
                             key={project.label}
                             href={project.link}
                             onClick={() => { setIsOpen(false); setMobileProjectsOpen(false); }}
-                            className="flex items-center gap-3 px-2 py-2 rounded-xl hover:bg-slate-50 transition-colors cursor-pointer"
+                            className="flex items-center gap-3 px-2 py-2 rounded-xl hover:bg-slate-50 active:bg-slate-100 transition-colors"
                           >
                             <div className="h-7 w-7 rounded-lg bg-[#EEF8FF] flex items-center justify-center shrink-0">
                               <project.icon className="h-3.5 w-3.5 text-brand-navy" />
                             </div>
-                            <span className="text-[13px] font-semibold text-slate-700">{project.label}</span>
+                            <div className="flex flex-col">
+                              <span className="text-[13px] font-semibold text-slate-800 leading-snug">{project.label}</span>
+                              <span className="text-[10px] text-slate-400 leading-snug line-clamp-1">{project.desc}</span>
+                            </div>
                           </Link>
                         ))}
                       </div>
@@ -486,49 +546,43 @@ const Navbar: React.FC = () => {
               </div>
 
               {navLinks.map((link) => (
-                link.path ? (
-                  <Link
-                    key={link.id}
-                    href={link.path}
-                    className="text-base font-semibold text-slate-800 hover:text-brand-teal transition-colors py-2.5 cursor-pointer"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                ) : (
+                <div key={link.id} className="py-2">
                   <a
-                    key={link.id}
                     href={`/#${link.id}`}
-                    className="text-base font-semibold text-slate-800 hover:text-brand-teal transition-colors py-2.5 cursor-pointer"
+                    className="flex items-center text-base font-semibold text-slate-800 hover:text-brand-navy active:text-brand-teal transition-colors py-2 px-1 rounded-lg cursor-pointer"
                     onClick={() => setIsOpen(false)}
                   >
                     {link.label}
                   </a>
-                )
+                </div>
               ))}
 
+              <div className="py-2">
+                <a
+                  href="/#contactus"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center text-base font-semibold text-slate-800 hover:text-brand-navy active:text-brand-teal transition-colors py-2 px-1 rounded-lg cursor-pointer"
+                >
+                  Contact Us
+                </a>
+              </div>
 
-
-              <a
-                href="/#contactus"
-                onClick={() => setIsOpen(false)}
-                className="text-base font-semibold text-slate-800 hover:text-brand-teal transition-colors py-2.5 cursor-pointer"
-              >
-                Contact Us
-              </a>
-
-              <button
-                onClick={() => { setIsOpen(false); handleWhatsAppClick(); }}
-                className="bg-brand-navy hover:bg-brand-teal text-white px-5 py-3 rounded-xl text-sm font-bold flex items-center justify-center gap-2 cursor-pointer"
-              >
-                Let's Talk <MessageCircle className="h-4 w-4" />
-              </button>
+              <div className="pt-3 pb-2">
+                <button
+                  type="button"
+                  onClick={() => { setIsOpen(false); handleWhatsAppClick(); }}
+                  className="w-full bg-brand-navy hover:bg-brand-teal active:scale-[0.99] text-white px-5 py-3 rounded-xl text-sm font-bold flex items-center justify-center gap-2 cursor-pointer shadow-sm transition-all"
+                >
+                  Let's Talk <MessageCircle className="h-4 w-4" />
+                </button>
+              </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
     </nav>
-  );
+  </>
+);
 };
 
 export default Navbar;
