@@ -6,6 +6,59 @@ import { ArrowLeft, CheckCircle2, Server, MessageCircle, Cpu, Star, BarChart, Ex
 import Link from 'next/link';
 import { ProjectDetails } from '../data/projectsData';
 
+const renderFormattedSolution = (text: string) => {
+  const items: { num: string; content: string }[] = [];
+  const introIndex = text.search(/\(\d+\)/);
+  const introText = introIndex !== -1 ? text.substring(0, introIndex).trim() : text;
+
+  if (introIndex !== -1) {
+    const listPart = text.substring(introIndex);
+    const itemRegex = /\((\d+)\)\s*([\s\S]*?)(?=(?:\(\d+\)|$))/g;
+    let match;
+    while ((match = itemRegex.exec(listPart)) !== null) {
+      let content = match[2].trim();
+      content = content
+        .replace(/^;\s*/, '')
+        .replace(/;\s*and\s*/gi, '')
+        .replace(/;\s*$/, '')
+        .replace(/\.\s*$/, '')
+        .trim();
+      if (content) {
+        items.push({ num: match[1], content });
+      }
+    }
+  }
+
+  if (items.length > 0) {
+    return (
+      <div className="space-y-4">
+        {introText && (
+          <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-semibold">
+            {introText}
+          </p>
+        )}
+        <div className="space-y-2.5 pt-1">
+          {items.map((item, idx) => (
+            <div
+              key={idx}
+              className="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50/80 border border-slate-200/60 hover:border-emerald-500/30 hover:bg-emerald-50/30 transition-all duration-200"
+            >
+              <span className="flex items-center justify-center h-6 w-6 rounded-lg bg-emerald-500 text-white font-bold text-xs shrink-0 mt-0.5 shadow-sm shadow-emerald-500/20">
+                {item.num}
+              </span>
+              <span className="text-slate-700 text-xs md:text-sm font-semibold leading-relaxed">
+                {item.content}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  return <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-semibold">{text}</p>;
+};
+
 export default function ProductDetailClient({ project }: { project: ProjectDetails }) {
   // Animation variants
   const fadeIn = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } };
@@ -79,8 +132,8 @@ export default function ProductDetailClient({ project }: { project: ProjectDetai
                       </div>
                   </motion.div>
 
-                  {/* Challenge & Solution details side by side/stacked */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Challenge & Solution details stacked for optimal readability */}
+                  <div className="grid grid-cols-1 gap-6">
                       <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="bg-white border border-slate-200/60 p-6 md:p-8 rounded-[24px] shadow-[0_8px_30px_rgba(0,0,0,0.02)]">
                           <div className="flex items-center gap-2.5 mb-4">
                             <div className="h-8 w-8 rounded-lg bg-red-50 flex items-center justify-center">
@@ -98,7 +151,7 @@ export default function ProductDetailClient({ project }: { project: ProjectDetai
                             </div>
                             <h2 className="text-lg font-bold text-slate-900">Our Solution</h2>
                           </div>
-                          <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-semibold">{project.solution}</p>
+                          {renderFormattedSolution(project.solution)}
                       </motion.div>
                   </div>
               </div>

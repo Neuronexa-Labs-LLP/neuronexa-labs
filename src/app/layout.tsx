@@ -25,8 +25,61 @@ const kanit = Kanit({
 
 export const metadata = {
   metadataBase: new URL('https://neuronexalabs.com/'),
-  title: 'AI Automation & Voice AI Solutions for Businesses | Neuronexa Labs',
-  description: 'Neuronexa Labs builds AI-powered business solutions that automate repetitive work, improve customer interactions, and help businesses scale.',
+  title: {
+    default: 'AI Automation & Voice AI Solutions for Businesses | Neuronexa Labs',
+    template: '%s | Neuronexa Labs',
+  },
+  description: 'Neuronexa Labs builds enterprise AI automation, custom Voice AI agents, and intelligent software solutions that automate repetitive workflows, accelerate sales, and scale business operations.',
+  keywords: [
+    'AI Automation',
+    'Voice AI Agents',
+    'AI Voice Assistant',
+    'Workflow Automation',
+    'Conversational AI',
+    'Custom AI Solutions',
+    'Enterprise Software Development',
+    'NexaDhi',
+    'AI Talent Assessment',
+    'Lead Qualification AI',
+    'Automated Appointment Scheduling',
+    'Neuronexa Labs'
+  ],
+  authors: [{ name: 'Neuronexa Labs', url: 'https://neuronexalabs.com' }],
+  creator: 'Neuronexa Labs',
+  publisher: 'Neuronexa Labs',
+  openGraph: {
+    title: 'AI Automation & Voice AI Solutions for Businesses | Neuronexa Labs',
+    description: 'Neuronexa Labs builds enterprise AI automation, custom Voice AI agents, and intelligent software solutions that automate repetitive workflows and scale operations.',
+    url: 'https://neuronexalabs.com/',
+    siteName: 'Neuronexa Labs',
+    images: [
+      {
+        url: 'https://neuronexalabs.com/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Neuronexa Labs - Enterprise AI Solutions & Voice AI Agents',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Automation & Voice AI Solutions | Neuronexa Labs',
+    description: 'Custom Voice AI Agents & Workflow Automation Solutions built to scale your business operations.',
+    images: ['https://neuronexalabs.com/og-image.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
     icon: [
       { url: '/icon.png', type: 'image/png' },

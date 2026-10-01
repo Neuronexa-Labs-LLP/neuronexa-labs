@@ -8,6 +8,7 @@ const HomeIntegrations = dynamic(() => import('../components/HomeIntegrations'))
 const FAQSection = dynamic(() => import('../components/FAQSection'));
 const ContactSection = dynamic(() => import('../components/ContactSection'));
 const HomeBannerCallout = dynamic(() => import('../components/HomeBannerCallout'));
+const HomeSEOSection = dynamic(() => import('../components/HomeSEOSection'));
 
 const homeFaqs = [
   {
@@ -44,6 +45,61 @@ const organizationSchema = {
   "url": "https://neuronexalabs.com/",
   "logo": "https://neuronexalabs.com/logo.png",
   "description": "Neuronexa Labs builds AI-powered business solutions that automate repetitive work, improve customer interactions, and help businesses scale.",
+  "sameAs": [
+    "https://linkedin.com/company/neuronexa-labs"
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "AI Automation & Voice AI Solutions",
+  "provider": {
+    "@type": "Organization",
+    "name": "Neuronexa Labs"
+  },
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "AI Engineering Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Custom Voice AI Agents"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Enterprise Workflow Automation"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AI Software Engineering & NexaDhi Platform"
+        }
+      }
+    ]
+  }
+};
+
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "NexaDhi",
+  "operatingSystem": "Web-Based",
+  "applicationCategory": "BusinessApplication",
+  "description": "AI-powered talent assessment and engineering learning platform featuring dynamic code synthesis, in-browser sandboxes, and biometric anti-cheat proctoring.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
 };
 
 const websiteSchema = {
@@ -80,7 +136,7 @@ export default function Home() {
       {/* Inject JSON-LD Schema */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([organizationSchema, websiteSchema, faqSchema]) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([organizationSchema, serviceSchema, softwareSchema, websiteSchema, faqSchema]) }}
       />
       <main>
         <HeroSection />
@@ -89,6 +145,7 @@ export default function Home() {
         <HomeHowItFits />
         <HomeIntegrations />
         <HomeBannerCallout />
+        <HomeSEOSection />
         <ContactSection />
         <FAQSection 
           title="Frequently Asked Questions" 

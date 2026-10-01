@@ -63,7 +63,7 @@ export const HowItWorksSection: React.FC = () => {
   return (
     <section
       id="how-it-works"
-      className="relative pt-12 md:pt-16 bg-slate-50 border-y border-slate-100 overflow-hidden"
+      className="relative pt-12 md:pt-16 bg-slate-50 border-y border-slate-100 overflow-hidden scroll-mt-20 md:scroll-mt-24"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* ================================================================= */}
