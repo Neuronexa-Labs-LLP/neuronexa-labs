@@ -74,26 +74,22 @@ function WhatsAppIcon({ className = "w-4 h-4" }: { className?: string }) {
 
 const services = [
   {
-    subtitle: 'Agents & Voice AI',
-    tag: 'AI Voice',
+    subtitle: 'Agents & Voice',
     image: '/assets/contact/ai-agents-voice.jpg',
     link: '/services/agents-voice/',
   },
   {
-    subtitle: 'Workflows Automations',
-    tag: 'AI Automations',
+    subtitle: 'Smart Workflows',
     image: '/assets/contact/automation-workflows.jpg',
     link: '/services/smart-workflows/',
   },
   {
     subtitle: 'Business Tools',
-    tag: 'Tools & Dashboards',
     image: '/assets/contact/software-business.jpg',
     link: '/services/business-tools/',
   },
   {
     subtitle: 'Web & Mobile',
-    tag: 'Digital Products',
     image: '/assets/contact/digital-products.jpg',
     link: '/services/web-mobile/',
   },
@@ -430,32 +426,25 @@ export default function ContactUsPage() {
               >
                 <Link
                   href={service.link}
-                  className="group flex flex-col bg-white rounded-xl sm:rounded-2xl overflow-hidden border border-slate-200/90 shadow-xs hover:border-brand-teal/50 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+                  className="group relative flex flex-col items-center justify-between p-3 sm:p-3.5 rounded-2xl bg-[#0B1526] border border-slate-800/90 hover:border-brand-teal/60 hover:shadow-lg hover:shadow-cyan-950/30 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
                 >
-                  {/* Visual container */}
-                  <div className="relative aspect-[4/3] bg-gradient-to-br from-[#0B1523] via-[#0F2137] to-[#142A45] overflow-hidden flex items-center justify-center p-3">
+                  {/* Subtle hover gradient wash */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-brand-teal/[0.06] to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+
+                  {/* Artwork frame */}
+                  <div className="w-full aspect-square flex items-center justify-center p-1.5 overflow-hidden">
                     <img
                       src={service.image}
                       alt={service.subtitle}
-                      className="w-full h-full object-contain opacity-90 group-hover:scale-108 group-hover:opacity-100 transition-transform duration-500"
+                      className="w-full h-full object-contain opacity-85 group-hover:opacity-100 group-hover:scale-108 transition-all duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0F2137]/60 via-transparent to-transparent pointer-events-none" />
                   </div>
 
-                  {/* Clean text body */}
-                  <div className="p-3 sm:p-3.5 flex flex-col flex-1 justify-between items-center text-center bg-white">
-                    <div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-brand-teal block mb-1">
-                        {service.tag}
-                      </span>
-                      <h3 className="text-xs sm:text-[13px] font-bold text-[#0F2137] group-hover:text-[#0F6F94] transition-colors leading-snug">
-                        {service.subtitle}
-                      </h3>
-                    </div>
-                    <div className="mt-2.5 pt-2 border-t border-slate-100 w-full flex items-center justify-center gap-1 text-[11px] font-semibold text-slate-400 group-hover:text-brand-teal transition-colors">
-                      <span>Explore</span>
-                      <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
-                    </div>
+                  {/* Title */}
+                  <div className="mt-2 text-center w-full">
+                    <h3 className="text-xs sm:text-[13px] font-bold text-white group-hover:text-brand-teal transition-colors truncate">
+                      {service.subtitle}
+                    </h3>
                   </div>
                 </Link>
               </motion.div>
