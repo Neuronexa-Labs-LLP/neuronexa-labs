@@ -336,39 +336,80 @@ export default function ContactUsPage() {
             href="https://wa.me/919110435020?text=Hi%20Neuronexa%20Labs!%20I%20would%20like%20to%20discuss%20a%20project."
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2.5 w-full py-3.5 px-4 rounded-xl sm:rounded-2xl bg-[#25D366] hover:bg-[#20be5a] text-white font-bold text-xs sm:text-sm tracking-wide shadow-sm hover:shadow transition-all duration-300 active:scale-[0.99]"
+            className="group flex items-center justify-between p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-[#25D366] hover:bg-[#20be5a] text-white shadow-sm hover:shadow-md transition-all duration-300 active:scale-[0.99]"
           >
-            <WhatsAppIcon className="w-4 h-4 shrink-0" />
-            <span>Chat on WhatsApp (+91 91104 35020)</span>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-xs flex items-center justify-center shrink-0">
+                <WhatsAppIcon className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-white/95">
+                    Chat on WhatsApp
+                  </span>
+                  <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-950 bg-white/90 px-2 py-0.5 rounded-full shadow-2xs">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    Fastest
+                  </span>
+                </div>
+                <p className="text-sm sm:text-base font-bold text-white mt-0.5 tracking-wide">
+                  +91 91104 35020
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-1 text-xs font-bold text-white group-hover:translate-x-1 transition-transform">
+              <span className="hidden sm:inline">Start Chat</span>
+              <ArrowRight className="w-4 h-4" />
+            </div>
           </a>
 
           {/* Symmetrical Phone & Email Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <a
               href="tel:+919110435020"
-              className="flex items-center gap-3.5 p-3.5 rounded-xl sm:rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-brand-teal/40 hover:shadow-sm transition-all group"
+              className="group flex items-center justify-between p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-[#0F6F94]/50 hover:shadow-md transition-all duration-300"
             >
-              <div className="w-9 h-9 rounded-xl bg-cyan-50 border border-cyan-100 flex items-center justify-center shrink-0 group-hover:bg-cyan-100/70 transition-colors">
-                <Phone className="w-4 h-4 text-[#0F6F94]" />
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center shrink-0 group-hover:bg-[#0F2137] transition-colors duration-300">
+                  <Phone className="w-4 h-4 text-[#0F6F94] group-hover:text-white transition-colors" />
+                </div>
+                <div className="min-w-0">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">
+                    Call Us
+                  </span>
+                  <p className="text-xs sm:text-sm font-bold text-[#0F2137] truncate mt-0.5">
+                    +91 91104 35020
+                  </p>
+                </div>
               </div>
-              <div className="min-w-0">
-                <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Call Us</p>
-                <p className="text-xs sm:text-sm font-semibold text-[#0F2137] truncate">+91 91104 35020</p>
-              </div>
+              <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#0F6F94] group-hover:translate-x-0.5 transition-all shrink-0" />
             </a>
 
             <a
               href="mailto:info@neuronexalabs.com"
-              className="flex items-center gap-3.5 p-3.5 rounded-xl sm:rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-brand-teal/40 hover:shadow-sm transition-all group"
+              className="group flex items-center justify-between p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-brand-teal/50 hover:shadow-md transition-all duration-300"
             >
-              <div className="w-9 h-9 rounded-xl bg-cyan-50 border border-cyan-100 flex items-center justify-center shrink-0 group-hover:bg-cyan-100/70 transition-colors">
-                <Mail className="w-4 h-4 text-[#0F6F94]" />
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="w-10 h-10 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center shrink-0 group-hover:bg-brand-teal transition-colors duration-300">
+                  <Mail className="w-4 h-4 text-brand-teal group-hover:text-white transition-colors" />
+                </div>
+                <div className="min-w-0">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">
+                    Email Us
+                  </span>
+                  <p className="text-xs sm:text-sm font-bold text-[#0F2137] truncate mt-0.5">
+                    info@neuronexalabs.com
+                  </p>
+                </div>
               </div>
-              <div className="min-w-0">
-                <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Email Us</p>
-                <p className="text-xs sm:text-sm font-semibold text-[#0F2137] truncate">info@neuronexalabs.com</p>
-              </div>
+              <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-brand-teal group-hover:translate-x-0.5 transition-all shrink-0" />
             </a>
+          </div>
+
+          {/* Location Note */}
+          <div className="flex items-center justify-center gap-1.5 text-xs text-slate-500 font-medium pt-1">
+            <MapPin className="w-3.5 h-3.5 text-brand-teal shrink-0" />
+            <span>India · Serving Global Remote Clients</span>
           </div>
         </motion.div>
 
