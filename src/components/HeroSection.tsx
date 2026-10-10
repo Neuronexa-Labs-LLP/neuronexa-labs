@@ -21,24 +21,24 @@ const NeuronexaHero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative bg-[#EEF8FF] pt-24 pb-16 md:pt-28 md:pb-28 overflow-hidden min-h-screen flex items-center">
+    <section className="relative bg-[#EEF8FF] pt-24 pb-10 md:pt-28 md:pb-10 overflow-hidden flex items-center">
       {/* Blur Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div 
-          className="anim-hero-blob-1 absolute -top-40 left-1/2 -translate-x-1/2 h-[600px] w-[600px] rounded-full bg-sky-400/10 blur-[120px] z-0" 
+        <div
+          className="anim-hero-blob-1 absolute -top-40 left-1/2 -translate-x-1/2 h-[600px] w-[600px] rounded-full bg-sky-400/10 blur-[120px] z-0"
         />
-        <div 
-          className="anim-hero-blob-2 absolute right-0 top-20 h-[400px] w-[400px] rounded-full bg-cyan-300/10 blur-[120px] z-0" 
+        <div
+          className="anim-hero-blob-2 absolute right-0 top-20 h-[400px] w-[400px] rounded-full bg-cyan-300/10 blur-[120px] z-0"
         />
-        <div 
-          className="anim-hero-blob-3 absolute left-0 bottom-0 h-[300px] w-[300px] rounded-full bg-blue-200/20 blur-[100px] z-0" 
+        <div
+          className="anim-hero-blob-3 absolute left-0 bottom-0 h-[300px] w-[300px] rounded-full bg-blue-200/20 blur-[100px] z-0"
         />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10 w-full">
         {/* Main Grid */}
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
-          
+
           {/* Left Text Column */}
           <div className="flex-1 text-left relative z-20">
             {/* Header Chips */}
@@ -57,7 +57,7 @@ const NeuronexaHero: React.FC = () => {
             >
               Scale Your Business with {' '}
               <span className="bg-gradient-to-r from-brand-navy via-cyan-600 to-sky-400 bg-clip-text text-transparent">
-                 Enterprise AI Voice & Automation
+                Enterprise AI Voice & Automation
               </span>{' '}
             </h1>
 
@@ -66,7 +66,7 @@ const NeuronexaHero: React.FC = () => {
               className="hero-anim hero-fade text-sm sm:text-base text-slate-600 font-normal leading-relaxed mb-6 max-w-xl"
               style={{ animationDelay: '180ms' }}
             >
-               Neuronexa Labs is an enterprise AI and workflow automation company that builds autonomous AI agents, intelligent voice assistants, and custom automation processes.
+              Neuronexa Labs is an enterprise AI and workflow automation company that builds autonomous AI agents, intelligent voice assistants, and custom automation processes.
             </p>
 
             {/* Feature Pills */}
@@ -136,13 +136,13 @@ const NeuronexaHero: React.FC = () => {
               className="anim-hero-glass-card w-full rounded-[32px] backdrop-blur-2xl bg-white/90 border border-white/80 shadow-[0_25px_70px_rgba(15,111,148,0.12)] p-2"
             >
               <div className="bg-gradient-to-b from-[#0B1528] via-[#0F1E36] to-[#0A1424] rounded-[26px] p-5 sm:p-6 border border-slate-700/40 relative overflow-hidden text-white shadow-inner">
-                
+
                 {/* Subtle radial ambient glows */}
                 <div className="absolute -top-12 -right-12 h-48 w-48 rounded-full bg-brand-navy/15 blur-[60px] pointer-events-none" />
                 <div className="absolute bottom-0 -left-10 h-36 w-36 rounded-full bg-emerald-500/10 blur-[50px] pointer-events-none" />
 
                 <div className="relative z-10 flex flex-col gap-3.5">
-                  
+
                   {/* Top Status Header */}
                   <div className="flex items-center justify-between pb-3 border-b border-slate-700/50">
                     <div className="flex items-center gap-2">
@@ -194,8 +194,8 @@ const NeuronexaHero: React.FC = () => {
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                         <span>
                           {statusState === 'Dialing...' ? 'Dialing...' :
-                           statusState === 'Ringing...' ? 'Ringing...' :
-                           statusState === 'Connected' ? '00:18' : '00:54'}
+                            statusState === 'Ringing...' ? 'Ringing...' :
+                              statusState === 'Connected' ? '00:18' : '00:54'}
                         </span>
                       </div>
                     </div>

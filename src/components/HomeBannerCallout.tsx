@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 
 const HomeBannerCallout: React.FC = () => {
   return (
-    <section className="bg-slate-50 py-10">
+    <section className="bg-slate-50 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-xl bg-gradient-to-r from-slate-900 via-[#0B2545] to-[#0F6F94] p-5 sm:p-6 text-white flex flex-col md:flex-row items-center justify-between gap-5 shadow-lg">
           <div className="text-left max-w-2xl">

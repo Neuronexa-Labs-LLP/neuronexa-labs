@@ -14,7 +14,7 @@ const fits = [
 
 const HomeHowItFits: React.FC = () => {
   return (
-    <section id="solutions" className="py-20 bg-white relative">
+    <section id="solutions" className="py-5 md:py-10 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 

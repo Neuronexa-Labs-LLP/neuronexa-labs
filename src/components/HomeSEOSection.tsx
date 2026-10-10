@@ -3,7 +3,7 @@ import { Cpu, Bot, Workflow, ShieldCheck, Zap, Layers, BarChart3, Database } fro
 
 export default function HomeSEOSection() {
   return (
-    <section className="py-16 md:py-24 bg-slate-50 border-t border-b border-slate-200/60 relative overflow-hidden">
+    <section className="py-5 md:py-10 bg-slate-50 border-t border-b border-slate-200/60 relative overflow-hidden">
       {/* Background Decorative Pattern */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0f172a_1px,transparent_1px)] [background-size:24px_24px]" />
 

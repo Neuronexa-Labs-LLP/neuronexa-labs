@@ -1,5 +1,125 @@
 [
   {
+    "slug": "agents-voice",
+    "title": "Agents & Voice",
+    "category": "End-to-End Business Solutions",
+    "shortDesc": "Autonomous AI agents and conversational voice intelligence engineered to handle customer support, qualify leads, and execute actions 24/7 with human-grade fluency.",
+    "heroImage": "/assets/contact/ai-agents-voice.jpg",
+    "content": "<h2>Scale Customer Interaction with Intelligent AI Agents & Voice Systems</h2>\n<p>At Neuronexa Labs, we build autonomous AI agents and conversational voice assistants that understand intent, converse naturally in real time, and execute complex workflows across your enterprise tools.</p>\n<p>Whether you require outbound lead qualification, 24/7 inbound customer support, or multi-lingual voice deflection, our subsecond latency speech pipelines deliver human-level experiences that eliminate waiting queues and scale without hiring overhead.</p>\n<h3>Key Capabilities</h3>\n<ul>\n  <li><strong>Subsecond Response Latency:</strong> Real-time streaming voice models for smooth, natural turn-taking conversations.</li>\n  <li><strong>Multilingual & Vernacular Support:</strong> Native support for English, Hindi, and regional accents with contextual understanding.</li>\n  <li><strong>Deep CRM & Database Integration:</strong> Direct two-way sync with Salesforce, HubSpot, Zoho, and custom PostgreSQL databases.</li>\n  <li><strong>Multi-Channel Deployment:</strong> Connect across telephone lines, WebRTC web browsers, WhatsApp voice notes, and mobile apps.</li>\n</ul>\n<p>Our autonomous voice agents continuously learn from customer interactions, ensuring higher conversion rates, instant response times, and drastic cost reductions.</p>",
+    "faqs": [
+      {
+        "question": "What are AI Agents & Voice systems?",
+        "answer": "AI Agents & Voice systems are intelligent autonomous programs capable of holding real-time conversational phone calls and chat sessions, executing decisions, and syncing information into your software stack without human supervision."
+      },
+      {
+        "question": "Can the voice assistant handle complex queries and accents?",
+        "answer": "Yes. We calibrate speech-to-text and LLM reasoning models to accurately recognize diverse accents, dialects, and technical industry terminology while maintaining conversational context."
+      },
+      {
+        "question": "How quickly can voice agents be integrated into our existing phone system?",
+        "answer": "Integration typically takes between 1 to 3 weeks using SIP trunking, Twilio, or cloud telephony providers, connecting seamlessly to your CRM and booking systems."
+      },
+      {
+        "question": "What happens if a caller requires a human agent?",
+        "answer": "Our systems feature warm human transfer protocols, instantly routing the call to your human team alongside full real-time transcript and sentiment context."
+      },
+      {
+        "question": "Is customer voice data secure and compliant?",
+        "answer": "Yes, we implement enterprise-grade encryption in transit and at rest, fully compliant with TRAI, DNC, and global data privacy standards."
+      }
+    ]
+  },
+  {
+    "slug": "smart-workflows",
+    "title": "Smart Workflows",
+    "category": "End-to-End Business Solutions",
+    "shortDesc": "Event-driven workflow automation and intelligent data pipelines connecting your disparate tools to eliminate repetitive manual work and errors.",
+    "heroImage": "/assets/contact/automation-workflows.jpg",
+    "content": "<h2>Automate Operations with Intelligent Smart Workflows</h2>\n<p>Manual data re-entry, delayed approvals, and fragmented tools create massive operational friction. Neuronexa Labs designs self-healing, event-driven Smart Workflows that orchestrate data seamlessly across your entire software ecosystem.</p>\n<p>We replace slow manual processes with automated decision logic, instant webhooks, and secure cloud pipelines that process thousands of transactions concurrently without errors.</p>\n<h3>Key Capabilities</h3>\n<ul>\n  <li><strong>Cross-Platform Synchronization:</strong> Connect CRMs, ERPs, accounting software, communications, and internal databases.</li>\n  <li><strong>Autonomous Logic Gates:</strong> Implement AI-driven validation, anomaly detection, and automated escalation pathways.</li>\n  <li><strong>Real-time Webhook Engines:</strong> Trigger instant multi-step actions the second an event occurs anywhere in your stack.</li>\n  <li><strong>Zero-Error Data Reconciliation:</strong> Guarantee 100% data consistency across inventory, billing, and reporting.</li>\n</ul>\n<p>Transform your operational speed and free your valuable team to focus on high-impact strategic initiatives rather than mundane administrative tasks.</p>",
+    "faqs": [
+      {
+        "question": "What are Smart Workflows?",
+        "answer": "Smart Workflows are automated operational processes combining AI logic and system integrations to execute routine tasks, route approvals, and sync data automatically."
+      },
+      {
+        "question": "How do Smart Workflows differ from basic Zapier or Make automations?",
+        "answer": "Our enterprise workflows are built on robust serverless architectures with automated error retry, state persistence, deep database integrations, and complex branch logic that off-the-shelf tools cannot handle reliably."
+      },
+      {
+        "question": "Can Smart Workflows connect with legacy software?",
+        "answer": "Yes, we integrate modern APIs with on-premises servers, SQL databases, and legacy systems using custom connectors and secure tunnel protocols."
+      },
+      {
+        "question": "How do you monitor and handle errors in automated workflows?",
+        "answer": "Every pipeline includes automated monitoring, alerting, self-healing retries, and fallback human intervention alerts to prevent data loss."
+      },
+      {
+        "question": "What ROI can we expect from workflow automation?",
+        "answer": "Most clients achieve full return on investment within 3 to 6 months through reduced labor hours, faster turnaround times, and error elimination."
+      }
+    ]
+  },
+  {
+    "slug": "business-tools",
+    "title": "Business Tools",
+    "category": "End-to-End Business Solutions",
+    "shortDesc": "Custom enterprise software, internal business portals, and specialized management tools engineered specifically for your organization's unique requirements.",
+    "heroImage": "/assets/contact/software-business.jpg",
+    "content": "<h2>Custom Software & Internal Business Tools Tailored to Your Growth</h2>\n<p>Off-the-shelf SaaS solutions often force your business into rigid molds with recurring subscription overhead. Neuronexa Labs builds custom business tools, internal administration portals, and proprietary platforms crafted around your exact operations.</p>\n<p>From centralized operational dashboards and inventory monitors to client self-service portals, our bespoke tools give your leadership complete visibility and control over core business metrics.</p>\n<h3>Key Capabilities</h3>\n<ul>\n  <li><strong>Custom Internal Dashboards:</strong> Unified single-pane-of-glass interfaces consolidating real-time operations and analytics.</li>\n  <li><strong>Custom CRM & ERP Modules:</strong> Bespoke workflow extensions designed around your proprietary processes.</li>\n  <li><strong>Role-Based Access Control (RBAC):</strong> Granular permissions ensuring security, auditing, and multi-tenant isolation.</li>\n  <li><strong>Scalable Cloud Architecture:</strong> Built on modern React, Next.js, Node.js, and cloud backends designed for enterprise reliability.</li>\n</ul>\n<p>Gain a sustainable competitive advantage with tailored technology that scales alongside your company without expensive per-seat software licensing.</p>",
+    "faqs": [
+      {
+        "question": "What kind of custom Business Tools does Neuronexa Labs build?",
+        "answer": "We build custom ERP extensions, team collaboration portals, real-time KPI dashboards, automated reporting engines, and workflow management software."
+      },
+      {
+        "question": "Why choose custom business tools over commercial SaaS?",
+        "answer": "Custom tools eliminate perpetual per-user licensing fees, give you 100% ownership of your IP and data, and fit your exact workflows without compromise."
+      },
+      {
+        "question": "Who owns the code and intellectual property?",
+        "answer": "You own 100% of the custom source code, assets, and intellectual property developed for your solution."
+      },
+      {
+        "question": "Can the business tools be integrated with our existing databases?",
+        "answer": "Yes, we integrate with your existing PostgreSQL, MySQL, MongoDB, Firebase, or external API endpoints without requiring data migration."
+      },
+      {
+        "question": "What post-launch support and updates are provided?",
+        "answer": "We provide dedicated maintenance, SLA monitoring, and feature iteration packages to ensure continuous high performance."
+      }
+    ]
+  },
+  {
+    "slug": "web-mobile",
+    "title": "Web & Mobile",
+    "category": "End-to-End Business Solutions",
+    "shortDesc": "High-performance web applications, progressive web apps, and native iOS & Android applications engineered for speed, beauty, and scale.",
+    "heroImage": "/assets/contact/digital-products.jpg",
+    "content": "<h2>High-Impact Web & Mobile Digital Products Built for Scale</h2>\n<p>In today's digital economy, your digital interface is your brand's frontline. Neuronexa Labs architects cutting-edge web platforms and native mobile applications that captivate users, convert traffic, and perform under heavy load.</p>\n<p>We blend modern UI/UX design with scalable architectures—leveraging Next.js, React, React Native, Flutter, and serverless backends—to launch products that look stunning and perform reliably.</p>\n<h3>Key Capabilities</h3>\n<ul>\n  <li><strong>Full-Stack Web Applications:</strong> Fast, SEO-optimized web applications with server-side rendering and static export capability.</li>\n  <li><strong>Native & Cross-Platform Mobile Apps:</strong> iOS and Android apps built with smooth 60fps animations and offline-first capabilities.</li>\n  <li><strong>Modern Design Systems:</strong> Crafted with Tailwind CSS, custom design tokens, and accessible, responsive layouts.</li>\n  <li><strong>High-Speed API & Database Backends:</strong> Cloud-native architectures capable of handling millions of requests with low latency.</li>\n</ul>\n<p>From initial prototype to production deployment on global CDNs, we turn complex technical requirements into elegant digital experiences.</p>",
+    "faqs": [
+      {
+        "question": "What technologies do you use for Web & Mobile products?",
+        "answer": "We specialize in modern stacks including Next.js, React, TypeScript, Tailwind CSS, React Native, Flutter, Node.js, and cloud platforms like AWS and GCP."
+      },
+      {
+        "question": "Are your web applications mobile-responsive?",
+        "answer": "Yes, all our web solutions are designed mobile-first, ensuring pixel-perfect display and fast loading across phones, tablets, and desktop displays."
+      },
+      {
+        "question": "Do you assist with App Store and Google Play deployment?",
+        "answer": "Yes, we manage the complete build, certification, and submission process for Apple App Store and Google Play Store compliance."
+      },
+      {
+        "question": "Can our web and mobile apps share a single backend?",
+        "answer": "Yes, we build centralized REST and GraphQL APIs that power both your web portal and mobile apps from a single source of truth."
+      },
+      {
+        "question": "How do you ensure optimal performance and SEO ranking?",
+        "answer": "We implement Core Web Vitals optimization, static caching, Schema.org semantic markup, and server-side rendering for optimal search engine visibility."
+      }
+    ]
+  },
+  {
     "slug": "ai-automation",
     "title": "Intelligent Workflow Automation",
     "category": "Autonomous AI Agents",
@@ -63,72 +183,6 @@
     "metaTitle": "Intelligent Workflow Automation | Neuronexa Labs",
     "metaDescription": "Automate repetitive tasks, sync data across platforms, and streamline your entire business operation with AI.",
     "canonicalUrl": "https://neuronexalabs.com/services/ai-automation/",
-    "robots": "index, follow"
-  },
-  {
-    "slug": "lead-qualification",
-    "title": "Smart Lead Scoring & Routing",
-    "category": "Autonomous AI Agents",
-    "shortDesc": "Automate inbound lead qualification. Analyze incoming leads instantly, assign intent scores, and route them to your CRM.",
-    "heroImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
-    "content": "<h2>Automate Inbound Lead Qualification with Smart Scoring</h2>\n<p>Not all leads are created equal. Wasting time on unqualified prospects drains your sales team's energy and inflates your customer acquisition cost. Neuronexa Labs introduces CRM-integrated AI calling and scoring engines that work in the background 24/7.</p>\n<h3>The Intelligent Routing Matrix</h3>\n<p>Our systems ingest incoming lead data from your website, ads, and social channels, instantly cross-referencing it against enrichment databases. Using predictive modeling, every lead is assigned a dynamic score.</p>\n<ul>\n  <li><strong>Instant Enrichment:</strong> Automatically pull in firmographic data like company size, revenue, and tech stack.</li>\n  <li><strong>Behavioral Intent:</strong> Track webinar attendance, whitepaper downloads, and pricing page views to gauge readiness.</li>\n  <li><strong>Precision Routing:</strong> Instantly ping the correct Account Executive via Slack or SMS when a 'Tier A' lead is active.</li>\n</ul>\n<p>Stop relying on gut feelings. Empower your sales force with predictive intelligence and watch your close rates soar as reps engage the right people at the exact right moment.</p>",
-    "faqs": [
-      {
-        "question": "What is the average reduction in lead-to-opportunity conversion rates with Smart Lead Scoring & Routing?",
-        "answer": "Up to 30%"
-      },
-      {
-        "question": "How much can I save on sales operations and administration costs with this solution?",
-        "answer": "Up to 25%"
-      },
-      {
-        "question": "Is Smart Lead Scoring & Routing suitable for my business size and industry?",
-        "answer": "Yes, our solution is designed to work with businesses of all sizes and industries"
-      },
-      {
-        "question": "What criteria does the AI use to score leads?",
-        "answer": "The AI evaluates demographic data, firmographics, engagement metrics (like email opens and website visits), and intent signals to generate a comprehensive score."
-      },
-      {
-        "question": "Can we customize the scoring rules?",
-        "answer": "Yes, the scoring models are highly customizable. We work with your sales team to weight the criteria that matter most to your specific sales cycle."
-      },
-      {
-        "question": "Does this integrate with Salesforce or HubSpot?",
-        "answer": "Yes, we offer seamless, bi-directional integration with major CRMs including Salesforce, HubSpot, Zoho, and Pipedrive."
-      },
-      {
-        "question": "How fast is the lead routing process?",
-        "answer": "Lead routing happens in near real-time (usually under 2 seconds), ensuring your sales reps can contact hot leads immediately."
-      },
-      {
-        "question": "What if a lead scores low but is actually high value?",
-        "answer": "Our AI models continuously learn. If a low-score lead converts, the system adjusts its algorithms to better recognize similar profiles in the future."
-      },
-      {
-        "question": "Can it handle multi-language leads?",
-        "answer": "Yes, the NLP engine can analyze intent and sentiment across multiple languages and route them to appropriate regional teams."
-      },
-      {
-        "question": "Is there a limit to how many leads it can process?",
-        "answer": "No, our cloud-based routing engine can process tens of thousands of leads per minute without any latency."
-      },
-      {
-        "question": "How do you prevent lead leakage?",
-        "answer": "The system includes automated follow-up trackers and SLA alerts to notify managers if a routed lead hasn't been engaged within a specified timeframe."
-      },
-      {
-        "question": "Can we route leads based on complex territory rules?",
-        "answer": "Yes, routing logic can incorporate complex round-robin, territory, company size, and rep availability rules simultaneously."
-      },
-      {
-        "question": "Do I need to clean my data first?",
-        "answer": "While clean data helps, our system includes automated data enrichment and deduplication as the first step of the qualification process."
-      }
-    ],
-    "metaTitle": "Smart Lead Scoring & Routing | Neuronexa Labs",
-    "metaDescription": "Automatically analyze incoming leads, assign scores based on intent, and route them to the right team instantly.",
-    "canonicalUrl": "https://neuronexalabs.com/services/lead-qualification/",
     "robots": "index, follow"
   },
   {
@@ -330,72 +384,6 @@
     "metaTitle": "iOS & Android Applications | Neuronexa Labs",
     "metaDescription": "Native and cross-platform mobile experiences that keep your users engaged on the go.",
     "canonicalUrl": "https://neuronexalabs.com/services/mobile-app-development/",
-    "robots": "index, follow"
-  },
-  {
-    "slug": "solution-support",
-    "title": "24/7 Managed Solution Support",
-    "category": "Custom Engineering",
-    "shortDesc": "Round-the-clock monitoring, maintenance, and technical support to keep your systems running flawlessly.",
-    "heroImage": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80",
-    "content": "<h2>Bulletproof Your Infrastructure with 24/7 Managed Support</h2>\n<p>Downtime is expensive. When critical systems fail, your business grinds to a halt. Neuronexa Labs provides elite, around-the-clock managed support to ensure your infrastructure remains resilient, secure, and fully operational.</p>\n<h3>Proactive, Not Just Reactive</h3>\n<p>We don't just wait for things to break. Our Site Reliability Engineers (SREs) implement comprehensive monitoring and alerting systems to catch memory leaks, CPU spikes, and database deadlocks before they impact your users.</p>\n<ul>\n  <li><strong>Continuous Monitoring:</strong> Real-time dashboards tracking server health, API latency, and error rates.</li>\n  <li><strong>Rapid Incident Response:</strong> SLA-backed emergency response times, getting elite engineers on the problem within minutes.</li>\n  <li><strong>Patching & Maintenance:</strong> Regular security updates, dependency upgrades, and database optimizations handled invisibly in the background.</li>\n</ul>\n<p>Sleep easy knowing that a team of dedicated experts is watching over your digital assets 365 days a year.</p>",
-    "faqs": [
-      {
-        "question": "What types of systems are supported by the 24/7 Managed Solution Support service?",
-        "answer": "Our service supports all types of systems, including servers, workstations, laptops, and mobile devices."
-      },
-      {
-        "question": "How do I sign up for the 24/7 Managed Solution Support service?",
-        "answer": "You can sign up for our service by contacting us directly via phone, email, or through our website's contact form."
-      },
-      {
-        "question": "What are the benefits of choosing Neuronexa Labs for my 24/7 Managed Solution Support needs?",
-        "answer": "Our team of experts has years of experience in providing reliable and efficient IT support, ensuring your systems run smoothly and securely."
-      },
-      {
-        "question": "What does 24/7 support actually cover?",
-        "answer": "It covers continuous system monitoring, emergency bug fixes, server downtime resolution, and technical assistance whenever you need it."
-      },
-      {
-        "question": "How fast is your response time?",
-        "answer": "For critical issues, our SLA guarantees a response within 15 to 30 minutes, 24 hours a day, 365 days a year."
-      },
-      {
-        "question": "Do we get a dedicated account manager?",
-        "answer": "Yes, you are assigned a dedicated technical account manager who understands your architecture and business goals."
-      },
-      {
-        "question": "Is the support team available via phone?",
-        "answer": "Yes, premium tiers include direct phone lines to our on-call engineering team for immediate crisis management."
-      },
-      {
-        "question": "Do you cover third-party integrations?",
-        "answer": "Yes, we monitor and troubleshoot issues that arise from third-party APIs and services connected to your core platform."
-      },
-      {
-        "question": "How do you handle critical outages?",
-        "answer": "We use automated alerting (via PagerDuty) to immediately wake our engineering team, who follow strict incident response playbooks to restore service."
-      },
-      {
-        "question": "Are emergency fixes included in the retainer?",
-        "answer": "Yes, emergency hotfixes to restore core functionality are included in our managed support plans."
-      },
-      {
-        "question": "Do you provide monthly performance reports?",
-        "answer": "Yes, we provide detailed monthly reports covering uptime, incident logs, resolved tickets, and proactive recommendations."
-      },
-      {
-        "question": "What is your escalation process?",
-        "answer": "Level 1 support handles initial triage, escalating to Level 2 engineers for complex bugs, and up to lead architects for critical infrastructure issues."
-      },
-      {
-        "question": "Can we adjust our support tier later?",
-        "answer": "Absolutely. You can scale your support plan up or down based on your seasonal traffic or evolving business needs."
-      }
-    ],
-    "metaTitle": "24/7 Managed Solution Support | Neuronexa Labs",
-    "metaDescription": "Round-the-clock monitoring, maintenance, and technical support to keep your systems running flawlessly.",
-    "canonicalUrl": "https://neuronexalabs.com/services/solution-support/",
     "robots": "index, follow"
   },
   {
