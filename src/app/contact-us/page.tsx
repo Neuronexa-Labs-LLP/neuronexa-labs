@@ -336,30 +336,30 @@ export default function ContactUsPage() {
             href="https://wa.me/919110435020?text=Hi%20Neuronexa%20Labs!%20I%20would%20like%20to%20discuss%20a%20project."
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-between p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-[#25D366] hover:bg-[#20be5a] text-white shadow-sm hover:shadow-md transition-all duration-300 active:scale-[0.99]"
+            className="group flex items-center justify-between p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-[#25D366]/60 hover:shadow-md transition-all duration-300"
           >
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-xs flex items-center justify-center shrink-0">
-                <WhatsAppIcon className="w-5 h-5 text-white" />
+            <div className="flex items-center gap-3 min-w-0">
+              <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 group-hover:bg-[#25D366] transition-colors duration-300">
+                <WhatsAppIcon className="w-5 h-5 text-[#25D366] group-hover:text-white transition-colors duration-300" />
               </div>
-              <div>
+              <div className="min-w-0">
                 <div className="flex items-center gap-2">
-                  <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-white/95">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">
                     Chat on WhatsApp
                   </span>
-                  <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-950 bg-white/90 px-2 py-0.5 rounded-full shadow-2xs">
+                  <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/70">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                     Fastest
                   </span>
                 </div>
-                <p className="text-sm sm:text-base font-bold text-white mt-0.5 tracking-wide">
+                <p className="text-xs sm:text-sm font-bold text-[#0F2137] truncate mt-0.5">
                   +91 91104 35020
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-1 text-xs font-bold text-white group-hover:translate-x-1 transition-transform">
+            <div className="flex items-center gap-1 text-xs font-semibold text-slate-400 group-hover:text-[#25D366] group-hover:translate-x-0.5 transition-all shrink-0">
               <span className="hidden sm:inline">Start Chat</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-3.5 h-3.5" />
             </div>
           </a>
 
