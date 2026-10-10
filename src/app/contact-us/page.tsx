@@ -74,20 +74,20 @@ function WhatsAppIcon({ className = "w-4 h-4" }: { className?: string }) {
 
 const services = [
   {
-    subtitle: 'Agents & Voice',
-    tag: 'Voice AI & Inbound',
+    subtitle: 'Agents & Voice AI',
+    tag: 'AI Voice',
     image: '/assets/contact/ai-agents-voice.jpg',
     link: '/services/agents-voice/',
   },
   {
-    subtitle: 'Smart Workflows',
-    tag: 'Custom Automations',
+    subtitle: 'Workflows Automations',
+    tag: 'AI Automations',
     image: '/assets/contact/automation-workflows.jpg',
     link: '/services/smart-workflows/',
   },
   {
     subtitle: 'Business Tools',
-    tag: 'Portals & Dashboards',
+    tag: 'Tools & Dashboards',
     image: '/assets/contact/software-business.jpg',
     link: '/services/business-tools/',
   },
@@ -347,10 +347,6 @@ export default function ContactUsPage() {
                   <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">
                     Chat on WhatsApp
                   </span>
-                  <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/70">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                    Fastest
-                  </span>
                 </div>
                 <p className="text-xs sm:text-sm font-bold text-[#0F2137] truncate mt-0.5">
                   +91 91104 35020
@@ -405,19 +401,13 @@ export default function ContactUsPage() {
               <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-brand-teal group-hover:translate-x-0.5 transition-all shrink-0" />
             </a>
           </div>
-
-          {/* Location Note */}
-          <div className="flex items-center justify-center gap-1.5 text-xs text-slate-500 font-medium pt-1">
-            <MapPin className="w-3.5 h-3.5 text-brand-teal shrink-0" />
-            <span>India · Serving Global Remote Clients</span>
-          </div>
         </motion.div>
 
         {/* ─── Core Solutions Grid (Redesigned: Simple & Professional) ─── */}
         <section className="mt-10 pt-8 border-t border-slate-200/80">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-sm sm:text-base font-bold text-[#0F2137]">
-              End-to-End Business Solutions
+              Explore Business Solutions
             </h2>
             <Link
               href="/services/"
@@ -440,27 +430,31 @@ export default function ContactUsPage() {
               >
                 <Link
                   href={service.link}
-                  className="group flex flex-col bg-white rounded-xl sm:rounded-2xl overflow-hidden border border-slate-200/90 shadow-xs hover:border-brand-teal/40 hover:shadow-md transition-all duration-300"
+                  className="group flex flex-col bg-white rounded-xl sm:rounded-2xl overflow-hidden border border-slate-200/90 shadow-xs hover:border-brand-teal/50 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
                 >
                   {/* Visual container */}
-                  <div className="relative aspect-[4/3] bg-gradient-to-br from-[#0F2137] to-[#162A45] overflow-hidden flex items-center justify-center p-2.5">
+                  <div className="relative aspect-[4/3] bg-gradient-to-br from-[#0B1523] via-[#0F2137] to-[#142A45] overflow-hidden flex items-center justify-center p-3">
                     <img
                       src={service.image}
                       alt={service.subtitle}
-                      className="w-full h-full object-contain opacity-85 group-hover:scale-108 group-hover:opacity-100 transition-transform duration-500"
+                      className="w-full h-full object-contain opacity-90 group-hover:scale-108 group-hover:opacity-100 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0F2137]/70 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0F2137]/60 via-transparent to-transparent pointer-events-none" />
                   </div>
 
                   {/* Clean text body */}
-                  <div className="p-2.5 sm:p-3 flex flex-col flex-1 justify-between bg-white">
+                  <div className="p-3 sm:p-3.5 flex flex-col flex-1 justify-between items-center text-center bg-white">
                     <div>
-                      <span className="text-[9px] font-bold uppercase tracking-wider text-brand-teal block mb-0.5 truncate">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-brand-teal block mb-1">
                         {service.tag}
                       </span>
                       <h3 className="text-xs sm:text-[13px] font-bold text-[#0F2137] group-hover:text-[#0F6F94] transition-colors leading-snug">
                         {service.subtitle}
                       </h3>
+                    </div>
+                    <div className="mt-2.5 pt-2 border-t border-slate-100 w-full flex items-center justify-center gap-1 text-[11px] font-semibold text-slate-400 group-hover:text-brand-teal transition-colors">
+                      <span>Explore</span>
+                      <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                     </div>
                   </div>
                 </Link>
