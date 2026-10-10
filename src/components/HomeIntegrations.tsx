@@ -31,7 +31,7 @@ const integrationsList = [
 
 const HomeIntegrations: React.FC = () => {
   return (
-    <section className="py-20 sm:py-24 bg-slate-50 border-t border-slate-100">
+    <section className="py-5 sm:py-10 bg-slate-50 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
 

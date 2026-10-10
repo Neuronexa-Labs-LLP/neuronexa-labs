@@ -73,7 +73,7 @@ const solutions = [
 
 const HomeSolution: React.FC = () => {
   return (
-    <section id="features" className="py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 relative overflow-hidden">
+    <section id="features" className="py-5 md:py-10 bg-gradient-to-b from-slate-50 via-white to-slate-50 relative overflow-hidden">
       {/* Subtle background texture */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-navy/[0.03] rounded-full blur-[120px]" />
@@ -94,12 +94,12 @@ const HomeSolution: React.FC = () => {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
           {solutions.map((item, index) => (
             <div
               key={item.title}
               className={`
-                group relative bg-white rounded-[24px] p-7 sm:p-8
+                group relative bg-white rounded-[14px] p-7 sm:p-8
                 border ${item.accent.border}
                 shadow-[0_1px_3px_rgba(0,0,0,0.04),0_4px_16px_rgba(0,0,0,0.04)]
                 ${item.accent.hoverShadow}
@@ -108,28 +108,15 @@ const HomeSolution: React.FC = () => {
                 cursor-pointer
               `}
             >
-              {/* Step number watermark */}
-              <span className="absolute top-6 right-7 text-[72px] font-black text-slate-100/80 leading-none select-none pointer-events-none transition-colors duration-300 group-hover:text-slate-200/60">
-                {item.number}
-              </span>
-
               {/* Card content */}
               <div className="relative z-10">
-                {/* Top row: Icon + Tag */}
-                <div className="flex items-start justify-between mb-6">
-                  {/* Icon with gradient background */}
-                  <div className={`w-14 h-14 rounded-2xl ${item.accent.iconBg} flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-105`}>
-                    <item.icon className={`w-6 h-6 ${item.accent.iconText}`} strokeWidth={2} />
-                  </div>
-                </div>
-
                 {/* Title */}
-                <h3 className="text-xl font-extrabold text-slate-900 mb-3 leading-snug tracking-tight">
+                <h3 className="text-xl font-extrabold text-slate-900 mb-5 leading-snug tracking-tight">
                   {item.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-[15px] text-slate-500 leading-relaxed mb-2" style={{ lineHeight: '1.7' }}>
+                <p className="text-[15px] text-slate-500 leading-relaxed" style={{ lineHeight: '1.7' }}>
                   {item.description}
                 </p>
               </div>
@@ -137,7 +124,7 @@ const HomeSolution: React.FC = () => {
           ))}
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 

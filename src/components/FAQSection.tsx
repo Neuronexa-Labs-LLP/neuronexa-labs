@@ -67,7 +67,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({
   };
 
   return (
-    <section id="faq" className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-b from-slate-50/60 via-white to-slate-50/60 border-t border-slate-200/80 overflow-hidden">
+    <section id="faq" className="relative py-5 md:py-10 bg-gradient-to-b from-slate-50/60 via-white to-slate-50/60 border-t border-slate-200/80 overflow-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}

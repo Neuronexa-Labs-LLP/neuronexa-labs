@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, X, MessageCircle, ChevronDown, Bot, Globe, ShieldCheck, Smartphone, Megaphone, Phone, CalendarCheck, UserCheck, Headset, LayoutDashboard, FileText, BarChart3, ArrowRight, Layout, Briefcase, MapPin, ShoppingBag, Brain, Zap, Mic, Search, Calendar, LifeBuoy, TrendingUp, Sparkles } from 'lucide-react';
+import { Menu, X, MessageCircle, ChevronDown, Bot, Globe, ShieldCheck, Smartphone, Megaphone, Phone, CalendarCheck, UserCheck, Headset, LayoutDashboard, FileText, BarChart3, ArrowRight, Layout, Briefcase, MapPin, ShoppingBag, Brain, Zap, Mic, Calendar, LifeBuoy, TrendingUp, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -29,29 +29,29 @@ interface ProjectItem {
 
 const categorizedServices: Category[] = [
   {
+    title: 'End-to-End Business Solutions',
+    items: [
+      { label: 'Agents & Voice', icon: Mic, desc: 'AI agents & conversational voice', link: '/services/agents-voice/' },
+      { label: 'Smart Workflows', icon: Zap, desc: 'Intelligent workflow automation', link: '/services/smart-workflows/' },
+      { label: 'Business Tools', icon: LayoutDashboard, desc: 'Custom enterprise software & tools', link: '/services/business-tools/' },
+      { label: 'Web & Mobile', icon: Smartphone, desc: 'Scalable web apps & digital products', link: '/services/web-mobile/' },
+    ]
+  },
+  {
     title: 'Autonomous AI Agents',
     items: [
       { label: 'AI Automation', icon: Zap, desc: 'Intelligent workflow automation', link: '/services/ai-automation/' },
       { label: 'Voice Assistants', icon: Mic, desc: 'Enterprise AI voice assistants', link: '/services/ai-voice-agent/' },
-      { label: 'Lead Qualification', icon: Search, desc: 'Smart lead scoring & routing', link: '/services/lead-qualification/' },
       { label: 'Appointment Scheduling', icon: Calendar, desc: 'Automated booking & reminders', link: '/services/appointment-scheduling/' },
     ]
   },
   {
-    title: 'Custom Engineering',
+    title: 'Engineering & Growth',
     items: [
       { label: 'Website Development', icon: Layout, desc: 'Custom web applications', link: '/services/website-development/' },
       { label: 'Mobile App Development', icon: Smartphone, desc: 'iOS & Android applications', link: '/services/mobile-app-development/' },
-      { label: 'Solution Support Services', icon: LifeBuoy, desc: '24/7 managed solution support', link: '/services/solution-support/' },
-    ]
-  },
-  {
-    title: 'Growth & Security',
-    items: [
       { label: 'Digital Marketing', icon: TrendingUp, desc: 'SEO, PPC & growth strategies', link: '/services/digital-marketing/' },
-      { label: 'Content & Marketing', icon: FileText, desc: 'Content strategy & creation', link: '/services/content-marketing/' },
       { label: 'Security & Validation', icon: ShieldCheck, desc: 'Security compliance & audits', link: '/services/security-validation/' },
-      { label: 'Outbound Campaigns', icon: Megaphone, desc: 'Multi-channel outreach at scale', link: '/services/outbound-campaigns/' },
     ]
   }
 ];
@@ -218,7 +218,7 @@ const Navbar: React.FC = () => {
               href="/services"
               className="text-sm font-semibold text-slate-700 hover:text-brand-teal transition-colors flex items-center gap-1"
             >
-              Services
+              Business Solutions
               <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`} />
             </Link>
 
@@ -445,7 +445,7 @@ const Navbar: React.FC = () => {
                   className="w-full flex items-center justify-between text-base font-semibold text-slate-800 hover:text-brand-navy active:text-brand-teal transition-colors py-2 px-1 cursor-pointer text-left rounded-lg"
                   aria-expanded={mobileServicesOpen}
                 >
-                  <span>Services</span>
+                  <span>Business Solutions</span>
                   <div className={`h-6 w-6 rounded-md flex items-center justify-center transition-colors ${mobileServicesOpen ? 'bg-brand-navy/10 text-brand-navy' : 'bg-slate-100 text-slate-500'}`}>
                     <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
                   </div>

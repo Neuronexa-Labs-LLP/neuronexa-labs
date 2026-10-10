@@ -1,25 +1,12 @@
-import { Inter, Playfair_Display, Kanit } from 'next/font/google';
+import { Source_Sans_3 } from 'next/font/google';
 import '../index.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-const inter = Inter({ 
-  subsets: ['latin'], 
-  variable: '--font-inter',
-  display: 'swap',
-});
-
-const playfair = Playfair_Display({ 
+const sourceSans = Source_Sans_3({ 
   subsets: ['latin'], 
   style: ['italic', 'normal'], 
-  variable: '--font-playfair',
-  display: 'swap',
-});
-
-const kanit = Kanit({ 
-  subsets: ['latin'], 
-  weight: ['300', '400', '500', '600', '700', '800', '900'], 
-  variable: '--font-kanit',
+  variable: '--font-source-sans',
   display: 'swap',
 });
 
@@ -97,7 +84,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${playfair.variable} ${kanit.variable} min-h-screen bg-white font-sans selection:bg-brand-teal selection:text-white transition-colors duration-300`}>
+      <body className={`${sourceSans.className} ${sourceSans.variable} min-h-screen bg-white font-sans selection:bg-brand-teal selection:text-white transition-colors duration-300`}>
         <Navbar />
         {children}
         <footer id="footer">

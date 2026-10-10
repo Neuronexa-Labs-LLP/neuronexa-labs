@@ -47,7 +47,7 @@ const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contactus" className="relative py-12 md:py-16 bg-white overflow-hidden flex items-center justify-center border-t border-slate-100/80 scroll-mt-24">
+    <section id="contactus" className="relative py-5 md:py-10 bg-white overflow-hidden flex items-center justify-center border-t border-slate-100/80 scroll-mt-24">
       {/* Anchor for backward compatibility with #contact */}
       <div id="contact" className="absolute -top-24 left-0 pointer-events-none" />
       {/* Blur Background Glows */}

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,7 +7,7 @@
 @layer base {
   body {
     @apply bg-white text-gray-900 antialiased;
-    font-family: var(--font-inter), sans-serif;
+    font-family: var(--font-source-sans), "Source Sans Pro", "Source Sans 3";
   }
 
   ::selection {
@@ -14,7 +16,7 @@
   }
 }
 
-.font-playfair { font-family: var(--font-playfair), serif; }
+.font-playfair { font-family: var(--font-source-sans), "Source Sans Pro", "Source Sans 3"; }
 
 /* Smooth scroll */
 html {
@@ -67,7 +69,7 @@ html {
 
 /* Jack 3D Creator Styles */
 .font-kanit {
-  font-family: var(--font-kanit), sans-serif;
+  font-family: var(--font-source-sans), "Source Sans Pro", "Source Sans 3";
 }
 
 .hero-heading {

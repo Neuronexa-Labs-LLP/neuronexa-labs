@@ -10,16 +10,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: 'about/', priority: 0.9, changeFrequency: 'monthly' as const },
     { path: 'services/', priority: 0.9, changeFrequency: 'weekly' as const },
 
+    // End-to-End Business Solutions
+    { path: 'services/agents-voice/', priority: 0.9, changeFrequency: 'monthly' as const },
+    { path: 'services/smart-workflows/', priority: 0.9, changeFrequency: 'monthly' as const },
+    { path: 'services/business-tools/', priority: 0.9, changeFrequency: 'monthly' as const },
+    { path: 'services/web-mobile/', priority: 0.9, changeFrequency: 'monthly' as const },
+
     // Autonomous AI Agents
     { path: 'services/ai-automation/', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: 'services/ai-voice-agent/', priority: 0.8, changeFrequency: 'monthly' as const },
-    { path: 'services/lead-qualification/', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: 'services/appointment-scheduling/', priority: 0.8, changeFrequency: 'monthly' as const },
 
     // Custom Engineering
     { path: 'services/website-development/', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: 'services/mobile-app-development/', priority: 0.8, changeFrequency: 'monthly' as const },
-    { path: 'services/solution-support/', priority: 0.8, changeFrequency: 'monthly' as const },
 
     // Growth & Security
     { path: 'services/digital-marketing/', priority: 0.8, changeFrequency: 'monthly' as const },
